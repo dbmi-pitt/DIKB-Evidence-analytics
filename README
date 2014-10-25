@@ -1,15 +1,25 @@
-CODE TO WORK WITH BOTH THE PICKLED (PYTHON) AND SQL VERSION OF THE DIKB
-Authors: Richard Boyce, Greg Gardner, Hassen Khan
-Date: 03/06/2012
+DIKB-Evidence-analytics : the primary code project for the Drug Interaction Knowledge Base
+
+The Drug Interaction Knowledge Base (DIKB), an evidence-focused
+knowledge base designed to support pharmacoepidemiology and clinical
+decision support.
+
+Principal Investigator and Architect: Richard D. Boyce, PhD
+
+Current and previous developers/analysts: Yifan Ning, MS, Sam Rosko,
+Sam Greg Gardner, Hassen Khan, Michele Morris
+
+License: Gnu GPL, Apache 2, or MIT depending on the sub-project. Please see
+the license explanations in each folder or within the code.
 
 ################################################################################
-OVERVIEW
+OVERVIEW OF THIS CODE PROJECT
 ################################################################################
 
 The DIKB currently is Python-centric, meaning that the database and
 linked data resources created from the DIKB depend on working with the
 data when loaded into Python. While the architecture is not ideal and
-evolved organically from the limited time and resources availabel for
+evolved organically from the limited time and resources available for
 working on the knowledge base, it works ok. This is because the Python
 DIKB is a suitable intermediary between the reasoning engine and the
 SQL database. However, one needs to keep in mind the following when

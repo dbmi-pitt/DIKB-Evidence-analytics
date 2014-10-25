@@ -1,0 +1,25 @@
+<p>This is the front page for the Drug Interaction Knowledge
+Base (DIKB). From here you can go to forms that will allow you to enter and
+modify information in the DIKB<p>
+<br>
+Go to a form to add evidence to the DIKB:<br>
+<a href="../simple-DIKB-web/addAssertions.rpy">Add Evidence</a>
+<br><br>
+<!-- Go to a form to add new evidence for an assertion in to the DIKB:<br> -->
+<!-- <a href="add-evidence.html">Add new evidence</a> -->
+<!-- <br><br> -->
+<!-- Go to a form to add or edit an object that is important for inference:<br> -->
+<!-- <a href="select-object.html">Select an object to modify or add a -->
+<!-- new one</a> -->
+<!-- <br><br> -->
+View all data in the DIKB:<br>
+<a href="../simple-DIKB-web/viewData.rpy">DIKB data</a>
+<br><br>
+Select belief criteria and export assertions:<br>
+<a href="../simple-DIKB-web/exportAssertionsForm.rpy">Export Assertions</a> 
+<br><br>
+View the evidence for all assertions in the DIBK as well as the data
+in all its objects:<br>
+<a href="../html/index.html">Assertion index</a>
+
+

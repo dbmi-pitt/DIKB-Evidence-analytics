@@ -1,0 +1,15 @@
+;; Object ir/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "ir/"
+  :tables (list 
+   (semanticdb-table "ddi_ir.rpy"
+    :major-mode 'python-mode
+    :tags '(("twisted.web" include nil nil [1 33]) ("Bio.EUtils" include nil nil [34 71]) ("re" include nil nil [72 81]) ("head" variable nil nil [100 160]) ("descr" variable nil nil [161 231]) ("tail" variable nil nil [232 259]) ("rct_images" variable nil nil [261 442]) ("crpt_images" variable nil nil [443 625]) ("epi_images" variable nil nil [626 807]) ("pk_invitro" variable nil nil [808 989]) ("pk_invivo" variable nil nil [990 1170]) ("r_table_start" variable nil nil [1171 1200]) ("r_table_end" variable nil nil [1201 1229]) ("res_start_even" variable nil nil [1230 1272]) ("a_target" variable nil nil [1273 1310]) ("res_start_odd" variable nil nil [1311 1371]) ("res_end" variable nil nil [1373 1394]) ("a_end" variable nil nil [1395 1413]) ("link_head" variable nil nil [1414 1525]) ("link_tail" variable nil nil [1526 1555]) ("form" variable nil nil [1557 3708]) ("Resource" type (:superclasses ("resource.Resource") :members (("__init__" function (:arguments (("self" variable nil (reparse-symbol function_parameters) [3796 3800]))) (reparse-symbol indented_block_body) [3783 3993]) ("render" function (:arguments (("self" variable nil (reparse-symbol function_parameters) [4014 4018]) ("request" variable nil (reparse-symbol function_parameters) [4020 4027]))) (reparse-symbol indented_block_body) [4003 7483])) :type "class") nil [3744 7483]) ("resource" variable nil nil [7484 7505]))
+    :file "ddi_ir.rpy"
+    :pointmax 7626
+    )
+   )
+  :file "semantic.cache"
+  :semantic-tag-version "2.0pre3"
+  :semanticdb-version "2.0pre3"
+  )

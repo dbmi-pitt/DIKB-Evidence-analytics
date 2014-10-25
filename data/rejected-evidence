@@ -1,0 +1,297 @@
+10454485|diltiazem_*|study did not use in vitro selective inhibitors
+10490896|lovastatin_*|intestinal micromomes were used and as of 5/22/07 these are not an acceptible microsomal system in the DIKB
+10490896|pravastatin_*|intestinal micromomes were used and as of 5/22/07 these are not an acceptible microsomal system in the DIKB
+10600094|clarithromycin_increases_auc_itraconazole|study did not provide comparitive data for subject population and population was very small
+11038161|diltiazem_*|study did not use in vitro selective inhibitors and did not test all major CYP450 enzymes
+11181496|simvastatin_inhibits_*|study did not use in vitro probe inhibitors for cyp3a4
+11422004|simvastatin_substrate_of_cyp3a4|study did not use in vitro probe inhibitors for cyp3a4
+12451428|diltiazem_substrate_of_cyp3a4|uses grapefruit juice as a inhibitor. Currently, we do not accept studies that use grapefruit juice
+12451428|diltiazem_substrate_of_cyp3a5|uses grapefruit juice as a inhibitor. Currently, we do not accept studies that use grapefruit juice
+15342470|midazolam_*|study did not look at all major CYP450 enzymes and did not use in vitro selective inhibitors
+15342470|triazolam_*|study did not look at all major CYP450 enzymes and did not use in vitro selective inhibitors
+15342470|alprazolam_*|study did not look at all major CYP450 enzymes and did not use in vitro selective inhibitors
+15618724|clarithromycin_fraction_cleared_by_*|study applied immunochemical quantitation, a method that is not considered sufficently accurate for use by the DIKB
+15735612|clarithromycin_*|uses non-hepatic source for enzymes and DIKB currently only accepts hepatic sources or recombinant (might be usable for assertions specific to intestinal CYP enzymes)
+15801939|diltiazem_inhibits_*|uses non-hepatic source for enzymes and DIKB currently only accepts hepatic sources or recombinant (might be usable for assertions specific to intestinal CYP enzymes)
+1976071|simvastatin_primary_total_clearance_mechanism_Metabolic_Clearance|study relied on an animal model; we only accept human-based evidence
+6255531|ketoconazole_primary_total_clearance_mechanism_Metabolic_Clearance|did not look in feces for metabolite or original compound so the results of the study cannot rule out biliary excretion
+6282204|ketoconazole_maximum_concentration_continuous_value|study used an active ingredient dose not typically given to patients; also, paper poorly written and sample size too small
+6707884|diltiazem_*|study considered too small to use for evidence
+6737261|diltiazem_*|study considered too small to use for evidence
+7972311|diltiazem_substrate_of_cyp3a4|uses grapefruit juice as a inhibitor. Currently, we do not accept studies that use grapefruit juice
+9223567|diltiazem_substrate_of_cyp3a4|rejected because methods section too confusing to comprehend and the paper did no provide sufficient data on their methods to make a fair judgement on the validity of their work.
+3146770|alprazolam_*|study size and dosing considered too small for use as evidence
+1914376|alprazolam_*|study size and dosing considered too small for use as evidence
+11038166|atorvastatin_inhibits_*|we are unable to enter this evidence because the DIKB does not distinguish lactone and acid forms of active ingredients and this relationship is specific to the lactone form
+11038166|atorvastatin_substrate_of_cyp2c8|while a Km value was available from the recombinant enzyme metabolism portion of the study, the estimated intrinsic clearance by 2C8 was so dramatically low comared to other enzymes that it was thought by our review board that it was insignificant and could be ignored
+16141567|fluconazole_inhibition_constant_*|Though an IC50 is given in the paper there is no k_i given and DIKB requires one
+9455717|erythromycin_increases_auc_*|this is a re-evaluation of a previous study and not a primary study itself 
+http://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?id=3341|lovastatin_fraction_absorbed_*|data is from animal studies
+11854151|ketoconazole_inhibits_*|no K_i for ketoconazole and no probe substrate used for CYP3A4 
+11854151|ketoconazole_inhibition_constant_*|no K_i for ketoconazole and no probe substrate used for CYP3A4 
+16684709|diltiazem_inhibition_constant_*|diltiazem evidence not clearly discussed in the paper
+16684709|diltiazem_inhibition_constant_*|diltiazem evidence not clearly discussed in the paper
+11744603|desacetyldiltiazem_substrate_of_*|the enzyme system used is not on that the DIKB accepts as of 10/02/2007
+http://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?id=3237|fluconazole_increases_auc_fluvastatin|dose of precipitant drug not mentioned and duration of study likely too short to mee inclusion criteria
+10971313|diltiazem_increases_auc_*|dose of precipitant too low and for too short of a duration to determine any positive or negative effect;also, study's intent was to test if diltiazem inhibition was systemic or 1st pass
+15531380|diltiazem_increases_auc_*|study design not appropriate for inferring PK interactions
+15531380|simvastatin_increases_auc_*|study design not appropriate for inferring PK interactions
+15531380|beta-hydroxy-simvastatin_increases_auc_*|study design not appropriate for inferring PK interactions
+15096363|diltiazem_increases_auc_simvastatin|data provided in case report not sufficient for inferring a PK interaction 
+15096363|diltiazem_increases_auc_atorvastatin|data provided in case report not sufficient for inferring a PK interaction 
+10600094|itraconazole_increases_auc_clarithromycin|Although it did measure clarithromycin levels these patients were on a ton of concomitant meds that could have played a role in high clarithromycin levels. For example, the second case..the patient came in on rifampin and they stopped the rifampin.
+2006579|erythromycin_increases_auc_lovastatin|The lovastatin level was drawn after the patient developed renal failure plus the patient was on a ton of con meds 
+9220046|clarithromycin_increases_auc_lovastatin|data provided in case report not sufficient for inferring a PK interaction 
+7637734|itraconazole_increases_auc_lovastatin|data provided in case report not sufficient for inferring a PK interaction 
+1815969|erythromycin_increases_auc_midazolam|data provided in case report not sufficient for inferring a PK interaction 
+10466919|nefazodone_increases_auc_pravastatin|data provided in case report not sufficient for inferring a PK interaction 
+9002485|nefazodone_increases_auc_simvastatin|data provided in case report not sufficient for inferring a PK interaction 
+10516882|ketoconazole_increases_auc_simvastatin|data provided in case report not sufficient for inferring a PK interaction 
+8918636|itraconazole_increases_auc_simvastatin|data provided in case report not sufficient for inferring a PK interaction 
+12841814|fluconazole_increases_auc_simvastatin|data provided in case report not sufficient for inferring a PK interaction 
+17381388|erythromycin_increases_auc_simvastatin|data provided in case report not sufficient for inferring a PK interaction 
+17381388|clarithromycin_increases_auc_simvastatin|data provided in case report not sufficient for inferring a PK interaction 
+11197581|clarithromycin_increases_auc_simvastatin|data provided in case report not sufficient for inferring a PK interaction 
+2265054|erythromycin_increases_auc_midazolam|I score this a possible with the DIPS. Big problem is that IV erythro should not have much effect on oral midazolam until some time has passed for the metabolite to be formed and produce inhibition. I would expect the IV erythro effect to be more on the systemic clearance of midazolam, rather than its first-pass. Comparison to other children does not impress me much. Finally, what 'fruit juice' do you think they used with the pre-op? Patient data relies on a single value at 5hr that appears to be high. What if it is an error? Then there is not much except the kid went to sleep. Nausea and tachycardia probably due to erythro and or atropine. Wonder if he had a brief bout of TDP (due to erythro) causing loss of consciousness that spontaneously reverted. No info given on ECG before transfer to recovery room. All in all, not a convincing case report 
+12243603|diltiazem_increases_auc_atorvastatin|data provided in case report not sufficient for inferring a PK interaction 
+11528245|diltiazem_increases_auc_simvastatin|data provided in case report not sufficient for inferring a PK interaction 
+15625612|fluconazole_increases_auc_atorvastatin|data provided in case report not sufficient for inferring a PK interaction 
+17368833|ketoconazole_increases_auc_simvastatin|data provided in case report not sufficient for inferring a PK interaction 
+17216557|ketoconazole_increases_auc_lovastatin|data provided in case report not sufficient for inferring a PK interaction 
+16288136|nefazodone_increases_auc_simvastatin|data provided in case report not sufficient for inferring a PK interaction 
+16159992|clarithromycin_increases_auc_simvastatin|data provided in case report not sufficient for inferring a PK interaction 
+15545884|clarithromycin_increases_auc_simvastatin|data provided in case report not sufficient for inferring a PK interaction 
+14966253|clarithromycin_increases_auc_simvastatin|data provided in case report not sufficient for inferring a PK interaction 
+14570351|nefazodone_increases_auc_simvastatin|data provided in case report not sufficient for inferring a PK interaction 
+12816614|clarithromycin_increases_auc_atorvastatin|data provided in case report not sufficient for inferring a PK interaction 
+12773066|clarithromycin_increases_auc_atorvastatin|data provided in case report not sufficient for inferring a PK interaction 
+12544321|ketoconazole_increases_auc_simvastatin|data provided in case report not sufficient for inferring a PK interaction 
+12397859|nefazodone_increases_auc_alprazolam|data provided in case report not sufficient for inferring a PK interaction 
+12380704|diltiazem_increases_auc_simvastatin|data provided in case report not sufficient for inferring a PK interaction 
+12202291|nefazodone_increases_auc_simvastatin|data provided in case report not sufficient for inferring a PK interaction 
+9496876|erythromycin_increases_auc_lovastatin|data provided in case report not sufficient for inferring a PK interaction 
+3421582|erythromycin_increases_auc_lovastatin|data provided in case report not sufficient for inferring a PK interaction 
+3421582|diltiazem_increases_auc_lovastatin|data provided in case report not sufficient for inferring a PK interaction 
+10460810|risperidone_inhibits_cyp3a*|study did not use in vitro probe substrate for cyp3a
+10460810|thioridazine_inhibits_cyp3a*|study did not use in vitro probe substrate for cyp3a
+10460810|fluphenazine_inhibits_cyp3a*|study did not use in vitro probe substrate for cyp3a
+10460810|perphenazine_inhibits_cyp3a*|study did not use in vitro probe substrate for cyp3a
+10460810|thiothixene_inhibits_cyp3a*|study did not use in vitro probe substrate for cyp3a
+10460810|haloperidol_inhibits_cyp3a*|study did not use in vitro probe substrate for cyp3a
+10460810|clozapine_inhibits_cyp3a*|study did not use in vitro probe substrate for cyp3a
+10460810|chlorpromazine_inhibits_cyp3a*|study did not use in vitro probe substrate for cyp3a
+aripiprazole-otsuka-082008|ariprazole_increases_auc_venlafaxine|drug product label did not include quantitative data or define what was meant by no effect
+aripiprazole-otsuka-082008|ariprazole_increases_auc_escitalopram|drug product label did not include quantitative data or define what was meant by no effect
+duloxetine-eli-lilly-022009|duloxetine_primary_total_clearance_enzyme_cyp1a2|although the AUC of duloxetine increased by 6-fold in the presence of fluoxetine, a strong 1A2 inhibitor, the AUC increase could also be due to fluoxetine 2C19 inhibition
+9447478|thiothixene_substrate_of_cyp2d6|neither CYP2D6 phenotyping or genotyping was done on the participants and it appears that one individual may have been an ultra-metabolizor extensive metabolizer while other participants were of a different phenotype
+bupropion-mylan-south-atlantic-032008|bupropion_bioavailability*|presented bioavailability data comes from animal studies
+bupropion-XR-actavis-south-atlantic-032008|bupropion_bioavailability*|presented bioavailability data comes from animal studies
+sertraline-mylan-102008|sertraline_inhibits_cyp3a4|the chemicals that the labels says were used as substrates are not acceptable for determining cyp3a4 inhibition
+sertraline-mylan-102008|primary_total_clearance_mechanism_Metabolic_Clearance|the study mentioned by the label is too small and does not explicitly mention if participants were EM and/or PM types
+citalopram-teva-102008|citalopram_substrate_of_cyp2d6|the studies mentioned by the product label did not use acceptable potent inhibitors of cyp2d6 and the lack of effect could be due to poor study design
+venlafaxine-wyeth-122008|venlafaxine_substrate_of_cyp3a4|in the curator's judgement, the product label does not provide sufficient data
+venlafaxine-wyeth-122008|velafaxine_increases_auc_risperidone|in the curator's judgement, the product label does not provide enough information from the study that it bases its claim
+quetiapine-XR-astra-zeneca-072007|fluoxetine_increases_auc_quetiapine|older fluoxetine studies were often not carried out long enough for an effect to be observed and the product label does not mention the duration of the study that would refute this assertion
+8267647|4-nitrophenol_in_vitro_probe_substrate_of_enzyme_cyp2e1|Although, in principal, the study seemed adequate to support the assertion, the studies age and the fact that 4-nitrophenol has not seen wide adoption as an in vitro probe led to this studies rejection. Note that 4-nitrophenol appears to be an acceptable substrate for in vitro studies according to the FDA (see fda2006a, p 32, table).
+escitalopram-forest-laboratories-032009|escitalopram_substrate_of_cyp1a2|in the curator's judgement, the product label does not provide sufficient data for its rebuttal of this assertion
+escitalopram-forest-laboratories-032009|escitalopram_substrate_of_cyp3a4|the study mentioned as support of the assertion (ketoconazole-escitalopram) appears to have used too low of a dose
+escitalopram-forest-laboratories-032009|escitalopram_substrate_of_cyp2d6|The study mentioned did not appear to address the possiblity of confounding by EM and PM phenotypes for CYP2C19
+quetiapine-astra-zeneca-102007|quetiapine_bioavailability*|in the curator's judgement, the product label does not provide sufficient information to support its claim
+quetiapine-astra-zeneca-102007|quetiapine_fraction_absorbed*|in the curator's judgement, the product label does not provide sufficient information to support its claim
+fluvoxamine-mylan-092007|fluvoxamine_inhibits_cyp3a4|the study mentioned in the product label used terfenadine as a probe substrate for cyp3a4 but, in the curator's judgement, it is not adequate for making this inference
+9574817|midazolam_inhibits_cyp2e1|this study used only one liver to derive an inhibition constant which is not  considered sufficient by DIKB curators at this time
+9574817|haloperidol_inhibits_cyp2e1|this study used only one liver to derive an inhibition constant which is not  considered sufficient by DIKB curators at this time
+9574817|chlorpromazine_inhibition_constant*|this study used only one liver to derive an inhibition constant which is not  considered sufficient by DIKB curators at this time
+9574817|fluphenazine_inhibition_constant*|this study used only one liver to derive an inhibition constant which is not  considered sufficient by DIKB curators at this time
+9574817|thioridazine_inhibition_constant*|this study used only one liver to derive an inhibition constant which is not  considered sufficient by DIKB curators at this time
+18648229|droperidol_increases_auc_ondansetron|the dose used in the study is far less than that used in clinical practice
+8764380|debrisoquine_primary_total_clearance_enzyme_cyp2d6|the study used a non-standard recombinant system
+8764380|debrisoquine_substrate_of_cyp2d6|the study used a non-standard recombinant system
+12023534|debrisoquine_substrate_of_cyp2d6|the study used a non-standard recombinant system
+12023534|debrisoquine_substrate_of_cyp1a1|the study used a non-standard recombinant system
+12023534|quinidine_in_vitro_selective_inhibitor_of_enzyme_cyp2d6|the study used a non-standard recombinant system
+12023534|debrisoquine_in_vitro_probe_substrate_of_enzyme_cyp2d6|the study used a non-standard recombinant system
+12023534|cyp1a1_controls_formation_of_4-hydroxydebrisoquine|the study used a non-standard recombinant system
+12023534|cyp2d6_controls_formation_of_4-hydroxydebrisoquine|the study used a non-standard recombinant system
+perphenazine-sandoz-022008|perphenazine_substrate_of_cyp2d6|in the curator's judgement the product label does not provide data to support or refute this assertion
+ziprasidone-roerig-082008|ziprasidone_bioavailability*|the product label provides a figure for bioavailability of 60% @ 20mg under fed conditions then states that the drug's absorption increases two-fold in the presence of food. This is an ambiguous statement and not suitable for entry into the DIKB
+quetiapine-astra-zeneca-102007|fluoxetine_increases_auc_quetiapine|the product label provides no data on the duration of study or participants
+quetiapine-astra-zeneca-102007|haloperidol_increases_auc_quetiapine|the product label provides no data on the duration of study or participants
+quetiapine-astra-zeneca-102007|risperidone_increases_auc_quetiapine|the product label provides no data on the duration of study or participants
+fluvoxamine-XR-jazz-022008|fluvoxamine_maximum_concentration*|although the C_max data provided seems valid (for the non-XR formulation) it is given in units adjusted for patient weight. The system requires unadjusted  units and it is unclear at this time what multiplier to use to convert adjusted weights to unadjusted.
+fluvoxamine-XR-jazz-022008|fluvoxamine_bioavailability*|this value is for the XR formulation and there is currently no way to specify so in the system.
+fluvoxamine-mylan-092007|fluvoxamine_increases_auc_alprazolam|the product label does not provide sufficient information on the study for entry into the knowledge-base
+fluvoxamine-mylan-092007|fluvoxamine_increases_auc_clozapine|the product label does not provide sufficient information on the study for entry into the knowledge-base
+quetiapine-XR-astra-zeneca-072007|ketoconazole_increases_auc_quetiapine|the product label does not provide sufficient information on the study for entry into the knowledge-base
+escitalopram-forest-laboratories-032009|escitalopram_substrate_of_cyp3a4|although the statement mentioning invitro support for this assertion would be acceptable for entry in the knowledge-base, there is at least one other statement that has caused this evidence source to be rejected. 
+12173784|sertraline_inhibits_cyp2d6|in the curator's opinion, the study's duration was very short and the study was underpowered to detect small PK changes
+12173784|fluvoxamine_inhibits_cyp2d6|in the curator's opinion, the study's duration was very short and the study was underpowered to detect small PK changes
+9431831|cyp2d6_controls_formation_of_4-(4-chlorophenyl)-4-hydroxypiperidine|DIKB curators do not currently  accept immunoinhibition studies as evidence
+8225700|fluvoxamine_inhibits_cyp2d6|study does not appear to have included a sufficient number of participants to refute this assertion given the known properties of fluvoxamine
+12809966|escitalopram_substrate_of_cyp3a4|in the curator's opinion, the inhibitor chosen is not acceptable this type of study
+11719727|fluvoxamine_permanently_deactivates_catalytic_function_cyp1a2|in the curator's opinion, the experiment is not appropriately designed for its results to support or refute this assertion 
+10771453|ziprasidone_inhibits_cyp2d6|in the curator's opinion, the study's duration was very short and the study was underpowered to detect small PK changes
+10192828|cyp2d6_controls_formation_of_N-desmethylvenlafaxine|DIKB curators do not currently  accept results from experiments using recombinant cell lines derived from human cells (e.g. lymphoblastoid cells) as support for substrate_of or controls_formation_of assertions. Such evidence is accepted as refuting evidence for these assertions
+mirtazapine-organon-orally-disintegrating-082007|mirtazapine_inhibits_*|The statement refuting this assertion is too vague to interpret because it is not clear what 'potent' means
+mirtazapine-organon-orally-disintegrating-082007|mirtazapine_primary_total_clearance_mechanism_Renal_Excretion|the label does not appear to distinguish the parent compound from its metabolites in discussing routes of elimination
+olanzapine-eli-lilly-042009|olanzapine_primary_total_clearance_mechanism_Metabolic_Clearance|the label does not provide an account of metabolites and parent compount retrieved in feces
+18832427|aripiprazole_increases_AUC_escitalopram|there appears to be serious errors in the written results of the study (see page 7 in the discussion of co-adminstered medications)
+15545309|olanzapine_substrate_of_cyp1a2|the study used fluvoxamine as an inhibitor but this is known to not be an in vitro selective inhibitor
+15834460|cyp3a4_controls_formation_of_7-hydroxy-N-desalkyl-quetiapine|this study is contradictory in how it presents its results - Table 1 shows no significant difference in the AUC of QTP-ND but p 86 3rd paragraph says that AUV and C_max declined significantly
+15834460|cyp3a4_controls_formation_of_quetiapine-sulfoxide|this study is contradictory in how it presents its results - Table 1 shows no significant difference in the AUC of QTP-ND but p 86 3rd paragraph says that AUV and C_max declined significantly; as a result, it is not clear how to best interpret other results
+15834460|quetiapine-sulfoxide_maximum_concentration_*|the curators note that the cyp2d6*10 genotype is prevalent in the population from which participants were recruited but no genotyping was done in the study
+15834460|7-hydroxy-quetiapine_maximum_concentration_*|the curators note that the cyp2d6*10 genotype is prevalent in the population from which participants were recruited but no genotyping was done in the study
+15834460|7-hydroxy-N-desalkyl-quetiapine_maximum_concentration_*|the curators note that the cyp2d6*10 genotype is prevalent in the population from which participants were recruited but no genotyping was done in the study
+15834460|quetiapine_maximum_concentration_*|the curators note that the cyp2d6*10 genotype is prevalent in the population from which participants were recruited but no genotyping was done in the study
+10211917|paroxetine_inhibits_cyp2d6|this study is a duplicate to PMID:12173784; a study already present in the evidence-base and used to support or refute this assertion
+10211917|fluoxetine_inhibits_cyp2d6|this study is a duplicate to PMID:12173784; a study already present in the evidence-base; a study already present in the evidence-base and used to support or refute this assertion
+10211917|sertraline_inhibits_cyp2d6|this study is a duplicate to PMID:12173784; a study already present in the evidence-base; a study already present in the evidence-base and used to support or refute this assertion
+10211917|fluvoxamine_inhibits_cyp2d6|this study is a duplicate to PMID:12173784; a study already present in the evidence-base; a study already present in the evidence-base and used to support or refute this assertion
+9681669|haloperidol_inhibits_cyp2d6|the curators are not familiar with carteolol hydroxylation as a probe 2d6 reaction 
+9431831|haloperidol_substrate_of_cyp3a4|the curators consider 3a4 catalysis of dextromethorphan N-demethylation to be inadequately selective to support this assertion   
+9431831|haloperidol_substrate_of_cyp3a4|DIKB curators do not currently  accept immunoinhibition studies as evidence
+9431831|cyp3a4_controls_formation_of_4-(4-chlorophenyl)-4-hydroxypiperidine|DIKB curators do not currently  accept immunoinhibition studies as evidence
+9431831|cyp3a4_controls_formation_of_4-(4-chlorophenyl)-4-hydroxypiperidine|the curators consider 3a4 catalysis of dextromethorphan N-demethylation to be inadequately selective to support this assertion   
+849674|chlorpromazine_bioavailability*|the experiment looked at bioavailability releative to an intra-muscular dose; an oral to IV dose comparison would be necessary to support this assertion
+849674|chlorpromazine_maximum_concentration*|C_max values are possibly derivable from figures but this action would require some further thought on the validity of the resulting value
+11719727|fluvoxamine_inhibition_constant_cyp1a2|the curators do not consider two doses sufficient for establishing an in vivo K_i estimate
+11454728|demethylcitalopram_substrate_of_cyp2d6|DIKB curators do not currently  accept results from experiments using recombinant cell lines derived from human cells (e.g. lymphoblastoid cells) as support for substrate_of or controls_formation_of assertions. Such evidence is accepted as refuting evidence for these assertions
+11147928|desmethylclozapine_substrate_of_cyp2d6|the experiment does not rule out that that the observed increase in metabolite formation could have been attributed to inhibition of an alternative clearance pathway for the parent compound
+1412613|reduced-haloperidol_substrate_of_cyp2d6|the experiment does not rule out that that the observed increase in metabolite formation could have been attributed to inhibition of an alternative clearance pathway for the parent compound. For example, the inrease in RHAL in 2d6 PMs could have been caused by the accumulation of HAL and then HAL's conversion to RHAL via a non-2d6 pathway 
+paliperidone-XR-janssen-122008|paliperidone_substrate_of_cyp2d6|statements related to this assertion appear to be contradictory; compare section 7.2 to the section "metabolism and elimination"
+11454728|citalopram_substrate_of_cyp2c19|DIKB curators do not currently  accept results from experiments using recombinant cell lines derived from human cells (e.g. lymphoblastoid cells) as support for substrate_of or controls_formation_of assertions. Such evidence is accepted as refuting evidence for these assertions
+11454728|citalopram_substrate_of_cyp2d6|DIKB curators do not currently  accept results from experiments using recombinant cell lines derived from human cells (e.g. lymphoblastoid cells) as support for substrate_of or controls_formation_of assertions. Such evidence is accepted as refuting evidence for these assertions
+11454728|citalopram_substrate_of_cyp3a4|DIKB curators do not currently  accept results from experiments using recombinant cell lines derived from human cells (e.g. lymphoblastoid cells) as support for substrate_of or controls_formation_of assertions. Such evidence is accepted as refuting evidence for these assertions
+11454728|escitalopram_substrate_of_cyp2c19|DIKB curators do not currently  accept results from experiments using recombinant cell lines derived from human cells (e.g. lymphoblastoid cells) as support for substrate_of or controls_formation_of assertions. Such evidence is accepted as refuting evidence for these assertions
+11454728|escitalopram_substrate_of_cyp3a4|DIKB curators do not currently  accept results from experiments using recombinant cell lines derived from human cells (e.g. lymphoblastoid cells) as support for substrate_of or controls_formation_of assertions. Such evidence is accepted as refuting evidence for these assertions
+10192828|venlafaxine_substrate_of_cyp2d6|DIKB curators do not currently  accept results from experiments using recombinant cell lines derived from human cells (e.g. lymphoblastoid cells) as support for substrate_of or controls_formation_of assertions. Such evidence is accepted as refuting evidence for these assertions
+10192828|venlafaxine_substrate_of_cyp2c19|DIKB curators do not currently  accept results from experiments using recombinant cell lines derived from human cells (e.g. lymphoblastoid cells) as support for substrate_of or controls_formation_of assertions. Such evidence is accepted as refuting evidence for these assertions
+10192828|venlafaxine_substrate_of_cyp2c9|DIKB curators do not currently  accept results from experiments using recombinant cell lines derived from human cells (e.g. lymphoblastoid cells) as support for substrate_of or controls_formation_of assertions. Such evidence is accepted as refuting evidence for these assertions
+10192828|venlafaxine_substrate_of_cyp3a4|DIKB curators do not currently  accept results from experiments using recombinant cell lines derived from human cells (e.g. lymphoblastoid cells) as support for substrate_of or controls_formation_of assertions. Such evidence is accepted as refuting evidence for these assertions
+10192828|cyp3a4_controls_formation_of_N-desmethylvenlafaxine|DIKB curators do not currently  accept results from experiments using recombinant cell lines derived from human cells (e.g. lymphoblastoid cells) as support for substrate_of or controls_formation_of assertions. Such evidence is accepted as refuting evidence for these assertions
+10192828|cyp2c19_controls_formation_of_N-desmethylvenlafaxine|DIKB curators do not currently  accept results from experiments using recombinant cell lines derived from human cells (e.g. lymphoblastoid cells) as support for substrate_of or controls_formation_of assertions. Such evidence is accepted as refuting evidence for these assertions
+10192828|cypc9_controls_formation_of_N-desmethylvenlafaxine|DIKB curators do not currently  accept results from experiments using recombinant cell lines derived from human cells (e.g. lymphoblastoid cells) as support for substrate_of or controls_formation_of assertions. Such evidence is accepted as refuting evidence for these assertions
+10192828|cypd6_controls_formation_of_O-desmethylvenlafaxine|DIKB curators do not currently  accept results from experiments using recombinant cell lines derived from human cells (e.g. lymphoblastoid cells) as support for substrate_of or controls_formation_of assertions. Such evidence is accepted as refuting evidence for these assertions
+10192828|cyp2c19_controls_formation_of_O-desmethylvenlafaxine|DIKB curators do not currently  accept results from experiments using recombinant cell lines derived from human cells (e.g. lymphoblastoid cells) as support for substrate_of or controls_formation_of assertions. Such evidence is accepted as refuting evidence for these assertions
+10192828|cypc9_controls_formation_of_O-desmethylvenlafaxine|DIKB curators do not currently  accept results from experiments using recombinant cell lines derived from human cells (e.g. lymphoblastoid cells) as support for substrate_of or controls_formation_of assertions. Such evidence is accepted as refuting evidence for these assertions
+11136295|perphenazine_substrate_of_cyp2c19|the study used fluvoxamine as an inhibitor but this is known to not be an in vitro selective inhibitor
+11136295|perphenazine_substrate_of_cyp2c18|the enzyme CYP2C18 is not currently in the DIKB knowledge-base 
+9431831|cyp2d6_controls_formation_of_4-(4-chlorophenyl)-4-hydroxypiperidine|DIKB curators do not currently  accept human liver microme studies that examine the correlation of the rate of metabolite formation between a metabolite for an active ingredient of interest and a metabolite product of another chemical that is known to be specifically catalyzed by a particular enzyme
+9431831|cyp1a2_controls_formation_of_4-(4-chlorophenyl)-4-hydroxypiperidine|DIKB curators do not currently  accept human liver microme studies that examine the correlation of the rate of metabolite formation between a metabolite for an active ingredient of interest and a metabolite product of another chemical that is known to be specifically catalyzed by a particular enzyme
+9431831|cyp2c9_controls_formation_of_4-(4-chlorophenyl)-4-hydroxypiperidine|DIKB curators do not currently  accept human liver microme studies that examine the correlation of the rate of metabolite formation between a metabolite for an active ingredient of interest and a metabolite product of another chemical that is known to be specifically catalyzed by a particular enzyme
+8466541|fluoxetine_inhibits_cyp1a2|this study used only one liver to test inhibition which is not  considered sufficient by DIKB curators at this time
+8466541|norfluoxetine_inhibits_cyp1a2|this study used only one liver to test inhibition which is not  considered sufficient by DIKB curators at this time
+8466541|citalopram_inhibits_cyp1a2|this study used only one liver to test inhibition which is not  considered sufficient by DIKB curators at this time
+8466541|demethylcitalopram_inhibits_cyp1a2|this study used only one liver to test inhibition which is not  considered sufficient by DIKB curators at this time
+9681669|reduced-haloperidol_substrate_of_cyp3a4|DIKB curators do not currently  accept results from experiments using recombinant cell lines derived from human cells (e.g. lymphoblastoid cells) as support for substrate_of or controls_formation_of assertions. Such evidence is accepted as refuting evidence for these assertions
+9681669|reduced-haloperidol_substrate_of_cyp2d6|DIKB curators do not currently  accept results from experiments using recombinant cell lines derived from human cells (e.g. lymphoblastoid cells) as support for substrate_of or controls_formation_of assertions. Such evidence is accepted as refuting evidence for these assertions
+7891353|cyp1a2_controls_formation_of_clozapine-N-oxide|this study used only one liver to test inhibition which is not considered sufficient by DIKB curators at this time
+7891353|cyp2a6_controls_formation_of_clozapine-N-oxide|this study used only one liver to test inhibition which is not considered sufficient by DIKB curators at this time
+7891353|cyp2c9_controls_formation_of_clozapine-N-oxide|this study used only one liver to test inhibition which is not considered sufficient by DIKB curators at this time
+7891353|cyp2d6_controls_formation_of_clozapine-N-oxide|this study used only one liver to test inhibition which is not considered sufficient by DIKB curators at this time
+7891353|cyp2d6_controls_formation_of_desmethylclozapine|this study used only one liver to test inhibition which is not considered sufficient by DIKB curators at this time
+8823236|fluvoxamine_substrate_of_cyp1a2|(for) This use of evidence assumes that polycyclic aromatic hydrocarbon (i.e. smoking) selectively induces cyp1a2 however, DIKB curators do not accept evidence that depends on induction assertions at this time
+olanzapine-eli-lilly-042009|olanzapine_substrate_of_cyp1a2|(for) This use of evidence assumes that polycyclic aromatic hydrocarbon (i.e. smoking) selectively induces cyp1a2 however, DIKB curators do not accept evidence that depends on induction assertions at this time
+11213852|citalopram_substrate_of_cyp3a4|(against) in the curators opinion, the dose used for this study was too low and the length of the study insufficient for refuting this assertion
+11213852|desmethylcitalopram_substrate_of_cyp3a4|(against) in the curators opinion, the dose used for this study was too low and the length of the study insufficient for refuting this assertion
+8941024|sertrline_inhibits_cyp2d6|(against) the method used for phenotyping does not seem to account for intermediate metabolizers and the study might be insufficiently powered for its results to refute this assertion
+9825830|reduced-haloperidol_substrate_of_cyp2d6|(against) DIKB curators do not currently  accept immunoinhibition studies as evidence
+9825830|reduced-haloperidol_substrate_of_cyp3a4|(for) DIKB curators do not currently  accept immunoinhibition studies as evidence
+9825830|reduced-haloperidol_substrate_of_cyp3a4|(for) DIKB curators do not currently  accept human liver microme studies that examine the correlation of the rate of metabolite formation between a metabolite for an active ingredient of interest and a metabolite product of another chemical that is known to be specifically catalyzed by a particular enzyme
+2007317|thioridazine-5-sulfoxide_substrate_of_cyp2d6|(against) although, in the curators opinion, the results are presented somewhat ambiguously, it appears that the  the metabolite AUC ratios were not statistically significant
+2007317|cyp2d6_controls_formation_of_mesoridazine|(for) although, in the curators opinion, the results are presented somewhat ambiguously, it appears that the  the metabolite AUC ratios were not statistically significant
+9825830|reduced-haloperidol_substrate_of_cyp2d6|(against) DIKB curators do not currently  accept human liver microme studies that examine the correlation of the rate of metabolite formation between a metabolite for an active ingredient of interest and a metabolite product of another chemical that is known to be specifically catalyzed by a particular enzyme
+9825830|reduced-haloperidol_substrate_of_cyp1a2|(against) DIKB curators do not currently  accept human liver microme studies that examine the correlation of the rate of metabolite formation between a metabolite for an active ingredient of interest and a metabolite product of another chemical that is known to be specifically catalyzed by a particular enzyme
+9825830|reduced-haloperidol_substrate_of_cyp2c9|(against) DIKB curators do not currently  accept human liver microme studies that examine the correlation of the rate of metabolite formation between a metabolite for an active ingredient of interest and a metabolite product of another chemical that is known to be specifically catalyzed by a particular enzyme
+10771452|ziprasidone_substrate_of_cyp3a4|(for) DIKB curators do not currently  accept human liver microme studies that examine the correlation of the rate of metabolite formation between a metabolite for an active ingredient of interest and a metabolite product of another chemical that is known to be specifically catalyzed by a particular enzyme
+10771452|ziprasidone_substrate_of_cyp2c19|(for) DIKB curators do not currently  accept human liver microme studies that examine the correlation of the rate of metabolite formation between a metabolite for an active ingredient of interest and a metabolite product of another chemical that is known to be specifically catalyzed by a particular enzyme
+9378846|threohydrobupropion_substrate_of_cyp1a2| (against) This use of evidence assumes that polycyclic aromatic hydrocarbon (i.e. smoking) selectively induces cyp1a2 however, DIKB curators do not accept evidence that depends on induction assertions at this time
+9378846|erythrohydrobupropion_substrate_of_cyp1a2|(against) This use of evidence assumes that polycyclic aromatic hydrocarbon (i.e. smoking) selectively induces cyp1a2 however, DIKB curators do not accept evidence that depends on induction assertions at this time
+9378846|bupropion_substrate_of_cyp1a2|(against) This use of evidence assumes that polycyclic aromatic hydrocarbon (i.e. smoking) selectively induces cyp1a2 however, DIKB curators do not accept evidence that depends on induction assertions at this time
+9378846|hydroxybupropion_substrate_of_cyp1a2|(against) This use of evidence assumes that polycyclic aromatic hydrocarbon (i.e. smoking) selectively induces cyp1a2 however, DIKB curators do not accept evidence that depends on induction assertions at this time
+7690693|risperidone_maximum_concentration_continuous_value| (for) the value derived from intra-muscular dosing is rejected because the DIKB does not currently accept this kind of evidence
+15199083|fluvoxamine_increases_auc_clozapine|the AUC increase did not meet bioequivalance and was statistically non-significant
+eszoplicone-sepracor-052008|eszoplicone_substrate_of_cyp2e1|the FDA does not currently recommend 4-methylpyrazole as a selective inhibitor for CYP2E1
+19001559|desvenlafaxine_inhibits_cyp2d6|in the curator's opinion, the results are not presented clearly enough to judge the quality of this study or its analysis 
+19001559|paroxetine_inhibits_cyp2d6|in the curator's opinion, the results are not presented clearly enough to judge the quality of this study or its analysis
+7586933|fluvastatin_inhibits_cyp2c9|in the curator's opinion, the results of this study are presented ambiguously. Table 1 shows no statistically significant effect on AUC but the authors claim significance in the results section
+7741408|clomipramine_inhibits_cyp2d6|the curators were unable to review the full-text of this article because it is published in French
+12102670|topiramate_inhibits_cyp2c19|inhibition was only 20% at concentrations greater than 100micM; too small to be clinically relevant
+tamoxifen-teva-122008|tamoxifen_inhibits_p_glycoprotein|the DIKB does not yet handle these assertions
+atomoxetine-eli-lilly-062009|atomoxetine_inhibits_cyp3a4|statements in the  label appear contradictory on this point
+lansoprazole-takeda-112008|lansoprazole_inhibits_cyp1a2|the apparent effect on theophylline might have been due to pH-induced changes in absorption; a possibility further evidenced by the lack of change in theophylline half-life
+8861737|fluoxetine_increases_auc_zolpidem|fluoxetine was apparently administered to steady state by the study is possibly too short to rule out effects from norfluoxetine
+19242403|clarithromycin_increases_auc_zolpidem|the study appears to have been to short to determine negative findings
+12809966|escitalopram_increases_auc_ritonavir|the study appears to have been to short to determine negative findings
+12809966|ritonavir_increases_auc_escitalopram|the study appears to have been to short to determine negative findings
+pantoprazole-wyeth-032009|pantoprazole_inhibits_*|the study claims "In vivo studies also suggest that pantoprazole does not significantly affect the kinetics of other drugs" but does not define "significant"
+10579150|cimetidine_increases_auc_bupropion|the study does not appear to dose cimetidine sufficiently to determine negative findings (single dose when multiple doses would be preferred)
+17687273|voriconazole_increases_auc_venlafaxine|this evidence item was considered as potential evidence against the assertion however, there was considerable variability in the AUC of venlafazine in response to voriconazole leaving the results somewhat inconclusive
+17687273|voriconazole_increases_auc_O-desmethylvenlafaxine|this evidence item was considered as potential evidence against the assertion however, there was considerable variability in the AUC of O-desmethylvenlafaxine in response to voriconazole leaving the results somewhat inconclusive
+leflunomide-barr-012008|leflunomide_bioavailability_*|bioavailability quoted in label is relative to an oral solution; the DIKB requires values relative to an IV formulation
+zafirlukast-astrazeneca-012008|zafirlukast_primary_total_clearance_mechanism_Metabolic_Clearance|evidence relies on an animal model; we only accept human-based evidence
+12102670|topiramate_maximum_concentration_continuous_value|no K_i provided in the study
+9855322|olanzapine_increases_auc_theophylline|the olanzapine dose appears to low to support negative findings and olanzapine is typically administered orally rather than IV as it is in the study
+zaleplon-teva-062008|zaleplon_primary_total_clearance_enzyme_aldehyde_oxidase|It appears that one NDA reviewer commented that the concentrations used to test this hypothesis were not clinically relevant.
+norfloxacin-merck-102008|norfloxacin_inhibits_cyp1a2|In the curators opinion, there is not sufficient evidence to support that inhibition of cyp1a2 is a shared property of quinolones
+omeprazole-sandoz-022009|omeprazole_inhibits_cyp3a4|While omeprazole appears to effect a PK change in clarithromycin and its metabolite possibly attributable to inhibiton of cyp3a4; a more likely explanation in the curators opinion is that such a change is attributable to alterations by Omeprazole in the pH-dependant absorbtion of clarithromycin
+propafenone-mutual-072009|propafenone_inhibits_cyp1a2|The product label is vague as to the nature of evidence for an interaction with propafenone and the cyp1a2 substrate theophylline 
+propafenone-mutual-072009|propafenone_inhibits_cyp2d6|The product label is vague as to the nature of evidence for an interaction with propafenone and the cyp2d6 substrate desipramine
+propafenone-mutual-072009|propafenone_inhibits_cyp1a2|The product label is vague as to the nature of evidence for an interaction with propafenone and the cyp1a2 substrate theophylline
+propafenone-mutual-072009|propafenone_inhibits_cyp2c9|The product label is vague as to the nature of evidence for an interaction with propafenone and the cyp2c9 substrate S-warfarin. While there is a stated interaction with warfarin other pathways might be involved in the case of the R enantiomer
+asenapine-organon-082009|asenapine_inhibits_cyp2d6|In the curators opinion, the data presented in support of this assertion is confusing -- there is little effect on dextromethorphan, a probe substrate of cyp2d6, but a big effect on paroxetine. Possible other mechanisms involved (protein transport?)
+asenapine-organon-082009|asenapine_substrate_of_cyp1a2|In the curators opinion, these pathways were poorly characterized in the pre-market studies of asenapine. For example, fluvoxamine is an inhibitor or multiple pathways according to the 2006 FDA guidance to industry on drug interaction studies yet it appears to have been used to examine if asenipine is a substrate of cyp1a2. Similarly, carbamazepine is an inducer of multiple CYP450s but appears to have been used to infer that asenapine is a substrate-of cyp3a4. In terms of cyp2d6, the in vivo data shown in Table 4 indicates that asenapine is not a substrate-of cyp2d6.
+asenapine-organon-082009|asenapine_substrate_of_cyp3a4|In the curators opinion, these pathways were poorly characterized in the pre-market studies of asenapine. For example, fluvoxamine is an inhibitor or multiple pathways according to the 2006 FDA guidance to industry on drug interaction studies yet it appears to have been used to examine if asenipine is a substrate of cyp1a2. Similarly, carbamazepine is an inducer of multiple CYP450s but appears to have been used to infer that asenapine is a substrate-of cyp3a4. In terms of cyp2d6, the in vivo data shown in Table 4 indicates that asenapine is not a substrate-of cyp2d6.
+asenapine-organon-082009|asenapine_substrate_of_cyp2d6|In the curators opinion, these pathways were poorly characterized in the pre-market studies of asenapine. For example, fluvoxamine is an inhibitor or multiple pathways according to the 2006 FDA guidance to industry on drug interaction studies yet it appears to have been used to examine if asenipine is a substrate of cyp1a2. Similarly, carbamazepine is an inducer of multiple CYP450s but appears to have been used to infer that asenapine is a substrate-of cyp3a4. In terms of cyp2d6, the in vivo data shown in Table 4 indicates that asenapine is not a substrate-of cyp2d6.
+iloperidone-vanda-2009|iloperidone_primary_total_clearance_mechanism_Metabolic_Clearance|While the label states clearly that iloperidone is highly metabolized, the study referred to in the NDA does not appear to provide enought details to infer that more than 50% of iloperidone's clearance is by metabolism
+atazanavir-ERSquibb-112009|atazanavir_inhibits_cyp2c8|While the label states that atazanavir is a weak inhibitor of cyp2c8 it is not clear from the label how this was established. In the curators opinion, this statement is not clarified well enough to be used as evidence in the DIKB since many or most substrates of cyp2c8 are also substrates of cyp3a4.
+telithromycin-Sanofi-Aventis-052009|telithromycin_inhibits_cyp1a2|While theophylline is a cyp1a2 substrate, it is unclear from the label statement if the increase mentioned in theophylline's AUC was statistically significant.
+indinavir-merck-112008|indinavir_inhibits_cyp2d6|The statement that indinivir weakly inhibits cyp2d6 is based solely on in vitro data.
+omeprazole-sandoz-022009|omeprazole_inhibits_cyp2c19|While there is one statement that vaguely refers to a potential for inhibition of cyp2c19 by omaprazole ("Other possible interaction mechanisms are via CYP2C19" in Section "Antiretroviral Agents") this statement is not clear enough to add into the DIKB.
+10494454|cyp2d6_controls_formation_of_desmethylcitalopram|DIKB curators do not currently  accept results from experiments using recombinant cell lines derived from human cells (e.g. lymphoblastoid cells) as support for substrate_of or controls_formation_of assertions. Such evidence is accepted as refuting evidence for these assertions
+10494454|cyp2c19_controls_formation_of_desmethylcitalopram|DIKB curators do not currently  accept results from experiments using recombinant cell lines derived from human cells (e.g. lymphoblastoid cells) as support for substrate_of or controls_formation_of assertions. Such evidence is accepted as refuting evidence for these assertions
+10379638|erythromycin_increases_auc_clozapine|Rejected as evidence against. The study used a single dose of erythromcyin which is not sufficient to rule out possible inhibition by a metabolite of erythromycin.
+10048600|risperidone_substrate_of_*|Rejected as evidence against. The only metabolite considered was 9-OH-risperidong (paliperidone) so, conclusions about other pathways cannot be made.
+8148222|clozapine_substrate_of_cyp2d6|Rejected as evidence against. The effect variation was considerable among extensive metabolizers. This along with the small sample size lead the curators to suspect potential Type II error.
+8148222|clozapine_substrate_of_cyp2c19|Rejected as evidence against. The effect variation was considerable among extensive metabolizers. This along with the small sample size lead the curators to suspect potential Type II error.
+8333005|fluvoxamine_inhibits_cyp2d6|Rejected as evidence against. No phenotyping of cyp2d6. Also, the variation in AUCs amongst controls was 33% while fluvoxamine increase was only 15%. The curators suspect potential Type II error. 
+16390352|quetiapine_substrate_of_cyp2d6|The in vitro experiment is rejected as evidence for this assertion.It is not possible to say of what relevance the findings are because the concentration of quetiapine in this in vitro experiment was 7-fold greater than the observed C_max at 300mg bid.
+16390352|quetiapine_substrate_of_cyp2e1|Rejected as evidence for. It is not possible to say of what relevance the findings are because the concentration of quetiapine in this in vitro experiment was 7-fold greater than the observed C_max at 300mg bid.
+11084219|venlafaxine_inhibits_cyp2d6|The study used imipramine to generate desipramine as a metabolite...the changes in AUC appear statistically signficant but those for clearance are barely so. Also, no statistically sigificant change in the T_1/2. The curators suspect some issue with the study or its analysis possibly related to sample size.
+9023308|citalopram_substrate_of_cyp2c19|DIKB curators do not currently  accept results from experiments using recombinant cell lines derived from human cells (e.g. lymphoblastoid cells) as support for substrate_of or controls_formation_of assertions. Such evidence is accepted as refuting evidence for these assertions
+9205822|venlafaxine_inhibits_cyp2d6|Rejected as evidence against. The experiment only used three livers which might be insufficent for evidence against this assertion. Also, the concentration of venlafaxine ranged from 0 to 50micM and 20% inhibition was observed at 50micM suggesting some relevant inhibition constant could be determined if the concentrations were allowed to move over a greater range.
+9394027|clozapine_substrate_of_*|No recombinant system specified and once cannot easily be assumed. Also, in the curator's opinion, the results are not presented with sufficient detail. 
+11910263|quetiapine_substrate_of_cyp2d6|Rejected as evidence against. The study was too short to rule out an effect
+11910263|fluoxetine_increases_auc_quetiapine|Rejected as evidence against. The study was too short to rule out an effect given norfluoxetine's very long half-life.
+9024962|venlafaxine_inhibits_cyp2d6|Rejected as evidence against. Alprazolam 4-hydroxylation is not a recommended probe substrate for CYP3A4.
+9023308|citalopram_substrate_of_*|The recombinant  enzyme and HML experiments are rejected as evidence for and against. DIKB curators do not currently  accept results from experiments using recombinant cell lines derived from human cells (e.g. lymphoblastoid cells) as support for substrate_of or controls_formation_of assertions. Such evidence is accepted as refuting evidence for these assertions however, this experiment only examined only one of at least three known metabolic clearance pathways for citalopram. The latter issue applies to the HLM experiment and excludes it as evidence against any substrate assertions.
+9023308|citalopram_substrate_of_cyp3a4|The concentration of ketoconazole was fixed at a 10 and 100micM in the HLM experiment. Ketoconazole might not be a selective inhibitor for CYP3A4 at either concentration (see for example PMID 17600081).
+4061700|disulfiram_increases_auc_amitriptyline|Rejected as evidence for due to not being statistically significant.
+6734030|oral_contraceptives_increases_auc_imipramine|Rejected due to study design (matched controls).
+8834415|haloperidol_increases_auc_nefazodone|Rejected as evidence against because haloperidol was not dosed to steady-state so not possible to infer a non-interaction. Nefazodone increased PK parameters of haloperidol.
+3069477|pentazocine_increases_auc_amitriptyline|Rejected as it is a pharmacodynamic study, not a pharmacokinetic study.
+4571186|clonidine_increases_auc_desipramine|Rejected since it is a pharmacodynamic study.
+10361775|carbamazepine_increases_auc_methylphenidate|Rejected because this study is a case report.
+1101843|perphenazine_increases_auc_amitriptyline|Rejected because this is not a pharmacokinetic study.
+11292004|carbamazepine_increases_auc_imipramine|Rejected because this is a plasma concentration study with no data on clearance or AUC.
+11852294|acetylsalicylic_acid_increases_auc_imipramine|Rejected because this study only looks at plasma binding.
+12172337|desipramine_increases_auc_fluoxetine|Rejected because there is no AUC or CL analysis.
+12172337|lithium_increases_auc_fluoxetine|Rejected because there is no AUC or CL analysis.
+136668|mianserin_increases_auc_amitriptyline|Rejected because it is not a pharmacokinetic study.
+15048613|fluoxetine_increases_auc_olanzapine|Rejected because it is a plasma concentration study.
+15048613|amitriptyline_increases_auc_olanzapine|Rejected because it is a plasma concentration study.
+15048613|benperidol_increases_auc_olanzapine|Rejected because it is a plasma concentration study.
+15048613|carbamazepine_increases_auc_olanzapine|Rejected because it is a plasma concentration study.
+15048613|flupentixol_increases_auc_olanzapine|Rejected because it is a plasma concentration study.
+15048613|lorazepam_increases_auc_olanzapine|Rejected because it is a plasma concentration study.
+16473984|methylphenidate_increases_auc_citalopram|Rejected because it is a pharmacodynamic study.
+17353373|methylphenidate_increases_auc_levodopa|Rejected because it is not a pharmacokinetic study.
+3381243|alprazolam_increases_auc_nortriptyline|Rejected because it is a plasma concentration study.
+6643704|thioridazine_increases_auc_desipramine|Rejected because it is a plasma concentration study.
+11233461|bupropion_increases_auc_nortriptyline|Rejected because this study is a case report.
+11926715|bupropion_increases_auc_venlafaxine|Rejected because it is a plasma concentration study.
+20631572|bupropion_increases_auc_venlafaxine|Rejected because this study is a case series.
+11675851|fluvoxamine_increases_auc_mirtazapine|Rejected because this study is a case report.
+cymbalta-duloxetine-604b9f2f-fee6-48ef-a6c2-289bf98692b1-062012|ciprofoxacin_increases_auc_duloxetine|Rejected because no study data is reported. The product label statement infers the interaction based on a large observed interaction with fluvoxamine and the assertion that both fluvoxamine and cipro are strong inhibitors of CYP1A2
+8986013|fluvoxamine_increases_auc_citalopram|Rejected because it is a plasma concentration study.
+no-pmid-patat2007|ketoconazole_increases_auc_desvenlafaxine|Rejected because the study is reported in an abstract and provides only scant details

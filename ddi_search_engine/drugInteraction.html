@@ -1,0 +1,80 @@
+
+<html>
+<title>Drug Interaction Knowledge Base Targeted Search Engine </title>
+<form action="ddi_ir.rpy" method="POST">      
+<center>
+<table cellpadding=1 border=1 width="75%">
+<tr>
+  <td bgcolor="ccccff">
+    
+    <table align="center" cellpadding="0" cellspacing="0">
+      <tr>
+	<td><b><font size=+1>Drug Interaction Knowledge Base Targeted Search Engine:</font>&nbsp;</b>
+	  <p>This search engine submits customized queries to returning specific
+	  kinds of evidence of drug-drug interactions. Enter the
+	  pharmaceutics of interest in the text areas below and select
+	  the kind of evidence you would like to have the search
+	  engine return</p>
+	</td>
+      </tr>
+      <tr align="center">
+	
+	<td>
+	  &nbsp;&nbsp;<font size = 3><b><i>Pharmaceutical entity 1:</i></b></font><br>
+	  &nbsp;&nbsp;<input type="text" name="object" size="30">
+	</td>
+      </tr>
+      <tr align="center">
+	<td>
+	  &nbsp;&nbsp;<font size = 3><b><i>Pharmaceutical entity 2:</i></b></font><br>
+	  &nbsp;&nbsp;<input type="text" name="precipitant" size="30">
+	</td>
+	<td>
+	  &nbsp;&nbsp;&nbsp;<input type="submit" name="Go" value="Go">
+	</td>
+	
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+  <td align="center" bgcolor="ffff99">
+    <b>Display the following types of trials: 
+    <table>
+      <tr>
+	<td><input type="checkbox" name = "rct"></td>
+	<td>Randomized controlled trials</td>
+      </tr>
+     <!--  <tr> -->
+<!-- 	<td><input type="checkbox" name = "epi"></td> -->
+<!-- 	<td>Epidemiological trials</td> -->
+<!--       </tr> -->
+      <tr>
+	<td><input type="checkbox" name = "case"></td>
+	<td>Case Report</td>
+      </tr>
+      <tr>
+	<td><input type="checkbox" name = "other"></td>
+	<td>Non-clinical trial/case report (included <i>in vitro</i> studies</td>
+      </tr>
+     <!--  <tr> -->
+<!-- 	<td><input type="checkbox" name = "pharmk_vitro"></td> -->
+<!-- 	<td>Pharmokinetics in vitro</td> -->
+<!--       </tr> -->
+<!--       <tr> -->
+<!-- 	<td><input type="checkbox" name="pharmk_vivo"></td> -->
+<!-- 	<td>Pharmokinetics in vivo</td> -->
+<!--       </tr> -->
+      <tr>
+	<td><input type="checkbox" name = "label"></td>
+	<td>Product Labeling</td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr><td bgcolor="ccccff" align="center"><a href="help.html">Help page</a></td></tr>
+
+</table>
+</center>
+</form>
+</html>

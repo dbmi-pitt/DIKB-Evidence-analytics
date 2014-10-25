@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+
+<HEAD>
+  <META NAME="GENERATOR" CONTENT="HTMLgen 2.2.2">
+        <TITLE>Sample SPARQL queries for the D2R version of the Drug Interaction Knowledge Base 1.2</TITLE>
+</HEAD>
+
+You may view known and predicted metabolic inhibition interactions for
+the drugs in the DIKB at
+the <a href="http://dbmi-icode-01.dbmi.pitt.edu:2020/">DIKB SPARQL
+endpoint</a>
+<BR><BR>
+
+The following queries show how to get results from the  <a href="http://dbmi-icode-01.dbmi.pitt.edu:2020/snorql/">DIKB SPARQL endpoint</a>
+
+
+<h2></h2>
+
+<p>
+Get all drugs in the DIKB that are in vivo inhibitors of CYP3A4 or
+known to have an in vitro inhibition constant:
+<pre>
+
+SELECT DISTINCT * WHERE {
+  {?s dikbD2:inhibition_constant "cyp3a4"} UNION {?s dikbD2R:inhibits obo:PR_000006130}
+}
+
+</pre>
+</p>
+
+Focus only on in vivo inhibitors or those that are expected to inhibit because the ratio of Ki to [I] is sufficient to infer in vivo inhibition:
+
+<pre>
+
+SELECT DISTINCT * WHERE {
+  ?s dikbD2R:inhibits obo:PR_000006130.
+}
+
+</pre>
+
+Or...if any Ki will do....
+
+<pre>
+
+SELECT DISTINCT * WHERE {
+  ?s dikbD2R:inhibition_constant "cyp3a4".
+}
+
+</pre>
+
+Give me all drugs that have been shown to increase the AUC of alprazolam:
+<pre>
+
+SELECT DISTINCT * WHERE {
+  ?p dikbD2R:increases_auc ?o.
+  ?o dikbD2R:active_ingredient_name "alprazolam".
+}
+
+</pre>
+
+What drugs has diltiazem been found to increase the AUC:
+<pre>
+
+SELECT DISTINCT * WHERE {
+  ?p dikbD2R:active_ingredient_name "diltiazem".
+  ?p dikbD2R:increases_auc ?o.
+}
+</pre>
+
+
+To what magnitude was diltiazem  found to increase the AUC of simvastatin:
+<pre>
+
+SELECT DISTINCT * WHERE {
+  ?p dikbD2R:active_ingredient_name "diltiazem".
+  ?p dikbD2R:claim_for_increases_auc_simvastatin ?a.
+  ?a dikbD2R:Assertions_numeric_val ?foldIncrease.
+  ?a dikbD2R:Assertions_cont_val ?discretized.
+}
+
+</pre>
+
+What evidence supports the diltiazem/simvastatin pharmacokinetic inhibition interaction?
+<pre>
+
+SELECT DISTINCT * WHERE {
+  ?p dikbD2R:active_ingredient_name "diltiazem".
+  ?p dikbD2R:claim_for_increases_auc_simvastatin ?a.
+  ?a swanco:citesAsSupportingEvidence ?ev.
+  ?ev dikbEvidence:Evidence_type ?type. # from the DIKB Evidence taxonomy (http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2783801/bin/NIHMS117019-supplement-02.pdf)
+  ?ev dikbD2R:Evidence_numb_subjects ?numbSubjects.
+  ?ev dikbD2R:Evidence_object_dose ?objectDose. # in grams
+  ?ev dikbD2R:Evidence_precip_dose ?precipDose. # in grams
+  ?ev rdfs:seeAlso ?docPointer. # in most cases a PubMed ID
+  ?ev siocns:content ?quote.
+
+}
+
+</pre>
+
+Which drugs listed in the DIKB are known to be cleared from the body primarily by renal clearance?
+
+<pre>
+
+SELECT DISTINCT * WHERE {
+  ?d dikbD2R:active_ingredient_name ?dn.
+  ?d dikbD2R:primary_total_clearance_mechanism "Renal_Excretion".
+
+}
+
+</pre>
+
+Which drugs listed in the DIKB are known to be primarily cleared from the body by metabolism? (NOTE: there are two ways that this is noted in the DIKB. The first is that the primary total clarance mechanism is noted to be "Metabolic_Clearance", the second is that the drug has a "primary total clearance enzyme" -- this is an enzyme by which more than 50% of the drug's clearance known to occur). These conditions are not mutually exclusive.
+
+<pre>
+
+SELECT DISTINCT * WHERE {
+  {?d dikbD2R:active_ingredient_name ?dn.
+  ?d dikbD2R:primary_total_clearance_mechanism "Metabolic_Clearance".} UNION
+
+  {?d dikbD2R:active_ingredient_name ?dn.
+  ?d dikbD2R:primary_total_clearance_enzyme ?enz.
+  FILTER(str(?enz) != "")}
+}
+ORDER BY ?dn
+
+
+</pre>
+
+</BODY>
+
+</HTML>

@@ -1,0 +1,1272 @@
+DIKB log: 06/19/2007 09:31:24
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/19/2007 09:31:25
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/19/2007 09:31:25
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 06/19/2007 09:31:25
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 06/19/2007 17:09:14
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/19/2007 17:09:14
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/19/2007 17:09:14
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 06/19/2007 17:09:15
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 06/25/2007 14:07:50
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/25/2007 14:07:50
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/25/2007 14:07:50
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 06/25/2007 14:07:52
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 06/25/2007 14:11:13
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/25/2007 14:11:13
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/25/2007 14:11:13
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 06/25/2007 14:11:14
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 06/25/2007 14:24:59
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/25/2007 14:24:59
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/25/2007 14:24:59
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 06/25/2007 14:25:01
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 06/25/2007 14:31:03
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/25/2007 14:31:03
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/25/2007 14:31:03
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 06/25/2007 14:31:05
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 06/25/2007 14:54:02
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/25/2007 14:54:02
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/25/2007 14:54:02
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 06/25/2007 14:54:03
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 06/25/2007 15:56:26
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/25/2007 15:56:26
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/25/2007 15:56:26
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 06/25/2007 15:56:27
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 06/26/2007 07:18:24
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/26/2007 07:18:24
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/26/2007 07:18:24
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 06/26/2007 07:18:25
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 06/26/2007 07:24:55
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/26/2007 07:24:55
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/26/2007 07:24:56
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 06/26/2007 07:24:56
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 06/26/2007 07:44:19
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/26/2007 07:44:20
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/26/2007 07:44:20
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 06/26/2007 07:44:20
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 06/26/2007 07:54:16
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/26/2007 07:54:17
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/26/2007 07:54:17
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 06/26/2007 07:54:17
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 07/03/2007 09:51:41
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 07/03/2007 09:51:41
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 07/03/2007 09:51:41
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 07/03/2007 09:51:42
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 07/24/2007 14:09:49
+  -  Web instance id: 123 locking  KB file to open: var/DIKB/dikb.pickle 
+DIKB log: 07/24/2007 14:09:49
+  -  Web instance id:  123 can't open : var/DIKB/dikb.pickle 
+DIKB log: 07/24/2007 14:11:56
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 07/24/2007 14:11:57
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 07/24/2007 14:11:57
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 07/24/2007 14:11:58
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 07/24/2007 14:57:35
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 07/24/2007 14:57:36
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 07/24/2007 14:57:36
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 07/24/2007 14:57:36
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 07/25/2007 12:06:40
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 07/25/2007 12:06:41
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 07/25/2007 12:06:41
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 07/25/2007 12:06:41
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 08/10/2007 10:48:54
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 08/10/2007 10:48:54
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 08/10/2007 10:48:54
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 08/10/2007 10:48:56
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 08/13/2007 16:35:47
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 08/13/2007 16:35:48
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 08/13/2007 16:35:48
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 08/13/2007 16:35:49
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 09/28/2007 14:04:27
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 09/28/2007 14:04:28
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 09/28/2007 14:04:28
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 09/28/2007 14:04:30
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 10/15/2007 08:08:53
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 10/15/2007 08:08:54
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 10/15/2007 08:08:54
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 10/15/2007 08:08:56
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 10/19/2007 17:26:38
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 10/19/2007 17:26:39
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 10/19/2007 17:26:39
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 10/19/2007 17:26:40
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 10/22/2007 12:55:09
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 10/22/2007 12:55:09
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 10/22/2007 12:55:10
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 10/22/2007 12:55:12
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 11/02/2007 12:27:06
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 11/02/2007 12:27:07
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 11/02/2007 12:27:07
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 11/02/2007 12:27:09
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 11/13/2007 09:25:05
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 11/13/2007 09:25:06
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 11/13/2007 09:25:06
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 11/13/2007 09:25:07
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 11/17/2007 12:39:38
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 11/17/2007 12:39:39
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 11/17/2007 12:39:39
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 11/17/2007 12:39:40
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 11/17/2007 12:45:10
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 11/17/2007 12:45:11
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 11/17/2007 12:45:11
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 11/17/2007 12:45:13
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 11/17/2007 15:17:10
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 11/17/2007 15:17:12
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 11/17/2007 15:17:12
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 11/17/2007 15:17:12
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 11/17/2007 15:21:05
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 11/17/2007 15:21:07
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 11/17/2007 15:21:07
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 11/17/2007 15:21:08
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/10/2007 18:48:32
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/10/2007 18:48:34
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/10/2007 18:48:34
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/10/2007 18:48:35
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/10/2007 19:23:42
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/10/2007 19:27:34
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/10/2007 19:27:36
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/10/2007 19:27:36
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/10/2007 19:27:37
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/10/2007 19:29:09
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/10/2007 19:29:10
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/10/2007 19:29:10
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/10/2007 19:29:11
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/10/2007 19:32:13
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/10/2007 19:32:14
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/10/2007 19:32:14
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/10/2007 19:32:15
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 07:15:38
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 07:15:40
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 07:15:40
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 07:15:40
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 07:22:14
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 07:22:16
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 07:22:16
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 07:22:17
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 07:35:15
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 07:35:17
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 07:35:17
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 07:35:17
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 07:45:51
+  -  Web instance id: 123 writing KB to file: var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 07:46:03
+  -  Web instance id: 123 writing KB to file: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 07:46:04
+  -  Web instance id: 123 locking: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 07:46:06
+  -  Web instance id: 123 Done: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 07:46:16
+  -  Web instance id: 123 writing KB to file: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 07:46:16
+  -  Web instance id: 123 locking: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 07:46:18
+  -  Web instance id: 123 Done: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 07:55:08
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 07:55:10
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 07:55:10
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 07:55:11
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 07:56:36
+  -  Web instance id: 123 writing KB to file: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 07:56:36
+  -  Web instance id: 123 locking: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 07:56:38
+  -  Web instance id: 123 Done: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 07:56:42
+  -  Web instance id: 123 writing KB to file: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 07:56:42
+  -  Web instance id: 123 locking: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 07:56:43
+  -  Web instance id: 123 Done: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 08:24:07
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 08:24:09
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 08:24:09
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 08:24:10
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 10:21:16
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 10:21:18
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 10:21:18
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 10:21:18
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 10:24:20
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 10:24:21
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 10:24:21
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 10:24:22
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 10:24:53
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 10:24:55
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 10:24:55
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 10:24:56
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 10:28:47
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 10:28:49
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 10:28:49
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 10:28:49
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 10:29:50
+  -  Web instance id: 123 writing KB to file: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 10:29:51
+  -  Web instance id: 123 locking: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 10:29:52
+  -  Web instance id: 123 Done: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 10:34:08
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 10:34:10
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 10:34:10
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 10:34:10
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 11:19:15
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 11:19:17
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 11:19:17
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 11:19:18
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 11:21:08
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 11:21:10
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 11:21:10
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 11:21:11
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 11:37:14
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 11:37:16
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 11:37:16
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 11:37:17
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 11:47:34
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 11:47:36
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 11:47:36
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 11:47:37
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 11:53:13
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 11:53:15
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 11:53:15
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 11:53:15
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 11:54:15
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 11:54:17
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 11:54:17
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 11:54:18
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 12:04:22
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 12:04:24
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 12:04:24
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 12:04:25
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 12:06:31
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 12:06:33
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 12:06:33
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 12:06:33
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 12:11:46
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 12:11:49
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 12:11:49
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 12:11:49
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 12:13:50
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 12:13:51
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 12:13:52
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 12:13:52
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 12:17:31
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 12:17:32
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 12:17:32
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 12:17:33
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 12:18:51
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 12:18:53
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 12:18:53
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 12:18:54
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 12:29:29
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 12:29:31
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 12:29:31
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 12:29:32
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 12:32:40
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 12:32:42
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 12:32:42
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 12:32:43
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 12:36:58
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 12:36:59
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 12:36:59
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 12:37:00
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 12:54:26
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 12:54:28
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 12:54:28
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 12:54:29
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 12:59:33
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 12:59:35
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 12:59:35
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 12:59:35
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 13:22:19
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 13:22:21
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 13:22:21
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 13:22:22
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 13:23:52
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 13:23:53
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 13:23:53
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 13:23:54
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 13:31:17
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 13:31:19
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 13:31:19
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 13:31:20
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 13:33:01
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 13:33:03
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 13:33:03
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 13:33:04
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 16:10:52
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 16:10:54
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/11/2007 16:10:54
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/11/2007 16:10:55
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 01/14/2008 13:56:06
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 01/14/2008 13:56:08
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 01/14/2008 13:56:08
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 01/14/2008 13:56:08
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 01/21/2008 15:10:34
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 01/21/2008 15:10:36
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 01/21/2008 15:10:36
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 01/21/2008 15:10:37
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 01/21/2008 15:52:01
+  -  Web instance id: 123 locking  KB file to open: var/DIKB/dikb.pickle 
+DIKB log: 01/21/2008 15:52:02
+  -  Web instance id:  123 can't open : var/DIKB/dikb.pickle 
+DIKB log: 01/21/2008 15:52:02
+  -  Web instance id: 123 locking  KB file to open: var/evidence-base/ev.pickle 
+DIKB log: 01/21/2008 15:52:02
+  -  Web instance id:  123 can't open : var/evidence-base/ev.pickle 
+DIKB log: 01/21/2008 15:52:07
+  -  Web instance id: 123 locking  KB file to open: var/DIKB/dikb.pickle 
+DIKB log: 01/21/2008 15:52:07
+  -  Web instance id:  123 can't open : var/DIKB/dikb.pickle 
+DIKB log: 01/21/2008 15:52:07
+  -  Web instance id: 123 locking  KB file to open: var/evidence-base/ev.pickle 
+DIKB log: 01/21/2008 15:52:07
+  -  Web instance id:  123 can't open : var/evidence-base/ev.pickle 
+DIKB log: 01/21/2008 16:01:50
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 01/21/2008 16:01:51
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 01/21/2008 16:01:51
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 01/21/2008 16:01:53
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 01/21/2008 16:06:41
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 01/21/2008 16:06:43
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 01/21/2008 16:06:43
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 01/21/2008 16:06:44
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 01/21/2008 16:10:49
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 01/21/2008 16:10:51
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 01/21/2008 16:10:51
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 01/21/2008 16:10:52
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 01/22/2008 07:10:04
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 01/22/2008 07:10:06
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 01/22/2008 07:10:06
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 01/22/2008 07:10:07
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 01/22/2008 16:26:00
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 01/22/2008 16:26:02
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 01/22/2008 16:26:02
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 01/22/2008 16:26:03
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 01/22/2008 17:05:32
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 01/22/2008 17:05:33
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 01/22/2008 17:05:34
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 01/22/2008 17:05:34
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 01/22/2008 17:13:50
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 01/22/2008 17:13:51
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 01/22/2008 17:13:51
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 01/22/2008 17:13:52
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 01/22/2008 19:32:28
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 01/22/2008 19:32:30
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 01/22/2008 19:32:30
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 01/22/2008 19:32:31
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 01/22/2008 19:36:22
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 01/22/2008 19:36:24
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 01/22/2008 19:36:24
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 01/22/2008 19:36:25
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 01/22/2008 19:40:52
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 01/22/2008 19:40:54
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 01/22/2008 19:40:54
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 01/22/2008 19:40:55
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 01/22/2008 19:49:51
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 01/22/2008 19:49:53
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 01/22/2008 19:49:53
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 01/22/2008 19:49:54
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 01/22/2008 19:51:16
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 01/22/2008 19:51:17
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 01/22/2008 19:51:17
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 01/22/2008 19:51:18
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 01/22/2008 19:54:20
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 01/22/2008 19:54:22
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 01/22/2008 19:54:22
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 01/22/2008 19:54:22
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 01/22/2008 20:27:44
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 01/22/2008 20:27:45
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 01/22/2008 20:27:46
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 01/22/2008 20:27:46
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 01/23/2008 09:42:36
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 01/23/2008 09:42:38
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 01/23/2008 09:42:38
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 01/23/2008 09:42:38
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 01/23/2008 11:52:47
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 01/23/2008 11:52:49
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 01/23/2008 11:52:49
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 01/23/2008 11:52:50
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 04/29/2009 20:17:14
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 04/29/2009 20:17:15
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 04/29/2009 20:17:15
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 04/29/2009 20:17:16
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 05/06/2009 15:41:09
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 05/06/2009 15:41:10
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 05/06/2009 15:41:10
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 05/06/2009 15:41:12
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 05/12/2009 10:36:26
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 05/12/2009 10:36:27
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 05/12/2009 10:36:27
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 05/12/2009 10:36:28
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 05/14/2009 12:59:46
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 05/14/2009 12:59:47
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 05/14/2009 12:59:47
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 05/14/2009 12:59:49
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 05/14/2009 13:43:19
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 05/14/2009 13:43:20
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 05/14/2009 13:43:20
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 05/14/2009 13:43:22
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 05/14/2009 13:50:02
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 05/14/2009 13:50:02
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 05/14/2009 13:50:02
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 05/14/2009 13:50:04
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 05/14/2009 14:08:19
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 05/14/2009 14:08:20
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 05/14/2009 14:08:20
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 05/14/2009 14:08:22
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 05/14/2009 14:58:45
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 05/14/2009 14:58:46
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 05/14/2009 14:58:46
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 05/14/2009 14:58:48
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 05/14/2009 17:02:16
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 05/14/2009 17:02:17
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 05/14/2009 17:02:17
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 05/14/2009 17:02:19
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 05/15/2009 10:42:49
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 05/15/2009 10:42:50
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 05/15/2009 10:42:50
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 05/15/2009 10:42:52
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 05/15/2009 11:20:42
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 05/15/2009 11:20:43
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 05/15/2009 11:20:43
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 05/15/2009 11:20:45
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 05/15/2009 11:33:38
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 05/15/2009 11:33:39
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 05/15/2009 11:33:39
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 05/15/2009 11:33:41
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 05/15/2009 11:38:04
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 05/15/2009 11:38:05
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 05/15/2009 11:38:05
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 05/15/2009 11:38:07
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 06/09/2009 19:58:09
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/09/2009 19:58:10
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/09/2009 19:58:10
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 06/09/2009 19:58:12
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 06/15/2009 13:17:16
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/15/2009 13:17:18
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/15/2009 13:17:18
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 06/15/2009 13:17:20
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 06/16/2009 10:56:44
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/16/2009 10:56:46
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/16/2009 10:56:46
+  -  Web instance id: 1234 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 06/16/2009 10:56:48
+  -  Web instance id: 1234Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 06/16/2009 11:47:32
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/16/2009 11:47:33
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/16/2009 12:02:11
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/16/2009 12:02:12
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/16/2009 12:03:58
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/16/2009 12:03:59
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/16/2009 14:27:13
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/16/2009 14:27:15
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/17/2009 12:51:59
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/17/2009 12:52:00
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/17/2009 12:53:36
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/17/2009 12:53:37
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/17/2009 12:59:33
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/17/2009 12:59:34
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/17/2009 13:22:26
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/17/2009 13:22:28
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/19/2009 09:49:45
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/19/2009 09:49:47
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/19/2009 10:28:22
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/19/2009 10:28:23
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/19/2009 11:37:44
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/19/2009 11:37:45
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/19/2009 11:49:03
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/19/2009 11:49:05
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/19/2009 12:40:15
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/19/2009 12:40:16
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/19/2009 17:44:33
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/19/2009 17:44:34
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/19/2009 18:45:21
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/19/2009 18:45:23
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/19/2009 20:15:19
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/19/2009 20:15:20
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/19/2009 20:53:26
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/19/2009 20:53:27
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/19/2009 20:58:11
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/19/2009 20:58:12
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/19/2009 20:59:04
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/19/2009 20:59:05
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/20/2009 10:37:55
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/20/2009 10:37:57
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/20/2009 10:47:47
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/20/2009 10:47:48
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/20/2009 14:26:13
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/20/2009 14:26:15
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/20/2009 14:27:05
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/20/2009 14:27:07
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/20/2009 15:23:30
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/20/2009 15:23:32
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/22/2009 15:57:40
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/22/2009 15:57:42
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/28/2009 19:19:15
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/28/2009 19:19:16
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/28/2009 19:19:34
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/28/2009 19:19:36
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/28/2009 19:21:00
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/28/2009 19:21:02
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/28/2009 19:28:35
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/28/2009 19:28:37
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/28/2009 19:29:53
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/28/2009 19:29:55
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/30/2009 14:30:20
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/30/2009 14:30:22
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/30/2009 14:31:56
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/30/2009 14:31:58
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/30/2009 14:32:00
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/30/2009 14:32:01
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/30/2009 15:16:19
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/30/2009 15:16:21
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 06/30/2009 15:16:23
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 06/30/2009 15:16:24
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 07/21/2009 12:26:23
+  -  Web instance id: 123 locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 07/21/2009 12:26:28
+  -  Web instance id: 123Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 07/21/2009 12:26:28
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 07/21/2009 12:26:30
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 09/21/2009 15:29:44
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 09/21/2009 15:29:46
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 09/21/2009 15:29:48
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 09/21/2009 15:29:50
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 09/23/2009 13:04:46
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 09/23/2009 13:04:48
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 09/23/2009 13:04:52
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 09/23/2009 13:04:54
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 09/24/2009 13:19:05
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 09/24/2009 13:19:07
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 09/24/2009 13:19:10
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 09/24/2009 13:19:12
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 09/24/2009 15:58:55
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 09/24/2009 15:58:58
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 09/24/2009 15:59:01
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 09/24/2009 15:59:03
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 09/25/2009 11:00:44
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 09/25/2009 11:00:47
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 09/25/2009 11:00:50
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 09/25/2009 11:00:53
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 09/25/2009 13:18:56
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 09/25/2009 13:18:58
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 09/29/2009 16:06:00
+  -  Web instance id: 123 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 09/29/2009 16:06:03
+  -  Web instance id: 123Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 11/03/2009 15:30:25
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 11/03/2009 15:30:28
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 11/03/2009 15:30:31
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 11/03/2009 15:30:33
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 11/09/2009 13:00:25
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 11/09/2009 13:00:27
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 11/09/2009 13:00:30
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 11/09/2009 13:00:33
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/17/2009 14:13:50
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/17/2009 14:13:53
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/17/2009 14:13:56
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 12/17/2009 14:14:00
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 01/13/2010 19:01:15
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 01/13/2010 19:01:19
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 01/13/2010 19:01:23
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 01/13/2010 19:01:27
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 01/13/2010 19:25:52
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 01/13/2010 19:25:55
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 01/13/2010 19:25:59
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 01/13/2010 19:26:02
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 01/13/2010 19:42:39
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 01/13/2010 19:42:43
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 01/13/2010 19:42:46
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 01/13/2010 19:42:50
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 01/14/2010 13:06:40
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 01/14/2010 13:06:45
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 01/14/2010 13:06:50
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 01/14/2010 13:06:55
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 01/19/2010 10:47:26
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 01/19/2010 10:47:31
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 01/19/2010 10:47:37
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 01/19/2010 10:47:42
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 02/13/2010 10:31:26
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 02/13/2010 10:31:31
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 02/13/2010 10:31:37
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 02/13/2010 10:31:42
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 02/13/2010 11:27:46
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 02/13/2010 11:27:51
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 02/13/2010 11:27:56
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 02/13/2010 11:28:02
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 10/12/2010 16:52:15
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 10/12/2010 16:52:16
+  -  Web instance id:  1234 can't open : ../var/evidence-base/ev.pickle 
+DIKB log: 10/12/2010 16:52:16
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 10/12/2010 16:52:16
+  -  Web instance id:  1234 can't open : ../var/evidence-base/ev.pickle 
+DIKB log: 10/20/2010 11:50:47
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 10/20/2010 11:50:54
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 10/20/2010 11:51:18
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 10/20/2010 11:51:24
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 10/20/2010 11:51:31
+  -  Web instance id: 1234 locking  KB file to open: ../var/evidence-base/ev.pickle 
+DIKB log: 10/20/2010 11:51:37
+  -  Web instance id: 1234Done loading: ../var/evidence-base/ev.pickle 
+DIKB log: 12/15/2011 10:42:06
+  -  Web instance id: addAssertions.rpy cgi:12/15/2011 10:42:02
+ locking  KB file to open: var/DIKB/dikb.pickle 
+DIKB log: 12/15/2011 10:48:20
+  -  Web instance id: addAssertions.rpy cgi:12/15/2011 10:48:18
+ locking  KB file to open: var/DIKB/dikb.pickle 
+DIKB log: 12/15/2011 10:48:20
+  -  Web instance id:  addAssertions.rpy cgi:12/15/2011 10:48:18
+ can't open : var/DIKB/dikb.pickle 
+DIKB log: 12/15/2011 11:00:41
+  -  Web instance id: addAssertions.rpy cgi:12/15/2011 11:00:27
+ locking  KB file to open: var/DIKB/dikb.pickle 
+DIKB log: 12/15/2011 11:00:41
+  -  Web instance id:  addAssertions.rpy cgi:12/15/2011 11:00:27
+ can't open : var/DIKB/dikb.pickle 
+DIKB log: 12/15/2011 11:04:22
+  -  Web instance id: addAssertions.rpy cgi:12/15/2011 11:04:20
+ locking  KB file to open: var/DIKB/dikb.pickle 
+DIKB log: 12/15/2011 11:04:22
+  -  Web instance id:  addAssertions.rpy cgi:12/15/2011 11:04:20
+ can't open : var/DIKB/dikb.pickle 
+DIKB log: 12/15/2011 11:05:57
+  -  Web instance id: addAssertions.rpy cgi:12/15/2011 11:05:57
+ locking  KB file to open: var/DIKB/dikb.pickle 
+DIKB log: 12/15/2011 11:05:57
+  -  Web instance id:  addAssertions.rpy cgi:12/15/2011 11:05:57
+ can't open : var/DIKB/dikb.pickle 
+DIKB log: 12/15/2011 11:06:23
+  -  Web instance id: addAssertions.rpy cgi:12/15/2011 11:06:23
+ locking  KB file to open: var/DIKB/dikb.pickle 
+DIKB log: 12/15/2011 11:06:23
+  -  Web instance id:  addAssertions.rpy cgi:12/15/2011 11:06:23
+ can't open : var/DIKB/dikb.pickle 
+DIKB log: 12/15/2011 11:10:38
+  -  Web instance id: addAssertions.rpy cgi:12/15/2011 11:10:35
+ locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/15/2011 11:11:04
+  -  Web instance id: addAssertions.rpy cgi:12/15/2011 11:10:35
+Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/15/2011 12:20:56
+  -  Web instance id: addAssertions.rpy cgi:12/15/2011 12:20:56
+ locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/15/2011 12:21:01
+  -  Web instance id: addAssertions.rpy cgi:12/15/2011 12:20:56
+Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/15/2011 12:22:07
+  -  Web instance id: addAssertions.rpy cgi:12/15/2011 12:22:05
+ locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/15/2011 12:22:34
+  -  Web instance id: addAssertions.rpy cgi:12/15/2011 12:22:05
+Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/15/2011 12:24:32
+  -  Web instance id: addAssertions.rpy cgi:12/15/2011 12:24:30
+ locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/15/2011 12:24:59
+  -  Web instance id: addAssertions.rpy cgi:12/15/2011 12:24:30
+Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/16/2011 11:15:10
+  -  Web instance id: editAssertions.rpy cgi:12/16/2011 11:15:10
+ locking  KB file to open: var/DIKB/dikb.pickle 
+DIKB log: 12/16/2011 11:15:10
+  -  Web instance id:  editAssertions.rpy cgi:12/16/2011 11:15:10
+ can't open : var/DIKB/dikb.pickle 
+DIKB log: 12/16/2011 11:19:46
+  -  Web instance id: editAssertions.rpy cgi:12/16/2011 11:19:46
+ locking  KB file to open: var/DIKB/dikb.pickle 
+DIKB log: 12/16/2011 11:19:46
+  -  Web instance id:  editAssertions.rpy cgi:12/16/2011 11:19:46
+ can't open : var/DIKB/dikb.pickle 
+DIKB log: 12/16/2011 11:25:54
+  -  Web instance id: editAssertions.rpy cgi:12/16/2011 11:25:54
+ locking  KB file to open: var/DIKB/dikb.pickle 
+DIKB log: 12/16/2011 11:26:25
+  -  Web instance id: editAssertions.rpy cgi:12/16/2011 11:26:25
+ locking  KB file to open: var/DIKB/dikb.pickle 
+DIKB log: 12/16/2011 11:26:25
+  -  Web instance id:  editAssertions.rpy cgi:12/16/2011 11:26:25
+ can't open : var/DIKB/dikb.pickle 
+DIKB log: 12/16/2011 11:27:09
+  -  Web instance id: editAssertions.rpy cgi:12/16/2011 11:27:09
+ locking  KB file to open: var/DIKB/dikb.pickle 
+DIKB log: 12/16/2011 11:27:09
+  -  Web instance id:  editAssertions.rpy cgi:12/16/2011 11:27:09
+ can't open : var/DIKB/dikb.pickle 
+DIKB log: 12/16/2011 11:29:03
+  -  Web instance id: editAssertions.rpy cgi:12/16/2011 11:29:03
+ locking  KB file to open: var/DIKB/dikb.pickle 
+DIKB log: 12/16/2011 11:29:03
+  -  Web instance id:  editAssertions.rpy cgi:12/16/2011 11:29:03
+ can't open : var/DIKB/dikb.pickle 
+DIKB log: 12/16/2011 11:30:35
+  -  Web instance id: editAssertions.rpy cgi:12/16/2011 11:30:35
+ locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/16/2011 11:30:40
+  -  Web instance id: editAssertions.rpy cgi:12/16/2011 11:30:35
+Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/16/2011 11:31:34
+  -  Web instance id: editAssertions.rpy cgi:12/16/2011 11:31:28
+ locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/16/2011 11:32:01
+  -  Web instance id: editAssertions.rpy cgi:12/16/2011 11:31:28
+Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/16/2011 11:33:39
+  -  Web instance id: editAssertions.rpy cgi:12/16/2011 11:33:39
+ locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/16/2011 11:33:43
+  -  Web instance id: editAssertions.rpy cgi:12/16/2011 11:33:39
+Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/16/2011 11:35:41
+  -  Web instance id: editAssertions.rpy cgi:12/16/2011 11:35:41
+ locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/16/2011 11:35:46
+  -  Web instance id: editAssertions.rpy cgi:12/16/2011 11:35:41
+Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/16/2011 11:36:47
+  -  Web instance id: editAssertions.rpy cgi:12/16/2011 11:36:47
+ locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/16/2011 11:36:52
+  -  Web instance id: editAssertions.rpy cgi:12/16/2011 11:36:47
+Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/16/2011 11:37:37
+  -  Web instance id: editAssertions.rpy cgi:12/16/2011 11:37:37
+ locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/16/2011 11:37:42
+  -  Web instance id: editAssertions.rpy cgi:12/16/2011 11:37:37
+Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/16/2011 11:45:37
+  -  Web instance id: editAssertions.rpy cgi:12/16/2011 11:45:37
+ locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/16/2011 11:45:42
+  -  Web instance id: editAssertions.rpy cgi:12/16/2011 11:45:37
+Done loading: ../var/DIKB/dikb.pickle 
+DIKB log: 12/16/2011 12:04:36
+  -  Web instance id: editAssertions.rpy cgi:12/16/2011 12:04:36
+ locking  KB file to open: ../var/DIKB/dikb.pickle 
+DIKB log: 12/16/2011 12:04:41
+  -  Web instance id: editAssertions.rpy cgi:12/16/2011 12:04:36
+Done loading: ../var/DIKB/dikb.pickle 

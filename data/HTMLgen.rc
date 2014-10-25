@@ -1,0 +1,18 @@
+# Resource file used by the Document class of the HTML module
+from HTMLcolors import *
+
+stylesheet = 'html/HTMLgen.css'
+author = '(c) 2005-2012 Richard David Boyce'
+email = 'rdb20 at pitt <dot> edu'
+bgcolor = WHITE
+textcolor = BLACK
+linkcolor = BLUE
+vlinkcolor = RED
+banner = None
+logo = ('./images/logo.jpg')
+blank = ('./images/blank.gif', 66, 22)
+prev = ('./images/simprev.gif', 66, 22)
+next = ('./images/simnext.gif', 66, 22)
+top = ('./images/simup.gif', 66, 22)
+home = ('./images/home.gif', 66, 22)
+

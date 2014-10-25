@@ -1,0 +1,276 @@
+CODE TO WORK WITH BOTH THE PICKLED (PYTHON) AND SQL VERSION OF THE DIKB
+Authors: Richard Boyce, Greg Gardner, Hassen Khan
+Date: 03/06/2012
+
+################################################################################
+OVERVIEW
+################################################################################
+
+The DIKB currently is Python-centric, meaning that the database and
+linked data resources created from the DIKB depend on working with the
+data when loaded into Python. While the architecture is not ideal and
+evolved organically from the limited time and resources availabel for
+working on the knowledge base, it works ok. This is because the Python
+DIKB is a suitable intermediary between the reasoning engine and the
+SQL database. However, one needs to keep in mind the following when
+working with the system:
+
+1) There is a public DIKB and a private DIKB. The public DIKB is
+currently hosted on a U of Pitt server (overview here:
+http://dbmi-icode-01.dbmi.pitt.edu/dikb-evidence/front-page.html)
+while the private version is portable. All edits should be done with
+the private DIKB and then transported to the public DIKB after
+rigorous quality and consistency checks.
+
+2) For efficiency reasons, one should make edits, including adding new
+drugs, assertions, and evidence to the DIKB, using APIs that connect
+to the SQL version of the DIKB (locally-hosted). The code in the
+dikb-pickle-to-SQL subfolder can help with that if you want to make
+programmatic changes (currently required for adding drugs, chemicals,
+and metabolites). Also, there is a simple web front end for adding
+assertions and evidence. The interface code is in the subfolder
+new-SQL-simple-DIKB-web and can be run using the "start-dikb"
+script. Once started, go to http://localhost:2022/new-SQL-simple-DIKB-web/addAssertions.rpy
+
+3) The linked data view of the DIKB is created using D2R which maps
+the SQL version of the DIKB to RDF. This requires a mapping file (see
+the dikb-d2r-mapping subfolder). 
+
+################################################################################
+NOTES ON LOADING DATA FROM THE SQL DIKB INTO PICKLE FORMAT
+################################################################################
+
+The architecture is as roughly as a relational to object mapping
+system where 1) the data for drug and evidence instances is located in
+a relational database, and 2) Python classes can be mapped to the
+relational database to make changes or conduct analyses
+programmatically
+
+- The relational database schema is defined in dikb-pickle-to-SQL
+  using the sqlalchemy relational to object mapping framework
+
+- The DIKB Drug, Chemical, Metabolite classes are present in the
+  relationa schema as well as tables that can be used to instantiate
+  Assertion and Evidence classes
+
+NOTE: Currently, only the script create-SQL-DIKB-from-pickle.py fully
+applies the relational to object mapping system for the use case of
+loading data into the database from Pickle files. The file
+quickstartdikb.py shows how to load evidence data from the sql dikb
+into pickle format. This could be used to programmatically edit or
+analyze content in the evidence base. However, adding new drugs,
+chemicals, or metabolites is a bit trickier because the script does
+not connect these classes in Python to the relational database. 
+
+TODO: work out a process for adding drugs, chemicals, and metabolites
+that either uses the relational to object mappings or works with
+pickles.
+
+################################################################################
+NOTES ON LOADING DATA INTO MYSQL
+################################################################################
+
+- The script create-SQL-DIKB-from-pickle.py can be modified to take
+DIKB data in pickle format and convert it to an SQL database which can
+then be loaded into mysql. The script outputs a test.db which is an
+SQLite database file. This needs to be brought into mysql in order for`
+D2R to serve it. The process is as follows (from http://sqlite.phxsoftware.com/forums/t/941.aspx):
+
+<example>
+
+SQLite ----> MySql
+
+   1. Download sqlite3.exe on http://www.sqlite.org
+   2. Export the SQLite database with sqlite3.exe and command parameter ".dump"
+      sqlite3 mySQLiteDataBase .dump  >> myDumpSQLite # NOTE THAT THE FILE IS BEING APPENDED!!!
+   3. Adapt the dump to get it compatible for MySQL
+        - Replace " (double-quotes) with ` (grave accent)
+        - Remove "BEGIN TRANSACTION;" "COMMIT;", and lines related to "sqlite_sequence"
+        - Replace "autoincrement" with "auto_increment"
+   4. The dump is ready to get imported in a MySQL server
+      
+</example>
+
+- With the MySQL ready file, you can load it into mysql as follows:
+
+1) create the database: 
+$ create database dikbEvidence;
+
+2) $ use dikbEvidence;
+
+3) $ source  <mysql-formatted file name >;
+
+################################################################################
+MOVING THE SQL DIKB TO ANOTHER MYSQL SERVER	 
+################################################################################
+
+1) Dump the DIKB you want to move
+$ mysqldump -uroot -p<password> --opt <database name> > dikbEvidence.sql
+
+2) from the commandline of the MySQL server that you are moving the database to:
+$ drop database dikbEvidence;
+$ create database dikbEvidence;
+$ use dikbEvidence;
+$ source dikbEvidence.sql
+
+NOTE: be sure the that D2R mapping file is correct for the version of
+the DIKB being hosted on the SQL server.
+
+################################################################################
+HOW TO LOAD DDI PREDICTIONS INTO THE DIKB
+################################################################################
+
+1) Edit the exported assertions (assertions.lisp) and changing
+assumptions (changing_assumptions.lisp) files created by
+create-SQL-DIKB-from-pickle.py so that commas are backquoted along
+with any parentheses in metabolite names
+(e.g. 4-(4-chlorophenyl)-4-hydroxypiperidine should be 4-\(4-chlorophenyl\)-4-hydroxypiperidine)
+
+2) Change to the folder "/home/boycerd/DI_DIR/lisp/jtms" and remove the exported assertions (assertions.lisp) and changing
+assumptions (changing_assumptions.lisp) files and create symbolic
+links to the ones written when create-SQL-DIKB-from-pickle.py  was ran
+
+3) run an inferior lisp mode that uses the Common Lisp dialect and
+enter:
+
+$ (load "load")
+$ (simple-dikb-rule-engine)
+
+4) If everything runs successfully, then clear the emacs buffer and
+iteratively execute the function call 'GET-PKI-TO-TSV' over all of the
+drug classes defined in 'drug-class-a-list'. For example:
+
+$ (GET-PKI-TO-TSV PKI-1 "PKI-1" "fourth-tier" 'statins)
+$ (GET-PKI-TO-TSV PKI-1 "PKI-1" "fourth-tier" 'antidepressants)
+...
+
+5) copy the accumulated output to a new text file and clean up the
+unecessary strings so that the file can be imported into Excel or
+OpenOffice as a spreadsheet. 
+
+6) load the tab-delimitted file from step 5 into Excel or OpenOffice
+as a spreadsheet and export it as a comma-delimited file with quotes
+around the strings. 
+
+NOTE: YOU NEED TO LOWER-CASE ALL OF THE DRUG NAMES BEFORE PROCEEDING
+AND MAKE SURE THAT THE FINAL CSV FILE HAS NO QUOTES.
+
+7) Lets say the CSV file from step 6 is named "DDI-predictions.csv"
+and that the file resides in the directory from which you initiate a
+MySQL shell. Do the following in the MySQL database that you loaded the DIKB into:
+
+CREATE TABLE `DDIPredictions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `OBJECT` varchar(100) DEFAULT NULL,
+  `PRECIPITANT` varchar(100) DEFAULT NULL,
+  `ENZYME` varchar(100) DEFAULT NULL,
+  `LEVEL` varchar(10) DEFAULT NULL,
+  `TIER` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+LOAD DATA LOCAL INFILE './DDI-predictions.csv' INTO TABLE DDIPredictions FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' (OBJECT, PRECIPITANT, ENZYME, LEVEL, TIER); 
+
+8) Now add the OBSERVED DDIs (ones for which an AUC study was
+conducted by ensuring the following table has been created and then
+using hte INSERT statement below:
+
+CREATE TABLE `DDIObservations` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `precipitant` varchar(100) DEFAULT NULL,
+  `object` varchar(100) DEFAULT NULL,
+  `assertionId` int(11), 
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+## USE THIS SQL STATEMENT IF YOU WANT TO SHOW THE POOLED ASSERTION AFTER EXPORTING EVIDENCE
+INSERT INTO `DDIObservations` (`precipitant`, `object`, `assertionId`) SELECT `Drugs`.`_name`,  `Value`.`value_string`, `Assertions`.`id` FROM `Assertions`, `Value`, `Drugs`, `EMultiSlot` WHERE (`Drugs`.`increases_auc` = `EMultiSlot`.`d_slot_id` AND `EMultiSlot`.`value_id` = `Value`.`value_id` AND `Assertions`.`object` = `Drugs`.`_name` AND `Assertions`.`value` = `Value`.`value_string`);
+
+## USE THIS SQL STATEMENT TO SHOW ALL INCREASES_AUC ASSERTIONS THAT HAVE SUPPORTING EVIDENCE
+INSERT INTO `DDIObservations` (`precipitant`, `object`, `assertionId`) SELECT `Assertions`.`object`,  `Assertions`.`value`, `Assertions`.`id` FROM `Assertions` WHERE (`Assertions`.`slot` = "increases_auc" AND `Assertions`.`evidence_for` IS NOT NULL);
+
+
+################################################################################
+GENERATING DIKB WEB PAGES
+################################################################################
+
+1) cd new-SQL-simple-DIKB-web
+
+2) run
+$ make web-pages
+
+3) all pages are output to html-output. To send to the server run:
+$ make send-web-pages
+
+
+################################################################################
+SOME USEFUL SPARQL QUERIES FOR VALIDATING THE SQL DIKB
+################################################################################
+
+SELECT DISTINCT * WHERE {
+  {?s dikbD2R:Drugs_inhibition_constant "cyp3a4"} UNION {?s dikbD2R:Drugs_inhibits "cyp3a4"}
+}
+
+Slightly different results than:
+
+<example>
+
+SELECT DISTINCT * WHERE {
+  ?s dikbD2R:Drugs_inhibits "cyp3a4".
+}
+
+</example>
+
+Or..
+
+<example>
+
+SELECT DISTINCT * WHERE {
+  ?s dikbD2R:Drugs_inhibition_constant "cyp3a4".
+}
+
+</example>
+
+Also interesting:
+
+
+<example>
+
+SELECT DISTINCT * WHERE {
+  ?p dikbD2R:Drugs_increases_auc ?o.
+  ?o dikbD2R:Drugs_active_ingredient_name "alprazolam".
+}
+
+
+################################################################################
+SOME NOTES ON THE ASSERTION AND EVIDENCE SCHEMA
+################################################################################
+
+To find each Evidence_for and Evidence_against items for an Assertion
+
+1. In the Assertion table, get either the Evidence_for or Evidence_against ID
+2. Match the ID from the Assertions table, to the Assert_Ev_ID in the Evidence_map table
+3. When you find the match, take the ID from Evidence_map and match it the ID in Evidence
+
+
+To find an Assumption for an Evidence item:
+
+1. In the Evidence table, get the Assump_List_Id
+2. Match the Assump_List_Id from the Evidence table to the ID in the Assump_map table
+
+
+To find each Assertion or Drug for an ESlot and EMultiSlot:
+
+1. In the ESlot or EMultiSlot table, get the D_Slot_Id
+2. Match the D_Slot_id to the D_Slot_Id in the Evidence_Slot_Map table
+3. When you find the match, you can get Assert_Id and Drug_Id
+4. Match the Assert_Id to the ID in the Assertions table for the corresponding Assertion for the ESlot or EMultiSlot
+5. Match the Drug_Id to the ID in the Drugs table for the corresponding Drug for the ESlot or EmultiSlot
+
+To find the Value of a Continous EMultiSlot:
+
+1. In the EMultiSlot table for a Continous Value Slot, get the Value_Id
+2. Match the Value_Id from the EMultiSlot table to the Value_Id in the Value table
+3. When you find the match, you can the Value_numeric
+4. Match the Value_numeric from the Value table to the ID in the Assertion table
+5. The values are in the cont_val and numeric_val columns

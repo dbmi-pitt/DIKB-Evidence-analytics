@@ -1,0 +1,166 @@
+
+(format t "~%~%SIMPLE-DDI-RULE-BASE: Do we believe that diltiazem will cause a toxic ddi with simvastatin? ~%~A"
+        (cond ((in? '(TOXIC-EFFECT 'DILTIAZEM 'SIMVASTATIN)) t)
+              (t nil)))
+(format t "~%~%SIMPLE-DDI-RULE-BASE: Assertions currently in the rule engine:~%")
+(show-data)
+                  
+(format t "~%~%SIMPLE-DDI-RULE-BASE: Creating enabled assumptions:~%")
+
+(format t "~%~%SIMPLE-DDI-RULE-BASE: Result of running rules with currently enabled assumptions:~%")
+(run-rules)
+(format t "~%~%SIMPLE-DDI-RULE-BASE: Do we believe that diltiazem will cause a toxic ddi with simvastatin? ~%~A"
+        (cond ((in? '(TOXIC-EFFECT 'DILTIAZEM 'SIMVASTATIN)) t)
+              (t nil)))
+                  
+(format t "~%~%SIMPLE-DDI-RULE-BASE: Assertions currently in the rule engine:~%")
+(show-data)
+          
+(format t "~%~%SIMPLE-DDI-RULE-BASE: Why are the following assertions believed?: ~%~A ~%~%~A."
+        (why? '(INCREASE-BIOAVAILABILITY 'DILTIAZEM 'SIMVASTATIN 'CYP3A4))
+        (why? '(TOXIC-EFFECT 'DILTIAZEM 'SIMVASTATIN)))
+
+(format t "~%~%SIMPLE-DDI-RULE-BASE: Show the 'well founded support' for these assertions: ~%~A ~~%%~A."
+        (wfs '(INCREASE-BIOAVAILABILITY 'DILTIAZEM 'SIMVASTATIN 'CYP3A4))
+        (wfs '(TOXIC-EFFECT 'DILTIAZEM 'SIMVASTATIN)))
+
+(format t "~%~%SIMPLE-DDI-RULE-BASE: Retracting an enabled assumption from the DIKB:~%")
+(retract! '(sufficient-concentration-to-inhibit 'diltiazem 'cyp3a4) 'dikb-enabled-assumption)
+
+(format t "~%~%SIMPLE-DDI-RULE-BASE: Do we now believe that diltiazem will cause a toxic ddi with simvastatin? ~%~A"
+        (cond ((in? '(TOXIC-EFFECT 'DILTIAZEM 'SIMVASTATIN)) t)
+              (t nil)))
+                                    
+(format t "~%~%SIMPLE-DDI-RULE-BASE: Assertions currently in the rule engine, notice that there is a change in what was believed:~%")
+(show-data)
+
+(setq patient '(joe (simvastatin tylenol)))
+
+(defun prescribe (patient new-drg)
+  (dolist (drug (cadr patient))
+    (let ((toxic-l (fetch (eval (list `QUOTE (cons 'toxic-effect (list (list 'QUOTE new-drg) (list 'QUOTE drug)))))))
+          (cnt 1))
+      (if (not (null toxic-l))
+          (dolist (inter toxic-l)
+            (let ((f-name (concatenate 'string "ddi-" (format nil "~A.html" cnt))))
+              (format t "~%Interaction between ~A and ~A, please see ~A for details"
+                      new-drg drug f-name)
+              (explanation inter f-name))
+            (+ cnt 1))))))
+            
+
+
+(setq d 'simvastatin)
+(fetch (eval (list 'QUOTE (cons 'toxic-effect (list (list 'QUOTE 'diltiazem) (list 'QUOTE d))))))
+
+
+(defmacro make-sentence (predicate l-objects)
+  `(eval (list 'QUOTE (cons (list 'QUOTE ,predicate)
+                             (let ((l ()))
+                               (dolist (obj ,l-objects)
+                                 (setq l (append l (list 'QUOTE obj))))
+                               l)
+                             ))))
+
+
+(defun patient-specific-rule-base ()
+  "A simple set of rules about pharmacokinetic drug-drug interactions
+   that models patient state.
+     Assertions and  assumptions will come in from the DIKB in the form:
+        (assume! '(drug-at-sufficient-concentration-to-inhibit 'precipitant 'enzyme))
+      and
+        (assert! '(inhibits 'precipitant 'enzyme))
+  "
+  (setq t-jtre (create-jtre "Simple DDI JTRE" :DEBUGGING t))
+  (in-jtre t-jtre)
+  (dolist (form '(                
+                  (rule ((:IN (inhibits ?precip ?enz))
+                         (:IN (substrate-of ?object ?enz))) 	
+                        (rassert! (inhibit-clearance ?precip ?object ?enz)
+                                  ;;justifications
+                                  (nil
+                                   (inhibits ?precip ?enz)
+                                   (substrate-of ?object ?enz)
+                                   (sufficient-concentration-to-inhibit ?precip ?enz)
+                                   (saturable-concentration ?precip ?enz))))
+                                    
+                  (rule (( :IN (inhibit-clearance ?precip ?object ?enz)))
+                        (rassert! (increase-bioavailability ?precip ?object ?enz)
+                                  ;;justifications
+                                  (nil
+                                   (inhibit-clearance ?precip ?object ?enz)
+                                   (given-when-object-near-steady-state ?precip ?object)
+                                   (currently-accounts-for-more-than-half-clearance ?enz ?object))))
+
+                  (rule (( :IN (increase-bioavailability ?precip ?object ?enz)))
+                        (rassert! (toxic-effect ?precip ?object)
+                                  ;;justifications
+                                  (nil
+                                   (increase-bioavailability ?precip ?object ?enz)
+                                   (currently-near-toxic-dose ?object))))
+                  (format t "~%~%SIMPLE-DDI-RULE-BASE: Loading enabled assumptions specific to patient simulation:~%")
+                  (load "./patient-assertions.lisp")  ;;this assertion file does not include the default assumptions for each assertion
+                  (format t "~%~%SIMPLE-DDI-RULE-BASE: Result of running rules with NO enabled assumptions:~%")
+                  (run-rules)
+                  (format t "~%~%SIMPLE-DDI-RULE-BASE: Assertions currently in the rule engine:~%")
+                  (show-data)
+                        
+                  ))
+    (print (eval form)))
+  t-jtre)
+
+
+
+
+(defun prescribe-patient (patient p-jtre new-drg)
+  "Prescribe to a patient a drug; the hypothesised state of the patient is held in a JTRE.
+   in: patient - a simple patient data type: list
+   in: p-jtre - a model of the patient's pharmacology: jtre
+   in: new-drg - the generic name of the new prescription: a symbol"
+  (dolist (drug (cadr patient))
+    ;;replace the global jtre temporarily
+    (if (not (null *jtre*))
+        (setq tmp-jtre *jtre*))
+    (in-jtre p-jtre)
+    
+    ;;enable assumptions
+    (format t "~%~%prescribe: Assuming that ~A given when ~A is near steady state:~%" new-drg drug)
+    (assume! (eval (list 'QUOTE (cons 'given-when-object-near-steady-state
+                                      (list (list 'QUOTE new-drg) (list 'QUOTE  drug)))))
+             'test-inference-assumption)
+
+    (let ((path (fetch (eval (list `QUOTE (cons 'PRIMARY-CLEARANCE-ENZYME (list
+                                                               (list 'QUOTE drug)
+                                                               (list 'QUOTE '?enz))))))))
+      (dolist (p path)
+        (let ((enz (third p)))
+          (assume! (eval (list 'QUOTE (cons 'CURRENTLY-ACCOUNTS-FOR-MORE-THAN-HALF-CLEARANCE
+                                            (list
+                                             (list 'QUOTE enz) (list 'QUOTE  drug)))))))
+             'test-inference-assumption)
+        
+    (format t "~%~%SIMPLE-DDI-RULE-BASE: Result of running rules with CURRENTLY enabled assumptions:~%")
+    (run-rules)
+    
+    (let ((induce-l (fetch (eval (list `QUOTE (cons 'increase-bioavailability (list
+                                                                               (list 'QUOTE new-drg)
+                                                                               (list 'QUOTE drug)
+                                                                               (list 'QUOTE '?enz)))))))
+          (cnt 1))
+      (if (not (null induce-l))
+          (dolist (inter induce-l)
+            (cond ((in? inter)
+                   (format t "~%~%prescribe: Assuming that ~A is currently near toxic dose :~%" drug)
+                   (assume! (eval (list 'QUOTE (cons 'currently-near-toxic-dose (list (list 'QUOTE drug)))))
+                            'test-inference-assumption)
+                   (let ((f-name (concatenate 'string "ddi-" (format nil "~A.html" cnt))))
+                     (format t "~%Interaction between ~A and ~A, please see ~A for details"
+                             new-drg drug f-name)
+                     (explanation inter f-name)
+                     (= cnt (+ cnt 1))))
+                  (t (format t "~%No interaction believed between ~A and ~A."
+                             new-drg drug))))))
+    ;;reset global jtre
+    (in-jtre tmp-jtre)
+    ))
+            

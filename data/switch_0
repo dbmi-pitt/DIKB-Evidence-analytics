@@ -1,0 +1,10 @@
+#!/bin/bash
+
+PWD=`pwd`
+
+
+echo "In directory " 
+echo $PWD
+echo "Switching believable_rct_or_fda_guidance to believable"
+cp believable_rct_or_fda_guidance believable
+

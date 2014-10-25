@@ -1,0 +1,15 @@
+To get the most recent dikbEvidence SQL:
+1) create a new folder for the backup with today's date
+2) copy the most recent SQL dump from where it is archived:
+$ scp rdb20@130.49.206.86:/media/Backup/dbmi-icode-01-backup/rdb20/mysqlbackups/dikbEvidence.sql ./
+
+To load the data:
+1) drop the dikbEvidence database 
+2) exit mysql and run:  mysql -u root --password=5bboys dikbEvidence < dikbEvidence.sql
+
+Note: if you have to create a fresh dump, go to the server and run:
+$ /home/rdb20/mysqlbackups/mysqlbackup.sh
+
+The backup will be in /home/rdb20/mysqlbackups/dikbEvidence.sql 
+
+

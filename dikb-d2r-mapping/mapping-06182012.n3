@@ -1,0 +1,2639 @@
+@prefix map: <file:////home/rdb20/Downloads/d2r-server-0.7-DIKB/mapping.n3#> .
+
+@prefix d2r: <http://sites.wiwiss.fu-berlin.de/suhl/bizer/d2r-server/config.rdf#> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix db: <> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dikbD2R: <http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/>  .
+@prefix dikbEvidence: <http://dbmi-icode-01.dbmi.pitt.edu/dikb-evidence/DIKB_evidence_ontology_v1.3.owl#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix jdbc: <http://d2rq.org/terms/jdbc/> .
+@prefix meta: <http://www4.wiwiss.fu-berlin.de/bizer/d2r-server/metadata#> .
+@prefix ncbit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
+@prefix ndfrt: <http://purl.bioontology.org/ontology/NDFRT/>.
+@prefix obo: <http://purl.obolibrary.org/obo/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prv:      <http://purl.org/net/provenance/ns#> .
+@prefix prvFiles: <http://purl.org/net/provenance/files#> .
+@prefix prvIV:    <http://purl.org/net/provenance/integrity#> .
+@prefix prvTypes: <http://purl.org/net/provenance/types#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix siocns: <http://rdfs.org/sioc/ns#>.
+@prefix swanci: <http://purl.org/swan/1.2/citations/> .
+@prefix swanco: <http://purl.org/swan/1.2/swan-commons#> .
+@prefix swande: <http://purl.org/swan/1.2/discourse-elements#> .
+@prefix swandr: <http://purl.org/swan/1.2/discourse-relationships/> .
+@prefix swanpav: <http://purl.org/swan/1.2/pav/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<> a d2r:Server;
+      rdfs:label "D2R Server for the Drug Interaction Knowledge Base";
+
+      # other dataset configuration options (e.g. d2r:baseURI, d2r:port)
+   
+      ## Graph metadata
+      d2r:documentMetadata [	  
+          foaf:primaryTopic <http://localhost:2020/all>;
+	  meta:d2rUser "Richard D. Boyce";
+	  meta:d2rUserHomepage <http://www.linkedin.com/in/boycer>;
+	  meta:d2rOperator "Richard D. Boyce";
+      	  meta:license <http://creativecommons.org/licenses/by-nc-sa/3.0/> ;
+	  meta:dataset <http://thedatahub.org/dataset/the-drug-interaction-knowledge-base>;
+	  prv:performedAt "2012-05-25T12:00:00Z"^^xsd:dateTime;
+          prv:performedBy <http://www.linkedin.com/in/boycer>;
+	  rdfs:comment "Please note that this resource is updated when time and resources are available. Please contact rdb20@pitt.edu to find out how current the information is. You can see the entry date of all evidence items by looking at the property dikbD2R:Evidence_timestamp.";
+      ];
+      .
+
+map:database a d2rq:Database;
+	d2rq:jdbcDriver "com.mysql.jdbc.Driver";
+	d2rq:jdbcDSN "jdbc:mysql://localhost:3306/dikbEvidence?user=root&password=";
+	jdbc:autoReconnect "true";
+	jdbc:zeroDateTimeBehavior "convertToNull";
+	.
+
+# Table Drugs
+map:Drugs a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "Drugs/@@Drugs._name@@";
+	d2rq:class ncbit:Pharmacologic_Substance;
+	d2rq:classDefinitionLabel "Drugs";
+	.
+
+map:DrugBankBridge a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:Drugs;
+    d2rq:property owl:sameAs;
+    d2rq:uriColumn "Drugs._name";
+    d2rq:translateWith map:DrugBank;
+    .
+  
+
+map:Drugs__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Drugs;
+	d2rq:property rdfs:label;
+	d2rq:column "Drugs._name";
+	.
+
+# map:Drugs_id a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:Drugs;
+# 	d2rq:property dikbD2R:Drugs_id;
+# 	d2rq:propertyDefinitionLabel "Drugs id";
+# 	d2rq:column "Drugs.id";
+# 	d2rq:datatype xsd:int;
+# 	.
+
+# map:Drugs__name a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:Drugs;
+# 	d2rq:property dikbD2R:name;
+# 	d2rq:propertyDefinitionLabel "name";
+# 	d2rq:column "Drugs._name";
+# 	.
+
+map:Drugs_prodrug a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Drugs;
+	d2rq:property dikbD2R:prodrug;
+	d2rq:propertyDefinitionLabel "prodrug";
+	d2rq:column "Drugs.prodrug";
+	d2rq:datatype xsd:boolean;
+	d2rq:propertyDefinitionComment "Is this pharmacologic entity a compound that, on administration, must undergo chemical conversion by metabolic processes before becoming an active pharmacological agent?";
+	.
+
+
+map:Drugs_primary_total_clearance_mechanism a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Drugs;
+	d2rq:property dikbD2R:primary_total_clearance_mechanism;
+	d2rq:propertyDefinitionLabel "Primary total clearance mechanism";
+	d2rq:join "Drugs.primary_total_clearance_mechanism = ESlot.d_slot_id";
+	d2rq:column "ESlot.value_string";
+	d2rq:propertyDefinitionComment "the mechanism responsible for more than .5 of this pharmacologic entity's clearance";
+	.
+
+map:DrugsPrimary_total_clearance_mechanismTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Drugs;
+	d2rq:join "Drugs.primary_total_clearance_mechanism = ESlot.d_slot_id";
+	d2rq:join "Drugs.primary_total_clearance_mechanism = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_primary_total_clearance_mechanism_@@ESlot.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_primary_total_clearance_mechanism";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Evidence_slot_map.assert_id@@";
+	.
+
+
+map:Drugs_primary_metabolic_clearance_enzyme a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Drugs;
+	d2rq:property dikbD2R:primary_metabolic_clearance_enzyme;
+	d2rq:propertyDefinitionLabel "Primary metabolic clearance enzyme";
+	d2rq:join "Drugs.primary_metabolic_clearance_enzyme = ESlot.d_slot_id";
+	d2rq:uriColumn "ESlot.value_string";
+	d2rq:translateWith map:EnzymeTable;
+	d2rq:propertyDefinitionComment "The enzyme responsible for at least .5 of this pharmacologic entity's metabolic clearance. Note that this might be a much smaller proportion of total drug clearance (e.g., in cases where a drug's clearance is primarily by non-metabolic routes) but is useful for noting the relative importance of an enzyme for a drug's metabolism" 
+	.
+
+map:DrugsPrimary_metabolic_clearance_enzymeTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Drugs;
+	d2rq:join "Drugs.primary_metabolic_clearance_enzyme = ESlot.d_slot_id";
+	d2rq:join "Drugs.primary_metabolic_clearance_enzyme = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_primary_metabolic_clearance_enzyme_@@ESlot.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_primary_metabolic_clearance_enzyme";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Evidence_slot_map.assert_id@@";
+	.
+
+
+map:Drugs_primary_total_clearance_enzyme a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Drugs;
+	d2rq:property dikbD2R:primary_total_clearance_enzyme;
+	d2rq:propertyDefinitionLabel "Primary total clearance enzyme";
+	d2rq:join "Drugs.primary_total_clearance_enzyme = ESlot.d_slot_id";
+	d2rq:uriColumn "ESlot.value_string";
+	d2rq:translateWith map:EnzymeTable;
+	d2rq:propertyDefinitionComment "The enzyme responsible for more than .5 of this pharmacologic entity's total clearance by any clearance mechanism";
+	.
+
+map:DrugsPrimary_total_clearance_enzymeTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Drugs;
+	d2rq:join "Drugs.primary_total_clearance_enzyme = ESlot.d_slot_id";
+	d2rq:join "Drugs.primary_total_clearance_enzyme = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_primary_total_clearance_enzyme_@@ESlot.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_primary_total_clearance_enzyme";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Evidence_slot_map.assert_id@@";
+	.
+
+map:Drugs_in_vitro_probe_substrate_of_enzyme a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Drugs;
+	d2rq:property dikbD2R:in_vitro_probe_substrate_of_enzyme;
+	d2rq:propertyDefinitionLabel "In vitro probe substrate of enzyme";
+	d2rq:join "Drugs.in_vitro_probe_substrate_of_enzyme = ESlot.d_slot_id";
+	d2rq:uriColumn "ESlot.value_string";
+	d2rq:translateWith map:EnzymeTable;
+	d2rq:propertyDefinitionComment "A list of enzymes for which this pharmacologic entity is considered a valid in vitro probe substrate";
+	.
+
+map:DrugsIn_Vitro_Probe_Substrate_Of_EnzymeTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Drugs;
+	d2rq:join "Drugs.in_vitro_probe_substrate_of_enzyme = ESlot.d_slot_id";
+	d2rq:join "Drugs.in_vitro_probe_substrate_of_enzyme = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_in_vitro_probe_substrate_of_enzyme_@@ESlot.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_in_vitro_probe_substrate_of_enzyme";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Evidence_slot_map.assert_id@@";
+	.
+
+map:Drugs_in_viVo_probe_substrate_of_enzyme a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Drugs;
+	d2rq:property dikbD2R:in_viVo_probe_substrate_of_enzyme;
+	d2rq:propertyDefinitionLabel "In viVo probe substrate of enzyme";
+	d2rq:join "Drugs.in_viVo_probe_substrate_of_enzyme = ESlot.d_slot_id";
+	d2rq:uriColumn "ESlot.value_string";
+	d2rq:translateWith map:EnzymeTable;
+	d2rq:propertyDefinitionComment "A list of enzymes for which this pharmacologic entity is considered a valid inVo probe substrate";
+	.
+
+map:DrugsIn_ViVo_Probe_Substrate_Of_EnzymeTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Drugs;
+	d2rq:join "Drugs.in_viVo_probe_substrate_of_enzyme = ESlot.d_slot_id";
+	d2rq:join "Drugs.in_viVo_probe_substrate_of_enzyme = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_in_viVo_probe_substrate_of_enzyme_@@ESlot.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_in_viVo_probe_substrate_of_enzyme";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Evidence_slot_map.assert_id@@";
+	.
+
+
+map:Drugs_in_vitro_selective_inhibitor_of_enzyme a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Drugs;
+	d2rq:property dikbD2R:in_vitro_selective_inhibitor_of_enzyme;
+	d2rq:propertyDefinitionLabel "In vitro selective inhibitor of enzyme";
+	d2rq:join "Drugs.in_vitro_selective_inhibitor_of_enzyme = ESlot.d_slot_id";
+	d2rq:column "ESlot.value_string";
+	d2rq:propertyDefinitionComment "A list of enzymes for which this pharmacologic entity is considered a selective inhibitor in vitro";
+	.
+
+map:DrugsIn_Vitro_Selective_Inhibitor_Of_EnzymeTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Drugs;
+	d2rq:join "Drugs.in_vitro_selective_inhibitor_of_enzyme = ESlot.d_slot_id";
+	d2rq:join "Drugs.in_vitro_selective_inhibitor_of_enzyme = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_in_vitro_selective_inhibitor_of_enzyme_@@ESlot.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_in_vitro_selective_inhibitor_of_enzyme";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Evidence_slot_map.assert_id@@";
+	.
+
+
+map:Drugs_in_viVo_selective_inhibitor_of_enzyme a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Drugs;
+	d2rq:property dikbD2R:in_viVo_selective_inhibitor_of_enzyme;
+	d2rq:propertyDefinitionLabel "In viVo selective inhibitor of enzyme";
+	d2rq:join "Drugs.in_viVo_selective_inhibitor_of_enzyme = ESlot.d_slot_id";
+	d2rq:column "ESlot.value_string";
+	d2rq:propertyDefinitionComment "A list of enzymes for which this pharmacologic entity is considered a selective inhibitor in viVo";
+	.
+
+map:DrugsIn_ViVo_Selective_Inhibitor_Of_EnzymeTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Drugs;
+	d2rq:join "Drugs.in_viVo_selective_inhibitor_of_enzyme = ESlot.d_slot_id";
+	d2rq:join "Drugs.in_viVo_selective_inhibitor_of_enzyme = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_in_viVo_selective_inhibitor_of_enzyme_@@ESlot.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_in_viVo_selective_inhibitor_of_enzyme";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Evidence_slot_map.assert_id@@";
+	.
+
+map:Drugs_pceut_entity_of_concern a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Drugs;
+	d2rq:property dikbD2R:pceut_entity_of_concern;
+	d2rq:propertyDefinitionLabel "Entity of concern?";
+	d2rq:join "Drugs.pceut_entity_of_concern = ESlot.d_slot_id";
+	d2rq:column "ESlot.value_string";
+	d2rq:propertyDefinitionComment "Is this pharmacologic entity considered an entity of concern?";
+	.
+
+map:DrugsPceut_Entity_Of_ConcernTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Drugs;
+	d2rq:join "Drugs.pceut_entity_of_concern = ESlot.d_slot_id";
+	d2rq:join "Drugs.pceut_entity_of_concern = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_pceut_entity_of_concern_@@ESlot.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_pceut_entity_of_concern";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Evidence_slot_map.assert_id@@";
+	.
+
+
+map:Drugs_active_ingredient_name a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Drugs;
+	d2rq:property dikbD2R:active_ingredient_name;
+	d2rq:propertyDefinitionLabel "Active ingredient name";
+	d2rq:column "Drugs.active_ingredient_name";
+	d2rq:propertyDefinitionComment "The name of the active ingredient";
+	.
+map:Drugs_active_ingredient a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Drugs;
+	d2rq:property dikbD2R:active_ingredient;
+	d2rq:propertyDefinitionLabel "Active ingredient?";
+	d2rq:column "Drugs.active_ingredient";
+	d2rq:datatype xsd:boolean;
+	d2rq:propertyDefinitionComment "Is this pharmacologic entity an active ingredient?";
+	.
+
+map:Drugs_maximum_concentration a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Drugs;
+	d2rq:property dikbD2R:maximum_concentration;
+	d2rq:join "Drugs.maximum_concentration = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:column "Value.value_string";
+	d2rq:propertyDefinitionLabel "maximum concentration";
+	d2rq:propertyDefinitionComment "The maximum concentration (C_max) in grams/liter that this pharmacologic entity is known to reach at a particular dose given in grams";
+	.
+
+map:DrugsMaximum_ConcentrationTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Drugs;
+	d2rq:join "Drugs.maximum_concentration = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_maximum_concentration_@@Value.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_maximum_concentration";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Value.value_numeric@@";
+	.
+
+
+# map:Drugs_minimum_therapeutic_dose a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:Drugs;
+# 	d2rq:property dikbD2R:minimum_therapeutic_dose;
+# 	d2rq:join "Drugs.minimum_therapeutic_dose = EMultiSlot.d_slot_id";
+# 	d2rq:join "EMultiSlot.value_id = Value.value_id";
+# 	d2rq:column "Value.value_string";
+#	d2rq:propertyDefinitionLabel "minimum therapeutic dose";
+#	d2rq:propertyDefinitionComment "The minimum therapeutic dose based on evidence";
+# 	.
+
+# map:DrugsMinimum_therapeutic_doseTypeBridge a d2rq:PropertyBridge;
+#         d2rq:belongsToClassMap map:Drugs;
+# 	d2rq:join "Drugs.minimum_therapeutic_dose = EMultiSlot.d_slot_id";
+# 	d2rq:join "EMultiSlot.value_id = Value.value_id";
+# 	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_minimum_therapeutic_dose_@@Value.value_string@@"; 
+# 	d2rq:propertyDefinitionLabel "claim_for_minimum_therapeutic_dose";
+# 	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+# 	d2rq:uriPattern "Assertions/@@Value.value_numeric@@";
+# 	.
+
+
+# map:Drugs_maximum_therapeutic_dose a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:Drugs;
+# 	d2rq:property dikbD2R:maximum_therapeutic_dose;
+# 	d2rq:join "Drugs.maximum_therapeutic_dose = EMultiSlot.d_slot_id";
+# 	d2rq:join "EMultiSlot.value_id = Value.value_id";
+# 	d2rq:column "Value.value_string";
+#	d2rq:propertyDefinitionLabel "maximum therapeutic dose";
+#	d2rq:propertyDefinitionComment "The maximum therapeutic dose based on evidence";
+# 	.
+
+# map:DrugsMaximum_therapeutic_doseTypeBridge a d2rq:PropertyBridge;
+#         d2rq:belongsToClassMap map:Drugs;
+# 	d2rq:join "Drugs.maximum_therapeutic_dose = EMultiSlot.d_slot_id";
+# 	d2rq:join "EMultiSlot.value_id = Value.value_id";
+# 	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_maximum_therapeutic_dose_@@Value.value_string@@"; 
+# 	d2rq:propertyDefinitionLabel "claim_for_maximum_therapeutic_dose";
+# 	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+# 	d2rq:uriPattern "Assertions/@@Value.value_numeric@@";
+# 	.
+
+map:Drugs_assumed_effective_dose a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Drugs;
+	d2rq:property dikbD2R:assumed_effective_dose;
+	d2rq:join "Drugs.assumed_effective_dose = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:column "Value.value_string";
+	d2rq:propertyDefinitionLabel "assumed effective dose";
+	d2rq:propertyDefinitionComment "The assumed effective dose";
+	.
+
+map:DrugsAssumed_effective_doseTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Drugs;
+	d2rq:join "Drugs.assumed_effective_dose = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_assumed_effective_dose_@@Value.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_assumed_effective_dose";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Value.value_numeric@@";
+	.
+
+# map:Drugs_assumed_effective_dose a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:Drugs;
+# 	d2rq:property dikbD2R:Drugs_assumed_effective_dose;
+# 	d2rq:propertyDefinitionLabel "Drugs assumed_effective_dose";
+# 	d2rq:column "Drugs.assumed_effective_dose";
+# 	d2rq:datatype xsd:int;
+# 	.
+
+map:Drugs_substrate_of a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Drugs;
+	d2rq:property dikbD2R:substrate_of;
+	d2rq:join "Drugs.substrate_of = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:uriColumn "Value.value_string";
+	d2rq:translateWith map:EnzymeTable;
+	d2rq:propertyDefinitionLabel "substrate of";
+	d2rq:propertyDefinitionComment "Enzymes that this pharmacologic entity is a substrate of";
+	.
+
+map:DrugsSubstrate_ofTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Drugs;
+	d2rq:join "Drugs.substrate_of = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_substrate_of_@@Assertions.value@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_substrate_of";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Assertions.id@@";
+	.
+
+
+map:Drugs_is_not_substrate_of a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Drugs;
+	d2rq:property dikbD2R:is_not_substrate_of;
+	d2rq:join "Drugs.is_not_substrate_of = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:uriColumn "Value.value_string";
+	d2rq:translateWith map:EnzymeTable;
+	d2rq:propertyDefinitionLabel "not substrate of";
+	d2rq:propertyDefinitionComment "Enzymes that this pharmacologic entity is not a substrate of";
+	.
+
+map:DrugsIs_not_substrate_ofTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Drugs;
+	d2rq:join "Drugs.is_not_substrate_of = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_is_not_substrate_of_@@Assertions.value@@"; #Could not get dikbD2R to show up on the property
+	d2rq:propertyDefinitionLabel "claim_for_is_not_substrate_of";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Assertions.id@@";
+	.
+
+
+map:Drugs_inhibits a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Drugs;
+	d2rq:property dikbD2R:inhibits;
+	d2rq:join "Drugs.inhibits = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:translateWith map:EnzymeTable;
+	d2rq:uriColumn "Value.value_string";
+	d2rq:propertyDefinitionLabel "inhibits";
+	d2rq:propertyDefinitionComment "Enzymes that this pharmacologic entity inhibits by competitive, MI-complex, or non-competitive inhibition";
+	.
+
+map:DrugsInhibitsTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Drugs;
+	d2rq:join "Drugs.inhibits = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_inhibits_@@Assertions.value@@"; #Could not get dikbD2R to show up on the property
+	d2rq:propertyDefinitionLabel "claim_for_inhibits";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Assertions.id@@";
+	.
+
+
+map:Drugs_does_not_inhibit a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Drugs;
+	d2rq:property dikbD2R:does_not_inhibit;
+	d2rq:join "Drugs.does_not_inhibit = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:uriColumn "Value.value_string";
+	d2rq:translateWith map:EnzymeTable;
+	d2rq:propertyDefinitionLabel "does not inhibit";
+	d2rq:propertyDefinitionComment "An incomplete list of enzymes that this pharmacologic entity does not inhibit by any known mechanism";
+	.
+
+map:DrugsDoes_Not_InhibitTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Drugs;
+	d2rq:join "Drugs.does_not_inhibit = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_does_not_inhibit_@@Assertions.value@@"; #Could not get dikbD2R to show up on the property
+	d2rq:propertyDefinitionLabel "claim_for_does_not_inhibit";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Assertions.id@@";
+	.
+
+map:Drugs_has_metabolite a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Drugs;
+	d2rq:property dikbD2R:has_metabolite;
+	d2rq:join "Drugs.has_metabolite = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:column "Value.value_string";
+	d2rq:propertyDefinitionLabel "has metabolite";
+	d2rq:propertyDefinitionComment "A biochemical entity that this pharmaceutical entity is transformed to via catalysis";
+	.
+
+map:DrugsHas_MetaboliteTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Drugs;
+	d2rq:join "Drugs.has_metabolite = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_has_metabolite_@@Assertions.value@@"; #Could not get dikbD2R to show up on the property
+	d2rq:propertyDefinitionLabel "claim_for_has_metabolite";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Assertions.id@@";
+	.
+
+map:Drugs_permanently_deactivates_catalytic_function a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Drugs;
+	d2rq:property dikbD2R:permanently_deactivates_catalytic_function;
+	d2rq:join "Drugs.permanently_deactivates_catalytic_function = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:column "Value.value_string";
+	d2rq:propertyDefinitionLabel "permanently deactivates catalytic function";
+	d2rq:propertyDefinitionComment "Enzymes for which this pharmacologic entity inhibits in such a way that the enzyme is no longer available for catalysis (i.e., mechanistic or irreversible inhibition)";
+	.
+
+map:DrugsPermanently_Deactivates_Catalytic_FunctionTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Drugs;
+	d2rq:join "Drugs.permanently_deactivates_catalytic_function = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_permanently_deactivates_catalytic_function_@@Assertions.value@@"; #Could not get dikbD2R to show up on the property
+	d2rq:propertyDefinitionLabel "claim_for_permanently_deactivates_catalytic_function";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Assertions.id@@";
+	.
+
+
+map:Drugs_does_not_permanently_deactivate_catalytic_function a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Drugs;
+	d2rq:property dikbD2R:does_not_permanently_deactivate_catalytic_function;
+	d2rq:join "Drugs.does_not_permanently_deactivate_catalytic_function = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:column "Value.value_string";
+	d2rq:propertyDefinitionLabel "does not permanently deactivate catalytic function";
+	d2rq:propertyDefinitionComment "The pharmacologic entity is not a mechanistic or irreversible inhibitor of the indicated enzyme ";
+	.
+
+map:DrugsDoes_Not_Permanently_Deactivate_Catalytic_FunctionTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Drugs;
+	d2rq:join "Drugs.does_not_permanently_deactivate_catalytic_function = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_does_not_permanently_deactivate_catalytic_function_@@Assertions.value@@"; #Could not get dikbD2R to show up on the property
+	d2rq:propertyDefinitionLabel "claim_for_does_not_permanently_deactivate_catalytic_function";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Assertions.id@@";
+	.
+
+map:Drugs_inhibition_constant a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Drugs;
+	d2rq:property dikbD2R:inhibition_constant;
+	d2rq:join "Drugs.inhibition_constant = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:column "Value.value_string";
+	d2rq:propertyDefinitionLabel "inhibition constant";
+	d2rq:propertyDefinitionComment "The inhibition rate constant (K_i); in grams/Liter/Unit of time (typically per minute)";
+	.
+
+map:DrugsInhibition_constantTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Drugs;
+	d2rq:join "Drugs.inhibition_constant = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_inhibition_constant_@@Value.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_inhibition_constant";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Value.value_numeric@@";
+	.
+
+map:Drugs_induces a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Drugs;
+	d2rq:property dikbD2R:induces;
+	d2rq:join "Drugs.induces = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:column "Value.value_string";
+	d2rq:propertyDefinitionLabel "induces";
+	d2rq:propertyDefinitionComment "Enzymes that this pharmacologic entity induces";
+	.
+
+map:DrugsInducesTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Drugs;
+	d2rq:join "Drugs.induces = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_induces_@@Assertions.value@@"; #Could not get dikbD2R to show up on the property
+	d2rq:propertyDefinitionLabel "claim_for_induces";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Assertions.id@@";
+	.
+
+map:Drugs_increases_auc a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Drugs;
+	d2rq:property dikbD2R:increases_auc;
+	d2rq:join "Drugs.increases_auc = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:uriPattern "Drugs/@@Value.value_string@@";  # NOTE: does note cover cases where the object is a metabolite
+	d2rq:propertyDefinitionLabel "increases AUC";
+	d2rq:propertyDefinitionComment "The drugs that this pharmacologic entity is known to cause an increase in AUC in during pharmacokinetic trials";
+	.
+
+
+map:DrugsIncreases_AucTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Drugs;
+	d2rq:join "Drugs.increases_auc = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_increases_auc_@@Assertions.value@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_increases_auc";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Assertions.id@@";
+	.
+
+map:Drugs_sole_PK_effect_alter_metabolic_clearance a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Drugs;
+	d2rq:property dikbD2R:sole_PK_effect_alter_metabolic_clearance;
+	d2rq:join "Drugs.sole_PK_effect_alter_metabolic_clearance = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:column "Value.value_string";
+	d2rq:propertyDefinitionLabel "sole PK effect alter metabolic clearance";
+	d2rq:propertyDefinitionComment "Asserts that this pharmacologic entity's sole pharmacokinetic effect on another pharmacologic entity is alteration of the second entity's metabolic clearance";
+	.
+
+map:DrugsSole_PK_Effect_Alter_Metabolic_ClearanceTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Drugs;
+	d2rq:join "Drugs.sole_PK_effect_alter_metabolic_clearance = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_sole_PK_effect_alter_metabolic_clearance_@@Assertions.value@@"; #Could not get dikbD2R to show up on the property
+	d2rq:propertyDefinitionLabel "claim_for_sole_PK_effect_alter_metabolic_clearance";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Assertions.id@@";
+	.
+
+map:Drugs_bioavailability a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Drugs;
+	d2rq:property ncbit:bioavailability;
+	d2rq:join "Drugs.bioavailability = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:column "Value.value_string";
+	.
+
+map:DrugsBioavailabilityTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Drugs;
+	d2rq:join "Drugs.bioavailability = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_bioavailability_@@Value.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_bioavailability";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Value.value_numeric@@";
+	.
+
+
+map:Drugs_fraction_absorbed a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Drugs;
+	d2rq:property dikbD2R:fraction_absorbed;
+	d2rq:join "Drugs.fraction_absorbed = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:column "Value.value_string";
+	.
+
+map:DrugsFraction_AbsorbedTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Drugs;
+	d2rq:join "Drugs.fraction_absorbed = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_fraction_absorbed_@@Value.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_fraction_absorbed";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Value.value_numeric@@";
+	.
+
+
+map:Drugs_fraction_cleared_by a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Drugs;
+	d2rq:property dikbD2R:fraction_cleared_by;
+	d2rq:propertyDefinitionLabel "Drugs fraction_cleared_by";
+	d2rq:column "Drugs.fraction_cleared_by";
+	d2rq:datatype xsd:int;
+	.
+
+## DEPRECATED with the addition of the DDIPredictions Class definition
+# map:DrugsPredictedToReduceClearanceOfTypeBridge a d2rq:PropertyBridge;
+#         d2rq:belongsToClassMap map:Drugs;
+# 	d2rq:join "Drugs._name => DDIPredictions.PRECIPITANT";
+# 	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/predicted_to_reduce_clearance_via_@@DDIPredictions.ENZYME@@"; 
+# 	d2rq:propertyDefinitionLabel "predicted_to_reduce_clearance_via_enzyme";
+# 	d2rq:propertyDefinitionComment "The precipitant of a predicted metabolic inhibition interaction";
+# 	d2rq:uriPattern "Drugs/@@DDIPredictions.OBJECT@@";
+# 	.
+
+# map:DrugsPredictedToHaveClearanceReducedByTypeBridge a d2rq:PropertyBridge;
+#         d2rq:belongsToClassMap map:Drugs;
+# 	d2rq:join "Drugs._name <= DDIPredictions.OBJECT";
+# 	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/predicted_to_have_clearance_reduced_via_@@DDIPredictions.ENZYME@@"; 
+# 	d2rq:propertyDefinitionLabel "predicted_to_have_clearance_reduced_via_enzyme";
+# 	d2rq:propertyDefinitionComment "The object of a predicted metabolic inhibition interaction";
+# 	d2rq:uriPattern "Drugs/@@DDIPredictions.PRECIPITANT@@";
+# 	.
+
+# Table DDIPredictions
+map:DDIPredictions a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "DDIPredictions/@@DDIPredictions.id@@";
+	d2rq:class dikbD2R:DDIPrediction;
+	d2rq:classDefinitionLabel "Predicted drug-drug interactions occurring by metabolic inhibition";
+	d2rq:classDefinitionComment "Each prediction was made because dikbD2R:ObjectDrugOfInteraction is believed to be a substrate of dikbD2R:EnzymeInhibited and dikbD2R:PrecipitantDrugOfInteraction is believed to inhibit the function of dikbD2R:EnzymeInhibited at the therapeutic dose range that it is typically prescribed. See the pages for each dikbD2R:ObjectDrugOfInteraction and dikbD2R:PrecipitantDrugOfInteraction for further justification.";
+	.
+
+map:DDIPredictions__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:DDIPredictions;
+	d2rq:property rdfs:label;
+	d2rq:pattern "@@DDIPredictions.PRECIPITANT@@ is predicted to reduce the clearance of @@DDIPredictions.OBJECT@@ by inhibition of @@DDIPredictions.ENZYME@@";
+	.
+
+map:DDIPredictionsObject a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:DDIPredictions;
+	d2rq:property dikbD2R:ObjectDrugOfInteraction;
+	d2rq:propertyDefinitionLabel "The object drug of a metabolic inhibition drug-drug interaction";
+	d2rq:uriPattern "Drugs/@@DDIPredictions.OBJECT@@"; 
+	.
+
+map:DDIPredictionsPrecipitant a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:DDIPredictions;
+	d2rq:property dikbD2R:PrecipitantDrugOfInteraction;
+	d2rq:propertyDefinitionLabel "The precipitant drug of a metabolic inhibition drug-drug interaction";
+	d2rq:uriPattern "Drugs/@@DDIPredictions.PRECIPITANT@@"; 
+	.
+
+map:DDIPredictionsEnzyme a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:DDIPredictions;
+	d2rq:property dikbD2R:EnzymeInhibited;
+	d2rq:propertyDefinitionLabel "The enzyme that is affected by a metabolic inhibition drug-drug interaction";
+	d2rq:uriColumn "DDIPredictions.ENZYME"; 
+	d2rq:translateWith map:EnzymeTable;
+	.
+
+## TODO - create justifications
+# map:DDIPredictionsJustification a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:DDIPredictions;
+# 	d2rq:property dikbD2R:Justification;
+# 	d2rq:propertyDefinitionLabel "Justification for a  metabolic inhibition drug-drug interaction prediction";
+# 	d2rq:pattern "@@DDIPredictions.PRECIPITANT@@ is predicted to reduce the clearance of @@DDIPredictions.OBJECT@@ by inhibition of @@DDIPredictions.ENZYME@@";
+# 	.
+
+map:DDIObservations a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:class dikbD2R:DDIObservation;
+	d2rq:classDefinitionLabel "An interaction observed in a pharmacokinetic drug-drug interaction study involving humans";
+	d2rq:uriPattern "DDIObservations@@DDIObservations.id@@";
+	.
+
+map:DDIObservations__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:DDIObservations;
+	d2rq:property rdfs:label;
+	d2rq:pattern "@@DDIObservations.precipitant@@ increases the AUC of @@DDIObservations.object@@ ";
+	.
+
+map:DDIObservationsObject a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:DDIObservations;
+	d2rq:property dikbD2R:ObjectDrugOfInteraction;
+	d2rq:propertyDefinitionLabel "The object drug of the observed pharmacokinetic drug-drug interaction";
+	d2rq:uriPattern "Drugs/@@DDIObservations.object@@"; 
+	.
+
+map:DDIObservationsPrecipitant a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:DDIObservations;
+	d2rq:property dikbD2R:PrecipitantDrugOfInteraction;
+	d2rq:propertyDefinitionLabel "The precipitant drug of the observed pharmacokinetic drug-drug interaction";
+	d2rq:uriPattern "Drugs/@@DDIObservations.precipitant@@"; 
+	.
+
+map:PharmacokineticDDIAssertion a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:DDIObservations;
+	d2rq:property dikbD2R:PharmacokineticDDIAssertion;
+	d2rq:propertyDefinitionLabel "An assertion type that links drug-drug interaction observatio to studies that support or refute it. ";
+	d2rq:uriPattern "Assertions/@@DDIObservations.assertionId@@"; 
+	.
+
+# Table Metabolite
+map:Metabolite a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "Metabolite/@@Metabolite.id@@";
+	d2rq:class ncbit:Metabolite;
+	d2rq:classDefinitionLabel "Metabolite";
+	.
+
+map:Metabolite__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Metabolite;
+	d2rq:property rdfs:label;
+	d2rq:column "Metabolite._name";
+	.
+#map:Metabolite_id a d2rq:PropertyBridge;
+#	d2rq:belongsToClassMap map:Metabolite;
+#	d2rq:property dikbD2R:id;
+#	d2rq:propertyDefinitionLabel "Metabolite id";
+#	d2rq:column "Metabolite.id";
+#	d2rq:datatype xsd:int;
+#	.
+map:Metabolite__name a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Metabolite;
+	d2rq:property dikbD2R:name;
+	d2rq:propertyDefinitionLabel "name";
+	d2rq:column "Metabolite._name";
+	d2rq:propertyDefinitionComment "The name of this pharmacologic entity";
+	.
+map:Metabolite_metabolite a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Metabolite;
+	d2rq:property dikbD2R:metabolite;
+	d2rq:propertyDefinitionLabel "metabolite";
+	d2rq:column "Metabolite.metabolite";
+	d2rq:datatype xsd:boolean;
+	d2rq:propertyDefinitionComment "Is this pharmacologic entity a metabolite?";
+	.
+
+map:Metabolite_primary_total_clearance_mechanism a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Metabolite;
+	d2rq:property dikbD2R:primary_total_clearance_mechanism;
+#	d2rq:propertyDefinitionLabel "primary total clearance mechanism";
+	d2rq:join "Metabolite.primary_total_clearance_mechanism = ESlot.d_slot_id";
+	d2rq:column "ESlot.value_string";
+#	d2rq:propertyDefinitionComment "The mechanism responsible for more than .5 of the metabolite instance's clearance";
+	.
+
+map:MetabolitePrimary_total_clearance_mechanismTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Metabolite;
+	d2rq:join "Metabolite.primary_total_clearance_mechanism = ESlot.d_slot_id";
+	d2rq:join "Metabolite.primary_total_clearance_mechanism = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_primary_total_clearance_mechanism_@@ESlot.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_primary_total_clearance_mechanism";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Evidence_slot_map.assert_id@@";
+	.
+
+
+map:Metabolite_primary_metabolic_clearance_enzyme a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Metabolite;
+	d2rq:property dikbD2R:primary_metabolic_clearance_enzyme;
+#	d2rq:propertyDefinitionLabel "Metabolite primary_metabolic_clearance_enzyme";
+	d2rq:join "Metabolite.primary_metabolic_clearance_enzyme = ESlot.d_slot_id";
+	d2rq:column "ESlot.value_string";
+	.
+
+map:MetabolitePrimary_metabolic_clearance_enzymeTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Metabolite;
+	d2rq:join "Metabolite.primary_metabolic_clearance_enzyme = ESlot.d_slot_id";
+	d2rq:join "Metabolite.primary_metabolic_clearance_enzyme = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_primary_metabolic_clearance_enzyme_@@ESlot.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_primary_metabolic_clearance_enzyme";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Evidence_slot_map.assert_id@@";
+	.
+
+
+map:Metabolite_primary_total_clearance_enzyme a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Metabolite;
+	d2rq:property dikbD2R:primary_total_clearance_enzyme;
+#	d2rq:propertyDefinitionLabel "Metabolite primary_total_clearance_enzyme";
+	d2rq:join "Metabolite.primary_total_clearance_enzyme = ESlot.d_slot_id";
+	d2rq:uriColumn "ESlot.value_string";
+	d2rq:translateWith map:EnzymeTable;
+	.
+
+map:MetabolitePrimary_total_clearance_enzymeTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Metabolite;
+	d2rq:join "Metabolite.primary_total_clearance_enzyme = ESlot.d_slot_id";
+	d2rq:join "Metabolite.primary_total_clearance_enzyme = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_primary_total_clearance_enzyme_@@ESlot.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_primary_total_clearance_enzyme";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Evidence_slot_map.assert_id@@";
+	.
+
+map:Metabolite_in_vitro_probe_substrate_of_enzyme a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Metabolite;
+	d2rq:property dikbD2R:in_vitro_probe_substrate_of_enzyme;
+#	d2rq:propertyDefinitionLabel "Metabolite in_vitro_probe_substrate_of_enzyme";
+	d2rq:join "Metabolite.in_vitro_probe_substrate_of_enzyme = ESlot.d_slot_id";
+	d2rq:uriColumn "ESlot.value_string";
+	d2rq:translateWith map:EnzymeTable;
+	.
+
+map:MetaboliteIn_Vitro_Probe_Substrate_Of_EnzymeTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Metabolite;
+	d2rq:join "Metabolite.in_vitro_probe_substrate_of_enzyme = ESlot.d_slot_id";
+	d2rq:join "Metabolite.in_vitro_probe_substrate_of_enzyme = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_in_vitro_probe_substrate_of_enzyme_@@ESlot.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_in_vitro_probe_substrate_of_enzyme";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Evidence_slot_map.assert_id@@";
+	.
+
+map:Metabolite_in_viVo_probe_substrate_of_enzyme a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Metabolite;
+	d2rq:property dikbD2R:in_viVo_probe_substrate_of_enzyme;
+#	d2rq:propertyDefinitionLabel "Metabolite in_viVo_probe_substrate_of_enzyme";
+	d2rq:join "Metabolite.in_viVo_probe_substrate_of_enzyme = ESlot.d_slot_id";
+	d2rq:uriColumn "ESlot.value_string";
+	d2rq:translateWith map:EnzymeTable;
+	.
+
+map:MetaboliteIn_ViVo_Probe_Substrate_Of_EnzymeTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Metabolite;
+	d2rq:join "Metabolite.in_viVo_probe_substrate_of_enzyme = ESlot.d_slot_id";
+	d2rq:join "Metabolite.in_viVo_probe_substrate_of_enzyme = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_in_viVo_probe_substrate_of_enzyme_@@ESlot.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_in_viVo_probe_substrate_of_enzyme";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Evidence_slot_map.assert_id@@";
+	.
+
+map:Metabolite_in_vitro_selective_inhibitor_of_enzyme a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Metabolite;
+	d2rq:property dikbD2R:in_vitro_selective_inhibitor_of_enzyme;
+#	d2rq:propertyDefinitionLabel "Metabolite in_vitro_selective_inhibitor_of_enzyme";
+	d2rq:join "Metabolite.in_vitro_selective_inhibitor_of_enzyme = ESlot.d_slot_id";
+	d2rq:column "ESlot.value_string";
+	.
+
+map:MetaboliteIn_Vitro_Selective_Inhibitor_Of_EnzymeTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Metabolite;
+	d2rq:join "Metabolite.in_vitro_selective_inhibitor_of_enzyme = ESlot.d_slot_id";
+	d2rq:join "Metabolite.in_vitro_selective_inhibitor_of_enzyme = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_in_vitro_selective_inhibitor_of_enzyme_@@ESlot.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_in_vitro_selective_inhibitor_of_enzyme";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Evidence_slot_map.assert_id@@";
+	.
+
+map:Metabolite_in_viVo_selective_inhibitor_of_enzyme a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Metabolite;
+	d2rq:property dikbD2R:in_viVo_selective_inhibitor_of_enzyme;
+#	d2rq:propertyDefinitionLabel "Metabolite in_viVo_selective_inhibitor_of_enzyme";
+	d2rq:join "Metabolite.in_viVo_selective_inhibitor_of_enzyme = ESlot.d_slot_id";
+	d2rq:column "ESlot.value_string";
+	.
+
+map:MetaboliteIn_ViVo_Selective_Inhibitor_Of_EnzymeTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Metabolite;
+	d2rq:join "Metabolite.in_viVo_selective_inhibitor_of_enzyme = ESlot.d_slot_id";
+	d2rq:join "Metabolite.in_viVo_selective_inhibitor_of_enzyme = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_in_viVo_selective_inhibitor_of_enzyme_@@ESlot.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_in_viVo_selective_inhibitor_of_enzyme";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Evidence_slot_map.assert_id@@";
+	.
+
+map:Metabolite_pceut_entity_of_concern a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Metabolite;
+	d2rq:property dikbD2R:pceut_entity_of_concern;
+#	d2rq:propertyDefinitionLabel "Metabolite pceut_entity_of_concern";
+	d2rq:join "Metabolite.pceut_entity_of_concern = ESlot.d_slot_id";
+	d2rq:column "ESlot.value_string";
+	.
+
+map:MetabolitePceut_Entity_Of_ConcernTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Metabolite;
+	d2rq:join "Metabolite.pceut_entity_of_concern = ESlot.d_slot_id";
+	d2rq:join "Metabolite.pceut_entity_of_concern = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_pceut_entity_of_concern_@@ESlot.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_pceut_entity_of_concern";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Evidence_slot_map.assert_id@@";
+	.
+
+
+map:Metabolite_maximum_concentration a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Metabolite;
+	d2rq:property dikbD2R:maximum_concentration;
+	d2rq:join "Metabolite.maximum_concentration = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:column "Value.value_string";
+	.
+
+map:MetaboliteMaximum_ConcentrationTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Metabolite;
+	d2rq:join "Metabolite.maximum_concentration = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_maximum_concentration_@@Value.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_maximum_concentration";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Value.value_numeric@@";
+	.
+
+
+# map:Metabolite_minimum_therapeutic_dose a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:Metabolite;
+# 	d2rq:property dikbD2R:minimum_therapeutic_dose;
+# 	d2rq:join "Metabolite.minimum_therapeutic_dose = EMultiSlot.d_slot_id";
+# 	d2rq:join "EMultiSlot.value_id = Value.value_id";
+# 	d2rq:column "Value.value_string";
+# 	.
+
+# map:MetaboliteMinimum_therapeutic_doseTypeBridge a d2rq:PropertyBridge;
+#         d2rq:belongsToClassMap map:Metabolite;
+# 	d2rq:join "Metabolite.minimum_therapeutic_dose = EMultiSlot.d_slot_id";
+# 	d2rq:join "EMultiSlot.value_id = Value.value_id";
+# 	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_minimum_therapeutic_dose_@@Value.value_string@@"; 
+# 	d2rq:propertyDefinitionLabel "claim_for_minimum_therapeutic_dose";
+# 	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+# 	d2rq:uriPattern "Assertions/@@Value.value_numeric@@";
+# 	.
+
+
+# map:Metabolite_maximum_therapeutic_dose a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:Metabolite;
+# 	d2rq:property dikbD2R:maximum_therapeutic_dose;
+# 	d2rq:join "Metabolite.maximum_therapeutic_dose = EMultiSlot.d_slot_id";
+# 	d2rq:join "EMultiSlot.value_id = Value.value_id";
+# 	d2rq:column "Value.value_string";
+# 	.
+
+# map:MetaboliteMaximum_therapeutic_doseTypeBridge a d2rq:PropertyBridge;
+#         d2rq:belongsToClassMap map:Metabolite;
+# 	d2rq:join "Metabolite.maximum_therapeutic_dose = EMultiSlot.d_slot_id";
+# 	d2rq:join "EMultiSlot.value_id = Value.value_id";
+# 	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_maximum_therapeutic_dose_@@Value.value_string@@"; 
+# 	d2rq:propertyDefinitionLabel "claim_for_maximum_therapeutic_dose";
+# 	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+# 	d2rq:uriPattern "Assertions/@@Value.value_numeric@@";
+# 	.
+
+map:Metabolite_assumed_effective_dose a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Metabolite;
+	d2rq:property dikbD2R:assumed_effective_dose;
+	d2rq:join "Metabolite.assumed_effective_dose = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:column "Value.value_string";
+	.
+
+map:MetaboliteAssumed_effective_doseTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Metabolite;
+	d2rq:join "Metabolite.assumed_effective_dose = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_assumed_effective_dose_@@Value.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_assumed_effective_dose";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Value.value_numeric@@";
+	.
+
+map:Metabolite_substrate_of a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Metabolite;
+	d2rq:property dikbD2R:substrate_of;
+	d2rq:join "Metabolite.substrate_of = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:uriColumn "Value.value_string";
+	d2rq:translateWith map:EnzymeTable;
+	.
+
+map:MetaboliteSubstrate_ofTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Metabolite;
+	d2rq:join "Metabolite.substrate_of = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_substrate_of_@@Assertions.value@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_substrate_of";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Assertions.id@@";
+	.
+
+
+map:Metabolite_is_not_substrate_of a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Metabolite;
+	d2rq:property dikbD2R:is_not_substrate_of;
+	d2rq:join "Metabolite.is_not_substrate_of = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:uriColumn "Value.value_string";
+	d2rq:translateWith map:EnzymeTable;
+	.
+
+map:MetaboliteIs_not_substrate_ofTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Metabolite;
+	d2rq:join "Metabolite.is_not_substrate_of = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_is_not_substrate_of_@@Assertions.value@@"; #Could not get dikbD2R to show up on the property
+	d2rq:propertyDefinitionLabel "claim_for_is_not_substrate_of";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Assertions.id@@";
+	.
+
+
+map:Metabolite_inhibits a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Metabolite;
+	d2rq:property dikbD2R:inhibits;
+	d2rq:join "Metabolite.inhibits = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:uriColumn "Value.value_string";
+	.
+
+map:MetaboliteInhibitsTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Metabolite;
+	d2rq:join "Metabolite.inhibits = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_inhibits_@@Assertions.value@@"; #Could not get dikbD2R to show up on the property
+	d2rq:propertyDefinitionLabel "claim_for_inhibits";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Assertions.id@@";
+	.
+
+
+map:Metabolite_does_not_inhibit a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Metabolite;
+	d2rq:property dikbD2R:does_not_inhibit;
+	d2rq:join "Metabolite.does_not_inhibit = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:uriColumn "Value.value_string";
+	d2rq:translateWith map:EnzymeTable;
+	.
+
+map:MetaboliteDoes_Not_InhibitTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Metabolite;
+	d2rq:join "Metabolite.does_not_inhibit = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_does_not_inhibit_@@Assertions.value@@"; #Could not get dikbD2R to show up on the property
+	d2rq:propertyDefinitionLabel "claim_for_does_not_inhibit";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Assertions.id@@";
+	.
+
+map:Metabolite_has_metabolite a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Metabolite;
+	d2rq:property dikbD2R:has_metabolite;
+	d2rq:join "Metabolite.has_metabolite = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:column "Value.value_string";
+	.
+
+map:MetaboliteHas_MetaboliteTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Metabolite;
+	d2rq:join "Metabolite.has_metabolite = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_has_metabolite_@@Assertions.value@@"; #Could not get dikbD2R to show up on the property
+	d2rq:propertyDefinitionLabel "claim_for_has_metabolite";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Assertions.id@@";
+	.
+
+map:Metabolite_permanently_deactivates_catalytic_function a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Metabolite;
+	d2rq:property dikbD2R:permanently_deactivates_catalytic_function;
+	d2rq:join "Metabolite.permanently_deactivates_catalytic_function = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:column "Value.value_string";
+	.
+
+map:MetabolitePermanently_Deactivates_Catalytic_FunctionTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Metabolite;
+	d2rq:join "Metabolite.permanently_deactivates_catalytic_function = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_permanently_deactivates_catalytic_function_@@Assertions.value@@"; #Could not get dikbD2R to show up on the property
+	d2rq:propertyDefinitionLabel "claim_for_permanently_deactivates_catalytic_function";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Assertions.id@@";
+	.
+
+
+map:Metabolite_does_not_permanently_deactivate_catalytic_function a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Metabolite;
+	d2rq:property dikbD2R:does_not_permanently_deactivate_catalytic_function;
+	d2rq:join "Metabolite.does_not_permanently_deactivate_catalytic_function = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:column "Value.value_string";
+	.
+
+map:MetaboliteDoes_Not_Permanently_Deactivate_Catalytic_FunctionTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Metabolite;
+	d2rq:join "Metabolite.does_not_permanently_deactivate_catalytic_function = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_does_not_permanently_deactivate_catalytic_function_@@Assertions.value@@"; #Could not get dikbD2R to show up on the property
+	d2rq:propertyDefinitionLabel "claim_for_does_not_permanently_deactivate_catalytic_function";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Assertions.id@@";
+	.
+
+map:Metabolite_inhibition_constant a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Metabolite;
+	d2rq:property dikbD2R:inhibition_constant;
+	d2rq:join "Metabolite.inhibition_constant = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:column "Value.value_string";
+	.
+
+map:MetaboliteInhibition_constantTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Metabolite;
+	d2rq:join "Metabolite.inhibition_constant = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_inhibition_constant_@@Value.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_inhibition_constant";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Value.value_numeric@@";
+	.
+
+map:Metabolite_induces a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Metabolite;
+	d2rq:property dikbD2R:induces;
+	d2rq:join "Metabolite.induces = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:column "Value.value_string";
+	.
+
+map:MetaboliteInducesTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Metabolite;
+	d2rq:join "Metabolite.induces = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_induces_@@Assertions.value@@"; #Could not get dikbD2R to show up on the property
+	d2rq:propertyDefinitionLabel "claim_for_induces";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Assertions.id@@";
+	.
+
+map:Metabolite_increases_auc a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Metabolite;
+	d2rq:property dikbD2R:increases_auc;
+	d2rq:join "Metabolite.increases_auc = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:uriPattern "Drugs/@@Value.value_string@@"; # NOTE: does note cover cases where the object is a metabolite
+	.
+
+
+map:MetaboliteIncreases_AucTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Metabolite;
+	d2rq:join "Metabolite.increases_auc = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_increases_auc_@@Assertions.value@@"; #Could not get dikbD2R to show up on the property
+	d2rq:propertyDefinitionLabel "claim_for_increases_auc";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Assertions.id@@";
+	.
+
+map:Metabolite_sole_PK_effect_alter_metabolic_clearance a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Metabolite;
+	d2rq:property dikbD2R:sole_PK_effect_alter_metabolic_clearance;
+	d2rq:join "Metabolite.sole_PK_effect_alter_metabolic_clearance = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:column "Value.value_string";
+	.
+
+map:MetaboliteSole_PK_Effect_Alter_Metabolic_ClearanceTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Metabolite;
+	d2rq:join "Metabolite.sole_PK_effect_alter_metabolic_clearance = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_sole_PK_effect_alter_metabolic_clearance_@@Assertions.value@@"; #Could not get dikbD2R to show up on the property
+	d2rq:propertyDefinitionLabel "claim_for_sole_PK_effect_alter_metabolic_clearance";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Assertions.id@@";
+	.
+
+
+
+
+# Table Chemical
+map:Chemical a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "Chemical/@@Chemical.id@@";
+	d2rq:class ncbit:Chemical;
+	d2rq:classDefinitionLabel "Chemical";
+	.
+
+map:Chemical__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Chemical;
+	d2rq:property rdfs:label;
+	d2rq:column "Chemical._name";
+	.
+#map:Chemical_id a d2rq:PropertyBridge;
+#	d2rq:belongsToClassMap map:Chemical;
+#	d2rq:property dikbD2R:id;
+#	d2rq:propertyDefinitionLabel "Chemical id";
+#	d2rq:column "Chemical.id";
+#	d2rq:datatype xsd:int;
+#	.
+map:Chemical__name a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Chemical;
+	d2rq:property dikbD2R:name;
+#	d2rq:propertyDefinitionLabel "Chemical name";
+	d2rq:column "Chemical._name";
+	.
+map:Chemical_chemical a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Chemical;
+	d2rq:property dikbD2R:chemical;
+	d2rq:propertyDefinitionLabel "chemical";
+	d2rq:column "Chemical.chemical";
+	d2rq:datatype xsd:boolean;
+	d2rq:propertyDefinitionComment "Is this entity a chemical?"
+	.
+
+map:Chemical_primary_total_clearance_mechanism a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Chemical;
+	d2rq:property dikbD2R:primary_total_clearance_mechanism;
+#	d2rq:propertyDefinitionLabel "Chemical primary_total_clearance_mechanism";
+	d2rq:join "Chemical.primary_total_clearance_mechanism = ESlot.d_slot_id";
+	d2rq:column "ESlot.value_string";
+	.
+
+map:ChemicalPrimary_total_clearance_mechanismTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Chemical;
+	d2rq:join "Chemical.primary_total_clearance_mechanism = ESlot.d_slot_id";
+	d2rq:join "Chemical.primary_total_clearance_mechanism = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_primary_total_clearance_mechanism_@@ESlot.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_primary_total_clearance_mechanism";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Evidence_slot_map.assert_id@@";
+	.
+
+
+map:Chemical_primary_metabolic_clearance_enzyme a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Chemical;
+	d2rq:property dikbD2R:primary_metabolic_clearance_enzyme;
+#	d2rq:propertyDefinitionLabel "primary metabolic clearance enzyme";
+	d2rq:join "Chemical.primary_metabolic_clearance_enzyme = ESlot.d_slot_id";
+	d2rq:column "ESlot.value_string";
+	.
+
+map:ChemicalPrimary_metabolic_clearance_enzymeTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Chemical;
+	d2rq:join "Chemical.primary_metabolic_clearance_enzyme = ESlot.d_slot_id";
+	d2rq:join "Chemical.primary_metabolic_clearance_enzyme = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_primary_metabolic_clearance_enzyme_@@ESlot.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_primary_metabolic_clearance_enzyme";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Evidence_slot_map.assert_id@@";
+	.
+
+
+map:Chemical_primary_total_clearance_enzyme a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Chemical;
+	d2rq:property dikbD2R:primary_total_clearance_enzyme;
+#	d2rq:propertyDefinitionLabel "primary total clearance enzyme";
+	d2rq:join "Chemical.primary_total_clearance_enzyme = ESlot.d_slot_id";
+	d2rq:uriColumn "ESlot.value_string";
+	d2rq:translateWith map:EnzymeTable;
+	.
+
+map:ChemicalPrimary_total_clearance_enzymeTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Chemical;
+	d2rq:join "Chemical.primary_total_clearance_enzyme = ESlot.d_slot_id";
+	d2rq:join "Chemical.primary_total_clearance_enzyme = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_primary_total_clearance_enzyme_@@ESlot.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_primary_total_clearance_enzyme";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Evidence_slot_map.assert_id@@";
+	.
+
+map:Chemical_in_vitro_probe_substrate_of_enzyme a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Chemical;
+	d2rq:property dikbD2R:in_vitro_probe_substrate_of_enzyme;
+#	d2rq:propertyDefinitionLabel "Chemical in_vitro_probe_substrate_of_enzyme";
+	d2rq:join "Chemical.in_vitro_probe_substrate_of_enzyme = ESlot.d_slot_id";
+	d2rq:uriColumn "ESlot.value_string";
+	d2rq:translateWith map:EnzymeTable;
+	.
+
+map:ChemicalIn_Vitro_Probe_Substrate_Of_EnzymeTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Chemical;
+	d2rq:join "Chemical.in_vitro_probe_substrate_of_enzyme = ESlot.d_slot_id";
+	d2rq:join "Chemical.in_vitro_probe_substrate_of_enzyme = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_in_vitro_probe_substrate_of_enzyme_@@ESlot.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_in_vitro_probe_substrate_of_enzyme";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Evidence_slot_map.assert_id@@";
+	.
+
+map:Chemical_in_viVo_probe_substrate_of_enzyme a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Chemical;
+	d2rq:property dikbD2R:in_viVo_probe_substrate_of_enzyme;
+#	d2rq:propertyDefinitionLabel "Chemical in_viVo_probe_substrate_of_enzyme";
+	d2rq:join "Chemical.in_viVo_probe_substrate_of_enzyme = ESlot.d_slot_id";
+	d2rq:uriColumn "ESlot.value_string";
+	d2rq:translateWith map:EnzymeTable;
+	.
+
+map:ChemicalIn_ViVo_Probe_Substrate_Of_EnzymeTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Chemical;
+	d2rq:join "Chemical.in_viVo_probe_substrate_of_enzyme = ESlot.d_slot_id";
+	d2rq:join "Chemical.in_viVo_probe_substrate_of_enzyme = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_in_viVo_probe_substrate_of_enzyme_@@ESlot.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_in_viVo_probe_substrate_of_enzyme";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Evidence_slot_map.assert_id@@";
+	.
+
+map:Chemical_in_vitro_selective_inhibitor_of_enzyme a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Chemical;
+	d2rq:property dikbD2R:in_vitro_selective_inhibitor_of_enzyme;
+#	d2rq:propertyDefinitionLabel "Chemical in_vitro_selective_inhibitor_of_enzyme";
+	d2rq:join "Chemical.in_vitro_selective_inhibitor_of_enzyme = ESlot.d_slot_id";
+	d2rq:column "ESlot.value_string";
+	.
+
+map:ChemicalIn_Vitro_Selective_Inhibitor_Of_EnzymeTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Chemical;
+	d2rq:join "Chemical.in_vitro_selective_inhibitor_of_enzyme = ESlot.d_slot_id";
+	d2rq:join "Chemical.in_vitro_selective_inhibitor_of_enzyme = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_in_vitro_selective_inhibitor_of_enzyme_@@ESlot.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_in_vitro_selective_inhibitor_of_enzyme";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Evidence_slot_map.assert_id@@";
+	.
+
+map:Chemical_in_viVo_selective_inhibitor_of_enzyme a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Chemical;
+	d2rq:property dikbD2R:in_viVo_selective_inhibitor_of_enzyme;
+#	d2rq:propertyDefinitionLabel "Chemical in_viVo_selective_inhibitor_of_enzyme";
+	d2rq:join "Chemical.in_viVo_selective_inhibitor_of_enzyme = ESlot.d_slot_id";
+	d2rq:column "ESlot.value_string";
+	.
+
+map:ChemicalIn_ViVo_Selective_Inhibitor_Of_EnzymeTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Chemical;
+	d2rq:join "Chemical.in_viVo_selective_inhibitor_of_enzyme = ESlot.d_slot_id";
+	d2rq:join "Chemical.in_viVo_selective_inhibitor_of_enzyme = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_in_viVo_selective_inhibitor_of_enzyme_@@ESlot.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_in_viVo_selective_inhibitor_of_enzyme";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Evidence_slot_map.assert_id@@";
+	.
+
+map:Chemical_pceut_entity_of_concern a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Chemical;
+	d2rq:property dikbD2R:pceut_entity_of_concern;
+#	d2rq:propertyDefinitionLabel "Chemical pceut_entity_of_concern";
+	d2rq:join "Chemical.pceut_entity_of_concern = ESlot.d_slot_id";
+	d2rq:column "ESlot.value_string";
+	.
+
+map:ChemicalPceut_Entity_Of_ConcernTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Chemical;
+	d2rq:join "Chemical.pceut_entity_of_concern = ESlot.d_slot_id";
+	d2rq:join "Chemical.pceut_entity_of_concern = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_pceut_entity_of_concern_@@ESlot.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_pceut_entity_of_concern";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Evidence_slot_map.assert_id@@";
+	.
+
+
+map:Chemical_maximum_concentration a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Chemical;
+	d2rq:property dikbD2R:maximum_concentration;
+	d2rq:join "Chemical.maximum_concentration = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:column "Value.value_string";
+	.
+
+map:ChemicalMaximum_ConcentrationTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Chemical;
+	d2rq:join "Chemical.maximum_concentration = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_maximum_concentration_@@Value.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_maximum_concentration";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Value.value_numeric@@";
+	.
+
+
+# map:Chemical_minimum_therapeutic_dose a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:Chemical;
+# 	d2rq:property dikbD2R:minimum_therapeutic_dose;
+# 	d2rq:join "Chemical.minimum_therapeutic_dose = EMultiSlot.d_slot_id";
+# 	d2rq:join "EMultiSlot.value_id = Value.value_id";
+# 	d2rq:column "Value.value_string";
+# 	.
+
+# map:ChemicalMinimum_therapeutic_doseTypeBridge a d2rq:PropertyBridge;
+#         d2rq:belongsToClassMap map:Chemical;
+# 	d2rq:join "Chemical.minimum_therapeutic_dose = EMultiSlot.d_slot_id";
+# 	d2rq:join "EMultiSlot.value_id = Value.value_id";
+# 	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_minimum_therapeutic_dose_@@Value.value_string@@"; 
+# 	d2rq:propertyDefinitionLabel "claim_for_minimum_therapeutic_dose";
+# 	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+# 	d2rq:uriPattern "Assertions/@@Value.value_numeric@@";
+# 	.
+
+
+# map:Chemical_maximum_therapeutic_dose a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:Chemical;
+# 	d2rq:property dikbD2R:maximum_therapeutic_dose;
+# 	d2rq:join "Chemical.maximum_therapeutic_dose = EMultiSlot.d_slot_id";
+# 	d2rq:join "EMultiSlot.value_id = Value.value_id";
+# 	d2rq:column "Value.value_string";
+# 	.
+
+# map:ChemicalMaximum_therapeutic_doseTypeBridge a d2rq:PropertyBridge;
+#         d2rq:belongsToClassMap map:Chemical;
+# 	d2rq:join "Chemical.maximum_therapeutic_dose = EMultiSlot.d_slot_id";
+# 	d2rq:join "EMultiSlot.value_id = Value.value_id";
+# 	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_maximum_therapeutic_dose_@@Value.value_string@@"; 
+# 	d2rq:propertyDefinitionLabel "claim_for_maximum_therapeutic_dose";
+# 	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+# 	d2rq:uriPattern "Assertions/@@Value.value_numeric@@";
+# 	.
+
+map:Chemical_assumed_effective_dose a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Chemical;
+	d2rq:property dikbD2R:assumed_effective_dose;
+	d2rq:join "Chemical.assumed_effective_dose = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:column "Value.value_string";
+	.
+
+map:ChemicalAssumed_effective_doseTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Chemical;
+	d2rq:join "Chemical.assumed_effective_dose = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_assumed_effective_dose_@@Value.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_assumed_effective_dose";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Value.value_numeric@@";
+	.
+
+map:Chemical_substrate_of a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Chemical;
+	d2rq:property dikbD2R:substrate_of;
+	d2rq:join "Chemical.substrate_of = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:uriColumn "Value.value_string";
+	d2rq:translateWith map:EnzymeTable;
+	.
+
+map:ChemicalSubstrate_ofTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Chemical;
+	d2rq:join "Chemical.substrate_of = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_substrate_of_@@Assertions.value@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_substrate_of";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Assertions.id@@";
+	.
+
+
+map:Chemical_is_not_substrate_of a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Chemical;
+	d2rq:property dikbD2R:is_not_substrate_of;
+	d2rq:join "Chemical.is_not_substrate_of = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:uriColumn "Value.value_string";
+	d2rq:translateWith map:EnzymeTable;
+	.
+
+map:ChemicalIs_not_substrate_ofTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Chemical;
+	d2rq:join "Chemical.is_not_substrate_of = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_is_not_substrate_of_@@Assertions.value@@"; #Could not get dikbD2R to show up on the property
+	d2rq:propertyDefinitionLabel "claim_for_is_not_substrate_of";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Assertions.id@@";
+	.
+
+
+map:Chemical_inhibits a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Chemical;
+	d2rq:property dikbD2R:inhibits;
+	d2rq:join "Chemical.inhibits = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:uriColumn "Value.value_string";
+	d2rq:translateWith map:EnzymeTable;
+	.
+
+map:ChemicalInhibitsTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Chemical;
+	d2rq:join "Chemical.inhibits = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_inhibits_@@Assertions.value@@"; #Could not get dikbD2R to show up on the property
+	d2rq:propertyDefinitionLabel "claim_for_inhibits";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Assertions.id@@";
+	.
+
+
+map:Chemical_does_not_inhibit a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Chemical;
+	d2rq:property dikbD2R:does_not_inhibit;
+	d2rq:join "Chemical.does_not_inhibit = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:uriColumn "Value.value_string";
+	d2rq:translateWith map:EnzymeTable;
+	.
+
+map:ChemicalDoes_Not_InhibitTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Chemical;
+	d2rq:join "Chemical.does_not_inhibit = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_does_not_inhibit_@@Assertions.value@@"; #Could not get dikbD2R to show up on the property
+	d2rq:propertyDefinitionLabel "claim_for_does_not_inhibit";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Assertions.id@@";
+	.
+
+map:Chemical_has_metabolite a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Chemical;
+	d2rq:property dikbD2R:has_metabolite;
+	d2rq:join "Chemical.has_metabolite = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:column "Value.value_string";
+	.
+
+map:ChemicalHas_MetaboliteTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Chemical;
+	d2rq:join "Chemical.has_metabolite = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_has_metabolite_@@Assertions.value@@"; #Could not get dikbD2R to show up on the property
+	d2rq:propertyDefinitionLabel "claim_for_has_metabolite";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Assertions.id@@";
+	.
+
+map:Chemical_permanently_deactivates_catalytic_function a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Chemical;
+	d2rq:property dikbD2R:permanently_deactivates_catalytic_function;
+	d2rq:join "Chemical.permanently_deactivates_catalytic_function = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:column "Value.value_string";
+	.
+
+map:ChemicalPermanently_Deactivates_Catalytic_FunctionTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Chemical;
+	d2rq:join "Chemical.permanently_deactivates_catalytic_function = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_permanently_deactivates_catalytic_function_@@Assertions.value@@"; #Could not get dikbD2R to show up on the property
+	d2rq:propertyDefinitionLabel "claim_for_permanently_deactivates_catalytic_function";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Assertions.id@@";
+	.
+
+
+map:Chemical_does_not_permanently_deactivate_catalytic_function a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Chemical;
+	d2rq:property dikbD2R:does_not_permanently_deactivate_catalytic_function;
+	d2rq:join "Chemical.does_not_permanently_deactivate_catalytic_function = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:column "Value.value_string";
+	.
+
+map:ChemicalDoes_Not_Permanently_Deactivate_Catalytic_FunctionTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Chemical;
+	d2rq:join "Chemical.does_not_permanently_deactivate_catalytic_function = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_does_not_permanently_deactivate_catalytic_function_@@Assertions.value@@"; #Could not get dikbD2R to show up on the property
+	d2rq:propertyDefinitionLabel "claim_for_does_not_permanently_deactivate_catalytic_function";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Assertions.id@@";
+	.
+
+map:Chemical_inhibition_constant a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Chemical;
+	d2rq:property dikbD2R:inhibition_constant;
+	d2rq:join "Chemical.inhibition_constant = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:column "Value.value_string";
+	.
+
+map:ChemicalInhibition_constantTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Chemical;
+	d2rq:join "Chemical.inhibition_constant = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_inhibition_constant_@@Value.value_string@@"; 
+	d2rq:propertyDefinitionLabel "claim_for_inhibition_constant";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Value.value_numeric@@";
+	.
+
+map:Chemical_induces a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Chemical;
+	d2rq:property dikbD2R:induces;
+	d2rq:join "Chemical.induces = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:column "Value.value_string";
+	.
+
+map:ChemicalInducesTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Chemical;
+	d2rq:join "Chemical.induces = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_induces_@@Assertions.value@@"; #Could not get dikbD2R to show up on the property
+	d2rq:propertyDefinitionLabel "claim_for_induces";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Assertions.id@@";
+	.
+
+map:Chemical_increases_auc a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Chemical;
+	d2rq:property dikbD2R:increases_auc;
+	d2rq:join "Chemical.increases_auc = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:uriPattern "Drugs/@@Value.value_string@@";  # NOTE: does note cover cases where the object is a metabolite
+	.
+
+
+map:ChemicalIncreases_AucTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Chemical;
+	d2rq:join "Chemical.increases_auc = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_increases_auc_@@Assertions.value@@"; #Could not get dikbD2R to show up on the property
+	d2rq:propertyDefinitionLabel "claim_for_increases_auc";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Assertions.id@@";
+	.
+
+map:Chemical_sole_PK_effect_alter_metabolic_clearance a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Chemical;
+	d2rq:property dikbD2R:sole_PK_effect_alter_metabolic_clearance;
+	d2rq:join "Chemical.sole_PK_effect_alter_metabolic_clearance = EMultiSlot.d_slot_id";
+	d2rq:join "EMultiSlot.value_id = Value.value_id";
+	d2rq:column "Value.value_string";
+	.
+
+map:ChemicalSole_PK_Effect_Alter_Metabolic_ClearanceTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Chemical;
+	d2rq:join "Chemical.sole_PK_effect_alter_metabolic_clearance = Evidence_slot_map.d_slot_id";
+	d2rq:join "Evidence_slot_map.assert_id = Assertions.id";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_for_sole_PK_effect_alter_metabolic_clearance_@@Assertions.value@@"; #Could not get dikbD2R to show up on the property
+	d2rq:propertyDefinitionLabel "claim_for_sole_PK_effect_alter_metabolic_clearance";
+	d2rq:propertyDefinitionComment "An Assertion instance that was found to meet belief criteria for this slot";
+	d2rq:uriPattern "Assertions/@@Assertions.id@@";
+	.
+
+
+# Table EMultiSlot
+# map:EMultiSlot a d2rq:ClassMap;
+# 	d2rq:dataStorage map:database;
+# 	d2rq:uriPattern "EMultiSlot/@@EMultiSlot.id@@";
+# 	d2rq:class dikbD2R:EMultiSlot;
+# 	d2rq:classDefinitionLabel "EMultiSlot";
+# 	.
+# map:EMultiSlot__label a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:EMultiSlot;
+# 	d2rq:property rdfs:label;
+# 	d2rq:pattern "EMultiSlot #@@EMultiSlot.id@@";
+# 	.
+# map:EMultiSlot_id a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:EMultiSlot;
+# 	d2rq:property dikbD2R:EMultiSlot_id;
+# 	d2rq:propertyDefinitionLabel "EMultiSlot id";
+# 	d2rq:column "EMultiSlot.id";
+# 	d2rq:datatype xsd:int;
+# 	.
+# map:EMultiSlot_range_id a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:EMultiSlot;
+# 	d2rq:property dikbD2R:EMultiSlot_range_id;
+# 	d2rq:propertyDefinitionLabel "EMultiSlot range_id";
+# 	d2rq:column "EMultiSlot.range_id";
+# 	d2rq:datatype xsd:int;
+# 	.
+# map:EMultiSlot_type a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:EMultiSlot;
+# 	d2rq:property dikbD2R:EMultiSlot_type;
+# 	d2rq:propertyDefinitionLabel "EMultiSlot type";
+# 	d2rq:column "EMultiSlot.type";
+# 	.
+# map:EMultiSlot_value_id a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:EMultiSlot;
+# 	d2rq:property dikbD2R:EMultiSlot_value_id;
+# 	d2rq:propertyDefinitionLabel "EMultiSlot value_id";
+# 	d2rq:column "EMultiSlot.value_id";
+# 	d2rq:datatype xsd:int;
+# 	.
+# map:EMultiSlot_d_slot_id a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:EMultiSlot;
+# 	d2rq:property dikbD2R:EMultiSlot_d_slot_id;
+# 	d2rq:propertyDefinitionLabel "EMultiSlot d_slot_id";
+# 	d2rq:column "EMultiSlot.d_slot_id";
+# 	d2rq:datatype xsd:int;
+# 	.
+
+# Table ESlot
+# map:ESlot a d2rq:ClassMap;
+#     d2rq:dataStorage map:database;
+#     d2rq:uriPattern "ESlot/@@ESlot.id@@";
+#     d2rq:class dikbD2R:ESlot;
+#     d2rq:classDefinitionLabel "ESlot";
+     
+# map:ProBridge a d2rq:PropertyBridge;
+#     d2rq:belongsToClassMap map:ESlot;
+#     d2rq:property owl:sameAs;
+#     d2rq:uriColumn "Drugs._name";
+#     d2rq:translateWith map:DrugBank;
+#     .
+
+# 	.
+# map:ESlot__label a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:ESlot;
+# 	d2rq:property rdfs:label;
+# 	d2rq:pattern "ESlot #@@ESlot.id@@";
+# 	.
+# map:ESlot_id a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:ESlot;
+# 	d2rq:property dikbD2R:ESlot_id;
+# 	d2rq:propertyDefinitionLabel "ESlot id";
+# 	d2rq:column "ESlot.id";
+# 	d2rq:datatype xsd:int;
+# 	.
+# map:ESlot_range_id a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:ESlot;
+# 	d2rq:property dikbD2R:ESlot_range_id;
+# 	d2rq:propertyDefinitionLabel "ESlot range_id";
+# 	d2rq:column "ESlot.range_id";
+# 	d2rq:datatype xsd:int;
+# 	.
+# map:ESlot_type a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:ESlot;
+# 	d2rq:property dikbD2R:ESlot_type;
+# 	d2rq:propertyDefinitionLabel "ESlot type";
+# 	d2rq:column "ESlot.type";
+# 	.
+# map:ESlot_d_slot_id a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:ESlot;
+# 	d2rq:property dikbD2R:ESlot_d_slot_id;
+# 	d2rq:propertyDefinitionLabel "ESlot d_slot_id";
+# 	d2rq:column "ESlot.d_slot_id";
+# 	d2rq:datatype xsd:int;
+# 	.
+# map:ESlot_value_string a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:ESlot;
+# 	d2rq:property dikbD2R:ESlot_value_string;
+# 	d2rq:propertyDefinitionLabel "ESlot value_string";
+# 	d2rq:column "ESlot.value_string";
+# 	.
+# map:ESlot_value_numeric a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:ESlot;
+# 	d2rq:property dikbD2R:ESlot_value_numeric;
+# 	d2rq:propertyDefinitionLabel "ESlot value_numeric";
+# 	d2rq:column "ESlot.value_numeric";
+# 	d2rq:datatype xsd:float;
+# 	.
+# map:ESlot_value_boolean a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:ESlot;
+# 	d2rq:property dikbD2R:ESlot_value_boolean;
+# 	d2rq:propertyDefinitionLabel "ESlot value_boolean";
+# 	d2rq:column "ESlot.value_boolean";
+# 	d2rq:datatype xsd:boolean;
+# 	.
+
+# Table Evidence
+map:Evidence a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "Evidence/@@Evidence.id@@";
+	d2rq:class ncbit:Evidence;
+	d2rq:classDefinitionLabel "Evidence";
+	.
+
+map:EvidenceRdfTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Evidence;
+	d2rq:property rdf:type;
+	d2rq:constantValue siocns:Item;
+	.
+
+map:Evidence__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Evidence;
+	d2rq:property rdfs:label;
+	d2rq:column "Evidence._name";
+	.
+# map:Evidence_id a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:Evidence;
+# 	d2rq:property dikbD2R:Evidence_id;
+# 	d2rq:propertyDefinitionLabel "Evidence id";
+# 	d2rq:column "Evidence.id";
+# 	d2rq:datatype xsd:int;
+# 	.
+# map:Evidence__name a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:Evidence;
+# 	d2rq:property dikbD2R:Evidence__name;
+# 	d2rq:propertyDefinitionLabel "Evidence _name";
+# 	d2rq:column "Evidence._name";
+# 	.
+
+map:Evidence_doc_pointer a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Evidence;
+	#d2rq:property dikbD2R:doc_pointer;
+	d2rq:property rdfs:seeAlso;
+	#d2rq:propertyDefinitionLabel "doc_pointer";
+	d2rq:uriColumn "Evidence.doc_pointer";
+	.
+
+# map:EvidenceDocPointerEquivalance a d2rq:AdditionalProperty;
+#         d2rq:belongsToClassMap map:Evidence;
+# 	d2rq:propertyName owl:equivalentProperty;
+# 	d2rq:constantValue <>;
+# 	d2rq:propertyValue swanpav:importedWithId;
+# 	.
+
+
+map:quote a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Evidence;
+	d2rq:property siocns:content;
+	d2rq:propertyDefinitionLabel "quote";
+	d2rq:column "Evidence.quote";
+	d2rq:additionalPropertyDefinitionProperty map:EvidenceQuoteEquivalance;
+	.
+
+map:EvidenceQuoteEquivalance a d2rq:AdditionalProperty;
+        d2rq:belongsToClassMap map:Evidence;
+	d2rq:propertyName owl:equivalentProperty;
+	d2rq:constantValue <>;
+	d2rq:propertyValue swanco:quote;
+	.
+
+map:Evidence_reviewer a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Evidence;
+	d2rq:property dc:creator;
+	d2rq:propertyDefinitionLabel "Evidence reviewer";
+	d2rq:column "Evidence.reviewer";
+	d2rq:additionalPropertyDefinitionProperty map:EvidenceCuratedByEquivalance;
+	.
+
+map:EvidenceCuratedByEquivalance a d2rq:AdditionalProperty;
+        d2rq:belongsToClassMap map:Evidence;
+	d2rq:propertyName owl:equivalentProperty;
+	d2rq:constantValue <>;
+	d2rq:propertyValue swanpav:curatedBy;
+	.
+
+map:Evidence_timestamp a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Evidence;
+#	d2rq:property dikbD2R:Evidence_timestamp;
+	d2rq:property dc:date;
+	d2rq:propertyDefinitionLabel "Evidence timestamp";
+	d2rq:column "Evidence.timestamp";
+	d2rq:additionalPropertyDefinitionProperty map:EvidenceCreatedOnEquivalance;
+	.
+
+map:EvidenceCreatedOnEquivalance a d2rq:AdditionalProperty;
+        d2rq:belongsToClassMap map:Evidence;
+	d2rq:propertyName owl:equivalentProperty;
+	d2rq:constantValue <>;
+	d2rq:propertyValue swanpav:createdOn;
+	.
+
+map:Evidence_evidence_type a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Evidence;
+	d2rq:property dikbEvidence:Evidence_type;
+	d2rq:propertyDefinitionLabel "Evidence evidence_type";
+	#d2rq:column "Evidence.evidence_type";
+	d2rq:uriSqlExpression "CONCAT('http://dbmi-icode-01.dbmi.pitt.edu/dikb-evidence/DIKB_evidence_ontology_v1.3.owl#', Evidence.evidence_type)";
+	.
+#map:Evidence_evidence_class a d2rq:PropertyBridge;
+#	d2rq:belongsToClassMap map:Evidence;
+#	d2rq:property dikbD2R:Evidence_evidence_class;
+#	d2rq:propertyDefinitionLabel "Evidence evidence_class";
+#	d2rq:column "Evidence.evidence_class";
+#	.
+map:Evidence_value a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Evidence;
+	d2rq:property dikbD2R:Evidence_value;
+	d2rq:propertyDefinitionLabel "Evidence value";
+	d2rq:propertyDefinitionComment "The 'value' of an DIKB evidence entity in units specific to the evidence type: In vitro inhibition studies: g/L; concentration (maximum or minimum): g/L; : fraction absorbed: proportion between 0.0 and 1.0; bioavailability: proportion between 0.0 and 1.0; pharmacokinetic clinical trials: AUC_i/AUC; ";
+	d2rq:column "Evidence.value";
+	d2rq:datatype xsd:float;
+	.
+map:Evidence_object_dose a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Evidence;
+	d2rq:property dikbD2R:Evidence_object_dose;
+	d2rq:propertyDefinitionLabel "Evidence object_dose";
+	d2rq:column "Evidence.object_dose";
+	d2rq:datatype xsd:float;
+	.
+map:Evidence_precip_dose a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Evidence;
+	d2rq:property dikbD2R:Evidence_precip_dose;
+	d2rq:propertyDefinitionLabel "Evidence precip_dose";
+	d2rq:column "Evidence.precip_dose";
+	d2rq:datatype xsd:float;
+	.
+map:Evidence_numb_subjects a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Evidence;
+	d2rq:property dikbD2R:Evidence_numb_subjects;
+	d2rq:propertyDefinitionLabel "Evidence numb_subjects";
+	d2rq:column "Evidence.numb_subjects";
+	d2rq:datatype xsd:int;
+	.
+map:Evidence_enzyme_system a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Evidence;
+	d2rq:property dikbD2R:Evidence_enzyme_system;
+	d2rq:propertyDefinitionLabel "Evidence enzyme_system";
+	d2rq:column "Evidence.enzyme_system";
+	.
+map:Evidence_dose a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Evidence;
+	d2rq:property dikbD2R:Evidence_dose;
+	d2rq:propertyDefinitionLabel "Evidence dose";
+	d2rq:column "Evidence.dose";
+	d2rq:datatype xsd:float;
+	.
+
+map:Evidence_assump_list_id a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Evidence;
+	d2rq:property dikbD2R:Evidence_assump_list_id;
+	d2rq:propertyDefinitionLabel "Evidence assump_list_id";
+	d2rq:column "Evidence.assump_list_id";
+	d2rq:datatype xsd:int;
+	.
+
+map:ChemicalEvidence_AssumptionsTypeBridge a d2rq:PropertyBridge;
+        d2rq:belongsToClassMap map:Evidence;
+	d2rq:join "Evidence.assump_list_id = Assumption_map.assump_list_id";
+	d2rq:join "Assumption_map.assump_assert_name = Assertions._name";
+	d2rq:dynamicProperty "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/claim_assumed_valid_for_evidence_application_@@Evidence._name@@"; #Could not get dikbD2R to show up on the property
+	d2rq:propertyDefinitionLabel "claim_assumed_valid_for_evidence_application";
+	d2rq:propertyDefinitionComment "An Assertion instance that must meet belief criteria for this evidence item be applicable as support or rebuttal for another claim";
+	d2rq:uriPattern "Assertions/@@Assertions.id@@";
+	.
+
+
+# Table Evidence_map
+# map:Evidence_map a d2rq:ClassMap;
+# 	d2rq:dataStorage map:database;
+# 	d2rq:uriPattern "Evidence_map/@@Evidence_map.id@@";
+# 	d2rq:class dikbD2R:Evidence_map;
+# 	d2rq:classDefinitionLabel "Evidence_map";
+# 	.
+# map:Evidence_map__label a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:Evidence_map;
+# 	d2rq:property rdfs:label;
+# 	d2rq:pattern "Evidence_map #@@Evidence_map.id@@";
+# 	.
+# map:Evidence_map_id a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:Evidence_map;
+# 	d2rq:property dikbD2R:Evidence_map_id;
+# 	d2rq:propertyDefinitionLabel "Evidence_map id";
+# 	d2rq:column "Evidence_map.id";
+# 	d2rq:datatype xsd:int;
+# 	.
+# map:Evidence_map_assert_ev_id a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:Evidence_map;
+# 	d2rq:property dikbD2R:Evidence_map_assert_ev_id;
+# 	d2rq:propertyDefinitionLabel "Evidence_map assert_ev_id";
+# 	d2rq:column "Evidence_map.assert_ev_id";
+# 	d2rq:datatype xsd:int;
+# 	.
+# map:Evidence_map_assert_id a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:Evidence_map;
+# 	d2rq:property dikbD2R:Evidence_map_assert_id;
+# 	d2rq:propertyDefinitionLabel "Evidence_map assert_id";
+# 	d2rq:column "Evidence_map.assert_id";
+# 	d2rq:datatype xsd:int;
+# 	.
+
+# Table Evidence_slot_map
+# map:Evidence_slot_map a d2rq:ClassMap;
+# 	d2rq:dataStorage map:database;
+# 	d2rq:uriPattern "Evidence_slot_map/@@Evidence_slot_map.id@@";
+# 	d2rq:class dikbD2R:Evidence_slot_map;
+# 	d2rq:classDefinitionLabel "Evidence_slot_map";
+# 	.
+# map:Evidence_slot_map__label a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:Evidence_slot_map;
+# 	d2rq:property rdfs:label;
+# 	d2rq:pattern "Evidence_slot_map #@@Evidence_slot_map.id@@";
+# 	.
+# map:Evidence_slot_map_id a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:Evidence_slot_map;
+# 	d2rq:property dikbD2R:Evidence_slot_map_id;
+# 	d2rq:propertyDefinitionLabel "Evidence_slot_map id";
+# 	d2rq:column "Evidence_slot_map.id";
+# 	d2rq:datatype xsd:int;
+# 	.
+# map:Evidence_slot_map_assert_id a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:Evidence_slot_map;
+# 	d2rq:property dikbD2R:Evidence_slot_map_assert_id;
+# 	d2rq:propertyDefinitionLabel "Evidence_slot_map assert_id";
+# 	d2rq:column "Evidence_slot_map.assert_id";
+# 	d2rq:datatype xsd:int;
+# 	.
+# map:Evidence_slot_map_d_slot_id a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:Evidence_slot_map;
+# 	d2rq:property dikbD2R:Evidence_slot_map_d_slot_id;
+# 	d2rq:propertyDefinitionLabel "Evidence_slot_map d_slot_id";
+# 	d2rq:column "Evidence_slot_map.d_slot_id";
+# 	d2rq:datatype xsd:int;
+# 	.
+
+
+# Table Value
+# map:Value a d2rq:ClassMap;
+# 	d2rq:dataStorage map:database;
+# 	d2rq:uriPattern "Value/@@Value.id@@";
+# 	d2rq:class dikbD2R:Value;
+# 	d2rq:classDefinitionLabel "Value";
+# 	.
+# map:Value__label a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:Value;
+# 	d2rq:property rdfs:label;
+# 	d2rq:pattern "Value #@@Value.id@@";
+# 	.
+# map:Value_id a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:Value;
+# 	d2rq:property dikbD2R:Value_id;
+# 	d2rq:propertyDefinitionLabel "Value id";
+# 	d2rq:column "Value.id";
+# 	d2rq:datatype xsd:int;
+# 	.
+# map:Value_value_id a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:Value;
+# 	d2rq:property dikbD2R:Value_value_id;
+# 	d2rq:propertyDefinitionLabel "Value value_id";
+# 	d2rq:column "Value.value_id";
+# 	d2rq:datatype xsd:int;
+# 	.
+# map:Value_value_string a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:Value;
+# 	d2rq:property dikbD2R:Value_value_string;
+# 	d2rq:propertyDefinitionLabel "Value value_string";
+# 	d2rq:column "Value.value_string";
+# 	.
+# map:Value_value_numeric a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:Value;
+# 	d2rq:property dikbD2R:Value_value_numeric;
+# 	d2rq:propertyDefinitionLabel "Value value_numeric";
+# 	d2rq:column "Value.value_numeric";
+# 	d2rq:datatype xsd:int;
+# 	.
+# map:Value_value_boolean a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:Value;
+# 	d2rq:property dikbD2R:Value_value_boolean;
+# 	d2rq:propertyDefinitionLabel "Value value_boolean";
+# 	d2rq:column "Value.value_boolean";
+# 	d2rq:datatype xsd:boolean;
+# 	.
+
+
+
+# Table Assertions
+map:Assertions a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "Assertions/@@Assertions.id@@";
+	d2rq:class swande:ResearchStatement;
+	d2rq:classDefinitionLabel "Assertions";
+	# this data has to remain private because it came from the Lexicomp Geriatric Dosage Handbook 
+	d2rq:condition "Assertions.slot != 'minimum_therapeutic_dose' && Assertions.slot != 'maximum_therapeutic_dose' ";
+	.
+
+map:Assertions__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Assertions;
+	d2rq:property rdfs:label;
+	d2rq:column "Assertions._name";
+	.
+
+# map:Assertions_id a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:Assertions;
+# 	d2rq:property dikbD2R:Assertions_id;
+# 	d2rq:propertyDefinitionLabel "Assertions id";
+# 	d2rq:column "Assertions.id";
+# 	d2rq:datatype xsd:int;
+# 	.
+
+# map:Assertions__name a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:Assertions;
+# 	d2rq:property dikbD2R:Assertions__name;
+# 	d2rq:propertyDefinitionLabel "Assertions _name";
+# 	d2rq:column "Assertions._name";
+# 	d2rq:additionalPropertyDefinitionProperty map:AssertionsNameEquivalence;
+# 	.
+
+map:AssertionsNameEquivalence a d2rq:AdditionalProperty;
+        d2rq:belongsToClassMap map:Assertions;
+        d2rq:propertyName owl:equivalentProperty;
+	d2rq:constantValue <http://purl.org/swan/1.2/discourse-elements#title>;
+        d2rq:propertyValue swande:title;
+	.
+
+
+map:Assertions_object a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Assertions;
+	d2rq:property dikbD2R:object;
+	d2rq:uriColumn "Assertions.object";
+	d2rq:propertyDefinitionLabel "Assertion object";
+	d2rq:propertyDefinitionComment "In the DIKB, the Assertion 'object' property indicates the subject of the hypothesis or assertion being represented.";
+	d2rq:translateWith map:DrugMoleculeAndEnzymeTable;
+	.
+map:Assertions_slot a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Assertions;
+	d2rq:property dikbD2R:slot;
+	d2rq:propertyDefinitionLabel "Assertions slot";
+	d2rq:propertyDefinitionComment "In the DIKB, the Assertion 'slot' property indicates the predicate (relationship) between the subject (aka object in DIKB terms) and the value of the hypothesis or assertion being represented.";
+	d2rq:uriColumn "Assertions.slot";
+	d2rq:translateWith map:AssertionsSlotValueTable;
+	.
+map:Assertions_value a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Assertions;
+	d2rq:property dikbD2R:value;
+	#d2rq:property rdf:object;
+	d2rq:propertyDefinitionLabel "Assertions value";
+	d2rq:propertyDefinitionComment "In the DIKB, the Assertion 'value' property indicates the entity or quantity being assigned to a subject (aka object in DIKB terms) for the hypothesis or assertion being represented.";
+	d2rq:uriColumn "Assertions.value";
+	d2rq:translateWith map:DrugMoleculeAndEnzymeTable;
+	.
+# map:Assertions_ready_for_classification a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:Assertions;
+# 	d2rq:property dikbD2R:Assertions_ready_for_classification;
+# 	d2rq:propertyDefinitionLabel "Assertions ready_for_classification";
+# 	d2rq:column "Assertions.ready_for_classification";
+# 	.
+# map:Assertions_assert_by_default a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:Assertions;
+# 	d2rq:property dikbD2R:Assertions_assert_by_default;
+# 	d2rq:propertyDefinitionLabel "Assertions assert_by_default";
+# 	d2rq:column "Assertions.assert_by_default";
+# 	.
+# map:Assertions_evidence_rating a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:Assertions;
+# 	d2rq:property dikbD2R:Assertions_evidence_rating;
+# 	d2rq:propertyDefinitionLabel "Assertions evidence_rating";
+# 	d2rq:column "Assertions.evidence_rating";
+# 	.
+map:Assertions_cont_val a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Assertions;
+	d2rq:property dikbD2R:Assertions_cont_val;
+	d2rq:propertyDefinitionLabel "Assertions cont_val";
+	d2rq:column "Assertions.cont_val";
+	.
+map:Assertions_numeric_val a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Assertions;
+	d2rq:property dikbD2R:Assertions_numeric_val;
+	d2rq:propertyDefinitionLabel "Assertions numeric_val";
+	d2rq:column "Assertions.numeric_val";
+	.
+# map:Assertions_assert_class a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:Assertions;
+# 	d2rq:property dikbD2R:Assertions_assert_class;
+# 	d2rq:propertyDefinitionLabel "Assertions assert_class";
+# 	d2rq:column "Assertions.assert_class";
+# 	.
+# map:Assertions_evidence_for a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:Assertions;
+# 	d2rq:property dikbD2R:Assertions_evidence_for;
+# 	d2rq:propertyDefinitionLabel "Assertions evidence_for";
+# 	d2rq:column "Assertions.evidence_for";
+# 	d2rq:datatype xsd:int;
+# 	.
+# map:Assertions_evidence_against a d2rq:PropertyBridge;
+# 	d2rq:belongsToClassMap map:Assertions;
+# 	d2rq:property dikbD2R:Assertions_evidence_against;
+# 	d2rq:propertyDefinitionLabel "Assertions evidence_against";
+# 	d2rq:column "Assertions.evidence_against";
+# 	d2rq:datatype xsd:int;
+# 	.
+
+map:HomepageURL a d2rq:PropertyBridge;
+      d2rq:belongsToClassMap map:Assertions;
+      d2rq:property foaf:homepage;
+      d2rq:uriSqlExpression "CONCAT('http://dbmi-icode-01.dbmi.pitt.edu/dikb-evidence/', Assertions._name, '.html')";
+      .
+
+
+map:AssertionsCitesAsSupporting a d2rq:PropertyBridge;
+      d2rq:belongsToClassMap map:Assertions;
+      d2rq:property swanco:citesAsSupportingEvidence;
+      d2rq:join "Assertions.evidence_for = Evidence_map.assert_ev_id";
+      d2rq:join "Evidence_map.id = Evidence.id";
+      d2rq:uriPattern "Evidence/@@Evidence.id@@";
+      .
+
+map:AssertionsCitesAsRefuting a d2rq:PropertyBridge;
+      d2rq:belongsToClassMap map:Assertions;
+      d2rq:property swanco:citesAsRefutingEvidence;
+      d2rq:join "Assertions.evidence_against = Evidence_map.assert_ev_id";
+      d2rq:join "Evidence_map.id = Evidence.id";
+      d2rq:uriPattern "Evidence/@@Evidence.id@@";
+      .
+
+
+## translation tables
+
+# Assertion slot value
+map:AssertionsSlotValueTable a d2rq:TranslationTable;
+        d2rq:translation [ d2rq:databaseValue "substrate_of"; d2rq:rdfValue dikbD2R:substrate_of; ];
+	d2rq:translation [ d2rq:databaseValue "inhibits"; d2rq:rdfValue dikbD2R:inhibits; ];
+	d2rq:translation [ d2rq:databaseValue "has_metabolite"; d2rq:rdfValue dikbD2R:has_metabolite; ];
+	d2rq:translation [ d2rq:databaseValue "is_not_substrate_of"; d2rq:rdfValue dikbD2R:is_not_substrate_of; ];
+	d2rq:translation [ d2rq:databaseValue "bioavailability"; d2rq:rdfValue ncbit:bioavailability; ];
+	d2rq:translation [ d2rq:databaseValue "primary_total_clearance_mechanism"; d2rq:rdfValue dikbD2R:primary_total_clearance_mechanism; ];
+	d2rq:translation [ d2rq:databaseValue "controls_formation_of"; d2rq:rdfValue dikbD2R:controls_formation_of; ];
+	d2rq:translation [ d2rq:databaseValue "increases_auc"; d2rq:rdfValue dikbD2R:increases_auc; ];
+	d2rq:translation [ d2rq:databaseValue "inhibition_constant"; d2rq:rdfValue dikbD2R:inhibition_constant; ];
+	d2rq:translation [ d2rq:databaseValue "maximum_concentration"; d2rq:rdfValue dikbD2R:maximum_concentration; ];
+	d2rq:translation [ d2rq:databaseValue "in_vitro_probe_substrate_of_enzyme"; d2rq:rdfValue dikbD2R:in_vitro_probe_substrate_of_enzyme; ];
+	d2rq:translation [ d2rq:databaseValue "in_vitro_selective_inhibitor_of_enzyme"; d2rq:rdfValue dikbD2R:in_vitro_selective_inhibitor_of_enzyme; ];
+	d2rq:translation [ d2rq:databaseValue "polymorphic_enzyme"; d2rq:rdfValue dikbD2R:polymorphic_enzyme; ];
+	d2rq:translation [ d2rq:databaseValue "does_not_permanently_deactivate_catalytic_function"; d2rq:rdfValue dikbD2R:does_not_permanently_deactivate_catalytic_function; ];
+	d2rq:translation [ d2rq:databaseValue "sole_PK_effect_alter_metabolic_clearance"; d2rq:rdfValue dikbD2R:sole_PK_effect_alter_metabolic_clearance; ];
+	d2rq:translation [ d2rq:databaseValue "fraction_absorbed"; d2rq:rdfValue dikbD2R:fraction_absorbed; ];
+	d2rq:translation [ d2rq:databaseValue "permanently_deactivates_catalytic_function"; d2rq:rdfValue dikbD2R:permanently_deactivates_catalytic_function; ];
+	d2rq:translation [ d2rq:databaseValue "in_viVo_probe_substrate_of_enzyme"; d2rq:rdfValue dikbD2R:in_viVo_probe_substrate_of_enzyme; ];
+	d2rq:translation [ d2rq:databaseValue "in_viVo_selective_inhibitor_of_enzyme"; d2rq:rdfValue dikbD2R:in_viVo_selective_inhibitor_of_enzyme; ];
+	d2rq:translation [ d2rq:databaseValue "primary_metabolic_clearance_enzyme"; d2rq:rdfValue dikbD2R:primary_metabolic_clearance_enzyme; ];
+	d2rq:translation [ d2rq:databaseValue "first_pass_effect"; d2rq:rdfValue dikbD2R:first_pass_effect; ];
+	.
+
+# enzymes
+map:EnzymeTable a d2rq:TranslationTable;
+        d2rq:translation [ d2rq:databaseValue "cyp1a1"; d2rq:rdfValue obo:PR_000006101; ];
+        d2rq:translation [ d2rq:databaseValue "cyp1a2"; d2rq:rdfValue obo:PR_000006102; ];
+        d2rq:translation [ d2rq:databaseValue "cyp1b1"; d2rq:rdfValue obo:PR_000006103; ];
+        d2rq:translation [ d2rq:databaseValue "cyp2a6"; d2rq:rdfValue obo:PR_000006114; ];
+        d2rq:translation [ d2rq:databaseValue "cyp2a13"; d2rq:rdfValue obo:PR_000006113; ];
+	d2rq:translation [ d2rq:databaseValue "cyp2b6"; d2rq:rdfValue obo:PR_000006116; ];
+	d2rq:translation [ d2rq:databaseValue "cyp2c8"; d2rq:rdfValue obo:PR_000006119; ];
+	d2rq:translation [ d2rq:databaseValue "cyp2c9"; d2rq:rdfValue obo:PR_000006120; ];
+	d2rq:translation [ d2rq:databaseValue "cyp2c19"; d2rq:rdfValue obo:PR_000006118; ];
+	d2rq:translation [ d2rq:databaseValue "cyp2d6"; d2rq:rdfValue obo:PR_000006121; ];
+	d2rq:translation [ d2rq:databaseValue "cyp2e1"; d2rq:rdfValue obo:PR_000006122; ];
+	d2rq:translation [ d2rq:databaseValue "cyp2j2"; d2rq:rdfValue obo:PR_000006124; ];
+        d2rq:translation [ d2rq:databaseValue "cyp3a4"; d2rq:rdfValue obo:PR_000006130; ];
+	d2rq:translation [ d2rq:databaseValue "cyp3a5"; d2rq:rdfValue obo:PR_000006132; ];
+	d2rq:translation [ d2rq:databaseValue "cyp4a11"; d2rq:rdfValue obo:PR_000006135; ];
+        d2rq:translation [ d2rq:databaseValue "CYP1A1"; d2rq:rdfValue obo:PR_000006101; ];
+        d2rq:translation [ d2rq:databaseValue "CYP1A2"; d2rq:rdfValue obo:PR_000006102; ];
+        d2rq:translation [ d2rq:databaseValue "CYP1B1"; d2rq:rdfValue obo:PR_000006103; ];
+        d2rq:translation [ d2rq:databaseValue "CYP2A6"; d2rq:rdfValue obo:PR_000006114; ];
+        d2rq:translation [ d2rq:databaseValue "CYP2A13"; d2rq:rdfValue obo:PR_000006113; ];
+	d2rq:translation [ d2rq:databaseValue "CYP2B6"; d2rq:rdfValue obo:PR_000006116; ];
+	d2rq:translation [ d2rq:databaseValue "CYP2C8"; d2rq:rdfValue obo:PR_000006119; ];
+	d2rq:translation [ d2rq:databaseValue "CYP2C9"; d2rq:rdfValue obo:PR_000006120; ];
+	d2rq:translation [ d2rq:databaseValue "CYP2C19"; d2rq:rdfValue obo:PR_000006118; ];
+	d2rq:translation [ d2rq:databaseValue "CYP2D6"; d2rq:rdfValue obo:PR_000006121; ];
+	d2rq:translation [ d2rq:databaseValue "CYP2E1"; d2rq:rdfValue obo:PR_000006122; ];
+	d2rq:translation [ d2rq:databaseValue "CYP2J2"; d2rq:rdfValue obo:PR_000006124; ];
+        d2rq:translation [ d2rq:databaseValue "CYP3A4"; d2rq:rdfValue obo:PR_000006130; ];
+	d2rq:translation [ d2rq:databaseValue "CYP3A5"; d2rq:rdfValue obo:PR_000006132; ];
+	d2rq:translation [ d2rq:databaseValue "CYP4A11"; d2rq:rdfValue obo:PR_000006135; ];
+	.
+
+map:DrugMoleculeAndEnzymeTable a d2rq:TranslationTable;
+        d2rq:translation [ d2rq:databaseValue "True"; d2rq:rdfValue ncbit:True; ];
+	d2rq:translation [ d2rq:databaseValue "False"; d2rq:rdfValue ncbit:False; ];
+	d2rq:translation [ d2rq:databaseValue "Metabolic_Clearance"; d2rq:rdfValue ndfrt:N0000000023; ];
+	d2rq:translation [ d2rq:databaseValue "Renal_Excretion"; d2rq:rdfValue ndfrt:N0000000042; ];
+	d2rq:translation [ d2rq:databaseValue "Exhalation_Excretion"; d2rq:rdfValue ndfrt:N0000000044; ];
+	d2rq:translation [ d2rq:databaseValue "Biliary_Excretion"; d2rq:rdfValue ndfrt:N0000000045; ];
+	d2rq:translation [ d2rq:databaseValue "continuous_value"; d2rq:rdfValue dikbEvidence:ContinuousValue; ];
+        d2rq:translation [ d2rq:databaseValue "cyp1a1"; d2rq:rdfValue obo:PR_000006101; ];
+        d2rq:translation [ d2rq:databaseValue "cyp1a2"; d2rq:rdfValue obo:PR_000006102; ];
+        d2rq:translation [ d2rq:databaseValue "cyp1b1"; d2rq:rdfValue obo:PR_000006103; ];
+        d2rq:translation [ d2rq:databaseValue "cyp2a6"; d2rq:rdfValue obo:PR_000006114; ];
+        d2rq:translation [ d2rq:databaseValue "cyp2a13"; d2rq:rdfValue obo:PR_000006113; ];
+	d2rq:translation [ d2rq:databaseValue "cyp2b6"; d2rq:rdfValue obo:PR_000006116; ];
+	d2rq:translation [ d2rq:databaseValue "cyp2c8"; d2rq:rdfValue obo:PR_000006119; ];
+	d2rq:translation [ d2rq:databaseValue "cyp2c9"; d2rq:rdfValue obo:PR_000006120; ];
+	d2rq:translation [ d2rq:databaseValue "cyp2c19"; d2rq:rdfValue obo:PR_000006118; ];
+	d2rq:translation [ d2rq:databaseValue "cyp2d6"; d2rq:rdfValue obo:PR_000006121; ];
+	d2rq:translation [ d2rq:databaseValue "cyp2e1"; d2rq:rdfValue obo:PR_000006122; ];
+	d2rq:translation [ d2rq:databaseValue "cyp2j2"; d2rq:rdfValue obo:PR_000006124; ];
+        d2rq:translation [ d2rq:databaseValue "cyp3a4"; d2rq:rdfValue obo:PR_000006130; ];
+	d2rq:translation [ d2rq:databaseValue "cyp3a5"; d2rq:rdfValue obo:PR_000006132; ];
+	d2rq:translation [ d2rq:databaseValue "cyp4a11"; d2rq:rdfValue obo:PR_000006135; ];
+        d2rq:translation [ d2rq:databaseValue "CYP1A1"; d2rq:rdfValue obo:PR_000006101; ];
+        d2rq:translation [ d2rq:databaseValue "CYP1A2"; d2rq:rdfValue obo:PR_000006102; ];
+        d2rq:translation [ d2rq:databaseValue "CYP1B1"; d2rq:rdfValue obo:PR_000006103; ];
+        d2rq:translation [ d2rq:databaseValue "CYP2A6"; d2rq:rdfValue obo:PR_000006114; ];
+        d2rq:translation [ d2rq:databaseValue "CYP2A13"; d2rq:rdfValue obo:PR_000006113; ];
+	d2rq:translation [ d2rq:databaseValue "CYP2B6"; d2rq:rdfValue obo:PR_000006116; ];
+	d2rq:translation [ d2rq:databaseValue "CYP2C8"; d2rq:rdfValue obo:PR_000006119; ];
+	d2rq:translation [ d2rq:databaseValue "CYP2C9"; d2rq:rdfValue obo:PR_000006120; ];
+	d2rq:translation [ d2rq:databaseValue "CYP2C19"; d2rq:rdfValue obo:PR_000006118; ];
+	d2rq:translation [ d2rq:databaseValue "CYP2D6"; d2rq:rdfValue obo:PR_000006121; ];
+	d2rq:translation [ d2rq:databaseValue "CYP2E1"; d2rq:rdfValue obo:PR_000006122; ];
+	d2rq:translation [ d2rq:databaseValue "CYP2J2"; d2rq:rdfValue obo:PR_000006124; ];
+        d2rq:translation [ d2rq:databaseValue "CYP3A4"; d2rq:rdfValue obo:PR_000006130; ];
+	d2rq:translation [ d2rq:databaseValue "CYP3A5"; d2rq:rdfValue obo:PR_000006132; ];
+	d2rq:translation [ d2rq:databaseValue "CYP4A11"; d2rq:rdfValue obo:PR_000006135; ];
+    d2rq:translation [ d2rq:databaseValue "basiliximab"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00074>; ];
+    d2rq:translation [ d2rq:databaseValue "cyclosporine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00091>; ];
+    d2rq:translation [ d2rq:databaseValue "pravastatin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00175>; ];
+    d2rq:translation [ d2rq:databaseValue "fluvoxamine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00176>; ];
+    d2rq:translation [ d2rq:databaseValue "fluconazole"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00196>; ];
+    d2rq:translation [ d2rq:databaseValue "erythromycin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00199>; ];
+    d2rq:translation [ d2rq:databaseValue "caffeine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00201>; ];
+    d2rq:translation [ d2rq:databaseValue "sildenafil"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00203>; ];
+    d2rq:translation [ d2rq:databaseValue "ticlopidine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00208>; ];
+    d2rq:translation [ d2rq:databaseValue "midodrine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00211>; ];
+    d2rq:translation [ d2rq:databaseValue "pantoprazole"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00213>; ];
+    d2rq:translation [ d2rq:databaseValue "citalopram"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00215>; ];
+    d2rq:translation [ d2rq:databaseValue "nelfinavir"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00220>; ];
+    d2rq:translation [ d2rq:databaseValue "indinavir"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00224>; ];
+    d2rq:translation [ d2rq:databaseValue "lovastatin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00227>; ];
+    d2rq:translation [ d2rq:databaseValue "ranolazine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00243>; ];
+    d2rq:translation [ d2rq:databaseValue "ziprasidone"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00246>; ];
+    d2rq:translation [ d2rq:databaseValue "phenytoin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00252>; ];
+    d2rq:translation [ d2rq:databaseValue "clotrimazole"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00257>; ];
+    d2rq:translation [ d2rq:databaseValue "topiramate"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00273>; ];
+    d2rq:translation [ d2rq:databaseValue "theophylline"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00277>; ];
+    d2rq:translation [ d2rq:databaseValue "venlafaxine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00285>; ];
+    d2rq:translation [ d2rq:databaseValue "atomoxetine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00289>; ];
+    d2rq:translation [ d2rq:databaseValue "indomethacin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00328>; ];
+    d2rq:translation [ d2rq:databaseValue "methadone"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00333>; ];
+    d2rq:translation [ d2rq:databaseValue "olanzapine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00334>; ];
+    d2rq:translation [ d2rq:databaseValue "omeprazole"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00338>; ];
+    d2rq:translation [ d2rq:databaseValue "diltiazem"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00343>; ];
+    d2rq:translation [ d2rq:databaseValue "chlorzoxazone"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00356>; ];
+    d2rq:translation [ d2rq:databaseValue "clozapine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00363>; ];
+    d2rq:translation [ d2rq:databaseValue "mirtazapine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00370>; ];
+    d2rq:translation [ d2rq:databaseValue "mexiletine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00379>; ];
+    d2rq:translation [ d2rq:databaseValue "tacrine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00382>; ];
+    d2rq:translation [ d2rq:databaseValue "eszopiclone"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00402>; ];
+    d2rq:translation [ d2rq:databaseValue "alprazolam"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00404>; ];
+    d2rq:translation [ d2rq:databaseValue "rosiglitazone"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00412>; ];
+    d2rq:translation [ d2rq:databaseValue "zolpidem"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00425>; ];
+    d2rq:translation [ d2rq:databaseValue "trimethoprim"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00440>; ];
+    d2rq:translation [ d2rq:databaseValue "teniposide"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00444>; ];
+    d2rq:translation [ d2rq:databaseValue "chloramphenicol"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00446>; ];
+    d2rq:translation [ d2rq:databaseValue "lansoprazole"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00448>; ];
+    d2rq:translation [ d2rq:databaseValue "droperidol"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00450>; ];
+    d2rq:translation [ d2rq:databaseValue "quinine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00468>; ];
+    d2rq:translation [ d2rq:databaseValue "montelukast"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00471>; ];
+    d2rq:translation [ d2rq:databaseValue "fluoxetine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00472>; ];
+    d2rq:translation [ d2rq:databaseValue "duloxetine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00476>; ];
+    d2rq:translation [ d2rq:databaseValue "chlorpromazine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00477>; ];
+    d2rq:translation [ d2rq:databaseValue "celecoxib"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00482>; ];
+    d2rq:translation [ d2rq:databaseValue "cimetidine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00501>; ];
+    d2rq:translation [ d2rq:databaseValue "haloperidol"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00502>; ];
+    d2rq:translation [ d2rq:databaseValue "ritonavir"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00503>; ];
+    d2rq:translation [ d2rq:databaseValue "dextromethorphan"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00514>; ];
+    d2rq:translation [ d2rq:databaseValue "mephenytoin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00532>; ];
+    d2rq:translation [ d2rq:databaseValue "ciprofloxacin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00537>; ];
+    d2rq:translation [ d2rq:databaseValue "fluorouracil"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00544>; ];
+    d2rq:translation [ d2rq:databaseValue "zafirlukast"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00549>; ];
+    d2rq:translation [ d2rq:databaseValue "methoxsalen"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00553>; ];
+    d2rq:translation [ d2rq:databaseValue "sulfamethizole"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00576>; ];
+    d2rq:translation [ d2rq:databaseValue "voriconazole"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00582>; ];
+    d2rq:translation [ d2rq:databaseValue "chloroquine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00608>; ];
+    d2rq:translation [ d2rq:databaseValue "imatinib"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00619>; ];
+    d2rq:translation [ d2rq:databaseValue "nicardipine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00622>; ];
+    d2rq:translation [ d2rq:databaseValue "fluphenazine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00623>; ];
+    d2rq:translation [ d2rq:databaseValue "testosterone"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00624>; ];
+    d2rq:translation [ d2rq:databaseValue "efavirenz"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00625>; ];
+    d2rq:translation [ d2rq:databaseValue "simvastatin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00641>; ];
+    d2rq:translation [ d2rq:databaseValue "propoxyphene"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00647>; ];
+    d2rq:translation [ d2rq:databaseValue "trazodone"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00656>; ];
+    d2rq:translation [ d2rq:databaseValue "verapamil"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00661>; ];
+    d2rq:translation [ d2rq:databaseValue "aprepitant"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00673>; ];
+    d2rq:translation [ d2rq:databaseValue "tamoxifen"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00675>; ];
+    d2rq:translation [ d2rq:databaseValue "thioridazine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00679>; ];
+    d2rq:translation [ d2rq:databaseValue "warfarin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00682>; ];
+    d2rq:translation [ d2rq:databaseValue "midazolam"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00683>; ];
+    d2rq:translation [ d2rq:databaseValue "amprenavir"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00701>; ];
+    d2rq:translation [ d2rq:databaseValue "delavirdine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00705>; ];
+    d2rq:translation [ d2rq:databaseValue "paroxetine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00715>; ];
+    d2rq:translation [ d2rq:databaseValue "thiabendazole"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00730>; ];
+    d2rq:translation [ d2rq:databaseValue "risperidone"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00734>; ];
+    d2rq:translation [ d2rq:databaseValue "zileuton"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00744>; ];
+    d2rq:translation [ d2rq:databaseValue "modafinil"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00745>; ];
+    d2rq:translation [ d2rq:databaseValue "clopidogrel"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00758>; ];
+    d2rq:translation [ d2rq:databaseValue "oxcarbazepine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00776>; ];
+    d2rq:translation [ d2rq:databaseValue "disulfiram"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00822>; ];
+    d2rq:translation [ d2rq:databaseValue "trifluoperazine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00831>; ];
+    d2rq:translation [ d2rq:databaseValue "mifepristone"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00834>; ];
+    d2rq:translation [ d2rq:databaseValue "perphenazine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00850>; ];
+    d2rq:translation [ d2rq:databaseValue "terbinafine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00857>; ];
+    d2rq:translation [ d2rq:databaseValue "triazolam"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00897>; ];
+    d2rq:translation [ d2rq:databaseValue "ethanol"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00898>; ];
+    d2rq:translation [ d2rq:databaseValue "quinidine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00908>; ];
+    d2rq:translation [ d2rq:databaseValue "metronidazole"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00916>; ];
+    d2rq:translation [ d2rq:databaseValue "felbamate"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00949>; ];
+    d2rq:translation [ d2rq:databaseValue "isoniazid"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00951>; ];
+    d2rq:translation [ d2rq:databaseValue "zaleplon"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00962>; ];
+    d2rq:translation [ d2rq:databaseValue "telithromycin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00976>; ];
+    d2rq:translation [ d2rq:databaseValue "doxorubicin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00997>; ];
+    d2rq:translation [ d2rq:databaseValue "cinacalcet"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01012>; ];
+    d2rq:translation [ d2rq:databaseValue "sulfamethoxazole"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01015>; ];
+    d2rq:translation [ d2rq:databaseValue "ketoconazole"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01026>; ];
+    d2rq:translation [ d2rq:databaseValue "norfloxacin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01059>; ];
+    d2rq:translation [ d2rq:databaseValue "promethazine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01069>; ];
+    d2rq:translation [ d2rq:databaseValue "atazanavir"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01072>; ];
+    d2rq:translation [ d2rq:databaseValue "diphenhydramine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01075>; ];
+    d2rq:translation [ d2rq:databaseValue "atorvastatin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01076>; ];
+    d2rq:translation [ d2rq:databaseValue "fluvastatin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01095>; ];
+    d2rq:translation [ d2rq:databaseValue "leflunomide"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01097>; ];
+    d2rq:translation [ d2rq:databaseValue "rosuvastatin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01098>; ];
+    d2rq:translation [ d2rq:databaseValue "pimozide"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01100>; ];
+    d2rq:translation [ d2rq:databaseValue "capecitabine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01101>; ];
+    d2rq:translation [ d2rq:databaseValue "sertraline"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01104>; ];
+    d2rq:translation [ d2rq:databaseValue "miconazole"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01110>; ];
+    d2rq:translation [ d2rq:databaseValue "chlorpheniramine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01114>; ];
+    d2rq:translation [ d2rq:databaseValue "amiodarone"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01118>; ];
+    d2rq:translation [ d2rq:databaseValue "tolbutamide"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01124>; ];
+    d2rq:translation [ d2rq:databaseValue "rabeprazole"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01129>; ];
+    d2rq:translation [ d2rq:databaseValue "pioglitazone"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01132>; ];
+    d2rq:translation [ d2rq:databaseValue "sulfinpyrazone"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01138>; ];
+    d2rq:translation [ d2rq:databaseValue "nefazodone"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01149>; ];
+    d2rq:translation [ d2rq:databaseValue "desipramine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01151>; ];
+    d2rq:translation [ d2rq:databaseValue "bupropion"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01156>; ];
+    d2rq:translation [ d2rq:databaseValue "itraconazole"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01167>; ];
+    d2rq:translation [ d2rq:databaseValue "escitalopram"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01175>; ];
+    d2rq:translation [ d2rq:databaseValue "propafenone"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01182>; ];
+    d2rq:translation [ d2rq:databaseValue "flecainide"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01195>; ];
+    d2rq:translation [ d2rq:databaseValue "clarithromycin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01211>; ];
+    d2rq:translation [ d2rq:databaseValue "quetiapine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01224>; ];
+    d2rq:translation [ d2rq:databaseValue "paclitaxel"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01229>; ];
+    d2rq:translation [ d2rq:databaseValue "saquinavir"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01232>; ];
+    d2rq:translation [ d2rq:databaseValue "aripiprazole"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01238>; ];
+    d2rq:translation [ d2rq:databaseValue "gemfibrozil"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01241>; ];
+    d2rq:translation [ d2rq:databaseValue "clomipramine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01242>; ];
+    d2rq:translation [ d2rq:databaseValue "dasatinib"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01254>; ];
+    d2rq:translation [ d2rq:databaseValue "lapatinib"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01259>; ];
+    d2rq:translation [ d2rq:databaseValue "posaconazole"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01263>; ];
+    d2rq:translation [ d2rq:databaseValue "paliperidone"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01267>; ];
+    d2rq:translation [ d2rq:databaseValue "fosamprenavir"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01319>; ];
+    d2rq:translation [ d2rq:databaseValue "troleandomycin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01361>; ];
+    d2rq:translation [ d2rq:databaseValue "quinupristin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01369>; ];
+    d2rq:translation [ d2rq:databaseValue "danazol"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01406>; ];
+    d2rq:translation [ d2rq:databaseValue "hydroxychloroquine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01611>; ];
+    d2rq:translation [ d2rq:databaseValue "molindone"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01618>; ];
+    d2rq:translation [ d2rq:databaseValue "thiothixene"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01623>; ];
+    d2rq:translation [ d2rq:databaseValue "phenacetin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB03783>; ];
+    d2rq:translation [ d2rq:databaseValue "thiotepa"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB04572>; ].
+	
+
+# drugs to DrugBank
+map:DrugBank a d2rq:TranslationTable;
+    d2rq:translation [ d2rq:databaseValue "basiliximab"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00074>; ];
+    d2rq:translation [ d2rq:databaseValue "cyclosporine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00091>; ];
+    d2rq:translation [ d2rq:databaseValue "pravastatin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00175>; ];
+    d2rq:translation [ d2rq:databaseValue "fluvoxamine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00176>; ];
+    d2rq:translation [ d2rq:databaseValue "fluconazole"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00196>; ];
+    d2rq:translation [ d2rq:databaseValue "erythromycin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00199>; ];
+    d2rq:translation [ d2rq:databaseValue "caffeine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00201>; ];
+    d2rq:translation [ d2rq:databaseValue "sildenafil"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00203>; ];
+    d2rq:translation [ d2rq:databaseValue "ticlopidine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00208>; ];
+    d2rq:translation [ d2rq:databaseValue "midodrine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00211>; ];
+    d2rq:translation [ d2rq:databaseValue "pantoprazole"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00213>; ];
+    d2rq:translation [ d2rq:databaseValue "citalopram"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00215>; ];
+    d2rq:translation [ d2rq:databaseValue "nelfinavir"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00220>; ];
+    d2rq:translation [ d2rq:databaseValue "indinavir"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00224>; ];
+    d2rq:translation [ d2rq:databaseValue "lovastatin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00227>; ];
+    d2rq:translation [ d2rq:databaseValue "ranolazine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00243>; ];
+    d2rq:translation [ d2rq:databaseValue "ziprasidone"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00246>; ];
+    d2rq:translation [ d2rq:databaseValue "phenytoin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00252>; ];
+    d2rq:translation [ d2rq:databaseValue "clotrimazole"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00257>; ];
+    d2rq:translation [ d2rq:databaseValue "topiramate"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00273>; ];
+    d2rq:translation [ d2rq:databaseValue "theophylline"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00277>; ];
+    d2rq:translation [ d2rq:databaseValue "venlafaxine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00285>; ];
+    d2rq:translation [ d2rq:databaseValue "atomoxetine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00289>; ];
+    d2rq:translation [ d2rq:databaseValue "indomethacin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00328>; ];
+    d2rq:translation [ d2rq:databaseValue "methadone"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00333>; ];
+    d2rq:translation [ d2rq:databaseValue "olanzapine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00334>; ];
+    d2rq:translation [ d2rq:databaseValue "omeprazole"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00338>; ];
+    d2rq:translation [ d2rq:databaseValue "diltiazem"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00343>; ];
+    d2rq:translation [ d2rq:databaseValue "chlorzoxazone"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00356>; ];
+    d2rq:translation [ d2rq:databaseValue "clozapine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00363>; ];
+    d2rq:translation [ d2rq:databaseValue "mirtazapine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00370>; ];
+    d2rq:translation [ d2rq:databaseValue "mexiletine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00379>; ];
+    d2rq:translation [ d2rq:databaseValue "tacrine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00382>; ];
+    d2rq:translation [ d2rq:databaseValue "eszopiclone"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00402>; ];
+    d2rq:translation [ d2rq:databaseValue "alprazolam"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00404>; ];
+    d2rq:translation [ d2rq:databaseValue "rosiglitazone"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00412>; ];
+    d2rq:translation [ d2rq:databaseValue "zolpidem"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00425>; ];
+    d2rq:translation [ d2rq:databaseValue "trimethoprim"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00440>; ];
+    d2rq:translation [ d2rq:databaseValue "teniposide"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00444>; ];
+    d2rq:translation [ d2rq:databaseValue "chloramphenicol"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00446>; ];
+    d2rq:translation [ d2rq:databaseValue "lansoprazole"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00448>; ];
+    d2rq:translation [ d2rq:databaseValue "droperidol"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00450>; ];
+    d2rq:translation [ d2rq:databaseValue "quinine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00468>; ];
+    d2rq:translation [ d2rq:databaseValue "montelukast"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00471>; ];
+    d2rq:translation [ d2rq:databaseValue "fluoxetine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00472>; ];
+    d2rq:translation [ d2rq:databaseValue "duloxetine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00476>; ];
+    d2rq:translation [ d2rq:databaseValue "chlorpromazine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00477>; ];
+    d2rq:translation [ d2rq:databaseValue "celecoxib"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00482>; ];
+    d2rq:translation [ d2rq:databaseValue "cimetidine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00501>; ];
+    d2rq:translation [ d2rq:databaseValue "haloperidol"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00502>; ];
+    d2rq:translation [ d2rq:databaseValue "ritonavir"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00503>; ];
+    d2rq:translation [ d2rq:databaseValue "dextromethorphan"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00514>; ];
+    d2rq:translation [ d2rq:databaseValue "mephenytoin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00532>; ];
+    d2rq:translation [ d2rq:databaseValue "ciprofloxacin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00537>; ];
+    d2rq:translation [ d2rq:databaseValue "fluorouracil"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00544>; ];
+    d2rq:translation [ d2rq:databaseValue "zafirlukast"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00549>; ];
+    d2rq:translation [ d2rq:databaseValue "methoxsalen"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00553>; ];
+    d2rq:translation [ d2rq:databaseValue "sulfamethizole"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00576>; ];
+    d2rq:translation [ d2rq:databaseValue "voriconazole"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00582>; ];
+    d2rq:translation [ d2rq:databaseValue "chloroquine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00608>; ];
+    d2rq:translation [ d2rq:databaseValue "imatinib"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00619>; ];
+    d2rq:translation [ d2rq:databaseValue "nicardipine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00622>; ];
+    d2rq:translation [ d2rq:databaseValue "fluphenazine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00623>; ];
+    d2rq:translation [ d2rq:databaseValue "testosterone"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00624>; ];
+    d2rq:translation [ d2rq:databaseValue "efavirenz"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00625>; ];
+    d2rq:translation [ d2rq:databaseValue "simvastatin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00641>; ];
+    d2rq:translation [ d2rq:databaseValue "propoxyphene"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00647>; ];
+    d2rq:translation [ d2rq:databaseValue "trazodone"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00656>; ];
+    d2rq:translation [ d2rq:databaseValue "verapamil"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00661>; ];
+    d2rq:translation [ d2rq:databaseValue "aprepitant"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00673>; ];
+    d2rq:translation [ d2rq:databaseValue "tamoxifen"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00675>; ];
+    d2rq:translation [ d2rq:databaseValue "thioridazine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00679>; ];
+    d2rq:translation [ d2rq:databaseValue "warfarin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00682>; ];
+    d2rq:translation [ d2rq:databaseValue "midazolam"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00683>; ];
+    d2rq:translation [ d2rq:databaseValue "amprenavir"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00701>; ];
+    d2rq:translation [ d2rq:databaseValue "delavirdine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00705>; ];
+    d2rq:translation [ d2rq:databaseValue "paroxetine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00715>; ];
+    d2rq:translation [ d2rq:databaseValue "thiabendazole"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00730>; ];
+    d2rq:translation [ d2rq:databaseValue "risperidone"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00734>; ];
+    d2rq:translation [ d2rq:databaseValue "zileuton"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00744>; ];
+    d2rq:translation [ d2rq:databaseValue "modafinil"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00745>; ];
+    d2rq:translation [ d2rq:databaseValue "clopidogrel"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00758>; ];
+    d2rq:translation [ d2rq:databaseValue "oxcarbazepine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00776>; ];
+    d2rq:translation [ d2rq:databaseValue "disulfiram"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00822>; ];
+    d2rq:translation [ d2rq:databaseValue "trifluoperazine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00831>; ];
+    d2rq:translation [ d2rq:databaseValue "mifepristone"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00834>; ];
+    d2rq:translation [ d2rq:databaseValue "perphenazine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00850>; ];
+    d2rq:translation [ d2rq:databaseValue "terbinafine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00857>; ];
+    d2rq:translation [ d2rq:databaseValue "triazolam"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00897>; ];
+    d2rq:translation [ d2rq:databaseValue "ethanol"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00898>; ];
+    d2rq:translation [ d2rq:databaseValue "quinidine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00908>; ];
+    d2rq:translation [ d2rq:databaseValue "metronidazole"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00916>; ];
+    d2rq:translation [ d2rq:databaseValue "felbamate"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00949>; ];
+    d2rq:translation [ d2rq:databaseValue "isoniazid"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00951>; ];
+    d2rq:translation [ d2rq:databaseValue "zaleplon"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00962>; ];
+    d2rq:translation [ d2rq:databaseValue "telithromycin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00976>; ];
+    d2rq:translation [ d2rq:databaseValue "doxorubicin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00997>; ];
+    d2rq:translation [ d2rq:databaseValue "cinacalcet"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01012>; ];
+    d2rq:translation [ d2rq:databaseValue "sulfamethoxazole"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01015>; ];
+    d2rq:translation [ d2rq:databaseValue "ketoconazole"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01026>; ];
+    d2rq:translation [ d2rq:databaseValue "norfloxacin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01059>; ];
+    d2rq:translation [ d2rq:databaseValue "promethazine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01069>; ];
+    d2rq:translation [ d2rq:databaseValue "atazanavir"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01072>; ];
+    d2rq:translation [ d2rq:databaseValue "diphenhydramine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01075>; ];
+    d2rq:translation [ d2rq:databaseValue "atorvastatin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01076>; ];
+    d2rq:translation [ d2rq:databaseValue "fluvastatin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01095>; ];
+    d2rq:translation [ d2rq:databaseValue "leflunomide"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01097>; ];
+    d2rq:translation [ d2rq:databaseValue "rosuvastatin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01098>; ];
+    d2rq:translation [ d2rq:databaseValue "pimozide"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01100>; ];
+    d2rq:translation [ d2rq:databaseValue "capecitabine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01101>; ];
+    d2rq:translation [ d2rq:databaseValue "sertraline"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01104>; ];
+    d2rq:translation [ d2rq:databaseValue "miconazole"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01110>; ];
+    d2rq:translation [ d2rq:databaseValue "chlorpheniramine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01114>; ];
+    d2rq:translation [ d2rq:databaseValue "amiodarone"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01118>; ];
+    d2rq:translation [ d2rq:databaseValue "tolbutamide"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01124>; ];
+    d2rq:translation [ d2rq:databaseValue "rabeprazole"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01129>; ];
+    d2rq:translation [ d2rq:databaseValue "pioglitazone"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01132>; ];
+    d2rq:translation [ d2rq:databaseValue "sulfinpyrazone"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01138>; ];
+    d2rq:translation [ d2rq:databaseValue "nefazodone"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01149>; ];
+    d2rq:translation [ d2rq:databaseValue "desipramine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01151>; ];
+    d2rq:translation [ d2rq:databaseValue "bupropion"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01156>; ];
+    d2rq:translation [ d2rq:databaseValue "itraconazole"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01167>; ];
+    d2rq:translation [ d2rq:databaseValue "escitalopram"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01175>; ];
+    d2rq:translation [ d2rq:databaseValue "propafenone"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01182>; ];
+    d2rq:translation [ d2rq:databaseValue "flecainide"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01195>; ];
+    d2rq:translation [ d2rq:databaseValue "clarithromycin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01211>; ];
+    d2rq:translation [ d2rq:databaseValue "quetiapine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01224>; ];
+    d2rq:translation [ d2rq:databaseValue "paclitaxel"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01229>; ];
+    d2rq:translation [ d2rq:databaseValue "saquinavir"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01232>; ];
+    d2rq:translation [ d2rq:databaseValue "aripiprazole"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01238>; ];
+    d2rq:translation [ d2rq:databaseValue "gemfibrozil"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01241>; ];
+    d2rq:translation [ d2rq:databaseValue "clomipramine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01242>; ];
+    d2rq:translation [ d2rq:databaseValue "dasatinib"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01254>; ];
+    d2rq:translation [ d2rq:databaseValue "lapatinib"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01259>; ];
+    d2rq:translation [ d2rq:databaseValue "posaconazole"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01263>; ];
+    d2rq:translation [ d2rq:databaseValue "paliperidone"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01267>; ];
+    d2rq:translation [ d2rq:databaseValue "fosamprenavir"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01319>; ];
+    d2rq:translation [ d2rq:databaseValue "troleandomycin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01361>; ];
+    d2rq:translation [ d2rq:databaseValue "quinupristin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01369>; ];
+    d2rq:translation [ d2rq:databaseValue "danazol"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01406>; ];
+    d2rq:translation [ d2rq:databaseValue "hydroxychloroquine"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01611>; ];
+    d2rq:translation [ d2rq:databaseValue "molindone"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01618>; ];
+    d2rq:translation [ d2rq:databaseValue "thiothixene"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB01623>; ];
+    d2rq:translation [ d2rq:databaseValue "phenacetin"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB03783>; ];
+    d2rq:translation [ d2rq:databaseValue "thiotepa"; d2rq:rdfValue  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB04572>; ].

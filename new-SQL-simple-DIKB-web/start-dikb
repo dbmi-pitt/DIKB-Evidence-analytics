@@ -1,0 +1,2 @@
+sudo /usr/bin/env DIKB_LOG_LEVEL=0 PYTHONPATH=$PYTHONPATH:/home/PITT/rdb20/linked-dikb/:/home/PITT/rdb20/linked-dikb/new-SQL-simple-DIKB-web/ twistd web --port 2022 --logfile /home/PITT/rdb20/linked-dikb/new-SQL-simple-DIKB-web/twistd.log --path /home/PITT/rdb20/linked-dikb
+

@@ -1,0 +1,36 @@
+Statement -  A published artifact that is "...the basis for belief or disbelief; knowledge on which to base belief" 
+Non_Tracable_Statement -  A statement that does not explicitly refer to evidence items in justification of its assertion(s) or that refers to an evidence item that is not accessible to the curator (e.g. pre-market drug studies only accessible to drug-company or FDA researchers) 
+Non_traceable_Drug_Label_Statement -  An assertion stated found in a drug label that does not provide any traceable citations for its evidence support
+Tracable_Statement - A statement that provides citation to evidence support for justification of its assertion(s)
+Traceable_Drug_Label_Statement - An assertion stated in a drug label that provides citations for its evidence support
+Drug_Label -  a document produced by a drug's   manufacturer to accompany a drug's container or wrapper whose statements   might include the drug's indications, effects, dosages, routes, methods,   frequency and duration of administration, warnings, hazards,   contraindications, side effects, precautions, and other relevant   information 
+EV_Drug_Review -  A published analysis of research on the efficacy or safety of a drug, family of drugs, or drug therapy.
+EV_DrugClinicalReview -  An FDA-sponsered review of a drug's pre-market studies and adverse event reports.
+EV_EX_Met_Enz_ID -  A drug metabolism identification experiment -- an experiment conducted with biological tissues and/or chemical compounds in a laboratory designed to ``...identify the specific enzymes responsible for the metabolism of a drug'' 
+EV_EX_Met_Enz_ID_Cyp450 -  A metabolic enzyme identification experiment specifically designed to identify the   Cytochrome P-450 enzymes involved in the metabolism of a drug
+EV_EX_Met_Enz_ID_Cyp450_Hum_Recom -  A Cytochrome P-450 metabolic enzyme identification experiment using recombinant human enzymes (but possibly NO probe enzyme inhibitor(s))     
+EV_EX_Met_Enz_ID_Cyp450_Hum_Recom_Chem -  A Cytochrome P-450 metabolic enzyme identification experiment using   recombinant human enzymes and chemical inhibitors     
+EV_EX_Met_Enz_ID_Cyp450_Hum_Recom_Antibody -  A Cytochrome P-450 metabolic enzyme identification experiment using recombinant human enzymes and antibodies as specific inhibitors   
+EV_EX_Met_Enz_ID_Cyp450_Hum_Microsome -  A Cytochrome P-450 metabolic enzyme identification experiment using human liver microsomes that have been characterized for Cytochrome P-450 activity (but possibly NO enzyme inhibitor(s))
+EV_EX_Met_Enz_ID_Cyp450_Hum_Microsome_Chem -  A Cytochrome P-450 metabolic enzyme identification experiment using   human liver microsomes that have been characterized for Cytochrome P-450 activity and chemical inhibitors     
+EV_EX_Met_Enz_ID_Cyp450_Hum_Microsome_Antibody -  A Cytochrome P-450 metabolic enzyme identification experiment using   human liver microsomes that have been characterized for Cytochrome P-450 activity and antibodies as specific inhibitors  
+EV_EX_Met_Enz_Inhibit -  An experiment conducted with biological tissues and/or chemical compounds in a laboratory designed to   determine whether or not a drug inhibits a specific drug-metabolizing enzyme 
+EV_EX_Met_Enz_Inhibit_Cyp450 -  A metabolic inhibition experiment specifically designed to determine whether or not a drug inhibits a specific CYP450 enzyme   
+EV_EX_Met_Enz_Inhibit_Cyp450_Hum_Recom -  A Cytochrome P-450 inhibition experiment  using recombinant human enzymes   
+EV_EX_Met_Enz_Inhibit_Cyp450_Hum_Microsome -  A Cytochrome P-450 metabolic enzyme inhibition experiment using human liver microsomes that have been characterized for Cytochrome P-450 activity  
+EV_Clinical_Trial -  "a pre-planned clinical study of the safety, efficacy, or optimum dosage schedule of one or more diagnostic,   therapeutic, or prophylactic drugs, devices, or techniques in humans selected according to predetermined criteria of eligibility and observed   for predefined evidence of favorable and unfavorable effects." 
+EV_CT_DDI -  A study designed to quantify the pharmacokinetic and/or pharmacodynamic effects within study participants of a single drug (the object drug) in the presence of a purported precipitant.
+EV_CT_PK_Genotype - A drug pharmacokinetics study whose population consists of at least two groups known to posses distinct forms of some drug-metabolizing enzyme
+EV_CT_PK_Phenotype - A drug pharmacokinetics study whose population consists of at least two groups known to posses distinct drug metabolizing phenotypes
+EV_PK_DDI_NR -  A pharmacokinetic study where participants receive a drug in the presence of a purported precipitant (experimental group) or not (control group) but participants are not randomly assigned to experiment and control groups. This can include fixed-order studies where all participants are tested with placebo and precipitant after some period of washout
+EV_PK_DDI_Par_Grps -  A pharmacokinetic study involving two groups of non-randomized participants where both groups receive the purported object drug while only one group receives the purported precipitant 
+EV_PK_DDI_RCT -  A randomized, controlled, pharmacokinetic study where participants receive a drug in the presence of a purported precipitant (experimental group) or not (control group)   
+EV_CT_Pharmacokinetic -  "A study of the process by which a drug is absorbed, distributed, metabolized, and eliminated by the body." 
+EV_Observation -  An observation-based report of some occurrence   
+EV_Obs_ADE -  An observation-based report of an adverse drug event 
+EV_Obs_ADE_Public_Reported -  An adverse event report on file in a public adverse event reporting database such as the FDA's Adverse Event Reporting System   
+EV_Obs_DI_CR -  An published observation-based case-report of a drug interaction 
+EV_Obs_DI_CR_Evaluated -  An observation-based report of a drug interaction that has been evaluated by some assesssment tool  
+EV_Retrospective -  "Studies used to test etiologic hypotheses in which inferences about an exposure to putative causal factors are derived from data relating to characteristics of persons  under study or to events or experiences in their past. The essential feature is that some of the persons under study have the disease or  outcome of interest and their characteristics are compared with those of unaffected persons."  
+EV_PK_DDI_Retro -  A retrospective study looking at the change in patient exposure of a single drug in the presence of a purported precipitant using a retrospective set of clinical records   
+EV_Population_PK -  a ``...study of the sources and correlates of variability in drug concentrations among individuals who are the target patient population receiving clinically relevant doses of a drug in question.''

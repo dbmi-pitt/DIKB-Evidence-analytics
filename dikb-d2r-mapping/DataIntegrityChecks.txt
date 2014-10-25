@@ -1,0 +1,30 @@
+DATA INTEGRITY CHECKS FOR THE LINKED-DIKB RESOURCE:
+
+
+1) Show all assertions for which there is no value assigned
+
+Query resource: http://dbmi-icode-01.dbmi.pitt.edu:2020/sparql
+Expected result:
+
+SELECT ?s ?lab WHERE
+   { ?s rdf:type swande:ResearchStatement.
+     ?s rdfs:label ?lab.
+     OPTIONAL { ?s dikbD2R:value ?r } .
+     FILTER (!BOUND(?r))
+   }
+
+2) Show all evidence items that do not report an NCBI doc pointer
+
+Query resource: http://dbmi-icode-01.dbmi.pitt.edu:2020/sparql
+Expected result:
+
+SELECT ?s ?lab ?docP WHERE
+   { ?s rdf:type ncbit:Evidence.
+     ?s rdfs:label ?lab.
+     ?s rdfs:seeAlso ?docP.
+     FILTER (!REGEX(str(?docP), "^http://www.ncbi.nlm.nih.gov/pubmed/"))
+   }
+
+
+
+

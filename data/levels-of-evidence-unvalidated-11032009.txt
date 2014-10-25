@@ -1,0 +1,241 @@
+## -*-Mode:python-*-   
+
+## a dictionary holding levels-of-evidence (LOE) for belief criteria for
+# each assertion. Each entry has a list of lists holding belief
+# criteria for a single assertion in order from the evidence types
+# that most support an assertion to those that least. Belief criteria
+# are constructed as follows:
+#
+#    1. a user specifies an integer, Q, specifying the level of
+#    evidence required for belief in a single assertion
+#
+#    2. the elements in each list of levels-of-evidence in the list
+#    associated with that assertion are concatenated from 0 to Q-1
+#
+#
+# NOTE: LOEs are simple regular expressions. The DIKB uses pattern
+# matching to determine if an assertions evidence meets belief
+# criteria. The process is as follows:
+#
+#        Each regular expression contains patterns for combinations of
+#        *ranking categories*. Ranking categories are combinations of
+#        evidence types that are believed to have equivalent
+#        validity. For example, the ranking category 'non_random',
+#        standing for 'non-randomized clinical trial' might consist of
+#        evidence types case-control-1 (cc1), case-control-2 (cc2),
+#        fixed-order-1 (fo1), and cohort-study-1 (cs1) provided that
+#        these evidence types existed in the main evidence type file
+#        'evidence_types'. The ranking categories are stored in the file
+#        'ranking_categories' in the format:
+
+#        <ranking category>-<evidence type 1>,<evidence type 2>,...,<evidence type n>
+#        <ranking category>-<evidence type 1>,<evidence type 2>,...,<evidence type n>
+#        ...
+       
+#        (NOTE: <ranking category> and the comma-seperated list of <evidence type>
+#         are seperated by a single '-' and no spaces)
+
+#        So, an example:
+
+#        assume the ranking categories:
+
+#        non_random-cc1,cc2,fo1,cs1
+#        iv-iv1,iv2
+#        label-lab1
+#        rct-rct1
+#        ex-ex1
+#        cr-cr1,cr2
+
+#        and the rules:
+
+#        (rct){1,}   (one or more randomized controlled trials)
+#        (lab){1,1}   (a single drug label evidence type)
+#        (iv){1,}.*(non_random){1,}   (one or more in vitro types AND one or more non-randomized trial types)
+
+#        and assume the set of evidence types for the relavant assertion is:
+#        ['fo1', 'iv2', 'rct1']
+
+#        Then, the the slot's assessEvidence method would return 'True' because
+#        there evidence meets the first and third rules for belief (ony one is necessary)
+#
+#        NOTE: (TODO) as of 12/11/2007 you cannot specify conjuctive
+#        rules for any 'continuous valued' type such as bioavailability,
+#        max concentration, or inhibition constant. You can for any
+#        non-continous type such as inhibits, substrate_of, etc.
+
+#        NOTE: It is important that you specify conjunctive rules for
+#        belief criteria in alphabetical order. For example, the correct
+#        way to specify 'one or more in vitro types AND one or more
+#        non-randomized trial types' is:
+#          (iv){1,}.*(non_random){1,}
+
+#        NOT: (non_random){1,}.*(iv){1,}
+
+#        This is because the rules are applied as a regex search across
+#        a string that concatenates, in alphabetical order, all ranking
+#        categories from every evidence item that is linked to an
+#        assertion. For example, assuming the following evidence items
+#        are linked to an assertion:
+#           ['rct1', 'iv2',  'fo1', 'rct1']
+
+#        Then, the regex search for a belief criteria rule '(iv){1,}.*(rct){1,}'
+#        is applied to the following string:
+#            'label iv rct rct'
+
+#        Which will derive the following match objects: ('iv','rct')
+
+#        These correspond to the first set of evidence items that cause
+#        an assertion's evidence to meet belief criteria
+loe_d = {
+    "bioavailability":  [["(pk_ct_pk){1,}","(label_statement){1,}"]],
+
+    "controls_formation_of": [["(pk_ct_pk_genotype){1,}","(pk_ct_pk_phenotype){1,}"],
+                              ["(pk_ddi_rndm){1,}","(pk_ddi_non_rndm){1,}"],
+                              ["(iv_met_enz_id_Cyp450_with_inh){1,}"],
+                              ["(label_statement){1,}"]],
+
+    "does_not_inhibit": [["(pk_ddi_rndm){1,}","(pk_ddi_non_rndm){1,}","(iv_met_inh_microsomal){1,}","(iv_met_inh_recombinant){1,}"],
+                         ["(label_statement){1,}"]],
+
+    "first_pass_effect": [["(pk_ct_pk){1,}"],
+                           ["(label_statement){1,}"]],
+
+    "fraction_absorbed": [["(pk_ct_pk){1,}"],
+                           ["(label_statement){1,}"]],
+
+    "has_metabolite": [["(pk_ct_pk){1,}"],
+                       ["(iv_met_enz_id_Cyp450_with_inh){1,}"],
+                       ["(label_statement){1,}"]],
+
+    "increases_auc": [["(pk_ddi_rndm){1,}","(pk_ddi_non_rndm){1,}"],
+                      ["(label_statement){1,}"]],
+    
+    "inhibition_constant": [["(iv_met_inh_microsomal){1,}","(iv_met_inh_recombinant){1,}"],
+                             ["(label_statement){1,}"]],
+    
+    "inhibits": [["(pk_ddi_rndm){1,}","(pk_ddi_non_rndm){1,}"],
+                 ["(iv_met_inh_microsomal){1,}","(iv_met_inh_recombinant){1,}"],
+                 ["(label_statement){1,}"]],
+
+    "is_not_substrate_of": [["(pk_ct_pk_phenotype){1,}", "(pk_ct_pk_genotype){1,}"],
+                            ["(pk_ddi_rndm){1,}","(pk_ddi_non_rndm){1,}"],
+                            ["(iv_met_enz_id_Cyp450_with_inh){1,}"],
+                            ["(label_statement){1,}"]],
+
+    "maximum_concentration": [["(pk_ct_pk){1,}", "(label_statement){1,}"]],
+
+    "primary_metabolic_clearance_enzyme": [["(pk_ct_pk_phenotype){1,}", "(pk_ct_pk_genotype){1,}"],
+                                           ["(pk_ddi_rndm){1,}","(pk_ddi_non_rndm){1,}"],
+                                           ["(label_statement){1,}"]],
+
+    "primary_total_clearance_enzyme": [["(pk_ct_pk_phenotype){1,}", "(pk_ct_pk_genotype){1,}"],
+                                       ["(pk_ddi_rndm){1,}","(pk_ddi_non_rndm){1,}"],
+                                       ["(label_statement){1,}"]],
+    
+    "primary_total_clearance_mechanism": [["(pk_ct_pk){1,}"],
+                                          ["(label_statement){1,}"]],
+
+    "substrate_of": [["(pk_ct_pk_phenotype){1,}", "(pk_ct_pk_genotype){1,}"],
+                     ["(pk_ddi_rndm){1,}","(pk_ddi_non_rndm){1,}"],
+                     ["(iv_met_enz_id_Cyp450_with_inh){1,}"],
+                     ["(label_statement){1,}"]],
+
+    ## assertions below this line are 'default assumptions' for the current study. Their
+    ## evidence is not evaluated so, these LOEs are not used
+    "does_not_permanently_deactivate_catalytic_function": [["(iv_met_enz_id_Cyp450_microsomal){1,}", "(iv_met_enz_id_Cyp450_recombinant){1,}"],
+                                                           ["(label_statement){1,}"],
+                                                           ["(nt_statement){1,}"]],
+
+    'in_vitro_probe_substrate_of_enzyme':[["(iv_met_enz_id_Cyp450_microsomal){1,}", "(iv_met_enz_id_Cyp450_recombinant){1,}"],
+                                          ["(label_statement){1,}"],
+                                          ["(nt_statement){1,}"]],
+    
+    "in_viVo_probe_substrate_of_enzyme": [["(pk_ddi_rndm){1,}"],
+                                              ["(pk_ddi_non_rndm){1,}"],
+                                              ["(label_statement){1,}"],
+                                              ["(nt_statement){1,}"]],
+
+    "in_vitro_selective_inhibitor_of_enzyme": [["(iv_met_inh_recombinant){1,}"],
+                                               ["(iv_met_inh_microsomal){1,}"],
+                                               ["(label_statement){1,}"],
+                                               ["(nt_statement){1,}"]],
+    
+    "in_viVo_selective_inhibitor_of_enzyme": [["(pk_ddi_rndm){1,}"],
+                                              ["(pk_ddi_non_rndm){1,}"],
+                                              ["(label_statement){1,}"],
+                                              ["(nt_statement){1,}"]],
+    
+    "minimum_therapeutic_dose": [["(label_statement){1,}"],
+                                 ["(nt_statement){1,}"]],
+    
+    'maximum_therapeutic_dose': [["(label_statement){1,}"],
+                                 ["(nt_statement){1,}"]],
+    
+    'assumed_effective_dose' : [["(label_statement){1,}"],
+                                ["(nt_statement){1,}"]],
+    
+    'pceut_entity_of_concern': [["(pk_ddi_rndm){1,}", "(pk_ddi_non_rndm){1,}", "(obs_eval){1,}", "(label_statement){1,}"],
+                                ["(nt_statement){1,}"]],
+    
+    "permanently_deactivates_catalytic_function": [["(iv_met_enz_id_Cyp450_microsomal){1,}", "(iv_met_enz_id_Cyp450_recombinant){1,}"],
+                                                   ["(label_statement){1,}"],
+                                                   ["(nt_statement){1,}"]],
+    
+    "polymorphic_enzyme": [["(pk_ct_pk_phenotype){1,}", "(pk_ct_pk_genotype){1,}"],
+                           ["(label_statement){1,}"],
+                           ["(nt_statement){1,}"]],
+    
+    "sole_PK_effect_alter_metabolic_clearance": [["(pk_ddi_rndm){1,}"],
+                                                 ["(pk_ddi_non_rndm){1,}"],
+                                                 ["(label_statement){1,}"],
+                                                 ["(nt_statement){1,}"]],
+    }
+
+# a dictionary mapping a level-of-evidence that confers a subjective
+# level of certainty in each assertion in the DIKB. Each assertion
+# receives a number, Q = [1,n], specifying the (index + 1) of an LOE
+# in the list of LOEs associated with that assertion in loe_d. For
+# assertions where the the kinds of evidence that confer belief for
+# the same assertion are thought to be different than the kinds of
+# evidence that confer belief against an assertion a tuple is used
+# with the following format:
+#
+#   ((<assertion str>,<level int>), (<assertion str>,<level int>))
+#
+# Where <assertion str> and <level int> in the first tuple refer
+# to the level of evidence heirarchy (from loe_d) and belief criteria
+# level (Q) for the evidence_for and <assertion str> and <level int>
+# in the second tuple refer to the level of evidence heirarchy
+# (from loe_d) and belief criteria level (Q) for the evidence_against.
+bc_d = {
+    "bioavailability":  1,
+    "controls_formation_of": 1,
+    "does_not_inhibit": (('does_not_inhibit',1),('inhibits',1)),
+    "first_pass_effect": 1,
+    "fraction_absorbed": 1,
+    "has_metabolite": 1,
+    "increases_auc": 1,
+    "inhibition_constant": 1,
+    "inhibits": (('inhibits',2),('does_not_inhibit',1)),
+    "is_not_substrate_of":1,
+    "maximum_concentration": 1,
+    "primary_metabolic_clearance_enzyme": 2,
+    "primary_total_clearance_enzyme": 2,
+    "primary_total_clearance_mechanism": 1,
+    "substrate_of": 3,
+
+    ## assertions below this line are 'default assumptions' for the current study. Their
+    ## evidence is not evaluated so, these belief criteria are not used
+    "does_not_permanently_deactivate_catalytic_function":1,
+    'in_vitro_probe_substrate_of_enzyme':1,
+    "in_viVo_probe_substrate_of_enzyme":1,
+    "in_vitro_selective_inhibitor_of_enzyme": 1,
+    "in_viVo_selective_inhibitor_of_enzyme": 1,
+    'pceut_entity_of_concern':1,
+    "permanently_deactivates_catalytic_function": 1,    
+    "polymorphic_enzyme": 1,
+    "sole_PK_effect_alter_metabolic_clearance": 1,
+    "minimum_therapeutic_dose": 1,
+    'maximum_therapeutic_dose': 1,
+    'assumed_effective_dose': 1
+    }

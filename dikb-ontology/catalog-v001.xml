@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=file:/home/boycerd/DI_DIR/linked-dikb/dikb-ontology/, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1360435324362" name="duplicate:http://marigold.informatics.washington.edu:25000/~boycer/owl/2007/DIKB_evidence_ontology.owl" uri="DIKB_evidence_ontology_v1.5.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1360435324362" name="duplicate:http://marigold.informatics.washington.edu:25000/~boycer/owl/2007/DIKB_evidence_ontology.owl" uri="DIKB_evidence_ontology_v1.4.owl"/>
+    </group>
+</catalog>

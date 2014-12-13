@@ -66,7 +66,6 @@ exportAssertions(ev, dikb, "/tmp/assertions.lisp")
 assessBeliefCriteria(dikb, ev, "/tmp/changing_assumptions.lisp")
 
 ######### TALLYING EVIDENCE TYPES
-
 non_default_asrts = {
     "bioavailability":  None,
     "controls_formation_of": None,

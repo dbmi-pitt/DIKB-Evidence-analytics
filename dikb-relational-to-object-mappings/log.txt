@@ -1,0 +1,122 @@
+DIKB log: 03/06/2012 11:17:59
+  -  Web instance id: confirmSave.rpy cgi:03/06/2012 11:17:59
+ locking  KB file to open: ../database/dikb-pickle-with-Robs-entries-fall-2010/dikb.pickle 
+DIKB log: 03/06/2012 11:18:09
+  -  Web instance id: confirmSave.rpy cgi:03/06/2012 11:17:59
+Done loading: ../database/dikb-pickle-with-Robs-entries-fall-2010/dikb.pickle 
+DIKB log: 03/06/2012 11:18:14
+  -  Web instance id: confirmSave.rpy cgi:03/06/2012 11:17:59
+ locking  KB file to open: ../database/dikb-pickle-with-Robs-entries-fall-2010/ev.pickle 
+DIKB log: 03/06/2012 11:18:20
+  -  Web instance id: confirmSave.rpy cgi:03/06/2012 11:17:59
+Done loading: ../database/dikb-pickle-with-Robs-entries-fall-2010/ev.pickle 
+DIKB log: 03/06/2012 11:22:26
+  -  Web instance id: Rob's missing DIKB entries : 03/06/2012 11:22:26
+ locking  KB file to open: ../database/dikb-pickle-with-Robs-entries-fall-2010/dikb.pickle 
+DIKB log: 03/06/2012 11:22:37
+  -  Web instance id: Rob's missing DIKB entries : 03/06/2012 11:22:26
+Done loading: ../database/dikb-pickle-with-Robs-entries-fall-2010/dikb.pickle 
+DIKB log: 03/06/2012 11:22:37
+  -  Web instance id: Rob's missing DIKB entries : 03/06/2012 11:22:26
+ locking  KB file to open: ../database/dikb-pickle-with-Robs-entries-fall-2010/ev.pickle 
+DIKB log: 03/06/2012 11:22:45
+  -  Web instance id: Rob's missing DIKB entries : 03/06/2012 11:22:26
+Done loading: ../database/dikb-pickle-with-Robs-entries-fall-2010/ev.pickle 
+DIKB log: 03/06/2012 14:04:26
+  -  Web instance id: Rob's missing DIKB entries : 03/06/2012 11:22:26
+ writing KB to file: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/dikb.pickle 
+DIKB log: 03/06/2012 14:04:26
+  -  Web instance id: Rob's missing DIKB entries : 03/06/2012 11:22:26
+ locking: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/dikb.pickle 
+DIKB log: 03/06/2012 14:04:39
+  -  Web instance id: Rob's missing DIKB entries : 03/06/2012 11:22:26
+ Done: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/dikb.pickle 
+DIKB log: 03/06/2012 14:04:48
+  -  Web instance id: Current SQL DIKB evidence : 03/06/2012 11:22:26
+ writing KB to file: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/ev.pickle 
+DIKB log: 03/06/2012 14:04:48
+  -  Web instance id: Current SQL DIKB evidence : 03/06/2012 11:22:26
+ locking: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/ev.pickle 
+DIKB log: 03/06/2012 14:05:00
+  -  Web instance id: Current SQL DIKB evidence : 03/06/2012 11:22:26
+ Done: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/ev.pickle 
+DIKB log: 03/06/2012 17:51:52
+  -  Web instance id: UPIA+Hanlon-AJGP-2012 locking  KB file to open: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/ev.pickle 
+DIKB log: 03/06/2012 17:52:02
+  -  Web instance id: UPIA+Hanlon-AJGP-2012Done loading: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/ev.pickle 
+DIKB log: 03/06/2012 17:52:08
+  -  Web instance id: Reconstitued UPIA locking  KB file to open: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/dikb.pickle 
+DIKB log: 03/06/2012 17:52:19
+  -  Web instance id: Reconstitued UPIADone loading: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/dikb.pickle 
+DIKB log: 03/06/2012 17:57:57
+  -  Web instance id: Reconstitued UPIA locking  KB file to open: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/dikb.pickle 
+DIKB log: 03/06/2012 17:58:07
+  -  Web instance id: Reconstitued UPIADone loading: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/dikb.pickle 
+DIKB log: 03/06/2012 17:58:07
+  -  Web instance id: UPIA+Hanlon-AJGP-2012 locking  KB file to open: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/ev.pickle 
+DIKB log: 03/06/2012 17:58:16
+  -  Web instance id: UPIA+Hanlon-AJGP-2012Done loading: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/ev.pickle 
+DIKB log: 03/06/2012 18:30:04
+  -  Web instance id: Reconstitued UPIA locking  KB file to open: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/dikb.pickle 
+DIKB log: 03/06/2012 18:30:17
+  -  Web instance id: Reconstitued UPIADone loading: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/dikb.pickle 
+DIKB log: 03/06/2012 18:30:17
+  -  Web instance id: UPIA+Hanlon-AJGP-2012 locking  KB file to open: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/ev.pickle 
+DIKB log: 03/06/2012 18:30:32
+  -  Web instance id: UPIA+Hanlon-AJGP-2012Done loading: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/ev.pickle 
+DIKB log: 03/06/2012 18:30:53
+  -  Web instance id: Reconstitued UPIA locking  KB file to open: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/dikb.pickle 
+DIKB log: 03/06/2012 18:31:06
+  -  Web instance id: Reconstitued UPIADone loading: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/dikb.pickle 
+DIKB log: 03/06/2012 18:31:07
+  -  Web instance id: UPIA+Hanlon-AJGP-2012 locking  KB file to open: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/ev.pickle 
+DIKB log: 03/06/2012 18:31:18
+  -  Web instance id: UPIA+Hanlon-AJGP-2012Done loading: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/ev.pickle 
+DIKB log: 03/06/2012 18:33:00
+  -  Web instance id: Reconstitued UPIA locking  KB file to open: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/dikb.pickle 
+DIKB log: 03/06/2012 18:33:10
+  -  Web instance id: Reconstitued UPIADone loading: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/dikb.pickle 
+DIKB log: 03/06/2012 18:33:10
+  -  Web instance id: UPIA+Hanlon-AJGP-2012 locking  KB file to open: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/ev.pickle 
+DIKB log: 03/06/2012 18:33:19
+  -  Web instance id: UPIA+Hanlon-AJGP-2012Done loading: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/ev.pickle 
+DIKB log: 03/07/2012 08:53:31
+  -  Web instance id: Reconstitued UPIA locking  KB file to open: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/dikb.pickle 
+DIKB log: 03/07/2012 08:53:43
+  -  Web instance id: Reconstitued UPIADone loading: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/dikb.pickle 
+DIKB log: 03/07/2012 08:53:43
+  -  Web instance id: UPIA+Hanlon-AJGP-2012 locking  KB file to open: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/ev.pickle 
+DIKB log: 03/07/2012 08:53:57
+  -  Web instance id: UPIA+Hanlon-AJGP-2012Done loading: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/ev.pickle 
+DIKB log: 03/07/2012 09:47:58
+  -  Web instance id: Reconstitued UPIA locking  KB file to open: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/dikb.pickle 
+DIKB log: 03/07/2012 09:48:08
+  -  Web instance id: Reconstitued UPIADone loading: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/dikb.pickle 
+DIKB log: 03/07/2012 09:48:08
+  -  Web instance id: UPIA+Hanlon-AJGP-2012 locking  KB file to open: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/ev.pickle 
+DIKB log: 03/07/2012 09:48:18
+  -  Web instance id: UPIA+Hanlon-AJGP-2012Done loading: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/ev.pickle 
+DIKB log: 03/07/2012 10:22:38
+  -  Web instance id: Reconstitued UPIA writing KB to file: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/full-Tier-4-UPIA-Hanlon-AJGP2012-DIKB-EVALUATED.pickle 
+DIKB log: 03/07/2012 10:22:38
+  -  Web instance id: Reconstitued UPIA locking: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/full-Tier-4-UPIA-Hanlon-AJGP2012-DIKB-EVALUATED.pickle 
+DIKB log: 03/07/2012 10:22:54
+  -  Web instance id: Reconstitued UPIA Done: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/full-Tier-4-UPIA-Hanlon-AJGP2012-DIKB-EVALUATED.pickle 
+DIKB log: 03/07/2012 10:23:09
+  -  Web instance id: UPIA+Hanlon-AJGP-2012 writing KB to file: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/full-Tier-4-UPIA-Hanlon-AJGP2012-EV-EVALUATED.pickle 
+DIKB log: 03/07/2012 10:23:09
+  -  Web instance id: UPIA+Hanlon-AJGP-2012 locking: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/full-Tier-4-UPIA-Hanlon-AJGP2012-EV-EVALUATED.pickle 
+DIKB log: 03/07/2012 10:23:20
+  -  Web instance id: UPIA+Hanlon-AJGP-2012 Done: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/full-Tier-4-UPIA-Hanlon-AJGP2012-EV-EVALUATED.pickle 
+DIKB log: 03/07/2012 12:55:29
+  -  Web instance id: Reconstitued UPIA writing KB to file: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/full-Tier-4-UPIA-Hanlon-AJGP2012-DIKB-EVALUATED.pickle 
+DIKB log: 03/07/2012 12:55:29
+  -  Web instance id: Reconstitued UPIA locking: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/full-Tier-4-UPIA-Hanlon-AJGP2012-DIKB-EVALUATED.pickle 
+DIKB log: 03/07/2012 12:55:48
+  -  Web instance id: Reconstitued UPIA Done: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/full-Tier-4-UPIA-Hanlon-AJGP2012-DIKB-EVALUATED.pickle 
+DIKB log: 03/07/2012 12:55:48
+  -  Web instance id: UPIA+Hanlon-AJGP-2012 writing KB to file: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/full-Tier-4-UPIA-Hanlon-AJGP2012-EV-EVALUATED.pickle 
+DIKB log: 03/07/2012 12:55:48
+  -  Web instance id: UPIA+Hanlon-AJGP-2012 locking: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/full-Tier-4-UPIA-Hanlon-AJGP2012-EV-EVALUATED.pickle 
+DIKB log: 03/07/2012 12:56:00
+  -  Web instance id: UPIA+Hanlon-AJGP-2012 Done: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/full-Tier-4-UPIA-Hanlon-AJGP2012-EV-EVALUATED.pickle 

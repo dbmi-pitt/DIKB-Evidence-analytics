@@ -1,0 +1,45 @@
+To load into mysql, change the path in the load statement below, run
+from a term 'mysql -u username -p --local-infile=1', then the
+following queries:
+
+CREATE TABLE `DDI` (
+  `id` int(11) NOT NULL,
+  `drug1` varchar(200) COLLATE utf8_bin NOT NULL,
+  `object` varchar(45) COLLATE utf8_bin NOT NULL,
+  `drug2` varchar(45) COLLATE utf8_bin NOT NULL,
+  `precipitant` varchar(45) COLLATE utf8_bin NOT NULL,
+  `certainty` varchar(45) COLLATE utf8_bin DEFAULT NULL,
+  `contraindication` varchar(45) COLLATE utf8_bin DEFAULT NULL,
+  `dateAdded` varchar(45) COLLATE utf8_bin DEFAULT NULL,
+  `ddiPkEffect` varchar(500) COLLATE utf8_bin DEFAULT NULL,
+  `ddiPkMechanism` varchar(1000) COLLATE utf8_bin DEFAULT NULL,
+  `effectConcept` varchar(1000) COLLATE utf8_bin DEFAULT NULL,
+  `homepage` varchar(200) COLLATE utf8_bin DEFAULT NULL,
+  `label` varchar(2000) COLLATE utf8_bin DEFAULT NULL,
+  `numericVal` varchar(45) COLLATE utf8_bin DEFAULT NULL,
+  `objectUri` varchar(200) COLLATE utf8_bin DEFAULT NULL,
+  `pathway` varchar(200) COLLATE utf8_bin DEFAULT NULL,
+  `precaution` varchar(200) COLLATE utf8_bin DEFAULT NULL,
+  `precipUri` varchar(200) COLLATE utf8_bin DEFAULT NULL,
+  `severity` varchar(45) COLLATE utf8_bin DEFAULT NULL,
+  `uri` varchar(200) COLLATE utf8_bin DEFAULT NULL,
+  `whoAnnotated` varchar(45) COLLATE utf8_bin DEFAULT NULL,
+  `source` varchar(45) COLLATE utf8_bin DEFAULT NULL,
+  `ddiType` varchar(45) COLLATE utf8_bin DEFAULT NULL,
+  `evidence` varchar(200) COLLATE utf8_bin DEFAULT NULL,
+  `evidenceSource` varchar(200) COLLATE utf8_bin DEFAULT NULL,
+  `evidenceStatement` varchar(2000) COLLATE utf8_bin DEFAULT NULL,
+  `researchStatementLabel` varchar(1000) COLLATE utf8_bin DEFAULT NULL,
+  `researchStatement` varchar(200) COLLATE utf8_bin DEFAULT NULL,
+  `managementOptions` varchar(1000) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+LOAD DATA LOCAL INFILE '/home/boycerd/DI_DIR/DIKB-Evidence-analytics/DIKB-5-sources-PDDI/CombinedDatasetConservative-5-sources.csv'
+INTO TABLE DDI
+FIELDS TERMINATED BY '\t'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(drug1,object,drug2,precipitant,certainty,contraindication,dateAdded,ddiPkEffect,ddiPkMechanism,effectConcept,homepage,label,numericVal,objectUri,pathway,precaution,precipUri,severity,uri,whoAnnotated,source,ddiType,evidence,evidenceSource,evidenceStatement,researchStatementLabel,researchStatement,managementOptions)
+;

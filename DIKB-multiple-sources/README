@@ -1,3 +1,13 @@
+Code in this folder is for testing the application of the merged
+dataset of potential drug-drug interaction (PDDI( pairs as listed in
+multiple sources. The data comes from a different code base (currently
+https://swat-4-med-safety.googlecode.com/svn/trunk/SW-DDI-catalog/drug-drug-interactions). You
+can replace the file of PDDIs below with one output from the script
+(https://swat-4-med-safety.googlecode.com/svn/trunk/SW-DDI-catalog/drug-drug-interactions/scripts/combine-PDDI-AllDatasets.py)
+or its variations within the scripts folder of that repository. 
+
+See below for loading the data....
+
 To collapse the data across datasets, use the following query and then open in emacs and run M-x replace-regexp --> :?None:?:
 ---
 select  
@@ -22,6 +32,7 @@ select
 	group_concat(researchStatementLabel separator ':'), 
 	group_concat(researchStatement separator ':'), 
 	group_concat(managementOptions separator ':')           
+INTO OUTFILE '/tmp/group_concatenated_PDDI_list.txt' FIELDS TERMINATED BY '\t' OPTIONALLY ENCLOSED BY '"' LINES TERMINATED BY '\n'
 from DDI
 GROUP BY drug1, drug2;
 ---
@@ -66,6 +77,7 @@ CREATE TABLE `DDI` (
 ---
 
 ---
+-- Note that this folder can be changed to any exported by https://swat-4-med-safety.googlecode.com/svn/trunk/SW-DDI-catalog/drug-drug-interactions/scripts/combine-PDDI-AllDatasets.py or its variations
 LOAD DATA LOCAL INFILE '/home/boycerd/DI_DIR/DIKB-Evidence-analytics/DIKB-5-sources-PDDI/CombinedDatasetConservative-5-sources.csv'
 INTO TABLE DDI
 FIELDS TERMINATED BY '\t'

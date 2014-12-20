@@ -3,7 +3,7 @@ from a term 'mysql -u username -p --local-infile=1', then the
 following queries:
 
 CREATE TABLE `DDI` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `drug1` varchar(200) COLLATE utf8_bin NOT NULL,
   `object` varchar(45) COLLATE utf8_bin NOT NULL,
   `drug2` varchar(45) COLLATE utf8_bin NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE `DDI` (
   `ddiType` varchar(45) COLLATE utf8_bin DEFAULT NULL,
   `evidence` varchar(200) COLLATE utf8_bin DEFAULT NULL,
   `evidenceSource` varchar(200) COLLATE utf8_bin DEFAULT NULL,
-  `evidenceStatement` varchar(2000) COLLATE utf8_bin DEFAULT NULL,
+  `evidenceStatement` varchar(7000) COLLATE utf8_bin DEFAULT NULL,
   `researchStatementLabel` varchar(1000) COLLATE utf8_bin DEFAULT NULL,
   `researchStatement` varchar(200) COLLATE utf8_bin DEFAULT NULL,
   `managementOptions` varchar(1000) COLLATE utf8_bin DEFAULT NULL,

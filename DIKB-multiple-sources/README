@@ -32,8 +32,8 @@ select
 	group_concat(researchStatementLabel separator ':'), 
 	group_concat(researchStatement separator ':'), 
 	group_concat(managementOptions separator ':')           
-INTO OUTFILE '/tmp/group_concatenated_PDDI_list.txt' FIELDS TERMINATED BY '\t' OPTIONALLY ENCLOSED BY '"' LINES TERMINATED BY '\n'
-from DDI
+INTO OUTFILE '/home/boycerd/DI_DIR/DIKB-Evidence-analytics/DIKB-multiple-sources/group_concatenated_PDDI_list.txt' FIELDS TERMINATED BY '\t' OPTIONALLY ENCLOSED BY '"' LINES TERMINATED BY '\n'
+FROM DDI
 GROUP BY drug1, drug2;
 ---
 
@@ -45,9 +45,9 @@ following queries:
 CREATE TABLE `DDI` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `drug1` varchar(200) COLLATE utf8_bin NOT NULL,
-  `object` varchar(45) COLLATE utf8_bin NOT NULL,
-  `drug2` varchar(45) COLLATE utf8_bin NOT NULL,
-  `precipitant` varchar(45) COLLATE utf8_bin NOT NULL,
+  `object` varchar(200) COLLATE utf8_bin NOT NULL,
+  `drug2` varchar(200) COLLATE utf8_bin NOT NULL,
+  `precipitant` varchar(200) COLLATE utf8_bin NOT NULL,
   `certainty` varchar(45) COLLATE utf8_bin DEFAULT NULL,
   `contraindication` varchar(45) COLLATE utf8_bin DEFAULT NULL,
   `dateAdded` varchar(45) COLLATE utf8_bin DEFAULT NULL,
@@ -66,9 +66,9 @@ CREATE TABLE `DDI` (
   `whoAnnotated` varchar(45) COLLATE utf8_bin DEFAULT NULL,
   `source` varchar(45) COLLATE utf8_bin DEFAULT NULL,
   `ddiType` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `evidence` varchar(200) COLLATE utf8_bin DEFAULT NULL,
+  `evidence` varchar(5000) COLLATE utf8_bin DEFAULT NULL,
   `evidenceSource` varchar(200) COLLATE utf8_bin DEFAULT NULL,
-  `evidenceStatement` varchar(7000) COLLATE utf8_bin DEFAULT NULL,
+  `evidenceStatement` varchar(5000) COLLATE utf8_bin DEFAULT NULL,
   `researchStatementLabel` varchar(1000) COLLATE utf8_bin DEFAULT NULL,
   `researchStatement` varchar(200) COLLATE utf8_bin DEFAULT NULL,
   `managementOptions` varchar(1000) COLLATE utf8_bin DEFAULT NULL,
@@ -77,8 +77,8 @@ CREATE TABLE `DDI` (
 ---
 
 ---
--- Note that this folder can be changed to any exported by https://swat-4-med-safety.googlecode.com/svn/trunk/SW-DDI-catalog/drug-drug-interactions/scripts/combine-PDDI-AllDatasets.py or its variations
-LOAD DATA LOCAL INFILE '/home/boycerd/DI_DIR/DIKB-Evidence-analytics/DIKB-5-sources-PDDI/CombinedDatasetConservative-5-sources.csv'
+-- Note that this file can be changed to any one exported by https://swat-4-med-safety.googlecode.com/svn/trunk/SW-DDI-catalog/drug-drug-interactions/scripts/combine-PDDI-AllDatasets.py or its variations
+LOAD DATA LOCAL INFILE '/home/boycerd/DI_DIR/DIKB-Evidence-analytics/DIKB-multiple-sources/CombinedDatasetNotConservativeAllsources.csv'
 INTO TABLE DDI
 FIELDS TERMINATED BY '\t'
 LINES TERMINATED BY '\n'

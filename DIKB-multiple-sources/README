@@ -8,6 +8,8 @@ or its variations within the scripts folder of that repository.
 
 See below for loading the data....
 
+NOTE: THIS QUERY NEEDS TO BE CORRECTED! IT CURRENTLY INCORRECTLY CONCATS MULTIPLE DDIS FROM THE SAME DATABASE. 
+
 To collapse the data across datasets, use the following query and then open in emacs and run M-x replace-regexp --> :?None:?:
 ---
 select  

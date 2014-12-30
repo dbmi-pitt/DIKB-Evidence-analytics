@@ -1,4 +1,35 @@
+### TODO: document this code with a title, author, date, purpose, etc...
 
+import os,sys, string, cgi
+from time import time, strftime, localtime
+
+import sys
+sys.path = sys.path + ['./dikb-relational-to-object-mappings']
+
+from mysql_tool import *
+from DIKB_Load import load_ev_from_db
+
+from sqlalchemy import func
+from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
+
+from DIKB.ModelUtils import *
+from DIKB.DIKB import *
+from DIKB.DrugModel import *
+from DIKB.EvidenceModel import *
+from DIKB.ExportAssertions import *
+
+## current time and date
+timestamp = strftime("%m/%d/%Y %H:%M:%S\n", localtime(time()))
+
+## Customize as you see fit
+ident = "".join(["Current SQL DIKB evidence : ", timestamp])
+
+## CODE TO RELOAD THE EB; SUFFICIENT FOR ADDING INFORMATION TO THE
+## EB. IF YOU NEED TO ADD OBJECTS TO THE KB OR ACCESS EVIDENCE FROM
+## THE DIKB'S DRUG MODEL, THEN USE THE CODE THAT RENOTIFIES OBSERVERS
+ev = load_ev_from_db(ident)
+
+################################################################################
 #basic entry attempt for inhibition
 for elt in ["cyp2d6", "cyp3a4"]:
     a = Assertion("rosko", "inhibits", elt)

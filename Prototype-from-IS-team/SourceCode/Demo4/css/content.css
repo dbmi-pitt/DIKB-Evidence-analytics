@@ -1,0 +1,40 @@
+#mainc
+{
+  width:950px;
+  padding: 10 30px; 
+}
+#top 
+{
+  width:950px;
+  height: 30px;
+  font-size: 24px;
+  background:#E9E9E4;
+  padding: 10 12px; 
+}
+#left
+{
+  float: left;
+  width:650px;
+  height: 500px;
+  text-align:left; 
+  overflow:scroll;
+}
+.evd
+{
+  border-width:1px;
+  border-style:solid;
+}
+.assertion
+{
+  border-width:1px;
+  border-style:solid;
+  background:#E9E9E4;
+  font-size: 18px;
+}
+#right
+{    
+  float: right;
+  width:200px;
+  height:500px;
+  text-align:center;
+}

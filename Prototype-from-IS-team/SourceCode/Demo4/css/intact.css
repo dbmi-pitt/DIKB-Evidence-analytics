@@ -1,0 +1,69 @@
+#top_prof
+{
+  width:950px;
+  text-align:right;
+  padding: 10px; 
+  height:20px;
+}
+#top_intro
+{
+  width:950px;
+  text-align:left;
+  border: 2px solid;
+  padding: 2 2 2 2px; 
+}
+#top_hyperlink
+{
+  width:950px;
+}
+#input_drug
+{
+  float:left;
+}
+#main
+{
+  width:1000px;
+  display:none;
+}
+#middle
+{
+  width:600px; 
+  height: 20px;
+  font-size: 15px;
+  text-align:left;
+  background:#E9E9E4;
+  padding: 10 12px;  
+}
+#clean
+{
+  float:right;
+  width:100px; 
+  height: 10px;
+}
+#dn1#dn2,#dn3,#dn4,#dn5,#dn6,#dn7,#dn8
+{
+  float:left;
+  width:400px; 
+  display:none;
+}
+#hot,#med,#cold,#all
+{
+  background-color:#ffffff;
+}
+#unprof
+{
+  display:block;
+}
+#prof
+{
+  display:none;
+}
+#interdesp
+{
+  text-align:left;
+  width:900px;
+}
+#generic,#brand
+{
+  display:inline;
+}

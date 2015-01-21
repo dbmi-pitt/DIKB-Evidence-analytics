@@ -1,0 +1,90 @@
+Code in this folder is for testing the application of the merged
+dataset of potential drug-drug interaction (PDDI( pairs as listed in
+multiple sources. The data comes from a different code base (currently
+https://swat-4-med-safety.googlecode.com/svn/trunk/SW-DDI-catalog/drug-drug-interactions). You
+can replace the file of PDDIs below with one output from the script
+(https://swat-4-med-safety.googlecode.com/svn/trunk/SW-DDI-catalog/drug-drug-interactions/scripts/combine-PDDI-AllDatasets.py)
+or its variations within the scripts folder of that repository. 
+
+See below for loading the data....
+
+NOTE: THIS QUERY NEEDS TO BE CORRECTED! IT CURRENTLY INCORRECTLY CONCATS MULTIPLE DDIS FROM THE SAME DATABASE. 
+
+To collapse the data across datasets, use the following query and then open in emacs and run M-x replace-regexp --> :?None:?:
+---
+select  
+	drug1,
+	object,
+	drug2,
+	precipitant,
+	group_concat(source separator ':'), 
+	group_concat(certainty separator ':'), 
+	group_concat(label separator ':'), 
+	group_concat(contraindication separator ':'), 
+	group_concat(ddiPkEffect separator ':'), 
+	group_concat(ddiPkMechanism separator ':'), 
+	group_concat(effectConcept separator ':'), 
+	group_concat(homepage separator ':'), 
+	group_concat(label separator '::'), 
+	group_concat(numericVal separator ':'), 
+	group_concat(severity separator ':'), 
+	group_concat(ddiType separator ':'), 
+	group_concat(evidence separator ':'), 
+	group_concat(evidenceSource separator ':'), 
+	group_concat(researchStatementLabel separator ':'), 
+	group_concat(researchStatement separator ':'), 
+	group_concat(managementOptions separator ':')           
+INTO OUTFILE '/home/boycerd/DI_DIR/DIKB-Evidence-analytics/DIKB-multiple-sources/group_concatenated_PDDI_list.txt' FIELDS TERMINATED BY '\t' OPTIONALLY ENCLOSED BY '"' LINES TERMINATED BY '\n'
+FROM DDI
+GROUP BY drug1, drug2;
+---
+
+To load into mysql, change the path in the load statement below, run
+from a term 'mysql -u username -p --local-infile=1', then the
+following queries:
+
+---
+CREATE TABLE `DDI` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `drug1` varchar(200) COLLATE utf8_bin NOT NULL,
+  `object` varchar(200) COLLATE utf8_bin NOT NULL,
+  `drug2` varchar(200) COLLATE utf8_bin NOT NULL,
+  `precipitant` varchar(200) COLLATE utf8_bin NOT NULL,
+  `certainty` varchar(45) COLLATE utf8_bin DEFAULT NULL,
+  `contraindication` varchar(45) COLLATE utf8_bin DEFAULT NULL,
+  `dateAdded` varchar(45) COLLATE utf8_bin DEFAULT NULL,
+  `ddiPkEffect` varchar(500) COLLATE utf8_bin DEFAULT NULL,
+  `ddiPkMechanism` varchar(1000) COLLATE utf8_bin DEFAULT NULL,
+  `effectConcept` varchar(1000) COLLATE utf8_bin DEFAULT NULL,
+  `homepage` varchar(200) COLLATE utf8_bin DEFAULT NULL,
+  `label` varchar(2000) COLLATE utf8_bin DEFAULT NULL,
+  `numericVal` varchar(45) COLLATE utf8_bin DEFAULT NULL,
+  `objectUri` varchar(200) COLLATE utf8_bin DEFAULT NULL,
+  `pathway` varchar(200) COLLATE utf8_bin DEFAULT NULL,
+  `precaution` varchar(200) COLLATE utf8_bin DEFAULT NULL,
+  `precipUri` varchar(200) COLLATE utf8_bin DEFAULT NULL,
+  `severity` varchar(45) COLLATE utf8_bin DEFAULT NULL,
+  `uri` varchar(200) COLLATE utf8_bin DEFAULT NULL,
+  `whoAnnotated` varchar(45) COLLATE utf8_bin DEFAULT NULL,
+  `source` varchar(45) COLLATE utf8_bin DEFAULT NULL,
+  `ddiType` varchar(45) COLLATE utf8_bin DEFAULT NULL,
+  `evidence` varchar(5000) COLLATE utf8_bin DEFAULT NULL,
+  `evidenceSource` varchar(200) COLLATE utf8_bin DEFAULT NULL,
+  `evidenceStatement` varchar(5000) COLLATE utf8_bin DEFAULT NULL,
+  `researchStatementLabel` varchar(1000) COLLATE utf8_bin DEFAULT NULL,
+  `researchStatement` varchar(200) COLLATE utf8_bin DEFAULT NULL,
+  `managementOptions` varchar(1000) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+---
+
+---
+-- Note that this file can be changed to any one exported by https://swat-4-med-safety.googlecode.com/svn/trunk/SW-DDI-catalog/drug-drug-interactions/scripts/combine-PDDI-AllDatasets.py or its variations
+LOAD DATA LOCAL INFILE '/home/boycerd/DI_DIR/DIKB-Evidence-analytics/DIKB-multiple-sources/CombinedDatasetNotConservativeAllsources.csv'
+INTO TABLE DDI
+FIELDS TERMINATED BY '\t'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(drug1,object,drug2,precipitant,certainty,contraindication,dateAdded,ddiPkEffect,ddiPkMechanism,effectConcept,homepage,label,numericVal,objectUri,pathway,precaution,precipUri,severity,uri,whoAnnotated,source,ddiType,evidence,evidenceSource,evidenceStatement,researchStatementLabel,researchStatement,managementOptions)
+;
+---

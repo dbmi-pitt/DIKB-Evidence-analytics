@@ -1,6 +1,6 @@
 ### SAM ROSKO'S TEST FILE FOR WORKING ON DIKB
 ### LAST UPDATED: 1/22/2015
-### RECENTLY ADDED: Code to add new inhibitor data, started working with substrate data
+### RECENTLY: Working on initial input for in vitro data
 
 import os,sys, string, cgi
 from time import time, strftime, localtime
@@ -81,28 +81,28 @@ a.insertEvidence("for",e)
 ev.addAssertion(a)
 
 ###########################################################
-############ TRIAL INHIBITOR DATA ENTRIES #################
+################ IN VIVO CYP INHIBITORS ###################
 ###########################################################
 
 ###### CYP1A2 inhibitor entries
 for elt in ["ciprofloxacin", "fluvoxamine"]:
     a = Assertion(elt, "inhibits", "cyp1a2")
     e = Evidence(ev)
-    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'strong' in vivo inhibitor of CYP1A2. For more information, see Table 3 on page 41 and also see Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2014")
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'strong' in vivo inhibitor of CYP1A2. For more information, see Table 3 on page 41 and also see Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2015")
     a.insertEvidence("for",e)
     ev.addAssertion(a)
 
 for elt in ["methoxsalen", "mexiletine", "phenypropanolamine", "vemurafenib", "zileuton"]:
     a = Assertion(elt, "inhibits", "cyp1a2")
     e = Evidence(ev)
-    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'moderate' in vivo inhibitor of CYP1A2. For more information, see Table 3 on page 41 and also see Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2014")
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'moderate' in vivo inhibitor of CYP1A2. For more information, see Table 3 on page 41 and also see Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2015")
     a.insertEvidence("for",e)
     ev.addAssertion(a)
 
 for elt in ["acyclovir", "allopurinol", "caffeine", "cimetidine", "disulfiram", "famotidine", "norfloxacin", "propafeonone", "propranolol", "terbinafine", "ticlopidine", "verapamil"]:
     a = Assertion(elt, "inhibits", "cyp1a2")
     e = Evidence(ev)
-    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'weak' in vivo inhibitor of CYP1A2. For more information, see Table 3 on page 41 and also see Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2014")
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'weak' in vivo inhibitor of CYP1A2. For more information, see Table 3 on page 41 and also see Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2015")
     a.insertEvidence("for",e)
     ev.addAssertion(a)
 
@@ -110,14 +110,14 @@ for elt in ["acyclovir", "allopurinol", "caffeine", "cimetidine", "disulfiram", 
 for elt in ["clopidogrel", "ticlopidine", "prasugrel"]:
     a = Assertion(elt, "inhibits", "cyp2b6")
     e = Evidence(ev)
-    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'weak' in vivo inhibitor of CYP2B6. For more information, see Table 3 on page 41 and also see Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2014")
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'weak' in vivo inhibitor of CYP2B6. For more information, see Table 3 on page 41 and also see Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2015")
     a.insertEvidence("for",e)
     ev.addAssertion(a)
 
 ###### CYP2C8 "inhibitor" entries
 a = Assertion("gemfibrozil", "inhibits", "cyp2c8")
 e = Evidence(ev)
-e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'strong' in vivo inhibitor of CYP2C8. Gemfibrozil also inhibits OATP1B1. For more information, see Table 3 on page 41, footnote 6 on page 42, and Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2014")
+e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'strong' in vivo inhibitor of CYP2C8. Gemfibrozil also inhibits OATP1B1. For more information, see Table 3 on page 41, footnote 6 on page 42, and Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2015")
 a.insertEvidence("for",e)
 ev.addAssertion(a)
 
@@ -125,47 +125,47 @@ ev.addAssertion(a)
 for elt in ["amiodarone", "fluconazole", "miconazole", "oxandrolone"]:
     a = Assertion(elt, "inhibits", "cyp2c9")
     e = Evidence(ev)
-    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'moderate' in vivo inhibitor of CYP2C9. For more information, see Table 3 on page 41 and also see Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2014")
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'moderate' in vivo inhibitor of CYP2C9. For more information, see Table 3 on page 41 and also see Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2015")
     a.insertEvidence("for",e)
     ev.addAssertion(a)
 
 for elt in ["capecitabine", "cotrimoxazole", "etravirine", "fluvastatin", "fluvoxamine", "metronidazole", "sulfinpyrazone", "tigecycline", "voriconazole", "zafirlukast"]:
     a = Assertion(elt, "inhibits", "cyp2c9")
     e = Evidence(ev)
-    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'weak' in vivo inhibitor of CYP2C9. For more information, see Table 3 on page 41 and also see Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2014")
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'weak' in vivo inhibitor of CYP2C9. For more information, see Table 3 on page 41 and also see Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2015")
     a.insertEvidence("for",e)
     ev.addAssertion(a)
 
 ###### CYP2C19 "inhibitor" entries
 a = Assertion("fluconazole", "inhibits", "cyp2c19")
 e = Evidence(ev)
-e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'strong' in vivo inhibitor of CYP2C19 based on the AUC ratio of omeprazole, which is also metabolized by CYP3A. For more information, see Table 3 on page 41, footnote 7 on page 42, and Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2014")
+e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'strong' in vivo inhibitor of CYP2C19 based on the AUC ratio of omeprazole, which is also metabolized by CYP3A. For more information, see Table 3 on page 41, footnote 7 on page 42, and Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2015")
 a.insertEvidence("for",e)
 ev.addAssertion(a)
 
 a = Assertion("fluvoxamine", "inhibits", "cyp2c19")
 e = Evidence(ev)
-e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'strong' in vivo inhibitor of CYP2C19. Fluvoxamine strongly inhibits CYP1A2 and CYP2C19, but it also inhibits CYP2C8/CYP2C9 and CYP3A. For more information, see Table 3 on page 41, footnote 8 on page 42, and Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2014")
+e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'strong' in vivo inhibitor of CYP2C19. Fluvoxamine strongly inhibits CYP1A2 and CYP2C19, but it also inhibits CYP2C8/CYP2C9 and CYP3A. For more information, see Table 3 on page 41, footnote 8 on page 42, and Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2015")
 a.insertEvidence("for",e)
 ev.addAssertion(a)
 
 a = Assertion("ticlopidine", "inhibits", "cyp2c19")
 e = Evidence(ev)
-e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'strong' in vivo inhibitor of CYP2C19. Ticlopidine strongly inhibits CYP2C19, but it also inhibits CYP3A, CYP2B6, and CYP1A2. For more information, see Table 3 on page 41, footnote 9 on page 42, and Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2014")
+e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'strong' in vivo inhibitor of CYP2C19. Ticlopidine strongly inhibits CYP2C19, but it also inhibits CYP3A, CYP2B6, and CYP1A2. For more information, see Table 3 on page 41, footnote 9 on page 42, and Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2015")
 a.insertEvidence("for",e)
 ev.addAssertion(a)
 
 for elt in ["esomeprazole", "fluoxetine", "omeprazole", "voriconazole"]:
     a = Assertion(elt, "inhibits", "cyp2c19")
     e = Evidence(ev)
-    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'moderate' in vivo inhibitor of CYP2C19. For more information, see Table 3 on page 41 and also see Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2014")
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'moderate' in vivo inhibitor of CYP2C19. For more information, see Table 3 on page 41 and also see Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2015")
     a.insertEvidence("for",e)
     ev.addAssertion(a)
 
 for elt in ["armodafinil", "cimetidine", "etravirine", "felbamate", "ketoconazole"]:
     a = Assertion(elt, "inhibits", "cyp2c19")
     e = Evidence(ev)
-    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'weak' in vivo inhibitor of CYP2C19. For more information, see Table 3 on page 41 and also see Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2014")
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'weak' in vivo inhibitor of CYP2C19. For more information, see Table 3 on page 41 and also see Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2015")
     a.insertEvidence("for",e)
     ev.addAssertion(a)
 
@@ -174,21 +174,21 @@ for elt in ["boceprevir", "clarithromycin", "conivaptan", "indinavir", "itracona
 "nelfinavir", "posaconazole", "ritonavir", "saquinavir", "telaprevir", "telithromycin", "voriconazole"]:
     a = Assertion(elt, "inhibits", "cyp3a4")
     e = Evidence(ev)
-    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'strong' in vivo inhibitor of CYP3A4. For more information, see Table 3 on pages 41/42 and also see Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2014")
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'strong' in vivo inhibitor of CYP3A4. For more information, see Table 3 on pages 41/42 and also see Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2015")
     a.insertEvidence("for",e)
     ev.addAssertion(a)
 
 for elt in ["amprenavir", "aprepitant", "atazanavir", "ciprofloxacin", "crizotinib", "darunavir/ritonavir", "diltiazem", "erythromycin", "fluconazole", "fosamprenavir", "imatinib", "verapamil"]:
     a = Assertion(elt, "inhibits", "cyp3a4")
     e = Evidence(ev)
-    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'moderate' in vivo inhibitor of CYP3A4. For more information, see Table 3 on page 42 and also see Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2014")
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'moderate' in vivo inhibitor of CYP3A4. For more information, see Table 3 on page 42 and also see Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2015")
     a.insertEvidence("for",e)
     ev.addAssertion(a)
 
 for elt in ["alprazolam", "amiodarone", "amlodipine", "atorvastatin", "bicalutamide", "cilostazol", "cimetidine", "cyclosporine", "fluoxetine", "fluvoxamine", "isoniazid", "lapatinib", "nilotinib", "pazopanib", "ranitidine", "ranolazine", "tipranavir/ritonavir", "zileuton"]:
     a = Assertion(elt, "inhibits", "cyp3a4")
     e = Evidence(ev)
-    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'weak' in vivo inhibitor of CYP3A4. For more information, see Table 3 on page 42 and also see Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2014")
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'weak' in vivo inhibitor of CYP3A4. For more information, see Table 3 on page 42 and also see Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2015")
     a.insertEvidence("for",e)
     ev.addAssertion(a)
 
@@ -196,40 +196,41 @@ for elt in ["alprazolam", "amiodarone", "amlodipine", "atorvastatin", "bicalutam
 for elt in ["bupropion", "fluoxetine", "paroxetine", "quinidine"]:
     a = Assertion(elt, "inhibits", "cyp2d6")
     e = Evidence(ev)
-    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'strong' in vivo inhibitor of CYP2D6. For more information, see Table 3 on page 42 and also see Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2014")
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'strong' in vivo inhibitor of CYP2D6. For more information, see Table 3 on page 42 and also see Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2015")
     a.insertEvidence("for",e)
     ev.addAssertion(a)
 
 for elt in ["cinacalcet", "duloxetine", "terbinafine"]:
     a = Assertion(elt, "inhibits", "cyp2d6")
     e = Evidence(ev)
-    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'moderate' in vivo inhibitor of CYP2D6. For more information, see Table 3 on page 42 and also see Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2014")
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'moderate' in vivo inhibitor of CYP2D6. For more information, see Table 3 on page 42 and also see Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2015")
     a.insertEvidence("for",e)
     ev.addAssertion(a)
 
 for elt in ["amiodarone", "celecoxib", "clobazam", "cimetidine", "desvenlafaxine", "diltiazem", "diphenhydramine", "escitalopram", "febuxostat", "gefitinib", "hydralazine", "hydroxychloroquine", "imatinib", "methadone", "pazopanib", "propafenone", "ranitidine", "ritonavir", "sertraline", "telithromycin", "verapamil", "vemurafenib"]:
     a = Assertion(elt, "inhibits", "cyp2d6")
     e = Evidence(ev)
-    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'weak' in vivo inhibitor of CYP2D6. For more information, see Table 3 on page 42 and also see Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2014")
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'weak' in vivo inhibitor of CYP2D6. For more information, see Table 3 on page 42 and also see Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/05/2015")
     a.insertEvidence("for",e)
     ev.addAssertion(a)
 
 ###########################################################
-############ TRIAL SUBSTRATE DATA ENTRIES #################
+################ IN VIVO CYP SUBSTRATES ###################
 ###########################################################
+#we need to address how substrates are entered, do we use (substrate_of), (primary_clearance_enzyme), or (in_Vivo_selective_inhibitor)
 
 ###### CYP1A2 substrate entries
 for elt in ["alosetron", "caffeine", "duloxetine", "melatonin", "ramelteon", "tacrine", "tizanidine"]:
     a = Assertion(elt, "substrate_of", "cyp1a2")
     e = Evidence(ev)
-    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'sensitive' in vivo substrate of CYP1A2. For more information, see Table 5 on page 44 and also see Table 7 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/12/2014")
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'sensitive' in vivo substrate of CYP1A2. For more information, see Table 5 on page 44 and also see Table 7 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/12/2015")
     a.insertEvidence("for",e)
     ev.addAssertion(a)
 
 for elt in ["theophylline", "tizanidine"]:
     a = Assertion(elt, "substrate_of", "cyp1a2")
     e = Evidence(ev)
-    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo substrate of CYP1A2 with a narrow therapeutic range. For more information, see Table 5 on page 44 and also see Table 7 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/12/2014")
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo substrate of CYP1A2 with a narrow therapeutic range. For more information, see Table 5 on page 44 and also see Table 7 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/12/2015")
     a.insertEvidence("for",e)
     ev.addAssertion(a)
 
@@ -237,34 +238,34 @@ for elt in ["theophylline", "tizanidine"]:
 for elt in ["bupropion", "efavirenz"]:
     a = Assertion(elt, "substrate_of", "cyp2b6")
     e = Evidence(ev)
-    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'sensitive' in vivo substrate of CYP2B6. The AUC of this compound was not increased by 5-fold or more with a CYP2B6 inhibitor, but it represents the most sensitive substrate studied with available inhibitors evaluated to date. For more information, see Table 5 on page 44, footnote 6 from Table 5, and Table 7 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/12/2014")
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'sensitive' in vivo substrate of CYP2B6. The AUC of this compound was not increased by 5-fold or more with a CYP2B6 inhibitor, but it represents the most sensitive substrate studied with available inhibitors evaluated to date. For more information, see Table 5 on page 44, footnote 6 from Table 5, and Table 7 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/12/2015")
     a.insertEvidence("for",e)
     ev.addAssertion(a)
 
 ##### CYP2C8 substrates
 a = Assertion("repaglinide", "substrate_of", "cyp2c8")
 e = Evidence(ev)
-e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'sensitive' in vivo substrate of CYP2C8. Repaglinide is also a substrate for OATP1B1, and it is only suitable as a CYP2C8 substrate if the inhibition of OATP1B1 by the investigational drug has been ruled out. For more information, see Table 5 on page 44, footnote 5 from Table 5, and Table 7 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/12/2014")
+e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'sensitive' in vivo substrate of CYP2C8. Repaglinide is also a substrate for OATP1B1, and it is only suitable as a CYP2C8 substrate if the inhibition of OATP1B1 by the investigational drug has been ruled out. For more information, see Table 5 on page 44, footnote 5 from Table 5, and Table 7 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/12/2015")
 a.insertEvidence("for",e)
 ev.addAssertion(a)
 
 a = Assertion("paclitaxel", "substrate_of", "cyp2c8")
 e = Evidence(ev)
-e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo substrate of CYP2C8 with a narrow therapeutic range. For more information, see Table 5 on page 44 and also see Table 7 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/12/2014")
+e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo substrate of CYP2C8 with a narrow therapeutic range. For more information, see Table 5 on page 44 and also see Table 7 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/12/2015")
 a.insertEvidence("for",e)
 ev.addAssertion(a)
 
 ##### CYP2C9 substrates
 a = Assertion("celecoxib", "substrate_of", "cyp2c9")
 e = Evidence(ev)
-e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'sensitive' in vivo substrate of CYP2C9. For more information, see Table 5 on page 44 and also see Table 7 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/12/2014")
+e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'sensitive' in vivo substrate of CYP2C9. For more information, see Table 5 on page 44 and also see Table 7 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/12/2015")
 a.insertEvidence("for",e)
 ev.addAssertion(a)
 
 for elt in ["warfarin", "phenytoin"]:
     a = Assertion(elt, "substrate_of", "cyp2c9")
     e = Evidence(ev)
-    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo substrate of CYP2C9 with a narrow therapeutic range. For more information, see Table 5 on page 44 and also see Table 7 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/12/2014")
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo substrate of CYP2C9 with a narrow therapeutic range. For more information, see Table 5 on page 44 and also see Table 7 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/12/2015")
     a.insertEvidence("for",e)
     ev.addAssertion(a)
 
@@ -272,13 +273,13 @@ for elt in ["warfarin", "phenytoin"]:
 for elt in ["lansoprazole", "omeprazole", "S-mephenytoin"]:
     a = Assertion(elt, "substrate_of", "cyp2c19")
     e = Evidence(ev)
-    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'sensitive' in vivo substrate of CYP2C19. For more information, see Table 5 on page 44 and also see Table 7 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/12/2014")
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'sensitive' in vivo substrate of CYP2C19. For more information, see Table 5 on page 44 and also see Table 7 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/12/2015")
     a.insertEvidence("for",e)
     ev.addAssertion(a)
 
 a = Assertion("S-mephenytoin", "substrate_of", "cyp2c19")
 e = Evidence(ev)
-e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo substrate of CYP2C19 with a narrow therapeutic range. For more information, see Table 5 on page 44 and also see Table 7 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/12/2014")
+e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo substrate of CYP2C19 with a narrow therapeutic range. For more information, see Table 5 on page 44 and also see Table 7 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/12/2015")
 a.insertEvidence("for",e)
 ev.addAssertion(a)
 
@@ -286,14 +287,14 @@ ev.addAssertion(a)
 for elt in ["alfentanil", "aprepitant", "budesonide", "buspirone", "conivaptan", "darifenacin", "darunavir", "dasatinib", "dronedarone", "eletriptan", "eplerenone", "everolimus", "felodipine", "indinavir", "fluticasone", "lopinavir", "lovastatin", "lurasidone", "maraviroc", "midazolam", "nisoldipine", "quetiapine", "saquinavir", "sildenafil", "simvastatin", "sirolimus", "tolvaptan", "tipranavir", "triazolam", "vardenafil", "ticagrelor"]:
     a = Assertion(elt, "substrate_of", "cyp3a4")
     e = Evidence(ev)
-    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'sensitive' in vivo substrate of CYP3A4. Because a number of CYP3A substrates (e.g., darunavir, maraviroc) are also substrates of P-gp, the observed increase in exposure could be due to inhibition of both CYP3A and P-gp. For more information, see Table 5 on page 44, footnote 6 from Table 5, and Table 7 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/12/2014")
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'sensitive' in vivo substrate of CYP3A4. Because a number of CYP3A substrates (e.g., darunavir, maraviroc) are also substrates of P-gp, the observed increase in exposure could be due to inhibition of both CYP3A and P-gp. For more information, see Table 5 on page 44, footnote 6 from Table 5, and Table 7 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/12/2015")
     a.insertEvidence("for",e)
     ev.addAssertion(a)
 
 for elt in ["alfentanil", "cyclosporine", "dihydroergotamine", "ergotamine", "fentanyl", "pimozide", "quinidine", "sirolimus", "tacrolimus"]:
     a = Assertion(elt, "substrate_of", "cyp3a4")
     e = Evidence(ev)
-    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo substrate of CYP3A4 with a narrow therapeutic range. For more information, see Table 5 on page 44 and also see Table 7 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/12/2014")
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo substrate of CYP3A4 with a narrow therapeutic range. For more information, see Table 5 on page 44 and also see Table 7 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/12/2015")
     a.insertEvidence("for",e)
     ev.addAssertion(a)
 
@@ -301,58 +302,55 @@ for elt in ["alfentanil", "cyclosporine", "dihydroergotamine", "ergotamine", "fe
 for elt in ["atomoxetine", "desipramine", "dextromethorphan", "metoprolol", "nebivolol", "perphenazine", "tolterodine", "venlafaxine"]:
     a = Assertion(elt, "substrate_of", "cyp2d6")
     e = Evidence(ev)
-    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'sensitive' in vivo substrate of CYP2D6. For more information, see Table 5 on page 44 and also see Table 7 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/12/2014")
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'sensitive' in vivo substrate of CYP2D6. For more information, see Table 5 on page 44 and also see Table 7 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/12/2015")
     a.insertEvidence("for",e)
     ev.addAssertion(a)
 
 a = Assertion("thioridazine", "substrate_of", "cyp2d6")
 e = Evidence(ev)
-e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo substrate of CYP2D6 with a narrow therapeutic range. For more information, see Table 5 on page 44 and also see Table 7 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/12/2014")
+e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo substrate of CYP2D6 with a narrow therapeutic range. For more information, see Table 5 on page 44 and also see Table 7 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/12/2015")
 a.insertEvidence("for",e)
 ev.addAssertion(a)
 
 a = Assertion("pimozide", "substrate_of", "cyp2d6")
 e = Evidence(ev)
-e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo substrate of CYP2D6 with a narrow therapeutic range. For more information, see Table 5 on page 44.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/12/2014")
+e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo substrate of CYP2D6 with a narrow therapeutic range. For more information, see Table 5 on page 44.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/12/2015")
 a.insertEvidence("for",e)
 ev.addAssertion(a)
 
 ###########################################################
-############ TRANSPORT PROTEIN DATA ENTRIES ###############
+############### IN VIVO TRANSPORT PROTEINS  ###############
 ###########################################################
+#gonna have to add these to the system as enzymes
 
-###### P-gp both inhibitors and substrates, going to have to add it to the system as an enzyme
+###### P-gp both inhibitors and substrates
 ##### also, going to need to replace the name P-gp
+##### do I need to make rules for increases AUC for digoxin, fexofenadine, talinolol
 
-for elt in ["amiodarone", "captopril", "carvedilol", "clarithromycin", "conivaptan", "cyclosporine", "diltiazem", "dronedarone", "felodipine", "itraconazole", "lopinavir/ritonavir", "quinidine", "ranolazine", "ticagrelor", "verapamil"]:
+for elt in ["amiodarone", "captopril", "carvedilol", "clarithromycin", "conivaptan", "cyclosporine", "diltiazem", "dronedarone", "felodipine", "itraconazole", "quinidine", "ranolazine", "ticagrelor", "verapamil"]:
     a = Assertion(elt, "inhibits", "P-gp")
     e = Evidence(ev)
-    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo inhibitor of P-gp because this showed a >25% increase in digoxin AUC. For more information, see Table 6 on page 49 and also see Table 12 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/15/2014")
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo inhibitor of P-gp because this showed a >25% increase in digoxin AUC. For more information, see Table 6 on page 49, footnote 2 on page 49, and  Table 12 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/15/2015")
     a.insertEvidence("for",e)
     ev.addAssertion(a)
 
-a = Assertion("azithromycin", "inhibits", "P-gp")
-e = Evidence(ev)
-e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo inhibitor of P-gp because this showed a >25% increase in fexofenadine AUC. For more information, see Table 6 on page 49 and also see Table 12 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/15/2014")
-a.insertEvidence("for",e)
-ev.addAssertion(a)
+for elt in ["azithromycin", "ketoconazole"]:
+    a = Assertion(elt, "inhibits", "P-gp")
+    e = Evidence(ev)
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo inhibitor of P-gp because this showed a >25% increase in fexofenadine AUC. For more information, see Table 6 on page 49, footnote 4 on page 49, and Table 12 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/22/2015")
+    a.insertEvidence("for",e)
+    ev.addAssertion(a)
 
 a = Assertion("erythromycin", "inhibits", "P-gp")
 e = Evidence(ev)
-e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo inhibitor of P-gp because this showed a >25% increase in talinolol AUC. For more information, see Table 6 on page 49 and also see Table 12 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/15/2014")
-a.insertEvidence("for",e)
-ev.addAssertion(a)
-
-a = Assertion("ketoconazole", "inhibits", "P-gp")
-e = Evidence(ev)
-e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo inhibitor of P-gp because this showed a >25% increase in fexofenadine AUC. For more information, see Table 6 on page 49 and also see Table 12 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/15/2014")
+e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo inhibitor of P-gp because this showed a >25% increase in talinolol AUC. For more information, see Table 6 on page 49, footnote 5 on page 49, and Table 12 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/15/2015")
 a.insertEvidence("for",e)
 ev.addAssertion(a)
 
 for elt in ["aliskiren", "ambrisentan", "colchicine", "dabigatran", "etexilate", "digoxin", "everolimus", "fexofenadine", "imatinib", "lapatinib", "maraviroc", "nilotinib", "posaconazole", "ranolazine", "saxagliptin", "sirolimus", "sitagliptin", "talinolol", "tolvaptan", "topotecan"]:
     a = Assertion(elt, "substrate_of", "P-gp")
     e = Evidence(ev)
-    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo substrate of P-gp. For more information, see Table 7 on page 51 and also see Table 13 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/15/2014")
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo substrate of P-gp. For more information, see Table 7 on page 51 and also see Table 13 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/15/2015")
     a.insertEvidence("for",e)
     ev.addAssertion(a)
 
@@ -361,7 +359,122 @@ for elt in ["aliskiren", "ambrisentan", "colchicine", "dabigatran", "etexilate",
 for elt in ["cyclosporine", "eltrombopag", "gemfibrozil"]:
     a = Assertion(elt, "inhibits", "OATP1B1")
     e = Evidence(ev)
-    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo inhibitor of OATP1B1 because this showed a >25% increase in digoxin AUC. For more information, see Table 6 on page 49 and also see Table 12 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/15/2014")
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo inhibitor of OATP1B1. For more information, see Table 6 on page 49 and also see Table 12 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/22/2015")
+    a.insertEvidence("for",e)
+    ev.addAssertion(a)
+
+# these might not be includeable, have to look up ritonavir drug combinations
+for elt in ["atazanavir", "lopinavir", "saquinavir", "tipranavir"]:
+    a = Assertion(elt, "inhibits", "OATP1B1")
+    e = Evidence(ev)
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo inhibitor of OATP1B1. Separation of the in vivo inhibition effect from ritonavir is difficult because this drug is usually co-administered with ritonavir. For more information, see Table 6 on page 49, footnote 10 on page 49, and also see Table 12 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/22/2015")
+    a.insertEvidence("for",e)
+    ev.addAssertion(a)
+
+a = Assertion("ritonavir", "inhibits", "OATP1B1")
+e = Evidence(ev)
+e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo inhibitor of OATP1B1. The in vivo inhibition effect of ritonavir cannot be easily estimated because it is usually coadministered with other HIV protease inhibitors that are inhibitors for OATP as well. For more information, see Table 6 on page 49, footnote 11 on page 49, and Table 12 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/22/2015")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion("rifampin", "inhibits", "OATP1B1")
+e = Evidence(ev)
+e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo inhibitor of OATP1B1 when given as a single dose. For more information, see Table 6 on page 49, footnote 9 on page 49, and Table 12 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/22/2015")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+for elt in ["atrasentan", "atorvastatin", "bosentan", "ezetimibe", "fluvastatin", "glyburide", "rosuvastatin", "simvastatin acid", "pitavastatin", "pravastatin", "repaglinide", "rifampin", "valsartan", "olmesartan"]:
+    a = Assertion(elt, "substrate_of", "OATP1B1")
+    e = Evidence(ev)
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo substrate of OATP1B1. For more information, see Table 7 on page 51 and also see Table 13 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/22/2015")
+    a.insertEvidence("for",e)
+    ev.addAssertion(a)
+
+# talk with dr. boyce, should I call it irinotecan or SN-38
+a = Assertion("irinotecan", "substrate_of", "OATP1B1")
+e = Evidence(ev)
+e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that the active metabolite of this drug, SN-38, is an in vivo substrate of OATP1B1. For more information, see Table 7 on page 51 and also see Table 12 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/22/2015")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+##### OATP1B3 inhibitors then substrates
+a = Assertion("cyclosporine", "inhibits", "OATP1B3")
+e = Evidence(ev)
+e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo inhibitor of OATP1B3. For more information, see Table 6 on page 49, and also see Table 12 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/22/2015")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+# these might not be includeable, have to look up ritonavir drug combinations
+for elt in ["atazanavir", "lopinavir", "saquinavir"]:
+    a = Assertion(elt, "inhibits", "OATP1B3")
+    e = Evidence(ev)
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo inhibitor of OATP1B3. Separation of the in vivo inhibition effect from ritonavir is difficult because this drug is usually co-administered with ritonavir. For more information, see Table 6 on page 49, footnote 10 on page 49, and also see Table 12 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/22/2015")
+    a.insertEvidence("for",e)
+    ev.addAssertion(a)
+
+a = Assertion("ritonavir", "inhibits", "OATP1B3")
+e = Evidence(ev)
+e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo inhibitor of OATP1B3. The in vivo inhibition effect of ritonavir cannot be easily estimated because it is usually coadministered with other HIV protease inhibitors that are inhibitors for OATP as well. For more information, see Table 6 on page 49, footnote 11 on page 49, and Table 12 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/22/2015")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion("rifampin", "inhibits", "OATP1B3")
+e = Evidence(ev)
+e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo inhibitor of OATP1B3 when given as a single dose. For more information, see Table 6 on page 49, footnote 9 on page 49, and Table 12 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/22/2015")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+for elt in ["atorvastatin", "rosuvastatin", "pitavastatin", "valsartan", "olmesartan"]:
+    a = Assertion(elt, "substrate_of", "OATP1B3")
+    e = Evidence(ev)
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo substrate of OATP1B3. For more information, see Table 7 on page 51 and also see Table 13 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/22/2015")
+    a.insertEvidence("for",e)
+    ev.addAssertion(a)
+
+a = Assertion("telmisartan", "substrate_of", "OATP1B3")
+e = Evidence(ev)
+e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo substrate selective for OATP1B3. For more information, see Table 7 on page 51, footnote 2 on page 51, and Table 12 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/22/2015")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+###########################################################
+################ IN VITRO CYP INHIBITORS ##################
+###########################################################
+# we are using in_vitro_probe_substrate_of_enzyme and in_vitro_selective_inhibitor_of_enzyme for all of these
+# also using inhibition_constant
+# this data comes from fda website, not fda 2012, i used a reference to the website, but a secondary, permanent link may be preferable
+
+##### CYP1A2
+a = Assertion("furafylline", "in_vitro_selective_inhibitor_of_enzyme", "cyp1a2")
+e = Evidence(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical inhibitor of CYP1A2 for in vitro experiments. Furafylline is a mechanism-based inhibitor and should be pre-incubated before adding substrate. See Table 1 and footnote 2 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/22/2015")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion("alpha-naphthoflavone", "in_vitro_selective_inhibitor_of_enzyme", "cyp1a2")
+e = Evidence(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP1A2 for in vitro experiments. See Table 1 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/22/2015")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("furafylline", "inhibition_constant", "cyp1a2")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptible chemical inhibitor of CYP1A2 for in vitro experiments at a K_i of 0.1micM. See Table 1 on the FDA website. \n\n0.6-0.73micM/L X 1M/10^6micM X 260.25g/M = 0.00015615g/L-0.0001899825g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/22/2015", val = "0.00015615")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("alpha-naphthoflavone", "inhibition_constant", "cyp1a2")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptible chemical inhibitor of CYP1A2 for in vitro experiments at a K_i of 0.1micM. See Table 1 on the FDA website. \n\n0.1micM/L X 1M/10^6micM X 272.30g/M = 0.00002723g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/22/2015", val = "0.00002723")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+
+
+for elt in []:
+    a = Assertion(elt, "in_vitro_selective_inhibitor_of_enzyme", "cyp1a2")
+    e = Evidence(ev)
+    e.create(doc_p = "", q = "", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/22/2015")
     a.insertEvidence("for",e)
     ev.addAssertion(a)
 

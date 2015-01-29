@@ -1,6 +1,6 @@
 ### SAM ROSKO'S TEST FILE FOR WORKING ON DIKB
-### LAST UPDATED: 1/22/2015
-### RECENTLY: Working on initial input for in vitro data
+### LAST UPDATED: 1/29/2015
+### RECENTLY: Working on input for in vitro data
 
 import os,sys, string, cgi
 from time import time, strftime, localtime
@@ -217,7 +217,7 @@ for elt in ["amiodarone", "celecoxib", "clobazam", "cimetidine", "desvenlafaxine
 ###########################################################
 ################ IN VIVO CYP SUBSTRATES ###################
 ###########################################################
-#we need to address how substrates are entered, do we use (substrate_of), (primary_clearance_enzyme), or (in_Vivo_selective_inhibitor)
+##Dr. Boyce, we need to address how substrates are entered, do we use (substrate_of), (primary_clearance_enzyme), or (in_Vivo_selective_inhibitor)
 
 ###### CYP1A2 substrate entries
 for elt in ["alosetron", "caffeine", "duloxetine", "melatonin", "ramelteon", "tacrine", "tizanidine"]:
@@ -321,11 +321,11 @@ ev.addAssertion(a)
 ###########################################################
 ############### IN VIVO TRANSPORT PROTEINS  ###############
 ###########################################################
-#gonna have to add these to the system as enzymes
+# Have to add these to the system as enzymes
 
 ###### P-gp both inhibitors and substrates
-##### also, going to need to replace the name P-gp
-##### do I need to make rules for increases AUC for digoxin, fexofenadine, talinolol
+# also, need to replace the name P-gp
+# do I need to make rules for 'increases AUC' for digoxin, fexofenadine, talinolol, see quote below... I believe I should
 
 for elt in ["amiodarone", "captopril", "carvedilol", "clarithromycin", "conivaptan", "cyclosporine", "diltiazem", "dronedarone", "felodipine", "itraconazole", "quinidine", "ranolazine", "ticagrelor", "verapamil"]:
     a = Assertion(elt, "inhibits", "P-gp")
@@ -390,7 +390,7 @@ for elt in ["atrasentan", "atorvastatin", "bosentan", "ezetimibe", "fluvastatin"
     a.insertEvidence("for",e)
     ev.addAssertion(a)
 
-# talk with dr. boyce, should I call it irinotecan or SN-38
+# Dr. Boyce, should I call it irinotecan or SN-38
 a = Assertion("irinotecan", "substrate_of", "OATP1B1")
 e = Evidence(ev)
 e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that the active metabolite of this drug, SN-38, is an in vivo substrate of OATP1B1. For more information, see Table 7 on page 51 and also see Table 12 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/22/2015")
@@ -441,7 +441,10 @@ ev.addAssertion(a)
 ################ IN VITRO CYP INHIBITORS ##################
 ###########################################################
 # we are using in_vitro_probe_substrate_of_enzyme and in_vitro_selective_inhibitor_of_enzyme for all of these
-# also using inhibition_constant
+# also using inhibition_constant... in regards to this, i haven't seen any notes on how to handle Ki or Km ranges...
+# so I have been using the lower bound... I checked your dissertation and the evidence taxonomy but couldn't find anything
+# however, the evidence taxonomy suggest i need to link the inhibition constants with an assumption of the inhibitor rule
+# do I manually do this or does the system do it when it processes the rules
 # this data comes from fda website, not fda 2012, i used a reference to the website, but a secondary, permanent link may be preferable
 
 ##### CYP1A2
@@ -459,27 +462,127 @@ ev.addAssertion(a)
 
 a = Assertion_inhibition_constant("furafylline", "inhibition_constant", "cyp1a2")
 e = In_vitro_inhibition_study(ev)
-e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptible chemical inhibitor of CYP1A2 for in vitro experiments at a K_i of 0.1micM. See Table 1 on the FDA website. \n\n0.6-0.73micM/L X 1M/10^6micM X 260.25g/M = 0.00015615g/L-0.0001899825g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/22/2015", val = "0.00015615")
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an preferred chemical inhibitor of CYP1A2 for in vitro experiments at a K_i range of 0.6micM-0.73micM. See Table 1 on the FDA website. \n\n0.6-0.73micM/L X 1M/10^6micM X 260.25g/M = 0.00015615g/L - 0.0001899825g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/22/2015", val = "0.00015615")
 a.insertEvidence("for",e)
 ev.addAssertion(a)
 
 a = Assertion_inhibition_constant("alpha-naphthoflavone", "inhibition_constant", "cyp1a2")
 e = In_vitro_inhibition_study(ev)
-e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptible chemical inhibitor of CYP1A2 for in vitro experiments at a K_i of 0.1micM. See Table 1 on the FDA website. \n\n0.1micM/L X 1M/10^6micM X 272.30g/M = 0.00002723g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/22/2015", val = "0.00002723")
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP1A2 for in vitro experiments at a K_i of 0.1micM. See Table 1 on the FDA website. \n\n0.1micM/L X 1M/10^6micM X 272.30g/M = 0.00002723g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/22/2015", val = "0.00002723")
 a.insertEvidence("for",e)
 ev.addAssertion(a)
 
+##### CYP2A6
+a = Assertion("tranylcypromine", "in_vitro_selective_inhibitor_of_enzyme", "cyp2a6")
+e = Evidence(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical inhibitor of CYP2A6 for in vitro experiments. See Table 1 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/29/2015")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
 
+a = Assertion("methoxsalen", "in_vitro_selective_inhibitor_of_enzyme", "cyp2a6")
+e = Evidence(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical inhibitor of CYP2A6 for in vitro experiments. Methoxsalen is a mechanism-based inhibitor and should be pre-incubated before adding substrate. See Table 1 and footnote 2 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/29/2015")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
 
-for elt in []:
-    a = Assertion(elt, "in_vitro_selective_inhibitor_of_enzyme", "cyp1a2")
+a = Assertion("pilocarpine", "in_vitro_selective_inhibitor_of_enzyme", "cyp2a6")
+e = Evidence(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2A6 for in vitro experiments. See Table 1 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/29/2015")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion("tryptamine", "in_vitro_selective_inhibitor_of_enzyme", "cyp2a6")
+e = Evidence(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a acceptable chemical inhibitor of CYP2A6 for in vitro experiments in cDNA expressing microsomes from human lymphoblast cells. See Table 1 and footnote 5 on the FDA website. ", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/29/2015")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("tranylcypromine", "inhibition_constant", "cyp2a6")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an preferred chemical inhibitor of CYP2A6 for in vitro experiments at a K_i range of 0.02micM to 0.2micM. See Table 1 on the FDA website. \n\n0.02-0.2micM/L X 1M/10^6micM X 133.19g/M = 2.6638E-6g/L - 2.6638E-5g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/29/2015", val = "0.0000026638")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("methoxsalen", "inhibition_constant", "cyp2a6")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an preferred chemical inhibitor of CYP2A6 for in vitro experiments at a K_i range of 0.01micM to 0.2micM. See Table 1 on the FDA website. \n\n0.01-0.2micM/L X 1M/10^6micM X 260.25g/M = 0.00000216189g/L - 0.0000432379g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/29/2015", val = "0.00000216189")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("pilocarpine", "inhibition_constant", "cyp2a6")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2A6 for in vitro experiments at a K_i of 4micM. See Table 1 on the FDA website. \n\n4micM/L X 1M/10^6micM X 208.2569g/M = 0.000833g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/29/2015", val = "0.000833")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("tryptamine", "inhibition_constant", "cyp2a6")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2A6 for in vitro experiments in cDNA expressing microsomes from human lymphoblast cells at a K_i of 1.7micM. See Table 1 and footnote 5 on the FDA website. \n\n1.7micM/L X 1M/10^6micM X 966.763g/M = 0.00164349g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/29/2015", val = "0.00164349")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+##### CYP2B6
+# The names here probably need changed, there shouldn't be allowed to be a space in the diamantane or adamantane, and thiotepa is an abbreviation of triethylenethiophosphoramide
+for elt in ["3-isopropenyl-3-methyl diamantane", "2-isopropenyl-2-methyl adamantane", "sertraline", "phencyclidine", "thiotepa", "clopidogrel", "ticlopidine"]:
+    a = Assertion(elt, "in_vitro_selective_inhibitor_of_enzyme", "cyp2b6")
     e = Evidence(ev)
-    e.create(doc_p = "", q = "", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/22/2015")
+    if elt == "3-isopropenyl-3-methyl diamantane" or elt ==  "2-isopropenyl-2-methyl adamantane":
+        e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2B6 for in vitro experiments in supersomes, microsomal isolated from insect cells transfected with baculovirus containing CYP2B6. See Table 1 and footnote 4 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/29/2015")
+        a.insertEvidence("for",e)
+        ev.addAssertion(a)
+    else:
+        e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2B6 for in vitro experiments. See Table 1 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/29/2015")
+        a.insertEvidence("for",e)
+        ev.addAssertion(a)
+
+##### CYP2C8
+for elt in ["montelukast", "quercetin"]:
+    a = Assertion(elt, "in_vitro_selective_inhibitor_of_enzyme", "cyp2c8")
+    e = Evidence(ev)
+    e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical inhibitor of CYP2C8 for in vitro experiments. See Table 1 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/29/2015")
     a.insertEvidence("for",e)
     ev.addAssertion(a)
 
+for elt in ["trimethoprim", "gemfibrozil", "rosiglitazone", "pioglitazone"]:
+    a = Assertion(elt, "in_vitro_selective_inhibitor_of_enzyme", "cyp2c8")
+    e = Evidence(ev)
+    e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2C8 for in vitro experiments. See Table 1 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/29/2015")
+    a.insertEvidence("for",e)
+    ev.addAssertion(a)
+
+##### CYP2C9
+a = Assertion("sulfaphenazole", "in_vitro_selective_inhibitor_of_enzyme", "cyp2c9")
+e = Evidence(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical inhibitor of CYP2C9 for in vitro experiments. See Table 1 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/29/2015")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+for elt in ["fluconazole", "fluvoxamine", "fluoxetine"]:
+    a = Assertion(elt, "in_vitro_selective_inhibitor_of_enzyme", "cyp2c9")
+    e = Evidence(ev)
+    e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2C9 for in vitro experiments. See Table 1 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/29/2015")
+    a.insertEvidence("for",e)
+    ev.addAssertion(a)
+    
+##### CYP2C19
+for elt in ["ticlopidine", "nootkatone"]:
+    a = Assertion(elt, "in_vitro_selective_inhibitor_of_enzyme", "cyp2c19")
+    e = Evidence(ev)
+    e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2C19 for in vitro experiments. See Table 1 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/29/2015")
+    a.insertEvidence("for",e)
+    ev.addAssertion(a)
+
+##### CYP2D6
+a = Assertion(, "in_vitro_selective_inhibitor_of_enzyme", "cyp2d6")
+e = Evidence(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical inhibitor of CYP2D6 for in vitro experiments. See Table 1 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/29/2015")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+##### CYP2E1
+
 ###########################################################
-##################### USEFUL CODE #########################
+############### OTHER USEFUL CODE #########################
 ###########################################################
 
 ## Using 'http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf' as the doc_pointer for now

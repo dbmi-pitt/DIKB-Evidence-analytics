@@ -1,6 +1,6 @@
 ### SAM ROSKO'S TEST FILE FOR WORKING ON DIKB
-### LAST UPDATED: 1/29/2015
-### RECENTLY: Working on input for in vitro data
+### LAST UPDATED: 2/2/2015
+### RECENTLY: Remaining evidence to be entered: Ki/Km values (need to optimize entry), in vitro transport data, dual inhibitors
 
 import os,sys, string, cgi
 from time import time, strftime, localtime
@@ -462,7 +462,7 @@ ev.addAssertion(a)
 
 a = Assertion_inhibition_constant("furafylline", "inhibition_constant", "cyp1a2")
 e = In_vitro_inhibition_study(ev)
-e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an preferred chemical inhibitor of CYP1A2 for in vitro experiments at a K_i range of 0.6micM-0.73micM. See Table 1 on the FDA website. \n\n0.6-0.73micM/L X 1M/10^6micM X 260.25g/M = 0.00015615g/L - 0.0001899825g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/22/2015", val = "0.00015615")
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical inhibitor of CYP1A2 for in vitro experiments at a K_i range of 0.6micM-0.73micM. See Table 1 on the FDA website. \n\n0.6-0.73micM/L X 1M/10^6micM X 260.25g/M = 0.00015615g/L - 0.0001899825g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/22/2015", val = "0.00015615")
 a.insertEvidence("for",e)
 ev.addAssertion(a)
 
@@ -493,19 +493,19 @@ ev.addAssertion(a)
 
 a = Assertion("tryptamine", "in_vitro_selective_inhibitor_of_enzyme", "cyp2a6")
 e = Evidence(ev)
-e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a acceptable chemical inhibitor of CYP2A6 for in vitro experiments in cDNA expressing microsomes from human lymphoblast cells. See Table 1 and footnote 5 on the FDA website. ", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/29/2015")
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2A6 for in vitro experiments in cDNA expressing microsomes from human lymphoblast cells. See Table 1 and footnote 5 on the FDA website. ", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/29/2015")
 a.insertEvidence("for",e)
 ev.addAssertion(a)
 
 a = Assertion_inhibition_constant("tranylcypromine", "inhibition_constant", "cyp2a6")
 e = In_vitro_inhibition_study(ev)
-e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an preferred chemical inhibitor of CYP2A6 for in vitro experiments at a K_i range of 0.02micM to 0.2micM. See Table 1 on the FDA website. \n\n0.02-0.2micM/L X 1M/10^6micM X 133.19g/M = 2.6638E-6g/L - 2.6638E-5g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/29/2015", val = "0.0000026638")
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical inhibitor of CYP2A6 for in vitro experiments at a K_i range of 0.02micM to 0.2micM. See Table 1 on the FDA website. \n\n0.02-0.2micM/L X 1M/10^6micM X 133.19g/M = 2.6638E-6g/L - 2.6638E-5g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/29/2015", val = "0.0000026638")
 a.insertEvidence("for",e)
 ev.addAssertion(a)
 
 a = Assertion_inhibition_constant("methoxsalen", "inhibition_constant", "cyp2a6")
 e = In_vitro_inhibition_study(ev)
-e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an preferred chemical inhibitor of CYP2A6 for in vitro experiments at a K_i range of 0.01micM to 0.2micM. See Table 1 on the FDA website. \n\n0.01-0.2micM/L X 1M/10^6micM X 260.25g/M = 0.00000216189g/L - 0.0000432379g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/29/2015", val = "0.00000216189")
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical inhibitor of CYP2A6 for in vitro experiments at a K_i range of 0.01micM to 0.2micM. See Table 1 on the FDA website. \n\n0.01-0.2micM/L X 1M/10^6micM X 260.25g/M = 0.00000216189g/L - 0.0000432379g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/29/2015", val = "0.00000216189")
 a.insertEvidence("for",e)
 ev.addAssertion(a)
 
@@ -573,14 +573,170 @@ for elt in ["ticlopidine", "nootkatone"]:
     ev.addAssertion(a)
 
 ##### CYP2D6
-a = Assertion(, "in_vitro_selective_inhibitor_of_enzyme", "cyp2d6")
+a = Assertion("quinidine", "in_vitro_selective_inhibitor_of_enzyme", "cyp2d6")
 e = Evidence(ev)
-e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical inhibitor of CYP2D6 for in vitro experiments. See Table 1 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/29/2015")
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical inhibitor of CYP2D6 for in vitro experiments. See Table 1 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "2/2/2015")
 a.insertEvidence("for",e)
 ev.addAssertion(a)
 
 ##### CYP2E1
+a = Assertion("diethyldithiocarbamate", "in_vitro_selective_inhibitor_of_enzyme", "cyp2e1")
+e = Evidence(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2E1 for in vitro experiments. See Table 1 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "2/2/2015")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
 
+##### CYP3A4/5
+# I'm confused about these being listed as CYP3A4/5, we should discuss this. For now, I have listed them as cyp3a4 and mentioned CYP3A5 in the quote...
+for elt in ["ketoconazole", "itraconazole"]:
+    a = Assertion(elt, "in_vitro_selective_inhibitor_of_enzyme", "cyp3a4")
+    e = Evidence(ev)
+    e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical inhibitor of CYP3A4/5 for in vitro experiments. See Table 1 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "2/2/2015")
+    a.insertEvidence("for",e)
+    ev.addAssertion(a)
+    
+for elt in ["azamulin", "troleandomycin", "verapamil"]:
+    a = Assertion(elt, "in_vitro_selective_inhibitor_of_enzyme", "cyp3a4")
+    e = Evidence(ev)
+    if elt == "azamulin":
+        e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP3A4/5 for in vitro experiments. Azamulin is a specific time-dependent inhibitor of CYP3A4/5. See Table 1 and footnote 6 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "2/2/2015")
+        a.insertEvidence("for",e)
+        ev.addAssertion(a)
+    else:
+        e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP3A4/5 for in vitro experiments. See Table 1 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "2/2/2015")
+        a.insertEvidence("for",e)
+        ev.addAssertion(a)
+
+###########################################################
+################ IN VITRO CYP SUBSTRATES ##################
+###########################################################
+# in_vitro_probe_substrate_of_enzyme is used here for substrate rules
+# need to develop an affinity_constant assertion to be able to use all of the Km that we got from the FDA website
+# also, all of these names seem like they need to be changed to work in the system, please let me know how/what do to about this
+
+##### CYP1A2
+a = Assertion("phenacetin-O-deethylation", "in_vitro_probe_substrate_of_enzyme", "cyp1a2")
+e = Evidence(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical substrate of CYP1A2 for in vitro experiments. See Table 2 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "2/2/2015")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+for elt in ["7-ethoxyresorufin-O-deethylation", "theophylline-N-demethylation", "caffeine-3-N-demethylation", "tacrine 1-hydroxylation"]:
+    a = Assertion(elt, "in_vitro_probe_substrate_of_enzyme", "cyp1a2")
+    e = Evidence(ev)
+    e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical substrate of CYP1A2 for in vitro experiments. See Table 2 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "2/2/2015")
+    a.insertEvidence("for",e)
+    ev.addAssertion(a)
+
+##### CYP2A6
+for elt in ["coumarin-7-hydroxylation", "nicotine C-oxidation"]:
+    a = Assertion(elt, "in_vitro_probe_substrate_of_enzyme", "cyp2a6")
+    e = Evidence(ev)
+    e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical substrate of CYP2A6 for in vitro experiments. See Table 2 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "2/2/2015")
+    a.insertEvidence("for",e)
+    ev.addAssertion(a)
+
+##### CYP2B6
+for elt in ["efavirenz hydroxylase", "bupropion-hydroxylation"]:
+    a = Assertion(elt, "in_vitro_probe_substrate_of_enzyme", "cyp2b6")
+    e = Evidence(ev)
+    e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical substrate of CYP2B6 for in vitro experiments. See Table 2 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "2/2/2015")
+    a.insertEvidence("for",e)
+    ev.addAssertion(a)
+
+for elt in ["propofol hydroxylation", "S-mephenytoin-N-demethylation"]:
+    a = Assertion(elt, "in_vitro_probe_substrate_of_enzyme", "cyp2b6")
+    e = Evidence(ev)
+    e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical substrate of CYP2B6 for in vitro experiments. See Table 2 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "2/2/2015")
+    a.insertEvidence("for",e)
+    ev.addAssertion(a)
+
+##### CYP2C8
+a = Assertion("taxol 6-hydroxylation", "in_vitro_probe_substrate_of_enzyme", "cyp2c8")
+e = Evidence(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical substrate of CYP2C8 for in vitro experiments. See Table 2 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "2/2/2015")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+for elt in ["amodiaquine N-deethylation", "rosiglitazone para-hydroxylation"]:
+    a = Assertion(elt, "in_vitro_probe_substrate_of_enzyme", "cyp2c8")
+    e = Evidence(ev)
+    e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical substrate of CYP2C8 for in vitro experiments. See Table 2 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "2/2/2015")
+    a.insertEvidence("for",e)
+    ev.addAssertion(a)
+
+##### CYP2C9
+for elt in ["tolbutamide methyl-hydroxylation", "S-warfarin 7-hydroxylation", "diclofenac 4’-hydroxylation"]:
+    a = Assertion(elt, "in_vitro_probe_substrate_of_enzyme", "cyp2c9")
+    e = Evidence(ev)
+    e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical substrate of CYP2C9 for in vitro experiments. See Table 2 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "2/2/2015")
+    a.insertEvidence("for",e)
+    ev.addAssertion(a)
+
+for elt in ["flurbiprofen 4’-hydroxylation", "phenytoin-4-hydroxylation"]:
+    a = Assertion(elt, "in_vitro_probe_substrate_of_enzyme", "cyp2c9")
+    e = Evidence(ev)
+    e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical substrate of CYP2C9 for in vitro experiments. See Table 2 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "2/2/2015")
+    a.insertEvidence("for",e)
+    ev.addAssertion(a)
+
+##### CYP2C19
+a = Assertion("S-mephenytoin 4’-hydroxylation", "in_vitro_probe_substrate_of_enzyme", "cyp2c19")
+e = Evidence(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical substrate of CYP2C19 for in vitro experiments. See Table 2 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "2/2/2015")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+for elt in ["omeprazole 5-hydroxylation", "fluoxetine O-dealkylation"]:
+    a = Assertion(elt, "in_vitro_probe_substrate_of_enzyme", "cyp2c19")
+    e = Evidence(ev)
+    e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical substrate of CYP2C19 for in vitro experiments. See Table 2 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "2/2/2015")
+    a.insertEvidence("for",e)
+    ev.addAssertion(a)
+
+##### CYP2D6
+for elt in ["( ± )-bufuralol 1’-hydroxylation", "dextromethorphan O-demethylation"]:
+    a = Assertion(elt, "in_vitro_probe_substrate_of_enzyme", "cyp2d6")
+    e = Evidence(ev)
+    e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical substrate of CYP2D6 for in vitro experiments. See Table 2 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "2/2/2015")
+    a.insertEvidence("for",e)
+    ev.addAssertion(a)
+
+a = Assertion("debrisoquine 4-hydroxylation", "in_vitro_probe_substrate_of_enzyme", "cyp2d6")
+e = Evidence(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical substrate of CYP2D6 for in vitro experiments. See Table 2 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "2/2/2015")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+##### CYP2E1
+a = Assertion("chlorzoxazone 6-hydroxylation", "in_vitro_probe_substrate_of_enzyme", "cyp2e1")
+e = Evidence(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical substrate of CYP2E1 for in vitro experiments. See Table 2 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "2/2/2015")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+for elt in ["p-nitrophenol 3-hydroxylation", "lauric acid 11-hydroxylation", "aniline 4-hydroxylation"]:
+    a = Assertion(elt, "in_vitro_probe_substrate_of_enzyme", "cyp2e1")
+    e = Evidence(ev)
+    e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical substrate of CYP2E1 for in vitro experiments. See Table 2 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "2/2/2015")
+    a.insertEvidence("for",e)
+    ev.addAssertion(a)
+
+##### CYP3A4
+for elt in ["midazolam 1-hydroxylation", "testosterone 6 b -hydroxylation"]:
+    a = Assertion(elt, "in_vitro_probe_substrate_of_enzyme", "cyp3a4")
+    e = Evidence(ev)
+    e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical substrate of CYP3A4/5 for in vitro experiments. See Table 2 on the FDA website. Guidelines also recommend use of 2 structurally unrelated CYP3A4/5 substrates for evaluation of in vitro CYP3A inhibition. If the drug inhibits at least one CYP3A substrate in vitro, then in vivo evaluation is warranted.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "2/2/2015")
+    a.insertEvidence("for",e)
+    ev.addAssertion(a)
+
+for elt in ["erythromycin N-demethylation", "dextromethorphan N-demethylation", "triazolam 4-hydroxylation", "terfenadine C-hydroxylation", "nifedipine oxidation"]:
+    a = Assertion(elt, "in_vitro_probe_substrate_of_enzyme", "cyp3a4")
+    e = Evidence(ev)
+    e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical substrate of CYP3A4/5 for in vitro experiments. See Table 2 on the FDA website. Guidelines also recommend use of 2 structurally unrelated CYP3A4/5 substrates for evaluation of in vitro CYP3A inhibition. If the drug inhibits at least one CYP3A substrate in vitro, then in vivo evaluation is warranted.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "2/2/2015")
+    a.insertEvidence("for",e)
+    ev.addAssertion(a)
+    
 ###########################################################
 ############### OTHER USEFUL CODE #########################
 ###########################################################

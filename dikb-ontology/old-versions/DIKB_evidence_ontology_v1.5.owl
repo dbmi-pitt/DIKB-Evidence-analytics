@@ -1,0 +1,2145 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY ndf "http://www.domain3.com#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY p1 "http://www.owl-ontologies.com/assert.owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#" >
+    <!ENTITY bp "http://www.biopax.org/release/biopax-level2.owl#" >
+    <!ENTITY xsp "http://www.owl-ontologies.com/2005/08/07/xsp.owl#" >
+    <!ENTITY DIKB_evidence_ontology "http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://marigold.informatics.washington.edu:25000/~boycer/owl/2007/DIKB_evidence_ontology.owl#"
+     xml:base="http://marigold.informatics.washington.edu:25000/~boycer/owl/2007/DIKB_evidence_ontology.owl"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:p1="http://www.owl-ontologies.com/assert.owl#"
+     xmlns:ndf="http://www.domain3.com#"
+     xmlns:DIKB_evidence_ontology="http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:bp="http://www.biopax.org/release/biopax-level2.owl#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl">
+        <rdfs:comment rdf:datatype="&xsd;string">Authors: Richard Boyce*, Carol Collins**, John Horn**, Ira Kalet**, John Gennari**.
+
+*University of Pittsburgh Department of Biomedical Informatics
+**All authors are currently with the University of Washington.</rdfs:comment>
+        <owl:versionInfo rdf:datatype="&xsd;string">The Dug Interaction Knowledge Base ontology. This version is essentially the original version from 2007 with a change to the base IRI to use a PURL</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="&xsd;string">Version 1.5</owl:versionInfo>
+        <owl:imports rdf:resource="http://www.biopax.org/release/biopax-level2.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&owl;versionInfo"/>
+    <owl:AnnotationProperty rdf:about="&rdfs;comment"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#controller_of -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;controller_of"/>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#describes -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;describes"/>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#effected_by_alteration_of -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;effected_by_alteration_of"/>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#evaluates -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;evaluates"/>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#has_been_evaluated_by -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;has_been_evaluated_by">
+        <owl:inverseOf rdf:resource="&DIKB_evidence_ontology;evaluates"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#has_consequence -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;has_consequence"/>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#has_focus_of_inquiry -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;has_focus_of_inquiry"/>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#has_object_drug -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;has_object_drug"/>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#has_participants -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;has_participants">
+        <owl:inverseOf rdf:resource="&DIKB_evidence_ontology;is_a_participant_in"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#has_precipitant_drug -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;has_precipitant_drug"/>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#has_sponser -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;has_sponser"/>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#has_treatment_assignment_method -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;has_treatment_assignment_method">
+        <owl:inverseOf rdf:resource="&DIKB_evidence_ontology;is_treatment_assignment_method"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#interaction_between_is_investigated_by -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;interaction_between_is_investigated_by">
+        <owl:inverseOf rdf:resource="&DIKB_evidence_ontology;investigates_interaction_between"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#investigates_drug -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;investigates_drug"/>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#investigates_interaction_between -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;investigates_interaction_between"/>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#is_a_participant_in -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;is_a_participant_in"/>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#is_consequence_of -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;is_consequence_of">
+        <owl:inverseOf rdf:resource="&DIKB_evidence_ontology;has_consequence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#is_focus_of_inquiry -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;is_focus_of_inquiry">
+        <owl:inverseOf rdf:resource="&DIKB_evidence_ontology;has_focus_of_inquiry"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#is_investigated_by -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;is_investigated_by">
+        <owl:inverseOf rdf:resource="&DIKB_evidence_ontology;investigates_drug"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#is_manufactured_by -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;is_manufactured_by">
+        <owl:inverseOf rdf:resource="&DIKB_evidence_ontology;manufactures"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#is_published_in -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;is_published_in"/>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#is_recorded_in -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;is_recorded_in">
+        <owl:inverseOf rdf:resource="&DIKB_evidence_ontology;records"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#is_referenced_by -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;is_referenced_by">
+        <owl:inverseOf rdf:resource="&DIKB_evidence_ontology;references"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#is_stated_in -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;is_stated_in"/>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#is_treatment_assignment_method -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;is_treatment_assignment_method"/>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#lowers_activation_energy_of -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;lowers_activation_energy_of"/>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#makes_the_statement -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;makes_the_statement">
+        <owl:inverseOf rdf:resource="&DIKB_evidence_ontology;is_stated_in"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#manufactures -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;manufactures">
+        <rdfs:comment rdf:datatype="&xsd;string"></rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#records -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;records"/>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#references -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;references"/>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#source_of_experimental_protein -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;source_of_experimental_protein"/>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#sponsers -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;sponsers">
+        <owl:inverseOf rdf:resource="&DIKB_evidence_ontology;has_sponser"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#summarizes_research_on_topic -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;summarizes_research_on_topic"/>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#tests_if_drug_inhibits -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;tests_if_drug_inhibits"/>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#tests_if_drug_is_substrate_of -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;tests_if_drug_is_substrate_of"/>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#unifies_with_XRef -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;unifies_with_XRef">
+        <rdfs:comment rdf:datatype="&xsd;string"></rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#uses_inhibitor_of_enzyme -->
+
+    <owl:ObjectProperty rdf:about="&DIKB_evidence_ontology;uses_inhibitor_of_enzyme"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.biopax.org/release/biopax-level2.owl#DB -->
+
+    <owl:DatatypeProperty rdf:about="&bp;DB"/>
+    
+
+
+    <!-- http://www.biopax.org/release/biopax-level2.owl#ID -->
+
+    <owl:DatatypeProperty rdf:about="&bp;ID"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Antibody -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Antibody">
+        <rdfs:subClassOf rdf:resource="&bp;protein"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Cytochrome_P450"/>
+        <rdfs:comment rdf:datatype="&xsd;string">&quot;An antibody is a type of protein made by B lymphocytes in response to a foreign substance (antigen). Each antibody only binds to a specific antigen, helping to destroy the antigen directly or by assisting white blood cells to destroy the antigen.&quot;
+
+NCI C16295 &apos;Antibody&apos;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Antibody_Inhibitor -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Antibody_Inhibitor">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;Antibody"/>
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;Inhibitor"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Chemical_Inhibitor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Authoriative_Organization -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Authoriative_Organization">
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Clinical_Trial_Participants"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Drug"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Drug_Drug_Interaction"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Drug_Interaction"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Drug_Manufacturer"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;EV_PK_DDI_NR"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Evidence_Type"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Journal_Peer_reviewed"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Metabolism"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Observation_based_DI_Report_Assessment_tool"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacodynamic_Effect_Consequences"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Effect_Consequences"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Process"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Public_Reporting_Database"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Treatment_Assignment"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;in_vitro_Protein_Source"/>
+        <owl:disjointWith rdf:resource="&bp;entity"/>
+        <owl:disjointWith rdf:resource="&bp;utilityClass"/>
+        <rdfs:comment rdf:datatype="&xsd;string">An agency or organized group of individual that whose opinions influence policy decisions</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#CYP1A2 -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;CYP1A2">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;Cytochrome_P450"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;CYP2C19"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;CYP2C9"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;CYP2D6"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;CYP2E1"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;CYP3A4"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;CYP3A5"/>
+        <rdfs:comment rdf:datatype="&xsd;string">cytochrome P450, family 1, subfamily A, polypeptide 2. A heme-thiolate monooxygenase. UniProtKB/Swiss-Prot entry P05177 summarizes the properties of this enzyme in humans. The  HUGO Gene Nomenclature Committee (HGNC) database uses &apos;CYP1A2&apos; as the  symbol for the gene that codes this protein.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#CYP2C19 -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;CYP2C19">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;Cytochrome_P450"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;CYP2C9"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;CYP2D6"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;CYP2E1"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;CYP3A4"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;CYP3A5"/>
+        <rdfs:comment rdf:datatype="&xsd;string">cytochrome P450, family 2, subfamily C, polypeptide 19.  A heme-thiolate monooxygenase. UniProtKB/Swiss-Prot entry  P33261 summarizes the properties of this enzyme in humans. The  HUGO Gene Nomenclature Committee (HGNC) database uses &apos;CYP2C19&apos; as the  symbol for the gene that codes this protein.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#CYP2C9 -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;CYP2C9">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;Cytochrome_P450"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;CYP2D6"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;CYP2E1"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;CYP3A4"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;CYP3A5"/>
+        <rdfs:comment rdf:datatype="&xsd;string">cytochrome P450, family 2, subfamily C, polypeptide 9. cytochrome P450, family 2, subfamily C, polypeptide 9. A heme-thiolate monooxygenase. UniProtKB/Swiss-Prot entry  P11712 summarizes the properties of this enzyme in humans. The  HUGO Gene Nomenclature Committee (HGNC) database uses &apos;CYP2C9&apos; as the  symbol for the gene that codes this protein.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#CYP2D6 -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;CYP2D6">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;Cytochrome_P450"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;CYP2E1"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;CYP3A4"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;CYP3A5"/>
+        <rdfs:comment rdf:datatype="&xsd;string">cytochrome P450, family 2, subfamily D, polypeptide 6. A heme-thiolate monooxygenase. UniProtKB/Swiss-Prot entry  P10635 summarizes the properties of this enzyme in humans. The  HUGO Gene Nomenclature Committee (HGNC) database uses &apos;CYP2D6&apos; as the  symbol for the gene that codes this protein.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#CYP2E1 -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;CYP2E1">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;Cytochrome_P450"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;CYP3A4"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;CYP3A5"/>
+        <rdfs:comment rdf:datatype="&xsd;string">cytochrome P450, family 2, subfamily E, polypeptide 1.  A heme-thiolate monooxygenase. UniProtKB/Swiss-Prot entry  P05181 summarizes the properties of this enzyme in humans. The  HUGO Gene Nomenclature Committee (HGNC) database uses &apos;CYP2E1&apos; as the  symbol for the gene that codes this protein.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#CYP3A4 -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;CYP3A4">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;Cytochrome_P450"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;CYP3A5"/>
+        <rdfs:comment rdf:datatype="&xsd;string">cytochrome P450, family 3, subfamily A; polypeptide 4. A heme-thiolate monooxygenase. UniProtKB/Swiss-Prot entry P08684 summarizes the properties of this enzyme in humans. The  HUGO Gene Nomenclature Committee (HGNC) database uses &apos;CYP3A4&apos; as the  symbol for the gene that codes this protein.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#CYP3A5 -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;CYP3A5">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;Cytochrome_P450"/>
+        <rdfs:comment rdf:datatype="&xsd;string">cytochrome P450, family 3, subfamily A; polypeptide 5. A heme-thiolate monooxygenase. UniProtKB/Swiss-Prot entry P20815 summarizes the properties of this enzyme in humans. The  HUGO Gene Nomenclature Committee (HGNC) database uses &apos;CYP3A5&apos; as the  symbol for the gene that codes this protein.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Cellular_Metabolism -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Cellular_Metabolism">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;Metabolism"/>
+        <rdfs:comment rdf:datatype="&xsd;string">&quot;The chemical reactions and pathways by which individual cells transform chemical substances.&quot;
+
+GO:0044237</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Chemical_Inhibitor -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Chemical_Inhibitor">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;Inhibitor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Clinical_Trial_Participants -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Clinical_Trial_Participants">
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Drug"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Drug_Drug_Interaction"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Drug_Interaction"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Drug_Manufacturer"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;EV_PK_DDI_NR"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Evidence_Type"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Journal_Peer_reviewed"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Metabolism"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Observation_based_DI_Report_Assessment_tool"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacodynamic_Effect_Consequences"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Effect_Consequences"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Process"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Public_Reporting_Database"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Treatment_Assignment"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;in_vitro_Protein_Source"/>
+        <owl:disjointWith rdf:resource="&bp;entity"/>
+        <owl:disjointWith rdf:resource="&bp;utilityClass"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Persons who have or are participating in a clinical trial</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Cytochrome_P450 -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Cytochrome_P450">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;Enzyme"/>
+        <rdfs:subClassOf rdf:resource="&bp;protein"/>
+        <rdfs:comment rdf:datatype="&xsd;string">&quot;Cytochrome P450 isozymes, hemoprotein components of the mixed-function oxidase system involving electron and/or hydrogen transport through reversible valency change of the heme iron and metabolic biotransformation of substances, including foreign compounds to mutagens and carcinogens.&quot;
+
+Definition quote taken from NCI C26511 &apos;Cytochrome_P450_Family_Gene&apos;, these are not synonomous types.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Decreased_Drug_AUC -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Decreased_Drug_AUC">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;Decreased_Drug_Level"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Decreased area under the plot of plasma concentration of a drug against time after drug administration
+
+NCI C54609 (2006)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Decreased_Drug_Level -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Decreased_Drug_Level">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Effect_Consequences"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Increased_Drug_Level"/>
+        <rdfs:comment rdf:datatype="&xsd;string">NCI C54356 (2006)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Drug -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Drug">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&DIKB_evidence_ontology;unifies_with_XRef"/>
+                <owl:someValuesFrom rdf:resource="&bp;xref"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Drug_Drug_Interaction"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Drug_Interaction"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Drug_Manufacturer"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;EV_PK_DDI_NR"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Evidence_Type"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Journal_Peer_reviewed"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Metabolism"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Observation_based_DI_Report_Assessment_tool"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacodynamic_Effect_Consequences"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Effect_Consequences"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Process"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Public_Reporting_Database"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Treatment_Assignment"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;in_vitro_Protein_Source"/>
+        <owl:disjointWith rdf:resource="&bp;utilityClass"/>
+        <rdfs:comment rdf:datatype="&xsd;string">&quot;A category of organic or inorganic substances, elements, and isotopes used in research or for the prevention, diagnosis, and /or treatment of disease states. Includes biologically active substances that are either synthetically manufactured or endogenous substances extracted and processed to be reintroduced into an organism. Chemicals and drugs also include hazardous substances, and naturally occurring or synthetically produced substances required to maintain life. (NCI04)&quot;
+
+Maps to: NCI code: C1908, 
+
+Instances of this class are also sub-types of NDF-RT &quot;active ingredients&quot; code: C178</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Drug_Absorption -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Drug_Absorption">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Process"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Drug_Distribution"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Drug_Excretion"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Drug_Metabolism"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Drug_Distribution -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Drug_Distribution">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Process"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Drug_Excretion"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Drug_Metabolism"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The directed movement of a drug, a substance used in the diagnosis, treatment or prevention of a disease, into, out of, within or between cells. GO:0015893 (GO 2006)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Drug_Drug_Interaction -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Drug_Drug_Interaction">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&DIKB_evidence_ontology;Drug_Interaction"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_object_drug"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Drug"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_precipitant_drug"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Drug"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_object_drug"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Drug"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_precipitant_drug"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Drug"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Drug_Manufacturer"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Evidence_Type"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Journal_Peer_reviewed"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Observation_based_DI_Report_Assessment_tool"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacodynamic_Effect_Consequences"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Effect_Consequences"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Process"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Public_Reporting_Database"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Treatment_Assignment"/>
+        <rdfs:comment rdf:datatype="&xsd;string">&quot;Alteration of the disposition and/or effect of a drug, owing to the presence of another drug&quot;
+
+NCI 2007 ID:C54708</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Drug_Excretion -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Drug_Excretion">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Process"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Drug_Metabolism"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Drug_Interaction -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Drug_Interaction">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_consequence"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&DIKB_evidence_ontology;Pharmacodynamic_Effect_Consequences"/>
+                            <rdf:Description rdf:about="&DIKB_evidence_ontology;Pharmacokinetic_Effect_Consequences"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_consequence"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&DIKB_evidence_ontology;Pharmacodynamic_Effect_Consequences"/>
+                            <rdf:Description rdf:about="&DIKB_evidence_ontology;Pharmacokinetic_Effect_Consequences"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Drug_Manufacturer"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Evidence_Type"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Journal_Peer_reviewed"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Metabolism"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Observation_based_DI_Report_Assessment_tool"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacodynamic_Effect_Consequences"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Effect_Consequences"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Process"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Public_Reporting_Database"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Treatment_Assignment"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;in_vitro_Protein_Source"/>
+        <owl:disjointWith rdf:resource="&bp;entity"/>
+        <owl:disjointWith rdf:resource="&bp;utilityClass"/>
+        <rdfs:comment rdf:datatype="&xsd;string">&quot;Alteration of the disposition and/or effect of a drug, owing to the presence of another factor such as a second drug, or food.&quot;
+
+NCI 2007 ID:C54708</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Drug_Label -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Drug_Label">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;Evidence_Type"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_sponser"/>
+                <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Drug_Manufacturer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&DIKB_evidence_ontology;summarizes_research_on_topic"/>
+                <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Drug"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;EV_Clinical_Trial"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;EV_EX_Met_Enz_ID"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;EV_EX_Met_Enz_Inhibit"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;EV_Observation"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;EV_Retrospective"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;EV_Review"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Statement"/>
+        <rdfs:comment rdf:datatype="&xsd;string">a document produced by a drug &apos;s manufacturer to accompany a drug&apos;s container or wrapper whose statements might include the drug&apos;s indications, effects, dosages, routes, methods, frequency and duration of administration, warnings, hazards, contraindications, side effects, precautions, and other relevant information.
+
+Adapted from MeSH 2007 &quot;Drug Labeling&quot; ID: D004348</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Drug_Manufacturer -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Drug_Manufacturer">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&DIKB_evidence_ontology;manufactures"/>
+                <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Drug"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Evidence_Type"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Journal_Peer_reviewed"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Metabolism"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Observation_based_DI_Report_Assessment_tool"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacodynamic_Effect_Consequences"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Effect_Consequences"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Process"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Public_Reporting_Database"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Treatment_Assignment"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;in_vitro_Protein_Source"/>
+        <owl:disjointWith rdf:resource="&bp;entity"/>
+        <owl:disjointWith rdf:resource="&bp;utilityClass"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A firm that legally manufactures drug products for sale on the wholesale or retail market</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Drug_Metabolism -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Drug_Metabolism">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Process"/>
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;Xenobiotic_Metabolism"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The chemical reactions and pathways involving a drug, a substance used in the diagnosis, treatment or prevention of a disease; as used here antibiotic substances (see antibiotic metabolism) are considered to be drugs, even if not used in medical or veterinary practice. GO:0017144 (2006)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_CT_DDI -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;EV_CT_DDI">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&DIKB_evidence_ontology;EV_Clinical_Trial"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_focus_of_inquiry"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Drug_Drug_Interaction"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;investigates_drug"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Drug"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_focus_of_inquiry"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Drug_Drug_Interaction"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;investigates_drug"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Drug"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;EV_CT_Pharmacokinetic"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A study designed to quantify the pharmacokinetic and/or pharmacodynamic effects within study participants of a single drug (the object drug) in the presence of a purported precipitant.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_CT_PK_DDI -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;EV_CT_PK_DDI">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&DIKB_evidence_ontology;EV_CT_DDI"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_focus_of_inquiry"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;PK_DDI"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_focus_of_inquiry"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;PK_DDI"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;EV_CT_Pharmacokinetic"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A study designed to quantify the pharmacokinetic effects within study participants of a single drug (the object drug) in the presence of a purported precipitant.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_CT_PK_Genotype -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;EV_CT_PK_Genotype">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;EV_CT_Pharmacokinetic"/>
+        <rdfs:comment>A drug pharmacokinetics study whose population consists of at least two groups known to posses distinct forms of some drug-metabolizing enzyme</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_CT_PK_Phenotype -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;EV_CT_PK_Phenotype">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;EV_CT_Pharmacokinetic"/>
+        <rdfs:comment>A drug pharmacokinetics study whose population consists of at least two groups known to posses distinct drug metabolizing phenotypes</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_CT_Pharmacokinetic -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;EV_CT_Pharmacokinetic">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&DIKB_evidence_ontology;EV_Clinical_Trial"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_focus_of_inquiry"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Process"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;investigates_drug"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Drug"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_focus_of_inquiry"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Process"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;investigates_drug"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Drug"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="&xsd;string">&quot;A study of the process by which a drug is absorbed, distributed, metabolized, and eliminated by the body.&quot; NCI code C49663</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_Clinical_Trial -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;EV_Clinical_Trial">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;Evidence_Type"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_participants"/>
+                <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Clinical_Trial_Participants"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_participants"/>
+                <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Clinical_Trial_Participants"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;EV_EX_Met_Enz_ID"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;EV_EX_Met_Enz_Inhibit"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;EV_Observation"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;EV_Retrospective"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;EV_Review"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Statement"/>
+        <rdfs:comment rdf:datatype="&xsd;string">&quot;a pre-planned clinical study of the safety, efficacy, or optimum dosage schedule of one or more diagnostic, therapeutic, or prophylactic drugs, devices, or techniques in humans selected according to predetermined criteria of eligibility and observed for predefined evidence of favorable and unfavorable effects.&quot; - Clinical Trial MeSH 2007</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_DrugClinicalReview -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;EV_DrugClinicalReview">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;EV_Drug_Review"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_sponser"/>
+                <owl:hasValue rdf:resource="&DIKB_evidence_ontology;US_Food_and_Drug_Administration"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="&xsd;string">An FDA-sponsered review of a drug&apos;s pre-market studies and adverse event reports.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_Drug_Review -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;EV_Drug_Review">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&DIKB_evidence_ontology;EV_Review"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;is_published_in"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Journal_Peer_reviewed"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;references"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Evidence_Type"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;summarizes_research_on_topic"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Drug"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;is_published_in"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Journal_Peer_reviewed"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;references"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Evidence_Type"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;summarizes_research_on_topic"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Drug"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="&xsd;string">A published analysis of research on the efficacy or safety of a drug, family of drugs, or drug therapy</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_EX_Met_Enz_ID -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;EV_EX_Met_Enz_ID">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&DIKB_evidence_ontology;Evidence_Type"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_focus_of_inquiry"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Drug_Metabolism"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;investigates_drug"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Drug"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;source_of_experimental_protein"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;in_vitro_Protein_Source"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;tests_if_drug_is_substrate_of"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Enzyme"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_focus_of_inquiry"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Drug_Metabolism"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;investigates_drug"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Drug"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;source_of_experimental_protein"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;in_vitro_Protein_Source"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;tests_if_drug_is_substrate_of"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Enzyme"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;EV_EX_Met_Enz_Inhibit"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;EV_Observation"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;EV_Retrospective"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Statement"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A drug metabolism identification experiment -- an experiment conducted with biological tissues and/or chemical compounds in a laboratory designed to ``...identify the specific enzymes responsible for the metabolism of a drug&apos;&apos;   (\cite{fda2006a}, p. 25)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_EX_Met_Enz_ID_CYP450 -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;EV_EX_Met_Enz_ID_CYP450">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&DIKB_evidence_ontology;EV_EX_Met_Enz_ID"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;tests_if_drug_is_substrate_of"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Cytochrome_P450"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;tests_if_drug_is_substrate_of"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Cytochrome_P450"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="&xsd;string">A metabolic enzyme identification experiment specifically designed to identify the     Cytochrome P-450 enzymes involved in the metabolism of a drug</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_EX_Met_Enz_ID_CYP450_Hum_Liver_Microsome -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;EV_EX_Met_Enz_ID_CYP450_Hum_Liver_Microsome">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&DIKB_evidence_ontology;EV_EX_Met_Enz_ID_CYP450"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;source_of_experimental_protein"/>
+                        <owl:hasValue rdf:resource="&DIKB_evidence_ontology;human_liver_microsomes"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="&xsd;string">A Cytochrome P-450 metabolic enzyme identification experiment using human liver   microsomes that have been characterized for Cytochrome P-450 activity</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_EX_Met_Enz_ID_CYP450_Hum_Liver_Microsome_Antibody -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;EV_EX_Met_Enz_ID_CYP450_Hum_Liver_Microsome_Antibody">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&DIKB_evidence_ontology;EV_EX_Met_Enz_ID_CYP450_Hum_Liver_Microsome"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;uses_inhibitor_of_enzyme"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Antibody_Inhibitor"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;uses_inhibitor_of_enzyme"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Antibody_Inhibitor"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="&xsd;string">A Cytochrome P-450 metabolic enzyme identification experiment using              human liver microsomes that have been characterized for Cytochrome P-450 activity and antibodies as specific inhibitors</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_EX_Met_Enz_ID_CYP450_Hum_Liver_Microsome_Chem -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;EV_EX_Met_Enz_ID_CYP450_Hum_Liver_Microsome_Chem">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&DIKB_evidence_ontology;EV_EX_Met_Enz_ID_CYP450_Hum_Liver_Microsome"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;uses_inhibitor_of_enzyme"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Chemical_Inhibitor"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;uses_inhibitor_of_enzyme"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Chemical_Inhibitor"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="&xsd;string">A Cytochrome P-450 metabolic enzyme identification experiment using              human liver microsomes that have been characterized for Cytochrome P-450 activity and chemical inhibitors</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_EX_Met_Enz_ID_CYP450_Hum_Recom -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;EV_EX_Met_Enz_ID_CYP450_Hum_Recom">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&DIKB_evidence_ontology;EV_EX_Met_Enz_ID_CYP450"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;source_of_experimental_protein"/>
+                        <owl:hasValue rdf:resource="&DIKB_evidence_ontology;recombinant_human_cytochrome_P450_isoenzymes"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="&xsd;string">A Cytochrome P450 metabolic enzyme identification experiment using recombinant human enzymes</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_EX_Met_Enz_ID_CYP450_Hum_Recom_Antibody -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;EV_EX_Met_Enz_ID_CYP450_Hum_Recom_Antibody">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&DIKB_evidence_ontology;EV_EX_Met_Enz_ID_CYP450_Hum_Recom"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;uses_inhibitor_of_enzyme"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Antibody_Inhibitor"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;uses_inhibitor_of_enzyme"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Antibody_Inhibitor"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="&xsd;string">A Cytochrome P-450 metabolic enzyme identification experiment using recombinant human enzymes and antibodies as specific
+              inhibitors</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_EX_Met_Enz_ID_CYP450_Hum_Recom_Chem -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;EV_EX_Met_Enz_ID_CYP450_Hum_Recom_Chem">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&DIKB_evidence_ontology;EV_EX_Met_Enz_ID_CYP450_Hum_Recom"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;uses_inhibitor_of_enzyme"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Chemical_Inhibitor"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;uses_inhibitor_of_enzyme"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Chemical_Inhibitor"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="&xsd;string">A Cytochrome P-450 metabolic enzyme identification experiment using             recombinant human enzymes and chemical inhibitors</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_EX_Met_Enz_Inhibit -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;EV_EX_Met_Enz_Inhibit">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&DIKB_evidence_ontology;Evidence_Type"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_focus_of_inquiry"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Drug_Metabolism"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;investigates_drug"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Drug"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;source_of_experimental_protein"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;in_vitro_Protein_Source"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;tests_if_drug_inhibits"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Enzyme"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_focus_of_inquiry"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Drug_Metabolism"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;investigates_drug"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Drug"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;source_of_experimental_protein"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;in_vitro_Protein_Source"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;tests_if_drug_inhibits"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Enzyme"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;EV_Observation"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;EV_Retrospective"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Statement"/>
+        <rdfs:comment rdf:datatype="&xsd;string">An experiment conducted with biological tissues and/or chemical compounds in a laboratory designed to    determine whether or not a drug inhibits a specific drug-metabolizing enzyme</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_EX_Met_Enz_Inhibit_CYP450 -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;EV_EX_Met_Enz_Inhibit_CYP450">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&DIKB_evidence_ontology;EV_EX_Met_Enz_Inhibit"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;tests_if_drug_inhibits"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Cytochrome_P450"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;tests_if_drug_inhibits"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Cytochrome_P450"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="&xsd;string">A metabolic \textbf{inhibition} experiment specifically designed to determine whether or not a drug inhibits a specific CYP450 enzyme</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_EX_Met_Enz_Inhibit_CYP450_Human_Liver_Microsome -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;EV_EX_Met_Enz_Inhibit_CYP450_Human_Liver_Microsome">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&DIKB_evidence_ontology;EV_EX_Met_Enz_Inhibit_CYP450"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;source_of_experimental_protein"/>
+                        <owl:hasValue rdf:resource="&DIKB_evidence_ontology;human_liver_microsomes"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="&xsd;string">A Cytochrome P-450 metabolic enzyme inhibition experiment using human liver     microsomes that have been characterized for Cytochrome P-450 activity</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_EX_Met_Enz_Inhibit_CYP450_Human_Recom -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;EV_EX_Met_Enz_Inhibit_CYP450_Human_Recom">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&DIKB_evidence_ontology;EV_EX_Met_Enz_Inhibit_CYP450"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;source_of_experimental_protein"/>
+                        <owl:hasValue rdf:resource="&DIKB_evidence_ontology;recombinant_human_cytochrome_P450_isoenzymes"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="&xsd;string">A Cytochrome P-450 inhibition experiment  using recombinant human enzymes</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_Obs_ADE -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;EV_Obs_ADE">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&DIKB_evidence_ontology;EV_Observation"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;describes"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&DIKB_evidence_ontology;Pharmacodynamic_Effect_Consequences"/>
+                                    <rdf:Description rdf:about="&DIKB_evidence_ontology;Pharmacokinetic_Effect_Consequences"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;describes"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&DIKB_evidence_ontology;Pharmacodynamic_Effect_Consequences"/>
+                                    <rdf:Description rdf:about="&DIKB_evidence_ontology;Pharmacokinetic_Effect_Consequences"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="&xsd;string">An observation-based report of an adverse drug event</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_Obs_ADE_Public_Reported -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;EV_Obs_ADE_Public_Reported">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&DIKB_evidence_ontology;EV_Obs_ADE"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;is_recorded_in"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Public_Reporting_Database"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;is_recorded_in"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Public_Reporting_Database"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="&xsd;string">An adverse drug event report on file in a public adverse event reporting database such as the FDA&apos;s Adverse Event Reporting System</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_Obs_DI_CR -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;EV_Obs_DI_CR">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&DIKB_evidence_ontology;EV_Obs_ADE"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;is_published_in"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Journal_Peer_reviewed"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;is_published_in"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Journal_Peer_reviewed"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="&xsd;string">An published observation-based case-report of a drug interaction</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_Obs_DI_CR_Evaluated -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;EV_Obs_DI_CR_Evaluated">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&DIKB_evidence_ontology;EV_Obs_DI_CR"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_been_evaluated_by"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Observation_based_DI_Report_Assessment_tool"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_been_evaluated_by"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Observation_based_DI_Report_Assessment_tool"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="&xsd;string">An observation-based report of a drug interaction that has been evaluated by some assesssment tool</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_Observation -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;EV_Observation">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;Evidence_Type"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;EV_Retrospective"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;EV_Review"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Statement"/>
+        <rdfs:comment rdf:datatype="&xsd;string">An observation-based report of some occurrence</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_PK_DDI_NR -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;EV_PK_DDI_NR">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&DIKB_evidence_ontology;EV_CT_PK_DDI"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_treatment_assignment_method"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Non_randomized_Tx_Assignment"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_treatment_assignment_method"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Non_randomized_Tx_Assignment"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Effect_Consequences"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Process"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Treatment_Assignment"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A pharmacokinetic study where participants receive a drug either in the presence of a purported        precipitant (experimental group) or not (control group) but participants are not randomly assigned to experiment and control groups</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_PK_DDI_Par_Grps -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;EV_PK_DDI_Par_Grps">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&DIKB_evidence_ontology;EV_PK_DDI_NR"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_treatment_assignment_method"/>
+                        <owl:hasValue rdf:resource="&DIKB_evidence_ontology;Parallel_groups_assignment"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="&xsd;string">A pharmacokinetic study involving two groups of non-randomized participants where both groups  recieve the purported object drug while only one group receives the purported precipitant</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_PK_DDI_RCT -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;EV_PK_DDI_RCT">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&DIKB_evidence_ontology;EV_CT_PK_DDI"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_treatment_assignment_method"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Randomized_Tx_Assignment"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_treatment_assignment_method"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Randomized_Tx_Assignment"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="&xsd;string">A randomized, controlled, pharmacokinetic study where participants receive a drug wither in the presence of a purported precipitant (experimental group) or not (control group)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_PK_DDI_Retro -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;EV_PK_DDI_Retro">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&DIKB_evidence_ontology;EV_Retrospective"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_focus_of_inquiry"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Effect_Consequences"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_focus_of_inquiry"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Effect_Consequences"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="&xsd;string">A retrospective study looking at the change in patient exposure of a single drug in the presence of a    purported precipitant using a retrospective set of clinical records</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_Population_PK -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;EV_Population_PK">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&DIKB_evidence_ontology;EV_Retrospective"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_focus_of_inquiry"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Process"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_focus_of_inquiry"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Process"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="&xsd;string">a ``...study of the sources and correlates of variability in drug concentrations among individuals who are the target patient population receiving clinically relevant doses of a drug in question.&apos;&apos; (\cite{fda1999b}, p.1)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_Retrospective -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;EV_Retrospective">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;Evidence_Type"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;EV_Review"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Statement"/>
+        <rdfs:comment rdf:datatype="&xsd;string">&quot;Studies used to test etiologic hypotheses in which inferences about an exposure to putative causal factors are derived from data relating to characteristics of persons under study or to events or experiences in their past. The essential feature is that some of the persons under study have the disease or outcome of interest and their characteristics are compared with those of unaffected persons.&quot;
+
+MeSH 2007 - D012189</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_Review -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;EV_Review">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;Evidence_Type"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Statement"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A published analysis of the evidence supportin and/or refuting some topic</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Enzyme -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Enzyme">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&bp;physicalEntity"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;lowers_activation_energy_of"/>
+                        <owl:someValuesFrom rdf:resource="&bp;physicalInteraction"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;lowers_activation_energy_of"/>
+                        <owl:allValuesFrom rdf:resource="&bp;physicalInteraction"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="&bp;complex"/>
+        <owl:disjointWith rdf:resource="&bp;dna"/>
+        <owl:disjointWith rdf:resource="&bp;rna"/>
+        <owl:disjointWith rdf:resource="&bp;smallMolecule"/>
+        <owl:disjointWith rdf:resource="&bp;utilityClass"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A physical entity &quot;...that catalyzes a particular chemical reaction involving a specific substrate or small number of related substrates&quot; \cite{lodish2004}</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Evidence_Type -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Evidence_Type">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Journal_Peer_reviewed"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Metabolism"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Observation_based_DI_Report_Assessment_tool"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacodynamic_Effect_Consequences"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Effect_Consequences"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Process"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Public_Reporting_Database"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Treatment_Assignment"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;in_vitro_Protein_Source"/>
+        <owl:disjointWith rdf:resource="&bp;entity"/>
+        <rdfs:comment rdf:datatype="&xsd;string">a kind of evidence where evidence is defined as an artifact that is &quot;...the basis for belief or disbelief; knowledge on which to base belief&quot;
+
+see &quot;evidence&quot; in Wordnet 2.1</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Increased_Drug_AUC -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Increased_Drug_AUC">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;Increased_Drug_Level"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Increased area under the plot of plasma concentration of a drug against time after drug administration.
+
+NCI C54605</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Increased_Drug_Level -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Increased_Drug_Level">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Effect_Consequences"/>
+        <rdfs:comment rdf:datatype="&xsd;string">NCI C54355 (2006)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Induction -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Induction">
+        <rdfs:subClassOf rdf:resource="&bp;modulation"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Inhibition"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Definition: A control interaction in which a physical entity improves the ability of an enzyme to  catalyze an interaction.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Inhibition -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Inhibition">
+        <rdfs:subClassOf rdf:resource="&bp;modulation"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Definition: A control interaction in which a physical entity reduces the ability of an enzyme to  catalyze an interaction.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Inhibitor -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Inhibitor">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&bp;physicalEntity"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;controller_of"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Inhibition"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;controller_of"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Inhibition"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Journal_Peer_reviewed -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Journal_Peer_reviewed">
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Metabolism"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Observation_based_DI_Report_Assessment_tool"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacodynamic_Effect_Consequences"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Effect_Consequences"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Process"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Public_Reporting_Database"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Treatment_Assignment"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;in_vitro_Protein_Source"/>
+        <owl:disjointWith rdf:resource="&bp;entity"/>
+        <owl:disjointWith rdf:resource="&bp;utilityClass"/>
+        <rdfs:comment rdf:datatype="&xsd;string">a periodical dedicated to a particular subject whose contents are reviewed by persons considered experts on the subject</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Metabolism -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Metabolism">
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Observation_based_DI_Report_Assessment_tool"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacodynamic_Effect_Consequences"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Effect_Consequences"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Public_Reporting_Database"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Treatment_Assignment"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;in_vitro_Protein_Source"/>
+        <owl:disjointWith rdf:resource="&bp;utilityClass"/>
+        <rdfs:comment rdf:datatype="&xsd;string">&quot;Processes that cause many of the chemical changes in living organisms, including anabolism and catabolism. Metabolic processes typically transform small molecules, but also include macromolecular processes such as DNA repair and replication, and protein synthesis and degradation.&quot;
+
+GO:0008152 &apos;metabolism&apos;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Microsomes -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Microsomes">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;in_vitro_Protein_Source"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Recombinant_Protein_System"/>
+        <rdfs:comment rdf:datatype="&xsd;string">&quot;Any of the small, heterogeneous, artifactual, vesicular particles, 50-150 nm in diameter, that are formed when some eukaryotic cells are homogenized and that sediment on centrifugation at 100000 g.&quot; GO:0005792</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Non_Tracable_Statement -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Non_Tracable_Statement">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;Statement"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Traceable_Statement"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A statement that does not explicitly refer to evidence items in justification of its assertion(s)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Non_randomized_Tx_Assignment -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Non_randomized_Tx_Assignment">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;Treatment_Assignment"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Randomized_Tx_Assignment"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A non-randomized tratment assignment method</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Non_traceable_Drug_Label_Statement -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Non_traceable_Drug_Label_Statement">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&DIKB_evidence_ontology;Non_Tracable_Statement"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;is_stated_in"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Drug_Label"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;is_stated_in"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Drug_Label"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="&xsd;string">An assertional statement in a drug label that does not provide any traceable citations for its evidence support</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Observation_based_DI_Report_Assessment_tool -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Observation_based_DI_Report_Assessment_tool">
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacodynamic_Effect_Consequences"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Effect_Consequences"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Process"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Public_Reporting_Database"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Treatment_Assignment"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;in_vitro_Protein_Source"/>
+        <owl:disjointWith rdf:resource="&bp;entity"/>
+        <owl:disjointWith rdf:resource="&bp;utilityClass"/>
+        <rdfs:comment rdf:datatype="&xsd;string">An assessment tool for grading the validity of an observation-based report&apos;s claims</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#PK_DDI -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;PK_DDI">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&DIKB_evidence_ontology;Drug_Drug_Interaction"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;effected_by_alteration_of"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Process"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;effected_by_alteration_of"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Process"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="&xsd;string">A DDI that occurs via a pharmacokinetic mechanism</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Pharmacodynamic_Effect_Consequences -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Pharmacodynamic_Effect_Consequences">
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Effect_Consequences"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Process"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Public_Reporting_Database"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Treatment_Assignment"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;in_vitro_Protein_Source"/>
+        <owl:disjointWith rdf:resource="&bp;utilityClass"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The consequences resulted from pharmacodynamic interactions between the drug and another drug or food.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Pharmacokinetic_Effect_Consequences -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Pharmacokinetic_Effect_Consequences">
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Pharmacokinetic_Process"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Public_Reporting_Database"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Treatment_Assignment"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;in_vitro_Protein_Source"/>
+        <owl:disjointWith rdf:resource="&bp;utilityClass"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The consequences resulted from pharmacokinetic interactions between the drug and another drug or food. 
+
+NCI C54354 (2006)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Pharmacokinetic_Process -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Pharmacokinetic_Process">
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Public_Reporting_Database"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Treatment_Assignment"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;in_vitro_Protein_Source"/>
+        <owl:disjointWith rdf:resource="&bp;utilityClass"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A physiological process that moves molecular entities (e.g. drugs) within biological systems -- absorption, distribution, binding, elimination, biotransformation, and excretion</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Public_Reporting_Database -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Public_Reporting_Database">
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Treatment_Assignment"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;in_vitro_Protein_Source"/>
+        <owl:disjointWith rdf:resource="&bp;entity"/>
+        <owl:disjointWith rdf:resource="&bp;utilityClass"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A database that receives and stores reports of events of public health interest from various persons and makes these reports accessible to the general public</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Randomized_Tx_Assignment -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Randomized_Tx_Assignment">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;Treatment_Assignment"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A randomized treatment assignment method</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Recombinant_Protein_System -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Recombinant_Protein_System">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;in_vitro_Protein_Source"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A system of proteins &quot;produced by genes or recombinant DNA that has been artificially engineered and inserted into a heterologous host. Recombinant proteins are used extensively by investigators of disease pathways to identify proteintargets for potential drug therapies.&quot;
+
+Adapted from NCI C17081 &apos;Recombinant_Protein&apos;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Statement -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Statement">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;Evidence_Type"/>
+        <rdfs:comment rdf:datatype="&xsd;string">&quot;a message that is stated or declared; a communication (oral or written) setting forth particulars or facts etc&quot;
+
+Wordnet v2.1</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Traceable_Drug_Label_Statement -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Traceable_Drug_Label_Statement">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&DIKB_evidence_ontology;Traceable_Statement"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;is_stated_in"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Drug_Label"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;is_stated_in"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Drug_Label"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="&xsd;string">An assertion stated in a drug label that provides citations for its evidence support</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Traceable_Statement -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Traceable_Statement">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&DIKB_evidence_ontology;Statement"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;references"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Evidence_Type"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;references"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Evidence_Type"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="&xsd;string">A statement that provides citation to evidence support for justification of its assertion(s)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Treatment_Assignment -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Treatment_Assignment">
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;in_vitro_Protein_Source"/>
+        <owl:disjointWith rdf:resource="&bp;entity"/>
+        <owl:disjointWith rdf:resource="&bp;utilityClass"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Method for assigning clinical trial participants to treatment and control groups</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Xenobiotic_Metabolism -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;Xenobiotic_Metabolism">
+        <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;Cellular_Metabolism"/>
+        <rdfs:comment rdf:datatype="&xsd;string">&quot;The chemical reactions and pathways involving a xenobiotic compound, a compound foreign to living organisms. Used of chemical compounds, e.g. a xenobiotic chemical, such as a pesticide.&quot;
+
+GO:0006805</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#in_vitro_Protein_Source -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;in_vitro_Protein_Source">
+        <owl:disjointWith rdf:resource="&bp;entity"/>
+        <owl:disjointWith rdf:resource="&bp;utilityClass"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A source of proteins that are used in biological experimentation</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biopax.org/release/biopax-level2.owl#complex -->
+
+    <owl:Class rdf:about="&bp;complex"/>
+    
+
+
+    <!-- http://www.biopax.org/release/biopax-level2.owl#dna -->
+
+    <owl:Class rdf:about="&bp;dna"/>
+    
+
+
+    <!-- http://www.biopax.org/release/biopax-level2.owl#entity -->
+
+    <owl:Class rdf:about="&bp;entity"/>
+    
+
+
+    <!-- http://www.biopax.org/release/biopax-level2.owl#modulation -->
+
+    <owl:Class rdf:about="&bp;modulation">
+        <rdfs:comment rdf:datatype="&xsd;string">Definition: A control interaction in which a physical entity modulates a 
+    catalysis interaction. Biologically, most modulation interactions describe 
+    an interaction in which a small molecule alters the ability of an enzyme 
+    to catalyze a specific reaction. Instances of this class describe a 
+    pairing between a modulating entity and a catalysis interaction. Comment: 
+    A separate modulation instance should be created for each different 
+    catalysis instance that a physical entity may modulate and for each 
+    different physical entity that may modulate a catalysis instance. A 
+    typical modulation instance has a small molecule as the controller entity 
+    and a catalysis instance as the controlled entity. Examples: Allosteric 
+    activation and competitive inhibition of an enzyme&apos;s ability to catalyze a 
+    specific reaction.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.biopax.org/release/biopax-level2.owl#physicalEntity -->
+
+    <owl:Class rdf:about="&bp;physicalEntity"/>
+    
+
+
+    <!-- http://www.biopax.org/release/biopax-level2.owl#physicalInteraction -->
+
+    <owl:Class rdf:about="&bp;physicalInteraction"/>
+    
+
+
+    <!-- http://www.biopax.org/release/biopax-level2.owl#protein -->
+
+    <owl:Class rdf:about="&bp;protein"/>
+    
+
+
+    <!-- http://www.biopax.org/release/biopax-level2.owl#publicationXref -->
+
+    <owl:Class rdf:about="&bp;publicationXref"/>
+    
+
+
+    <!-- http://www.biopax.org/release/biopax-level2.owl#rna -->
+
+    <owl:Class rdf:about="&bp;rna"/>
+    
+
+
+    <!-- http://www.biopax.org/release/biopax-level2.owl#smallMolecule -->
+
+    <owl:Class rdf:about="&bp;smallMolecule"/>
+    
+
+
+    <!-- http://www.biopax.org/release/biopax-level2.owl#unificationXref -->
+
+    <owl:Class rdf:about="&bp;unificationXref"/>
+    
+
+
+    <!-- http://www.biopax.org/release/biopax-level2.owl#utilityClass -->
+
+    <owl:Class rdf:about="&bp;utilityClass"/>
+    
+
+
+    <!-- http://www.biopax.org/release/biopax-level2.owl#xref -->
+
+    <owl:Class rdf:about="&bp;xref"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Evidence_Type_8 -->
+
+    <owl:NamedIndividual rdf:about="&DIKB_evidence_ontology;Evidence_Type_8">
+        <rdf:type rdf:resource="&DIKB_evidence_ontology;Evidence_Type"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#FDA_Adverse_Reporting_System -->
+
+    <owl:NamedIndividual rdf:about="&DIKB_evidence_ontology;FDA_Adverse_Reporting_System">
+        <rdf:type rdf:resource="&DIKB_evidence_ontology;Public_Reporting_Database"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The FDA&apos;s Adverse Event Reporting System: http://www.fda.gov/cder/aers/default.htm</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Parallel_groups_assignment -->
+
+    <owl:NamedIndividual rdf:about="&DIKB_evidence_ontology;Parallel_groups_assignment">
+        <rdf:type rdf:resource="&DIKB_evidence_ontology;Non_randomized_Tx_Assignment"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A pharmacokinetic clinical trial study design involving two groups of non-randomized participants where both groups recieve the purported object drug while only one group receives the purported precipitant</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#US_Food_and_Drug_Administration -->
+
+    <owl:NamedIndividual rdf:about="&DIKB_evidence_ontology;US_Food_and_Drug_Administration">
+        <rdf:type rdf:resource="&DIKB_evidence_ontology;Authoriative_Organization"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The US Food and Drug Administration (FDA): http://www.fda.gov/opacom/hpview.html</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#human_liver_microsomes -->
+
+    <owl:NamedIndividual rdf:about="&DIKB_evidence_ontology;human_liver_microsomes">
+        <rdf:type rdf:resource="&DIKB_evidence_ontology;Microsomes"/>
+        <rdfs:comment rdf:datatype="&xsd;string">human liver microsomes</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#publicationXref_6 -->
+
+    <owl:NamedIndividual rdf:about="&DIKB_evidence_ontology;publicationXref_6">
+        <rdf:type rdf:resource="&bp;publicationXref"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#recombinant_human_cytochrome_P450_isoenzymes -->
+
+    <owl:NamedIndividual rdf:about="&DIKB_evidence_ontology;recombinant_human_cytochrome_P450_isoenzymes">
+        <rdf:type rdf:resource="&DIKB_evidence_ontology;Recombinant_Protein_System"/>
+        <rdfs:comment rdf:datatype="&xsd;string">recombinant human cytochrome P450 isoenzymes</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#simvastatin -->
+
+    <owl:NamedIndividual rdf:about="&DIKB_evidence_ontology;simvastatin">
+        <rdf:type rdf:resource="&DIKB_evidence_ontology;Drug"/>
+        <rdfs:comment rdf:datatype="&xsd;string">&quot;A derivative of LOVASTATIN and potent competitive inhibitor of 3-hydroxy-3-methylglutaryl coenzyme A reductase (HYDROXYMETHYLGLUTARYL COA REDUCTASES), which is the rate-limiting enzyme in cholesterol biosynthesis. It may also interfere with steroid hormone production. Due to the induction of hepatic LDL RECEPTORS, it increases breakdown of LDL-cholesterol (LIPOPROTEINS, LDL CHOLESTEROL).&quot; (MeSH D019821)</rdfs:comment>
+        <DIKB_evidence_ontology:unifies_with_XRef rdf:resource="&DIKB_evidence_ontology;unificationXref_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#unificationXref_4 -->
+
+    <owl:NamedIndividual rdf:about="&DIKB_evidence_ontology;unificationXref_4">
+        <rdf:type rdf:resource="&bp;unificationXref"/>
+        <bp:ID rdf:datatype="&xsd;string">C22028</bp:ID>
+        <bp:DB rdf:datatype="&xsd;string">VA_NDFRT</bp:DB>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.3.1957) http://owlapi.sourceforge.net -->
+

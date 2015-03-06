@@ -6,38 +6,6 @@ can replace the file of PDDIs below with one output from the script
 (https://swat-4-med-safety.googlecode.com/svn/trunk/SW-DDI-catalog/drug-drug-interactions/scripts/combine-PDDI-AllDatasets.py)
 or its variations within the scripts folder of that repository. 
 
-See below for loading the data....
-
-NOTE: THIS QUERY NEEDS TO BE CORRECTED! IT CURRENTLY INCORRECTLY CONCATS MULTIPLE DDIS FROM THE SAME DATABASE. 
-
-To collapse the data across datasets, use the following query and then open in emacs and run M-x replace-regexp --> :?None:?:
----
-select  
-	drug1,
-	object,
-	drug2,
-	precipitant,
-	group_concat(source separator ':'), 
-	group_concat(certainty separator ':'), 
-	group_concat(label separator ':'), 
-	group_concat(contraindication separator ':'), 
-	group_concat(ddiPkEffect separator ':'), 
-	group_concat(ddiPkMechanism separator ':'), 
-	group_concat(effectConcept separator ':'), 
-	group_concat(homepage separator ':'), 
-	group_concat(label separator '::'), 
-	group_concat(numericVal separator ':'), 
-	group_concat(severity separator ':'), 
-	group_concat(ddiType separator ':'), 
-	group_concat(evidence separator ':'), 
-	group_concat(evidenceSource separator ':'), 
-	group_concat(researchStatementLabel separator ':'), 
-	group_concat(researchStatement separator ':'), 
-	group_concat(managementOptions separator ':')           
-INTO OUTFILE '/home/boycerd/DI_DIR/DIKB-Evidence-analytics/DIKB-multiple-sources/group_concatenated_PDDI_list.txt' FIELDS TERMINATED BY '\t' OPTIONALLY ENCLOSED BY '"' LINES TERMINATED BY '\n'
-FROM DDI
-GROUP BY drug1, drug2;
----
 
 To load into mysql, change the path in the load statement below, run
 from a term 'mysql -u username -p --local-infile=1', then the
@@ -87,4 +55,37 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
 (drug1,object,drug2,precipitant,certainty,contraindication,dateAdded,ddiPkEffect,ddiPkMechanism,effectConcept,homepage,label,numericVal,objectUri,pathway,precaution,precipUri,severity,uri,whoAnnotated,source,ddiType,evidence,evidenceSource,evidenceStatement,researchStatementLabel,researchStatement,managementOptions)
 ;
+---
+
+
+
+NOTE: THIS QUERY NEEDS TO BE CORRECTED! IT CURRENTLY INCORRECTLY CONCATS MULTIPLE DDIS FROM THE SAME DATABASE. 
+
+To collapse the data across datasets, use the following query and then open in emacs and run M-x replace-regexp --> :?None:?:
+---
+select  
+	drug1,
+	object,
+	drug2,
+	precipitant,
+	group_concat(source separator ':'), 
+	group_concat(certainty separator ':'), 
+	group_concat(label separator ':'), 
+	group_concat(contraindication separator ':'), 
+	group_concat(ddiPkEffect separator ':'), 
+	group_concat(ddiPkMechanism separator ':'), 
+	group_concat(effectConcept separator ':'), 
+	group_concat(homepage separator ':'), 
+	group_concat(label separator '::'), 
+	group_concat(numericVal separator ':'), 
+	group_concat(severity separator ':'), 
+	group_concat(ddiType separator ':'), 
+	group_concat(evidence separator ':'), 
+	group_concat(evidenceSource separator ':'), 
+	group_concat(researchStatementLabel separator ':'), 
+	group_concat(researchStatement separator ':'), 
+	group_concat(managementOptions separator ':')           
+INTO OUTFILE '/home/boycerd/DI_DIR/DIKB-Evidence-analytics/DIKB-multiple-sources/group_concatenated_PDDI_list.txt' FIELDS TERMINATED BY '\t' OPTIONALLY ENCLOSED BY '"' LINES TERMINATED BY '\n'
+FROM DDI
+GROUP BY drug1, drug2;
 ---

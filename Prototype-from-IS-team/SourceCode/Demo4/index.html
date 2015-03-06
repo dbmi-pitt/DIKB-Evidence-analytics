@@ -1,0 +1,534 @@
+<html>
+ <head>
+  <script src="./js/jquery-1.11.1.js"></script>
+  <script src="./js/auto_dict.js"></script> 
+  <script src="./js/autocompleter1.js"></script> 
+  <script src="./js/autocompleter2.js"></script>  
+  <script src="./js/tab.js"></script> 
+  <script src="./js/search.js"></script> 
+  <script src="./js/intact.js"></script> 
+  <script src="./js/index.js"></script> 
+  <script src="./js/content.js"></script> 
+  <style type="text/css">
+<!-- 
+	@import url(./css/auto_compelete.css);
+	@import url(./css/intact.css);
+	@import url(./css/tab.css);
+	@import url(./css/content.css);
+--> 
+  </style> 
+ </head> 
+ <body> 
+  <center> 
+   <table width="1000px" frame="below"> 
+    <tbody>
+     <tr> 
+      <td> <a href="index.html"><img src="./img/left.png" width="500px" /></a> </td> 
+      <td align="right"> 
+       <table width="100%"> 
+        <tbody>
+         <tr>
+          <td align="right"><a href="help.html"><img src="./img/forhelp.png" height="40px" /></a></td>
+         </tr> 
+         <tr>
+          <td align="right"><a href="contact.html"><img src="./img/contactus.png" height="40px" /></a></td>
+         </tr> 
+        </tbody>
+       </table> </td> 
+     </tr> 
+    </tbody>
+   </table> 
+   <div id="top_prof"> 
+    <input id="profmark" type="checkbox" onclick="setVersion(&quot;profmark&quot;)" />Professional 
+   </div> 
+   <div id="top_intro">
+    <font size="3" color="grey"> Drug Interaction Knowledge Base (DIKB) is an evidence-focused knowledge base designed to support pharmacoepidemiology and clinical decision support. It contains quantitative and qualitative assertions about drug mechanisms and pharmacokinetic drug-drug interactions for over 60 drugs.</font> 
+   </div> 
+   <br /> 
+   <div id="top_search"> 
+    <main> 
+     <div id="input_drug"> 
+      <div class="field"> 
+       <input type="text" name="nope" id="nope" placeholder="type in drug, brand or generic name." maxlength="40"/> 
+      </div> 
+     </div> 
+     <div id="input_drug">
+      &nbsp;&nbsp;&nbsp;
+      <input type="image" src="./img/click.png" width="80px" border="0" id="search" onclick="adddrug()"/>
+     </div> 
+     <div width="500px" align="left">
+	  <font size="2px">Example: Abilify, Isotretinaion, etc.</font>
+	 </div>
+     <br /> 
+    </main> 
+   </div> 
+   <div id="top_hyperlink"> 
+    <br /> <br /> <br /> <br /> <br /> <br /> <br /> 
+    <table width="950px"> 
+     <tbody>
+      <tr> 
+       <td with="450px" height="50px"> <font size="4" color="purple"><u>Patient-Relevant</u></font> </td> 
+       <td with="500px"> <font size="4" color="purple"><u>Recent Publications from the DIKB Project</u></font> </td> 
+      </tr> 
+      <tr> 
+       <td with="450px"> <font size="2"> <p><a href="http://www.ranker.com/list/list-of-common-diseases-most-common-illnesses/diseases-and-medications-info" target="_blank">Most common diseases</a></p></font></td> 
+       <td with="500px"> <font size="2"> <p><a href="http://dbmi-icode-01.dbmi.pitt.edu/dikb-evidence/index.html" target="_blank">Summary of the DIKB project</a></p>
+	                                     <p><a href="http://jodischneider.com/pubs/argdiap2014.pdf ">Modelling Arguments in Scientific Papers</a></p>
+	                                     <p><a href="http://purl.net/net/drug-interaction-knowledge-base/evidence-types-and-inclusion-criteria" target="_blank">The inclusion criteria for evidence entered into the DIKB and other information</a></p></font></td> 
+      </tr> 
+      <tr> 
+       <td> <font size="4" color="purple"><u>Recent Publications from the DIKB Project</u></font> 
+	        <font size="2"> <p><a href="http://dbmi-icode-01.dbmi.pitt.edu/linkedSPLs/" target="_blank">The University of Pittsburgh Linked Structured Product Label Repository</a> </p>
+	                        <p><a href="http://dbmi-icode-01.dbmi.pitt.edu/dikb-evidence/package-insert-DDI-NLP-corpus.html" target="_blank">The University of Pittsburgh Drug-drug Interaction (PK DDI) Package Insert Corpus</a> </p>
+	                        <p><a href="http://bioportal.bioontology.org/ontologies/1672" target="_blank">The DIKB evidence taxonomy within the NCBO Annotator</a> </font> </p></td> 
+       <td> </td> 
+      </tr> 
+     </tbody>
+    </table> 
+   </div> 
+   <br /> 
+   <div id="main"> 
+    <div id="middle"> 
+     <div id="clean"> 
+      <a href="#" id="clean"  onclick="cleandrug()">Remove all</a> 
+     </div> 
+	 <div id="druglist">
+     <div id="dn1" class="drug"> 
+      &nbsp;&nbsp; <strong></strong> &nbsp;&nbsp;&nbsp;<img src="./img/remove.png" width="15px" onclick="deldrug(&quot;dn1&quot;)"/>
+     </div> 
+     <div id="dn2" class="drug"> 
+      &nbsp;&nbsp; <strong></strong> &nbsp;&nbsp;&nbsp; <a href="#" id="cancel2"><img src="./img/remove.png" width="15px" onclick="deldrug(&quot;dn2&quot;)"/></a>
+     </div> 
+     <div id="dn3" class="drug"> 
+      &nbsp;&nbsp; <strong></strong> &nbsp;&nbsp;&nbsp; <a href="#" id="cancel3"><img src="./img/remove.png" width="15px" onclick="deldrug(&quot;dn3&quot;)"/></a> 
+     </div> 
+     <div id="dn4" class="drug"> 
+      &nbsp;&nbsp; <strong></strong> &nbsp;&nbsp;&nbsp; <a href="#" id="cancel4"><img src="./img/remove.png" width="15px" onclick="deldrug(&quot;dn4&quot;)" /></a>
+     </div> 
+     <div id="dn5" class="drug"> 
+      &nbsp;&nbsp; <strong></strong> &nbsp;&nbsp;&nbsp; <a href="#" id="cancel5"><img src="./img/remove.png" width="15px" onclick="deldrug(&quot;dn5&quot;)" /></a> 
+     </div> 
+     <div id="dn6" class="drug"> 
+      &nbsp;&nbsp; <strong></strong> &nbsp;&nbsp;&nbsp; <a href="#" id="cancel6"><img src="./img/remove.png" width="15px" onclick="deldrug(&quot;dn6&quot;)" /></a>
+     </div> 
+     <div id="dn7" class="drug"> 
+      &nbsp;&nbsp; <strong></strong> &nbsp;&nbsp;&nbsp; <a href="#" id="cancel7"><img src="./img/remove.png" width="15px" onclick="deldrug(&quot;dn7&quot;) "/></a> 
+     </div> 
+     <div id="dn8" class="drug"> 
+      &nbsp;&nbsp; <strong></strong> &nbsp;&nbsp;&nbsp; <a href="#" id="cancel8"><img src="./img/remove.png" width="15px" onclick="deldrug(&quot;dn8&quot;)"/></a>
+     </div> 
+     <br /> 
+	 </div>
+    </div> 
+    <div class="tab_big" id="unprof"> 
+     <div class="tab"> 
+      <ul> 
+       <li id="tow1" class="on" onclick="setTab(&quot;tow&quot;,1,6)">Overview </li> 
+       <li id="tow2" onclick="setTab(&quot;tow&quot;,2,6)">Interaction </li> 
+       <li id="tow3" onclick="setTab(&quot;tow&quot;,3,6)">Create a report </li> 
+      </ul> 
+     </div> 
+     <div class="tabList"> 
+      <div id="cont_tow_1" class="one block"> 
+        <table>
+         <tbody>
+          <tr> 
+           <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="genericbox" checked="true" onclick="showgeneric()"/>Show Generic Name</td> 
+           <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="brandbox" checked="true" onclick="showbrand()"/>Show Brand Name</td> 
+          </tr>
+         </tbody>
+        </table> 
+		<div class="tab_small"> 
+         <div class="tab_s"> 
+          <ul> 
+           <li id="smalltab1" class="on" onclick="setSmallTab(&quot;smalltab&quot;,1,4,1)"><img src="./img/hot.png" width="15px" /><img src="./img/med.png" width="15px" /><img src="./img/cold.png" width="15px" />&nbsp;&nbsp;16 interactions </li> 
+           <li id="smalltab2" onclick="setSmallTab(&quot;smalltab&quot;,2,4,1)"><img src="./img/hot.png" width="15px" />&nbsp;&nbsp;8 major interactions</a> </li> 
+           <li id="smalltab3" onclick="setSmallTab(&quot;smalltab&quot;,3,4,1)"><img src="./img/med.png" width="15px" />&nbsp;&nbsp;4 moderate interactions</li> 
+           <li id="smalltab4" onclick="setSmallTab(&quot;smalltab&quot;,4,4,1)"><img src="./img/cold.png" width="15px" />&nbsp;&nbsp;4 minor interactions</li> 
+          </ul> 
+         </div> 
+         <div class="tabList"> 
+          <div id="smalltab1div" class="one block"> 
+		   <table width="100%" style="font-size:15px; text-align: left;"> 
+			 <tbody>
+			  <tr> 
+			   <td width="50%" height="30px"> 
+				<div id="r1"> 
+				 <p><a href="content.html" target="_blank"><img src="./img/hot.png" width="15px" />&nbsp;&nbsp;<a name="generic" href="content.html" target="_blank">A-Cof DH</a><a name="brand">(guaifenensin / hydrocodone)</a></a></p>
+				</div> </td> 
+			   <td width="50%"><div id="r2"> <p><a href="content.html" target="_blank"><img src="./img/med.png" width="15px" />&nbsp;&nbsp;<a name="generic" href="content.html" target="_blank">A_G Tussion </a><a name="brand"> (chlorpheniramine / hydrocodone)</a></a>  </p></div></td> 
+			  </tr> 
+			<tr> 
+			   <td> 
+				<div id="r5"> 
+				 <p><a href="content.html" target="_blank"><img src="./img/hot.png" width="15px" />&nbsp;&nbsp;<a name="generic" href="content.html" target="_blank">A-Tan 12X </a><a name="brand">(guaifenesin / phenylephrine / pyrilamine)</a></a> </p>
+				</div> </td> 
+			   <td> 
+				<div id="r6"> 
+				 <p><a href="content.html" target="_blank"><img src="./img/hot.png" width="15px" />&nbsp;&nbsp;<a name="generic" href="content.html" target="_blank">Abatuss DMX</a><a name="brand"> (dexchlorpheniramin / dextromethorphan / pseudoephedrine)</a></a> </p>
+				</div> </td> 
+			  </tr> 
+			 		  </div>
+          <div id="smalltab2div" class="one"> 
+		   <table width="100%" style="font-size:15px; text-align: left;"> 
+			 <tbody>
+			  <tr> 
+			   <td width="50%" height="30px"> 
+				<div id="r7"> 
+				 <p><a href="content.html" target="_blank"><img src="./img/hot.png" width="15px" />&nbsp;&nbsp;<a name="generic" href="content.html" target="_blank">A-Cof DH </a><a name="brand">(guaifenensin / hydrocodone)</a></a> </p>
+				</div> </td> 
+			   <td width="50%"><div id="r8"> <p><a href="content.html" target="_blank"><img src="./img/hot.png" width="15px" />&nbsp;&nbsp;<a name="generic" href="content.html" target="_blank">A_G Tussion </a><a name="brand">(chlorpheniramine / hydrocodone)</a></a>  </p></div></td> 
+			  </tr> 
+			  <tr> 
+			   <td> 
+				<div id="r3"> 
+				 <p><a href="content.html" target="_blank"><img src="./img/hot.png" width="15px" />&nbsp;&nbsp;<a name="generic" href="content.html" target="_blank">A-Phedrin</a><a name="brand"> (pseudoephedrine / triprolidine)</a></a> </p>
+				</div> </td> 
+			   <td> 
+				<div id="r4"> 
+				 <p><a href="content.html" target="_blank"><img src="./img/hot.png" width="15px" />&nbsp;&nbsp;<a name="generic" href="content.html" target="_blank">A-Spas S / L </a><a name="brand">(hyoscyamine)</a></a> </p>
+				</div> </td> 
+			  </tr>
+<tr> 
+           <td> 
+            <div id="r11"> 
+             <p><a href="content.html" target="_blank"><img src="./img/hot.png" width="15px" />&nbsp;&nbsp;<a name="generic" href="content.html" target="_blank">AAllergy Sinus Maximum Strength</a><a name="brand">  (acetaminophen / chlorpheniramine / pseudoephedrine)</a> </a> </p>
+            </div> </td> 
+           <td> 
+            <div id="r12"> 
+             <p><a href="content.html" target="_blank"><img src="./img/cold.png" width="15px" />&nbsp;&nbsp;<a name="generic" href="content.html" target="_blank">AAllergy Sinus PE Pain Relief</a><a name="brand">  (acetaminophen / chlorpheniramine / phenylephrine)</a> </a> </p>
+            </div> </td> 
+          </tr> 
+          <tr> 
+           <td> 
+            <div id="r13"> 
+             <p><a href="content.html" target="_blank"><img src="./img/med.png" width="15px" />&nbsp;&nbsp;<a name="generic" href="content.html" target="_blank">AAllergy Time</a><a name="brand">  (chlorpheniramine) </a></a> </p>
+            </div> </td> 
+           <td> 
+            <div id="r14"> 
+             <p><a href="content.html" target="_blank"><img src="./img/cold.png" width="15px" />&nbsp;&nbsp;<a name="generic" href="content.html" target="_blank">AAllerhist-1</a><a name="brand">  (clemastine)</a> </a> </p>
+            </div> </td> 
+          </tr> 
+          <tr> 
+           <td> 
+            <div id="r15"> 
+             <p><a href="content.html" target="_blank"><img src="./img/cold.png" width="15px" />&nbsp;&nbsp;<a name="generic" href="content.html" target="_blank">AABC Plus Senior</a><a name="brand">  (multivitamin with minerals)</a> </a> </p>
+            </div> </td> 
+           <td> 
+            <div id="r16"> 
+             <p><a href="content.html" target="_blank"><img src="./img/cold.png" width="15px" />&nbsp;&nbsp;<a name="generic" href="content.html" target="_blank">AAbbkkinase</a><a name="brand">  (urokinase)</a> </a> </p>
+            </div> </td> 
+          </tr> 
+          <tr> 
+           <td> 
+            <div id="r17"> 
+             <p><a href="content.html" target="_blank"><img src="./img/hot.png" width="15px" />&nbsp;&nbsp;<a name="generic" href="content.html" target="_blank">AAbelcet</a><a name="brand">  (amphotenic in b lipid complex)</a> </a> </p>
+            </div> </td> 
+           <td> 
+            <div id="r18"> 
+             <p><a href="content.html" target="_blank"><img src="./img/med.png" width="15px" />&nbsp;&nbsp;<a name="generic" href="content.html" target="_blank">AAbstral</a><a name="brand">  (fentany)  </a></a> </p>
+            </div> </td> 
+          </tr>  			 </tbody>
+			</table> 
+		  </div>
+          <div id="smalltab3div" class="one"> 
+		   <table width="100%" style="font-size:15px; text-align: left;"> 
+			 <tbody>
+			  <tr> 
+			   <td width="50%" height="30px"> 
+				<div id="r1"> 
+				 <p><a href="content.html" target="_blank"><img src="./img/med.png" width="15px" />&nbsp;&nbsp;<a name="generic">A-Cof DH  </a><a name="brand">(guaifenensin / hydrocodone)</a></a> </p>
+				</div> </td> 
+			   <td width="50%"><div id="r2"> <p><a href="content.html" target="_blank"><img src="./img/med.png" width="15px" />&nbsp;&nbsp;<a name="generic">A_G Tussion  </a><a name="brand">(chlorpheniramine / hydrocodone)</a> </a> </p></div></td> 
+			  </tr> 
+			  <tr> 
+			   <td> 
+				<div id="r3"> 
+				 <p><a href="content.html" target="_blank"><img src="./img/med.png" width="15px" />&nbsp;&nbsp;<a name="generic">A-Phedrin  </a><a name="brand">(pseudoephedrine / triprolidine)</a></a> </p>
+				</div> </td> 
+			   <td> 
+				<div id="r4"> 
+				 <p><a href="content.html" target="_blank"><img src="./img/med.png" width="15px" />&nbsp;&nbsp;<a name="generic">A-Spas S / L  </a><a name="brand">(hyoscyamine)</a> </a></p>
+				</div> </td> 
+			  </tr> 
+			 </tbody>
+			</table> 
+		  </div>
+          <div id="smalltab4div" class="one"> 
+		   <table width="100%" style="font-size:15px; text-align: left;"> 
+			 <tbody>
+			  <tr> 
+			   <td width="50%" height="30px"> 
+				<div id="r1"> 
+				 <p><a href="content.html" target="_blank"><img src="./img/cold.png" width="15px" />&nbsp;&nbsp;A-Cof DH (guaifenensin / hydrocodone)</a> </p>
+				</div> </td> 
+			   <td width="50%"><div id="r2"> <p><a href="content.html" target="_blank"><img src="./img/cold.png" width="15px" />&nbsp;&nbsp;A_G Tussion (chlorpheniramine / hydrocodone)</a>  </p></div></td> 
+			  </tr> 
+			  <tr> 
+			   <td> 
+				<div id="r3"> 
+				 <p><a href="content.html" target="_blank"><img src="./img/cold.png" width="15px" />&nbsp;&nbsp;A-Phedrin (pseudoephedrine / triprolidine)</a> </p>
+				</div> </td> 
+			   <td> 
+				<div id="r4"> 
+				 <p><a href="content.html" target="_blank"><img src="./img/cold.png" width="15px" />&nbsp;&nbsp;A-Spas S / L (hyoscyamine)</a> </p>
+				</div> </td> 
+			  </tr> 
+			 </tbody>
+			</table> 
+		  </div>
+		 </div>
+       </div>  
+      </div>
+      <div id="cont_tow_2" class="one"> 
+		<div id="interdesp">
+        Metabolism Following oral dosing, theophylline does not undergo any measurable first-pass elimination. In adults and children beyond one year of age, approximately 90%of the dose is metabolized in the liver. Biotransformation takes place through demethylation to 1-methylxanthine and 3-methylxanthine and hydroxylation to 1,3-dimethyluric acid. 1-methylxanthine is further hydroxylated, by xanthine oxidase, to 1-methyluric acid. About 6%of a theophylline dose is N-methylated to caffeine. Theophylline demethylation to 3-methylxanthine is catalyzed by cytochrome P-450 1A2, while cytochromes P-450 2E1 and P-450 3A3 catalyze the hydroxylation to 1,3-dimethyluric acid. Demethylation to 1-methylxanthine appears to be catalyzed either by cytochrome P-450 1A2 or a closely related cytochrome. In neonates, the N-demethylation pathway is absent while the function of the hydroxylation pathway is markedly deficient. The activity of these pathways slowly increases to maximal levels by one year of age.	    </div>
+      </div> 
+      <div id="cont_tow_3" class="one" align="left"> 
+ <div width="900px">
+        Select patient factors:<br>
+		<div align="center">
+			<input type="checkbox" name="factor" value="Caffeine">Caffeine
+			<input type="checkbox" name="factor" value="Alcohol">Ethanol / Alcohol
+			<input type="checkbox" name="factor" value="Tobacco">Tobacco
+			<input type="checkbox" name="factor" value="Beverage">Beverage 
+			<input type="checkbox" name="factor" value="Food">Food<br>
+		</div>
+		<hr>
+		<div id="newreport" class="newreport">
+		<h3>Drug interactions report for the following mediations: </h3>
+		<p>Abilify Abraxane </p>
+		<h3>Drug to Drug Interactions</h3>
+		<p>No Clinically significant drug-drug interactions are expercted. </p>
+		<h3>Drug-Caffeine interactions are found</h3>
+		Caffeine (Enerjets) | Top Care Stay Awake Maximum Strength | Stay Awake | Awake | 44 Magnum | Mobe | Overtime | 357 HR Magnum
+		<p>While taking Caffeine products, limit the use at foods, beverages, herbs and other medicines that contain additional caffeine, like coffee, teas, colas and some diet pills.</p>
+		</div>
+		</div>
+       
+      </div> 
+     </div> 
+    </div> 
+    <div class="tab_big" id="prof"> 
+     <div class="tab"> 
+      <ul> 
+       <li id="tow4" onclick="setTab(&quot;tow&quot;,4,6)">Overview </li> 
+       <li id="tow5" onclick="setTab(&quot;tow&quot;,5,6)">Assertion </li> 
+       <li id="tow6" onclick="setTab(&quot;tow&quot;,6,6)">Create a report for the patient </li> 
+      </ul> 
+     </div> 
+     <div class="tabList"> 
+      <div id="cont_tow_4" class="one block"> 
+       <div id="statistic"> 
+        <table>
+         <tbody>
+          <tr> 
+           <td><a id="all"><img src="./img/hot.png" width="15px" /><img src="./img/med.png" width="15px" /><img src="./img/cold.png" width="15px" />&nbsp;&nbsp;60 interactions</a></td> 
+           <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="hot"><img src="./img/hot.png" width="15px" />&nbsp;&nbsp;32 major interactions</a></td> 
+           <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="med"><img src="./img/med.png" width="15px" />&nbsp;&nbsp;12 moderate interactions</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
+           <td><a id="cold"><img src="./img/cold.png" width="15px" />&nbsp;&nbsp;16 minor interactions</a></td> 
+          </tr>
+         </tbody>
+        </table> 
+        <table>
+         <tbody>
+          <tr> 
+           <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="bike" />Show Generic Name</td> 
+           <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="bike" />Show Brand Name</td> 
+          </tr>
+         </tbody>
+        </table> 
+       </div> 
+       <div id="bottom"> 
+        <table width="100%" style="font-size:15px; text-align: left;"> 
+         <tbody>
+          <tr> 
+           <td width="50%" height="30px"> 
+            <div id="r1"> 
+             <p><a href="content.html" target="_blank"><img src="./img/hot.png" width="15px" />&nbsp;&nbsp;A-Cof DH (guaifenensin / hydrocodone)</a> </p>
+            </div> </td> 
+           <td width="50%"><div id="r2"> <p><a href="content.html" target="_blank"><img src="./img/med.png" width="15px" />&nbsp;&nbsp;A_G Tussion (chlorpheniramine / hydrocodone)</a>  </p></td> 
+          </tr> 
+          <tr> 
+           <td> 
+            <div id="r3"> 
+             <p><a href="content.html" target="_blank"><img src="./img/hot.png" width="15px" />&nbsp;&nbsp;A-Phedrin (pseudoephedrine / triprolidine)</a> </p>
+            </div> </td> 
+           <td> 
+            <div id="r4"> 
+             <p><a href="content.html" target="_blank"><img src="./img/cold.png" width="15px" />&nbsp;&nbsp;A-Spas S / L (hyoscyamine)</a> </p>
+            </div> </td> 
+          </tr> 
+          <tr> 
+           <td> 
+            <div id="r5"> 
+             <p><a href="content.html" target="_blank"><img src="./img/hot.png" width="15px" />&nbsp;&nbsp;A-Tan 12X (guaifenesin / phenylephrine / pyrilamine)</a> </p>
+            </div> </td> 
+           <td> 
+            <div id="r6"> 
+             <p><a href="content.html" target="_blank"><img src="./img/hot.png" width="15px" />&nbsp;&nbsp;Abatuss DMX (dexchlorpheniramin / dextromethorphan / pseudoephedrine)</a> </p>
+            </div> </td> 
+          </tr> 
+          <tr> 
+           <td> 
+            <div id="r7"> 
+             <p><a href="content.html" target="_blank"><img src="./img/hot.png" width="15px" />&nbsp;&nbsp;Allergy Multi-Symptom (acetaminophen / chlorpheniramine / pheylephrine)</a> </p>
+            </div> </td> 
+           <td> 
+            <div id="r8"> 
+             <p><a href="content.html" target="_blank"><img src="./img/med.png" width="15px" />&nbsp;&nbsp;Allergy Pain Relief (acetaminophen / chlorpheniramine / phenylephrine)</a> </p>
+            </div> </td> 
+          </tr> 
+          <tr> 
+           <td> 
+            <div id="r9"> 
+             <p><a href="content.html" target="_blank"><img src="./img/med.png" width="15px" />&nbsp;&nbsp;Allergy Relief (chlorpheniramine)</a> </p>
+            </div> </td> 
+           <td> 
+            <div id="r10"> 
+             <p><a href="content.html" target="_blank"><img src="./img/med.png" width="15px" />&nbsp;&nbsp;Allergy Relief D (cetirizine / pseudoephedrine)</a> </p>
+            </div> </td> 
+          </tr> 
+          <tr> 
+           <td> 
+            <div id="r11"> 
+             <p><a href="content.html" target="_blank"><img src="./img/hot.png" width="15px" />&nbsp;&nbsp;Allergy Sinus Maximum Strength (acetaminophen / chlorpheniramine / pseudoephedrine)</a> </p>
+            </div> </td> 
+           <td> 
+            <div id="r12"> 
+             <p><a href="content.html" target="_blank"><img src="./img/cold.png" width="15px" />&nbsp;&nbsp;Allergy Sinus PE Pain Relief (acetaminophen / chlorpheniramine / phenylephrine)</a> </p>
+            </div> </td> 
+          </tr> 
+          <tr> 
+           <td> 
+            <div id="r13"> 
+             <p><a href="content.html" target="_blank"><img src="./img/med.png" width="15px" />&nbsp;&nbsp;Allergy Time (chlorpheniramine)</a> </p>
+            </div> </td> 
+           <td> 
+            <div id="r14"> 
+             <p><a href="content.html" target="_blank"><img src="./img/cold.png" width="15px" />&nbsp;&nbsp;Allerhist-1 (clemastine)</a> </p>
+            </div> </td> 
+          </tr> 
+          <tr> 
+           <td> 
+            <div id="r15"> 
+             <p><a href="content.html" target="_blank"><img src="./img/cold.png" width="15px" />&nbsp;&nbsp;ABC Plus Senior (multivitamin with minerals)</a> </p>
+            </div> </td> 
+           <td> 
+            <div id="r16"> 
+             <p><a href="content.html" target="_blank"><img src="./img/cold.png" width="15px" />&nbsp;&nbsp;Abbkkinase (urokinase)</a> </p>
+            </div> </td> 
+          </tr> 
+          <tr> 
+           <td> 
+            <div id="r17"> 
+             <p><a href="content.html" target="_blank"><img src="./img/hot.png" width="15px" />&nbsp;&nbsp;Abelcet (amphotenic in b lipid complex)</a> </p>
+            </div> </td> 
+           <td> 
+            <div id="r18"> 
+             <p><a href="content.html" target="_blank"><img src="./img/med.png" width="15px" />&nbsp;&nbsp;Abstral (fentany) </a> </p>
+            </div> </td> 
+          </tr> 
+          <tr> 
+           <td> 
+            <div id="r19"> 
+             <p><a href="content.html" target="_blank"><img src="./img/hot.png" width="15px" />&nbsp;&nbsp;Absorica (isotretinaion)</a> </p>
+            </div> </td> 
+           <td> 
+            <div id="r20"> 
+             <p><a href="content.html" target="_blank"><img src="./img/hot.png" width="15px" />&nbsp;&nbsp;Abreva (docosanol topical)</a> </p>
+            </div> </td> 
+          </tr> 
+         </tbody>
+        </table> 
+       </div> 
+      </div> 
+      <div id="cont_tow_5" class="one"> 
+       <div id="mainc"> 
+        <div id="left"> 
+         <div id="evd1" class="evd"> 
+          <p><strong>Evidence 1:</strong></p> 
+          <p><strong>Evidence Type:</strong> Non_traceable_Drug_Label_Statement</p> 
+          <p><strong>Quote:</strong> Metabolism Following oral dosing, theophylline does not undergo any measurable first-pass elimination. In adults and children beyond one year of age, approximately 90%of the dose is metabolized in the liver. Biotransformation takes place through demethylation to 1-methylxanthine and 3-methylxanthine and hydroxylation to 1,3-dimethyluric acid. 1-methylxanthine is further hydroxylated, by xanthine oxidase, to 1-methyluric acid. About 6%of a theophylline dose is N-methylated to caffeine. Theophylline demethylation to 3-methylxanthine is catalyzed by cytochrome P-450 1A2, while cytochromes P-450 2E1 and P-450 3A3 catalyze the hydroxylation to 1,3-dimethyluric acid. Demethylation to 1-methylxanthine appears to be catalyzed either by cytochrome P-450 1A2 or a closely related cytochrome. In neonates, the N-demethylation pathway is absent while the function of the hydroxylation pathway is markedly deficient. The activity of these pathways slowly increases to maximal levels by one year of age.</p> 
+          <p><strong>Pointer:</strong> heophylline-3M-082006</p> 
+          <p><strong>Reviewer:</strong> Boycer</p> 
+          <p><strong>Assumptions:</strong> -</p> 
+          <p><strong>Num_subjects:</strong> -</p> 
+          <p><strong>Dose:</strong> -</p> 
+          <p><strong>Maximum_Concentration:</strong> -</p> 
+         </div> 
+         <p> </p>
+         <div id="evd2" class="evd"> 
+          <p><strong>Evidence 2:</strong></p> 
+          <p><strong>Evidence Type:</strong> Non_traceable_Drug_Label_Statement</p> 
+          <p><strong>Quote:</strong> Metabolism Following oral dosing, theophylline does not undergo any measurable first-pass elimination. In adults and children beyond one year of age, approximately 90%of the dose is metabolized in the liver. Biotransformation takes place through demethylation to 1-methylxanthine and 3-methylxanthine and hydroxylation to 1,3-dimethyluric acid. 1-methylxanthine is further hydroxylated, by xanthine oxidase, to 1-methyluric acid. About 6%of a theophylline dose is N-methylated to caffeine. Theophylline demethylation to 3-methylxanthine is catalyzed by cytochrome P-450 1A2, while cytochromes P-450 2E1 and P-450 3A3 catalyze the hydroxylation to 1,3-dimethyluric acid. Demethylation to 1-methylxanthine appears to be catalyzed either by cytochrome P-450 1A2 or a closely related cytochrome. In neonates, the N-demethylation pathway is absent while the function of the hydroxylation pathway is markedly deficient. The activity of these pathways slowly increases to maximal levels by one year of age.</p> 
+          <p><strong>Pointer:</strong> heophylline-3M-082006</p> 
+          <p><strong>Reviewer:</strong> Boycer</p> 
+          <p><strong>Assumptions:</strong> -</p> 
+          <p><strong>Num_subjects:</strong> -</p> 
+          <p><strong>Dose:</strong> -</p> 
+          <p><strong>Maximum_Concentration:</strong> -</p> 
+         </div> 
+         <p> </p>
+         <div id="evd3" class="evd"> 
+          <p><strong>Evidence 3:</strong></p> 
+          <p><strong>Evidence Type:</strong> Non_traceable_Drug_Label_Statement</p> 
+          <p><strong>Quote:</strong> Metabolism Following oral dosing, theophylline does not undergo any measurable first-pass elimination. In adults and children beyond one year of age, approximately 90%of the dose is metabolized in the liver. Biotransformation takes place through demethylation to 1-methylxanthine and 3-methylxanthine and hydroxylation to 1,3-dimethyluric acid. 1-methylxanthine is further hydroxylated, by xanthine oxidase, to 1-methyluric acid. About 6%of a theophylline dose is N-methylated to caffeine. Theophylline demethylation to 3-methylxanthine is catalyzed by cytochrome P-450 1A2, while cytochromes P-450 2E1 and P-450 3A3 catalyze the hydroxylation to 1,3-dimethyluric acid. Demethylation to 1-methylxanthine appears to be catalyzed either by cytochrome P-450 1A2 or a closely related cytochrome. In neonates, the N-demethylation pathway is absent while the function of the hydroxylation pathway is markedly deficient. The activity of these pathways slowly increases to maximal levels by one year of age.</p> 
+          <p><strong>Pointer:</strong> heophylline-3M-082006</p> 
+          <p><strong>Reviewer:</strong> Boycer</p> 
+          <p><strong>Assumptions:</strong> -</p> 
+          <p><strong>Num_subjects:</strong> -</p> 
+          <p><strong>Dose:</strong> -</p> 
+          <p><strong>Maximum_Concentration:</strong> -</p> 
+         </div> 
+         <p> </p>
+         <div id="evd4" class="evd"> 
+          <p><strong>Evidence 4:</strong></p> 
+          <p><strong>Evidence Type:</strong> Non_traceable_Drug_Label_Statement</p> 
+          <p><strong>Quote:</strong> Metabolism Following oral dosing, theophylline does not undergo any measurable first-pass elimination. In adults and children beyond one year of age, approximately 90%of the dose is metabolized in the liver. Biotransformation takes place through demethylation to 1-methylxanthine and 3-methylxanthine and hydroxylation to 1,3-dimethyluric acid. 1-methylxanthine is further hydroxylated, by xanthine oxidase, to 1-methyluric acid. About 6%of a theophylline dose is N-methylated to caffeine. Theophylline demethylation to 3-methylxanthine is catalyzed by cytochrome P-450 1A2, while cytochromes P-450 2E1 and P-450 3A3 catalyze the hydroxylation to 1,3-dimethyluric acid. Demethylation to 1-methylxanthine appears to be catalyzed either by cytochrome P-450 1A2 or a closely related cytochrome. In neonates, the N-demethylation pathway is absent while the function of the hydroxylation pathway is markedly deficient. The activity of these pathways slowly increases to maximal levels by one year of age.</p> 
+          <p><strong>Pointer:</strong> heophylline-3M-082006</p> 
+          <p><strong>Reviewer:</strong> Boycer</p> 
+          <p><strong>Assumptions:</strong> -</p> 
+          <p><strong>Num_subjects:</strong> -</p> 
+          <p><strong>Dose:</strong> -</p> 
+          <p><strong>Maximum_Concentration:</strong> -</p> 
+         </div> 
+         <p> </p>
+        </div> 
+        <div id="right"> 
+         <p><li id="e1">Evidence 1</a> </p>
+         <p><li id="e2">Evidence 2</a> </p>
+         <p><li id="e3">Evidence 3</a> </p>
+         <p><li id="e4">Evidence 4</a> </p>
+        </div> 
+       </div> 
+      </div> 
+      <div id="cont_tow_6" class="one" align="left"> 
+       <div width="900px">
+        Select patient factors:<br>
+		<div align="center">
+			<input type="checkbox" name="factor" value="Caffeine">Caffeine
+			<input type="checkbox" name="factor" value="Alcohol">Ethanol / Alcohol
+			<input type="checkbox" name="factor" value="Tobacco">Tobacco
+			<input type="checkbox" name="factor" value="Beverage">Beverage 
+			<input type="checkbox" name="factor" value="Food">Food<br>
+		</div>
+		<hr>
+		<div id="newreport" class="newreport">
+		<h3>Drug interactions report for the following mediations: </h3>
+		<p>Abilify Abraxane </p>
+		<h3>Drug to Drug Interactions</h3>
+		<p>No Clinically significant drug-drug interactions are expercted. </p>
+		<h3>Drug-Caffeine interactions are found</h3>
+		Caffeine (Enerjets) | Top Care Stay Awake Maximum Strength | Stay Awake | Awake | 44 Magnum | Mobe | Overtime | 357 HR Magnum
+		<p>While taking Caffeine products, limit the use at foods, beverages, herbs and other medicines that contain additional caffeine, like coffee, teas, colas and some diet pills.</p>
+		</div>
+		</div>
+      </div> 
+     </div> 
+    </div> 
+    <br /> 
+   </div> 
+  </center>   
+ </body>
+</html>

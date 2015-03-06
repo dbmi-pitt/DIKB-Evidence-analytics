@@ -1,3 +1,0 @@
-Enter file contents here
-Test 
-Git knows its change.

@@ -1,0 +1,77 @@
+.tab_big 
+{ 
+width: 999px; 
+} 
+.tab UL 
+{ 
+zoom: 1; 
+clear: both; 
+} 
+.tab UL:after 
+{ 
+display: block; 
+height: 0px; 
+visibility: hidden; 
+clear: both; 
+content: ""; 
+} 
+.tab UL LI 
+{ 
+text-align: center; 
+line-height: 26px; 
+width: 310px; 
+display: inline; 
+background: #27408B; 
+float: left; 
+height: 26px; 
+color: #fff; 
+} 
+.tab UL LI.on 
+{ 
+background: #E9E9E4; 
+color: #000; 
+} 
+.tabList .one 
+{ 
+  padding: 10 10 10 10px;
+  display: none; 
+} 
+.tabList .block 
+{ 
+  display: block; 
+} 
+
+
+
+.tab_small
+{ 
+width: 900px; 
+} 
+
+.tab_s UL 
+{ 
+zoom: 1; 
+clear: both; 
+} 
+.tab_s UL:after 
+{ 
+display: block; 
+height: 0px; 
+visibility: hidden; 
+clear: both; 
+content: ""; 
+} 
+.tab_s UL LI 
+{ 
+text-align: center; 
+line-height: 26px; 
+width: 210px; 
+display: inline; 
+float: left; 
+height: 26px; 
+background: #ffffff; 
+} 
+.tab_s UL LI.on 
+{ 
+background: #E9E9E4; 
+} 

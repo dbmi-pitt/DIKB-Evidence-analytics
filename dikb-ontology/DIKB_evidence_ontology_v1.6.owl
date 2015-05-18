@@ -1020,14 +1020,6 @@ For representing homology generics a better way is to use generic entity referen
 
     <owl:ObjectProperty rdf:about="&bp;subRegion">
         <rdfs:comment rdf:datatype="&xsd;string">The sub region of a region or nucleic acid molecule. The sub region must be wholly part of the region, not outside of it.</rdfs:comment>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&bp;DnaRegionReference"/>
-                    <rdf:Description rdf:about="&bp;RnaRegionReference"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -1038,6 +1030,14 @@ For representing homology generics a better way is to use generic entity referen
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&bp;DnaRegionReference"/>
+                    <rdf:Description rdf:about="&bp;RnaRegionReference"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2187,19 +2187,6 @@ NCI 2007 ID:C54708</rdfs:comment>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_consequence"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="&DIKB_evidence_ontology;Pharmacodynamic_Effect_Consequences"/>
-                            <rdf:Description rdf:about="&DIKB_evidence_ontology;Pharmacokinetic_Effect_Consequences"/>
-                        </owl:unionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_consequence"/>
                 <owl:allValuesFrom>
                     <owl:Class>
                         <owl:unionOf rdf:parseType="Collection">
@@ -2208,6 +2195,19 @@ NCI 2007 ID:C54708</rdfs:comment>
                         </owl:unionOf>
                     </owl:Class>
                 </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_consequence"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&DIKB_evidence_ontology;Pharmacodynamic_Effect_Consequences"/>
+                            <rdf:Description rdf:about="&DIKB_evidence_ontology;Pharmacokinetic_Effect_Consequences"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;Drug_Manufacturer"/>
@@ -2542,13 +2542,13 @@ Adapted from MeSH 2007 &quot;Drug Labeling&quot; ID: D004348</rdfs:comment>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_participants"/>
-                <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Clinical_Trial_Participants"/>
+                <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Clinical_Trial_Participants"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&DIKB_evidence_ontology;has_participants"/>
-                <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Clinical_Trial_Participants"/>
+                <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Clinical_Trial_Participants"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;EV_EX_Met_Enz_ID"/>
@@ -2947,6 +2947,29 @@ Adapted from MeSH 2007 &quot;Drug Labeling&quot; ID: D004348</rdfs:comment>
     
 
 
+    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_Non_traceable_Drug_Label_Statement -->
+
+    <owl:Class rdf:about="&DIKB_evidence_ontology;EV_Non_traceable_Drug_Label_Statement">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&DIKB_evidence_ontology;EV_Non_Tracable_Statement"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;is_stated_in"/>
+                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Drug_Label"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;is_stated_in"/>
+                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Drug_Label"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="&xsd;string">An assertional statement in a drug label that does not provide any traceable citations for its evidence support</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#EV_Observational -->
 
     <owl:Class rdf:about="&DIKB_evidence_ontology;EV_Observational">
@@ -3306,29 +3329,6 @@ GO:0008152 &apos;metabolism&apos;</rdfs:comment>
     
 
 
-    <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Non_traceable_Drug_Label_Statement -->
-
-    <owl:Class rdf:about="&DIKB_evidence_ontology;Non_traceable_Drug_Label_Statement">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&DIKB_evidence_ontology;EV_Non_Tracable_Statement"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;is_stated_in"/>
-                        <owl:someValuesFrom rdf:resource="&DIKB_evidence_ontology;Drug_Label"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&DIKB_evidence_ontology;is_stated_in"/>
-                        <owl:allValuesFrom rdf:resource="&DIKB_evidence_ontology;Drug_Label"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:comment rdf:datatype="&xsd;string">An assertional statement in a drug label that does not provide any traceable citations for its evidence support</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl#Observation_based_DI_Report_Assessment_tool -->
 
     <owl:Class rdf:about="&DIKB_evidence_ontology;Observation_based_DI_Report_Assessment_tool">
@@ -3539,14 +3539,14 @@ Comment: In the example reaction above, ATP is considered to be an equilibrium m
         <rdfs:subClassOf rdf:resource="&bp;Control"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&bp;controlled"/>
-                <owl:allValuesFrom rdf:resource="&bp;Conversion"/>
+                <owl:onProperty rdf:resource="&bp;controlType"/>
+                <owl:hasValue rdf:datatype="&xsd;string">ACTIVATION</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&bp;controlType"/>
-                <owl:hasValue rdf:datatype="&xsd;string">ACTIVATION</owl:hasValue>
+                <owl:onProperty rdf:resource="&bp;controlled"/>
+                <owl:allValuesFrom rdf:resource="&bp;Conversion"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment rdf:datatype="&xsd;string">Definition: A control interaction in which a physical entity (a catalyst) increases the rate of a conversion interaction by lowering its activation energy. Instances of this class describe a pairing between a catalyzing entity and a catalyzed conversion.
@@ -4017,8 +4017,8 @@ Usage: Gene should only be used for describing GeneticInteractions.</rdfs:commen
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&bp;interactionType"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+                <owl:onProperty rdf:resource="&bp;participant"/>
+                <owl:allValuesFrom rdf:resource="&bp;Gene"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -4029,8 +4029,8 @@ Usage: Gene should only be used for describing GeneticInteractions.</rdfs:commen
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&bp;participant"/>
-                <owl:allValuesFrom rdf:resource="&bp;Gene"/>
+                <owl:onProperty rdf:resource="&bp;interactionType"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="&bp;MolecularInteraction"/>
@@ -4236,14 +4236,14 @@ Examples: extracellular calcium, ser 64 phosphorylated p53</rdfs:comment>
         <rdfs:subClassOf rdf:resource="&bp;PhysicalEntity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&bp;memberPhysicalEntity"/>
-                <owl:allValuesFrom rdf:resource="&bp;Protein"/>
+                <owl:onProperty rdf:resource="&bp;entityReference"/>
+                <owl:allValuesFrom rdf:resource="&bp;ProteinReference"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&bp;entityReference"/>
-                <owl:allValuesFrom rdf:resource="&bp;ProteinReference"/>
+                <owl:onProperty rdf:resource="&bp;memberPhysicalEntity"/>
+                <owl:allValuesFrom rdf:resource="&bp;Protein"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="&bp;Rna"/>
@@ -4373,14 +4373,14 @@ Examples: messengerRNA, microRNA, ribosomalRNA. A specific example is the let-7 
         <rdfs:subClassOf rdf:resource="&bp;PhysicalEntity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&bp;entityReference"/>
-                <owl:allValuesFrom rdf:resource="&bp;RnaRegionReference"/>
+                <owl:onProperty rdf:resource="&bp;memberPhysicalEntity"/>
+                <owl:allValuesFrom rdf:resource="&bp;RnaRegion"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&bp;memberPhysicalEntity"/>
-                <owl:allValuesFrom rdf:resource="&bp;RnaRegion"/>
+                <owl:onProperty rdf:resource="&bp;entityReference"/>
+                <owl:allValuesFrom rdf:resource="&bp;RnaRegionReference"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment rdf:datatype="&xsd;string">Definition: A region on a RNA molecule. 
@@ -4476,26 +4476,26 @@ Usage: A sequence site is always defined based on the reference sequence of the 
         <rdfs:subClassOf rdf:resource="&bp;PhysicalEntity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&bp;entityReference"/>
-                <owl:allValuesFrom rdf:resource="&bp;SmallMoleculeReference"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="&bp;feature"/>
                 <owl:allValuesFrom rdf:resource="&bp;BindingFeature"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&bp;memberPhysicalEntity"/>
-                <owl:allValuesFrom rdf:resource="&bp;SmallMolecule"/>
+                <owl:onProperty rdf:resource="&bp;notFeature"/>
+                <owl:allValuesFrom rdf:resource="&bp;BindingFeature"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&bp;notFeature"/>
-                <owl:allValuesFrom rdf:resource="&bp;BindingFeature"/>
+                <owl:onProperty rdf:resource="&bp;entityReference"/>
+                <owl:allValuesFrom rdf:resource="&bp;SmallMoleculeReference"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&bp;memberPhysicalEntity"/>
+                <owl:allValuesFrom rdf:resource="&bp;SmallMolecule"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment rdf:datatype="&xsd;string">Definition: A pool of molecules that are neither complexes nor are genetically encoded.

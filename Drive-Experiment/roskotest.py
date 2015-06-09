@@ -1063,6 +1063,31 @@ a.insertEvidence("for",e)
 ev.addAssertion(a)
 
 ###########################################################
+################ DUAL INHIBITORS EXTRAS ###################
+###########################################################
+###### These are the parts of dual-inhibitor assertions that were not listed elsewhere
+
+for elt in ["quinidine", "felodipine", "azithromycin"]:
+    a = Assertion(elt, "inhibits", "cyp3a4")
+    e = Evidence(ev)
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'weak' in vivo inhibitor of CYP3A4. For more information, see Table 8 on page 53 and also see Table 14 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/9/2015")
+    a.insertEvidence("for",e)
+    ev.addAssertion(a)
+
+a = Assertion("lapatinib", "inhibits", "P-gp")
+e = Evidence(ev)
+e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo inhibitor of P-gp. For more information, see Table 8 on page 53 and also see Table 14 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/9/2015")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+for elt in ["voriconazole", "nefazodone", "cimetidine"]:
+    a = Assertion(elt, "inhibits", "P-gp")
+    e = Evidence(ev)
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is not an effective in vivo inhibitor of P-gp. This data was derived with digoxin. For more information, see Table 8 on page 53 of the FDA guidelines and Table 14 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/9/2015")
+    a.insertEvidence("against",e)
+    ev.addAssertion(a)
+
+###########################################################
 ############### OTHER USEFUL CODE #########################
 ###########################################################
 

@@ -1,6 +1,6 @@
 ### SAM ROSKO'S TEST FILE FOR WORKING ON DIKB
-### LAST UPDATED: 2/2/2015
-### RECENTLY: Remaining evidence to be entered: Ki/Km values (need to optimize entry), in vitro transport data, dual inhibitors
+### LAST UPDATED: 6/8/2015
+### RECENTLY: Remaining evidence to be entered: Km values, in vitro transport data, dual inhibitors, combination therapy, weird drug names
 
 import os,sys, string, cgi
 from time import time, strftime, localtime
@@ -355,7 +355,6 @@ for elt in ["aliskiren", "ambrisentan", "colchicine", "dabigatran", "etexilate",
     ev.addAssertion(a)
 
 ##### OATP1B1 inhibitors then substrates
-
 for elt in ["cyclosporine", "eltrombopag", "gemfibrozil"]:
     a = Assertion(elt, "inhibits", "OATP1B1")
     e = Evidence(ev)
@@ -522,7 +521,7 @@ a.insertEvidence("for",e)
 ev.addAssertion(a)
 
 ##### CYP2B6
-# The names here probably need changed, there shouldn't be allowed to be a space in the diamantane or adamantane, and thiotepa is an abbreviation of triethylenethiophosphoramide
+# The names here probably need changed, there shouldn't be allowed to be a space in the diamantane or adamantane, and i cant find the drugs online to make conversions for the kI value
 for elt in ["3-isopropenyl-3-methyl diamantane", "2-isopropenyl-2-methyl adamantane", "sertraline", "phencyclidine", "thiotepa", "clopidogrel", "ticlopidine"]:
     a = Assertion(elt, "in_vitro_selective_inhibitor_of_enzyme", "cyp2b6")
     e = Evidence(ev)
@@ -534,6 +533,50 @@ for elt in ["3-isopropenyl-3-methyl diamantane", "2-isopropenyl-2-methyl adamant
         e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2B6 for in vitro experiments. See Table 1 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "1/29/2015")
         a.insertEvidence("for",e)
         ev.addAssertion(a)
+
+####################################################################################################
+a = Assertion_inhibition_constant("3-isopropenyl-3-methyl diamantane", "inhibition_constant", "cyp2b6")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2B6 for in vitro experiments in supersomes, microsomal isolated from insect cells transfected with baculovirus containing CYP2B6 at a K_i of 2.2micM. See Table 1 on the FDA website. \n\n2.2micM/L X 1M/10^6micM X g/M = g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/8/2015", val = "")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("2-isopropenyl-2-methyl adamantane", "inhibition_constant", "cyp2b6")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2B6 for in vitro experiments in supersomes, microsomal isolated from insect cells transfected with baculovirus containing CYP2B6 at a K_i of 5.3 micM. See Table 1 on the FDA website. \n\n5.3micM/L X 1M/10^6micM X g/M = g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/8/2015", val = "")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+####################################################################################################
+
+a = Assertion_inhibition_constant("sertraline", "inhibition_constant", "cyp2b6")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2B6 for in vitro experiments at a K_i of 3.2micM. See Table 1 on the FDA website. \n\n3.2micM/L X 1M/10^6micM X 306.229580g/M = 0.000979934656g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/8/2015", val = "0.000979934656")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("phencyclidine", "inhibition_constant", "cyp2b6")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2B6 for in vitro experiments at a K_i of 10micM. See Table 1 on the FDA website. \n\n10micM/L X 1M/10^6micM X 243.387100g/M = 0.002433871g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/8/2015", val = "0.002433871")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("thiotepa", "inhibition_constant", "cyp2b6")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2B6 for in vitro experiments at a K_i of 4.8micM. See Table 1 on the FDA website. \n\n4.8micM/L X 1M/10^6micM X 189.218342g/M = 0.0009082480416g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/8/2015", val = "0.0009082480416")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("clopidogrel", "inhibition_constant", "cyp2b6")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2B6 for in vitro experiments at a K_i of 0.5micM. See Table 1 on the FDA website. \n\n0.5micM/L X 1M/10^6micM X 321.821740g/M = 0.00016091087g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/8/2015", val = "0.00016091087")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("ticlopidine", "inhibition_constant", "cyp2b6")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2B6 for in vitro experiments at a K_i of 0.2micM. See Table 1 on the FDA website. \n\n0.2micM/L X 1M/10^6micM X 263.785660g/M = 0.000052757132g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/8/2015", val = "0.000052757132")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
 
 ##### CYP2C8
 for elt in ["montelukast", "quercetin"]:
@@ -550,6 +593,42 @@ for elt in ["trimethoprim", "gemfibrozil", "rosiglitazone", "pioglitazone"]:
     a.insertEvidence("for",e)
     ev.addAssertion(a)
 
+a = Assertion_inhibition_constant("montelukast", "inhibition_constant", "cyp2c8")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical inhibitor of CYP2C8 for in vitro experiments at a K_i of 1.1micM. See Table 1 on the FDA website. \n\n1.1micM/L X 1M/10^6micM X 586.183240g/M = 0.000644801564g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/8/2015", val = "0.000644801564")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("quercetin", "inhibition_constant", "cyp2c8")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical inhibitor of CYP2C8 for in vitro experiments at a K_i of 1.1micM. See Table 1 on the FDA website. \n\n1.1micM/L X 1M/10^6micM X 1701.19848g/M = 0.001871318328g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/8/2015", val = "0.001871318328")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("trimethoprim", "inhibition_constant", "cyp2c8")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2C8 for in vitro experiments at a K_i of 32micM. See Table 1 on the FDA website. \n\n32micM/L X 1M/10^6micM X 290.317720g/M = 0.00929016704g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/8/2015", val = "0.00929016704")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("gemfibrozil", "inhibition_constant", "cyp2c8")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2C8 for in vitro experiments at a K_i range of 69micM to 75 micM. See Table 1 on the FDA website. \n\n69micM/L X 1M/10^6micM X 250.33338g/M = 0.01727300322g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/8/2015", val = "0.01727300322")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("rosiglitazone", "inhibition_constant", "cyp2c8")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2C8 for in vitro experiments at a K_i of 5.6micM. See Table 1 on the FDA website. \n\n5.6micM/L X 1M/10^6micM X 357.426760g/M = 0.002001589856g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/8/2015", val = "0.002001589856")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("pioglitazone", "inhibition_constant", "cyp2c8")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2C8 for in vitro experiments at a K_i of 1.7micM. See Table 1 on the FDA website. \n\n1.7micM/L X 1M/10^6micM X 356.438700g/M = 0.00060594579g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/8/2015", val = "0.00060594579")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
 ##### CYP2C9
 a = Assertion("sulfaphenazole", "in_vitro_selective_inhibitor_of_enzyme", "cyp2c9")
 e = Evidence(ev)
@@ -564,6 +643,30 @@ for elt in ["fluconazole", "fluvoxamine", "fluoxetine"]:
     a.insertEvidence("for",e)
     ev.addAssertion(a)
     
+a = Assertion_inhibition_constant("sulfaphenazole", "inhibition_constant", "cyp2c9")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical inhibitor of CYP2C9 for in vitro experiments at a K_i of 1.3micM. See Table 1 on the FDA website. \n\n1.3micM/L X 1M/10^6micM X 314.36226g/M = 0.000408670938g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/8/2015", val = "0.000408670938")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("fluconazole", "inhibition_constant", "cyp2c9")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2C9 for in vitro experiments at a K_i of 7micM. See Table 1 on the FDA website. \n\n7micM/L X 1M/10^6micM X 306.270786g/M = 0.002143895502g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/8/2015", val = "0.002143895502")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("fluvoxamine", "inhibition_constant", "cyp2c9")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2C9 for in vitro experiments at a K_i range of 6.4micM to 19micM. See Table 1 on the FDA website. \n\n6.4micM/L X 1M/10^6micM X 318.334650g/M = 0.00203734176g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/8/2015", val = "0.00203734176")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("fluoxetine", "inhibition_constant", "cyp2c9")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2C9 for in vitro experiments at a K_i range of 18micM to 41micM. See Table 1 on the FDA website. \n\n18micM/L X 1M/10^6micM X 309.326130g/M = 0.00556787034g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/8/2015", val = "0.00556787034")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
 ##### CYP2C19
 for elt in ["ticlopidine", "nootkatone"]:
     a = Assertion(elt, "in_vitro_selective_inhibitor_of_enzyme", "cyp2c19")
@@ -572,6 +675,18 @@ for elt in ["ticlopidine", "nootkatone"]:
     a.insertEvidence("for",e)
     ev.addAssertion(a)
 
+a = Assertion_inhibition_constant("ticlopidine", "inhibition_constant", "cyp2c19")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2C19 for in vitro experiments at a K_i of 1.2micM. See Table 1 on the FDA website. \n\n1.2micM/L X 1M/10^6micM X 263.785660g/M = 0.000316542792g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/8/2015", val = "0.000316542792")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("nootkatone", "inhibition_constant", "cyp2c19")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2C19 for in vitro experiments at a K_i of 0.5micM. See Table 1 on the FDA website. \n\n0.5micM/L X 1M/10^6micM X 218.334580g/M = 0.00010916729g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/8/2015", val = "0.00010916729")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
 ##### CYP2D6
 a = Assertion("quinidine", "in_vitro_selective_inhibitor_of_enzyme", "cyp2d6")
 e = Evidence(ev)
@@ -579,10 +694,22 @@ e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmen
 a.insertEvidence("for",e)
 ev.addAssertion(a)
 
+a = Assertion_inhibition_constant("quinidine", "inhibition_constant", "cyp2d6")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2D6 for in vitro experiments at a K_i range of 0.27micM to 0.4micM. See Table 1 on the FDA website. \n\n0.27micM/L X 1M/10^6micM X 324.416760g/M = 0.0000875925252g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/8/2015", val = "0.0000875925252")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
 ##### CYP2E1
 a = Assertion("diethyldithiocarbamate", "in_vitro_selective_inhibitor_of_enzyme", "cyp2e1")
 e = Evidence(ev)
 e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2E1 for in vitro experiments. See Table 1 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "2/2/2015")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("diethyldithiocarbamate", "inhibition_constant", "cyp2e1")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2E1 for in vitro experiments at a K_i range of 9.8micM to 34micM. See Table 1 on the FDA website. \n\n9.8micM/L X 1M/10^6micM X 148.269600g/M = 0.002139678884g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/8/2015", val = "0.002139678884")
 a.insertEvidence("for",e)
 ev.addAssertion(a)
 
@@ -606,6 +733,30 @@ for elt in ["azamulin", "troleandomycin", "verapamil"]:
         e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP3A4/5 for in vitro experiments. See Table 1 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "2/2/2015")
         a.insertEvidence("for",e)
         ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("ketoconazole", "inhibition_constant", "cyp3a4")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical inhibitor of CYP3A4/5 for in vitro experiments at a K_i range of 0.0037micM to 0.18micM. See Table 1 on the FDA website. \n\n0.0037micM/L X 1M/10^6micM X 531.430920g/M = 0.0000019662944g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/8/2015", val = "0.0000019662944")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("itraconazole", "inhibition_constant", "cyp3a4")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical inhibitor of CYP3A4/5 for in vitro experiments at K_i's of 0.27micM and 2.3micM. See Table 1 on the FDA website. \n\n0.27micM/L X 1M/10^6micM X 705.633420g/M = 0.0001905210234g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/8/2015", val = "0.0001905210234")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("troleandomycin", "inhibition_constant", "cyp3a4")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP3A4/5 for in vitro experiments at K_i's of 0.27micM and 2.3micM. See Table 1 on the FDA website. \n\n0.27micM/L X 1M/10^6micM X 813.968380g/M = 0.0002197714626g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/8/2015", val = "0.0002197714626")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("verapamil", "inhibition_constant", "cyp3a4")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP3A4/5 for in vitro experiments at K_i's of 10micM and 24micM. See Table 1 on the FDA website. \n\n10micM/L X 1M/10^6micM X 454.601620g/M = 0.0045460162g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/8/2015", val = "0.0045460162")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
 
 ###########################################################
 ################ IN VITRO CYP SUBSTRATES ##################
@@ -737,6 +888,14 @@ for elt in ["erythromycin N-demethylation", "dextromethorphan N-demethylation", 
     a.insertEvidence("for",e)
     ev.addAssertion(a)
     
+###########################################################
+################ IN VITRO TRAN SUBSTRATES ##################
+###########################################################
+########
+
+
+
+
 ###########################################################
 ############### OTHER USEFUL CODE #########################
 ###########################################################

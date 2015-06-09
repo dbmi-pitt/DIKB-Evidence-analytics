@@ -1,6 +1,6 @@
 ### SAM ROSKO'S TEST FILE FOR WORKING ON DIKB
-### LAST UPDATED: 6/8/2015
-### RECENTLY: Remaining evidence to be entered: Km values, in vitro transport data, dual inhibitors, combination therapy, weird drug names
+### LAST UPDATED: 6/9/2015
+### RECENTLY: Remaining evidence to be entered: Km values, dual inhibitors
 
 import os,sys, string, cgi
 from time import time, strftime, localtime
@@ -550,7 +550,7 @@ ev.addAssertion(a)
 
 a = Assertion_inhibition_constant("sertraline", "inhibition_constant", "cyp2b6")
 e = In_vitro_inhibition_study(ev)
-e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2B6 for in vitro experiments at a K_i of 3.2micM. See Table 1 on the FDA website. \n\n3.2micM/L X 1M/10^6micM X 306.229580g/M = 0.000979934656g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/8/2015", val = "0.000979934656")
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2B6 for in vitro experiments at an IC50 of 3.2micM. See Table 1 on the FDA website. \n\n3.2micM/L X 1M/10^6micM X 306.229580g/M = 0.000979934656g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/8/2015", val = "0.000979934656")
 a.insertEvidence("for",e)
 ev.addAssertion(a)
 
@@ -889,12 +889,178 @@ for elt in ["erythromycin N-demethylation", "dextromethorphan N-demethylation", 
     ev.addAssertion(a)
     
 ###########################################################
-################ IN VITRO TRAN SUBSTRATES ##################
+############## IN VITRO TRANSPORT ENTRIES  ################
 ###########################################################
-########
+######## P-gp Substrates
+######## still need a rule to put in the Km values
 
+for elt in ["digoxin", "loperamide", "quinidine", "vinblastine", "talinolol"]:
+    a = Assertion(elt, "in_vitro_probe_substrate_of_enzyme", "P-gp")
+    e = Evidence(ev)
+    if elt == "vinblastine":
+        e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical substrate of P-gp for in vitro experiments. Vinblastine is also a substrate for MRP2 that is constitutively expressed in Caco-2, and wild type MDCK and LL-CPK1 cells. See Table 8 and footnote 'a' on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/9/2015")
+        a.insertEvidence("for",e)
+        ev.addAssertion(a)
+    else:
+        e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical substrate of P-gp for in vitro experiments. See Table 8 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/9/2015")
+        a.insertEvidence("for",e)
+        ev.addAssertion(a)
 
+####### P-gp Inhibitors
+####### Need help figuring out which inhibition constants to use?
+for elt in ["cyclosporine A", "ketoconazole", "zosuquidar trichloride", "nelfinavir", "quinidine", "ritonavir", "saquinavir", "tacrolimus", "valspodar", "verapamil", "elacridar", "reserpine"]:
+    a = Assertion(elt, "in_vitro_selective_inhibitor_of_enzyme", "P-gp")
+    e = Evidence(ev)
+    if elt == "cyclosporine A" or elt ==  "ketoconazole" or elt == "nelfinavir" or elt == "ritonavir" or elt == "saquinavir":
+        e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of P-gp for in vitro experiments. This chemical is also a CYP3A inhibitor. See Table 9 and footnote 'a' on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/9/2015")
+        a.insertEvidence("for",e)
+        ev.addAssertion(a)
+    else if elt == "quinidine":
+        e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of P-gp for in vitro experiments. This chemical is also a CYP2D6 inhibitor. See Table 9 and footnote 'b' on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/9/2015")
+        a.insertEvidence("for",e)
+        ev.addAssertion(a)
+    else:
+        e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of P-gp for in vitro experiments. See Table 9 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/9/2015")
+        a.insertEvidence("for",e)
+        ev.addAssertion(a)
 
+a = Assertion_inhibition_constant("cyclosporine A", "inhibition_constant", "P-gp")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of P-gp for in vitro experiments at an IC50 of 1.3micM using a Caco-2 permeability assay with digoxin as a P-gp substrate. See Table 9 and the footnotes on the FDA website. \n\n1.3micM/L X 1M/10^6micM X 1202.611240g/M = 0.001563394612g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/9/2015", val = "0.001563394612")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("cyclosporine A", "inhibition_constant", "P-gp")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of P-gp for in vitro experiments at a Ki of 0.5micM using a Caco-2 permeability assay with digoxin as a P-gp substrate. See Table 9 and the footnotes on the FDA website. \n\n0.5micM/L X 1M/10^6micM X 1202.611240g/M = 0.00060130562g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/9/2015", val = "0.00060130562")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("cyclosporine A", "inhibition_constant", "P-gp")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of P-gp for in vitro experiments at a Ki of 2.2micM using a MDCK-MDR1 permeability assay with digoxin as a P-gp substrate. See Table 9 and the footnotes on the FDA website. \n\n2.2micM/L X 1M/10^6micM X 1202.611240g/M = 0.002645744728g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/9/2015", val = "0.002645744728")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("cyclosporine A", "inhibition_constant", "P-gp")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of P-gp for in vitro experiments at a Ki of 1.3micM using a LLC-PK1-MDR1 permeability assay with vinblastine as a P-gp substrate. See Table 9 and the footnotes on the FDA website. \n\n1.3micM/L X 1M/10^6micM X 1202.611240g/M = 0.001563394612g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/9/2015", val = "0.001563394612")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("ketoconazole", "inhibition_constant", "P-gp")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of P-gp for in vitro experiments at an IC50 of 1.2micM using a Caco-2 permeability assay with digoxin as a P-gp substrate. See Table 9 and the footnotes on the FDA website. \n\n1.2micM/L X 1M/10^6micM X 531.430920g/M = 0.000637717104g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/9/2015", val = "0.000637717104")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("ketoconazole", "inhibition_constant", "P-gp")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of P-gp for in vitro experiments at a Ki of 5.3micM using a LLC-PK1-MDR1 permeability assay with vinblastine as a P-gp substrate. See Table 9 and the footnotes on the FDA website. \n\n5.3micM/L X 1M/10^6micM X 531.430920g/M = 0.002816583876g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/9/2015", val = "0.002816583876")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("zosuquidar trihydrochloride", "inhibition_constant", "P-gp")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of P-gp for in vitro experiments at an IC50 of 0.024micM using a Caco-2 permeability assay with digoxin as a P-gp substrate. See Table 9 and the footnotes on the FDA website. \n\n0.024micM/L X 1M/10^6micM X 636.987066g/M = 0.000015287689584g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/9/2015", val = "0.000015287689584")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("nelfinavir", "inhibition_constant", "P-gp")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of P-gp for in vitro experiments at an IC50 of 1.4micM using a Caco-2 permeability assay with digoxin as a P-gp substrate. See Table 9 and the footnotes on the FDA website. \n\n1.4micM/L X 1M/10^6micM X 567.782400g/M = 0.00079489536g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/9/2015", val = "0.00079489536")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("quinidine", "inhibition_constant", "P-gp")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of P-gp for in vitro experiments at an IC50 of 2.2micM using a Caco-2 permeability assay with digoxin as a P-gp substrate. See Table 9 and the footnotes on the FDA website. \n\n2.2micM/L X 1M/10^6micM X 324.416760g/M = 0.000713716872g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/9/2015", val = "0.000713716872")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("quinidine", "inhibition_constant", "P-gp")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of P-gp for in vitro experiments at a Ki of 3.2micM using a Caco-2 permeability assay with digoxin as a P-gp substrate. See Table 9 and the footnotes on the FDA website. \n\n3.2micM/L X 1M/10^6micM X 324.416760g/M = 0.001038133632g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/9/2015", val = "0.001038133632")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("quinidine", "inhibition_constant", "P-gp")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of P-gp for in vitro experiments at a Ki of 8.6micM using a MDCK-MDR1 permeability assay with digoxin as a P-gp substrate. See Table 9 and the footnotes on the FDA website. \n\n8.6micM/L X 1M/10^6micM X 324.416760g/M = 0.002789984136g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/9/2015", val = "0.002789984136")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("ritonavir", "inhibition_constant", "P-gp")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of P-gp for in vitro experiments at an IC50 of 3.8micM using a Caco-2 permeability assay with digoxin as a P-gp substrate. See Table 9 and the footnotes on the FDA website. \n\n3.8micM/L X 1M/10^6micM X 720.944220g/M = 0.002739588036g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/9/2015", val = "0.002739588036")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("saquinavir", "inhibition_constant", "P-gp")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of P-gp for in vitro experiments at an IC50 of 6.5micM using a Caco-2 permeability assay with digoxin as a P-gp substrate. See Table 9 and the footnotes on the FDA website. \n\n6.5micM/L X 1M/10^6micM X 670.840800g/M = 0.0043604652g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/9/2015", val = "0.0043604652")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("tacrolimus", "inhibition_constant", "P-gp")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of P-gp for in vitro experiments at an IC50 of 0.74micM using a Caco-2 permeability assay with digoxin as a P-gp substrate. See Table 9 and the footnotes on the FDA website. \n\n0.74micM/L X 1M/10^6micM X 804.018160g/M = 0.0005949734384g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/9/2015", val = "0.0005949734384")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("valspodar", "inhibition_constant", "P-gp")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of P-gp for in vitro experiments at an IC50 of 0.11micM using a Caco-2 permeability assay with digoxin as a P-gp substrate. See Table 9 and the footnotes on the FDA website. \n\n0.11micM/L X 1M/10^6micM X 1214.621940g/M = 0.0001336084134g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/9/2015", val = "0.0001336084134")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("verapamil", "inhibition_constant", "P-gp")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of P-gp for in vitro experiments at an IC50 of 2.1micM using a Caco-2 permeability assay with digoxin as a P-gp substrate. See Table 9 and the footnotes on the FDA website. \n\n2.1micM/L X 1M/10^6micM X 454.601620g/M = 0.000954663402g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/9/2015", val = "0.000954663402")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("verapamil", "inhibition_constant", "P-gp")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of P-gp for in vitro experiments at a Ki of 8micM using a Caco-2 permeability assay with digoxin as a P-gp substrate. See Table 9 and the footnotes on the FDA website. \n\n8micM/L X 1M/10^6micM X 454.601620g/M = 0.00363681296g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/9/2015", val = "0.00363681296")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("verapamil", "inhibition_constant", "P-gp")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of P-gp for in vitro experiments at a Ki of 15micM using a MDCK-MDR1 permeability assay with digoxin as a P-gp substrate. See Table 9 and the footnotes on the FDA website. \n\n15micM/L X 1M/10^6micM X 454.601620g/M = 0.0068190243g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/9/2015", val = "0.0068190243")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("verapamil", "inhibition_constant", "P-gp")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of P-gp for in vitro experiments at a Ki of 23micM using a LLC-PK1-MDR1 permeability assay with vinblastine as a P-gp substrate. See Table 9 and the footnotes on the FDA website. \n\n23micM/L X 1M/10^6micM X 454.601620g/M = 0.01045583726g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/9/2015", val = "0.01045583726")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("elacridar", "inhibition_constant", "P-gp")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of P-gp for in vitro experiments at a Ki of 0.4micM using a Caco-2 permeability assay with digoxin as a P-gp substrate. See Table 9 and the footnotes on the FDA website. \n\n0.4micM/L X 1M/10^6micM X 563.642920g/M = 0.000225457168g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/9/2015", val = "0.000225457168")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("elacridar", "inhibition_constant", "P-gp")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of P-gp for in vitro experiments at a Ki of 0.4micM using a MDCK-MDR1 permeability assay with digoxin as a P-gp substrate. See Table 9 and the footnotes on the FDA website. \n\n0.4micM/L X 1M/10^6micM X 563.642920g/M = 0.000225457168g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/9/2015", val = "0.000225457168")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("reserpine", "inhibition_constant", "P-gp")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of P-gp for in vitro experiments at a Ki of 1.4micM using a Caco-2 permeability assay with digoxin as a P-gp substrate. See Table 9 and the footnotes on the FDA website. \n\n1.4micM/L X 1M/10^6micM X 608.678700g/M = 0.00085215018g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/9/2015", val = "0.00085215018")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
+
+a = Assertion_inhibition_constant("reserpine", "inhibition_constant", "P-gp")
+e = In_vitro_inhibition_study(ev)
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of P-gp for in vitro experiments at a Ki of 11.5micM using a MDCK-MDR1 permeability assay with digoxin as a P-gp substrate. See Table 9 and the footnotes on the FDA website. \n\n11.5micM/L X 1M/10^6micM X 608.678700g/M = 0.00699980505g/L", ev_type = "Non_Tracable_Statement", revwr = "hines", timestamp = "6/9/2015", val = "0.00699980505")
+a.insertEvidence("for",e)
+ev.addAssertion(a)
 
 ###########################################################
 ############### OTHER USEFUL CODE #########################

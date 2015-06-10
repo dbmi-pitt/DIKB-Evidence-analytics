@@ -39,7 +39,7 @@ from Portalocker import lock, unlock, LOCK_EX, LOCK_SH, LOCK_NB
 ## properly handled. For now, we have to enter in conjunctions of
 ## reviewers to avoid Slot entry errors
 reviewers = ['boycer','c3c','jhorn','ikalet',"boycer,annals2012","boycer,annals2012,ajgp2012","boycer,aj\
-gp2012"]
+gp2012",'roskos']
 
 def getVersion(path):
     """

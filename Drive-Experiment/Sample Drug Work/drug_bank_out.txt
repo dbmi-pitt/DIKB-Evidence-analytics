@@ -1,0 +1,583 @@
+Pravastatin
+
+Substituents:
+alcohol
+beta-hydroxy acid
+carboxylic acid
+carboxylic acid derivative
+carboxylic acid ester
+dicarboxylic acid derivative
+enolate
+ether
+hydroxy acid
+polyamine
+secondary alcohol
+
+Targets:
+3-hydroxy-3-methylglutaryl-coenzyme A reductase
+
+Action on Target:
+inhibitor
+
+Molecular Weight:
+424.5277
+
+ATC Code:
+C10AA03
+C - CARDIOVASCULAR SYSTEM
+C10 - LIPID MODIFYING AGENTS
+C10A - LIPID MODIFYING AGENTS, PLAIN
+C10AA - HMG CoA reductase inhibitors
+
+AHFS Code:
+24:06.08
+
+InChI Key:
+InChIKey=TUZYXOIXSAXUGO-PZAWKZKUSA-N
+
+Citalopram
+
+Substituents:
+amine
+aryl fluoride
+aryl halide
+benzene
+benzonitrile
+carbonitrile
+dialkyl ether
+ether
+fluorobenzene
+nitrile
+organofluoride
+organohalogen
+organonitrogen compound
+polyamine
+tertiary amine
+
+Targets:
+Sodium-dependent serotonin transporter
+Histamine H1 receptor
+Alpha-1A adrenergic receptor
+Muscarinic acetylcholine receptor M1
+
+Action on Target:
+inhibitor
+binder
+binder
+binder
+
+Molecular Weight:
+324.3919
+
+ATC Code:
+N06AB04
+N - NERVOUS SYSTEM
+N06 - PSYCHOANALEPTICS
+N06A - ANTIDEPRESSANTS
+N06AB - Selective serotonin reuptake inhibitors
+
+AHFS Code:
+28:16.04.20
+
+InChI Key:
+InChIKey=WSEQXVZVJXJVFP-UHFFFAOYSA-N
+
+Alprazolam
+
+Substituents:
+1,2,4-triazole
+aryl chloride
+aryl halide
+azole
+benzene
+chlorobenzene
+organochloride
+organohalogen
+organonitrogen compound
+polyamine
+
+Targets:
+GABA-A receptor (anion channel)
+
+Action on Target:
+positive allosteric modulator
+
+Molecular Weight:
+308.765
+
+ATC Code:
+N05BA12
+N - NERVOUS SYSTEM
+N05 - PSYCHOLEPTICS
+N05B - ANXIOLYTICS
+N05BA - Benzodiazepine derivatives
+
+AHFS Code:
+28:24.08
+
+InChI Key:
+InChIKey=VREFGVBLTWBCJP-UHFFFAOYSA-N
+
+Duloxetine
+
+Substituents:
+alkyl aryl ether
+amine
+benzene
+ether
+organonitrogen compound
+phenol ether
+polyamine
+secondary aliphatic amine
+secondary amine
+thiophene
+
+Targets:
+Sodium-dependent serotonin transporter
+Sodium-dependent noradrenaline transporter
+Sodium-dependent dopamine transporter
+
+Action on Target:
+inhibitor
+inhibitor
+inhibitor
+
+Molecular Weight:
+297.415
+
+ATC Code:
+N06AX21
+N - NERVOUS SYSTEM
+N06 - PSYCHOANALEPTICS
+N06A - ANTIDEPRESSANTS
+N06AX - Other antidepressants
+
+AHFS Code:
+
+InChI Key:
+InChIKey=ZEUITGRIYCTCEM-KRWDZBQOSA-N
+
+Haloperidol
+
+Substituents:
+acetophenone
+alcohol
+amine
+aryl chloride
+aryl fluoride
+aryl halide
+benzene
+benzoyl
+carbonyl group
+chlorobenzene
+enolate
+fluorobenzene
+ketone
+organochloride
+organofluoride
+organohalogen
+organonitrogen compound
+polyamine
+tertiary alcohol
+tertiary amine
+
+Targets:
+D(2) dopamine receptor
+D(1A) dopamine receptor
+Glutamate receptor ionotropic, NMDA 2B
+5-hydroxytryptamine receptor 2A
+D(3) dopamine receptor
+
+Action on Target:
+antagonist
+antagonist
+antagonist
+other/unknown
+inverse agonist
+
+Molecular Weight:
+375.864
+
+ATC Code:
+N05AD01
+N - NERVOUS SYSTEM
+N05 - PSYCHOLEPTICS
+N05A - ANTIPSYCHOTICS
+N05AD - Butyrophenone derivatives
+
+AHFS Code:
+28:16.08.08
+
+InChI Key:
+InChIKey=LNEPOXFFQSENCJ-UHFFFAOYSA-N
+
+Simvastatin
+
+Substituents:
+alcohol
+carboxylic acid derivative
+carboxylic acid ester
+dicarboxylic acid derivative
+enolate
+ether
+oxane
+polyamine
+secondary alcohol
+
+Targets:
+3-hydroxy-3-methylglutaryl-coenzyme A reductase
+Integrin beta-2
+
+Action on Target:
+inhibitor
+other
+
+Molecular Weight:
+418.5662
+
+ATC Code:
+C10AA01
+C - CARDIOVASCULAR SYSTEM
+C10 - LIPID MODIFYING AGENTS
+C10A - LIPID MODIFYING AGENTS, PLAIN
+C10AA - HMG CoA reductase inhibitors
+
+AHFS Code:
+24:06.08
+
+InChI Key:
+InChIKey=RYMZZMVNJRMUDD-HGQWONQESA-N
+
+Paroxetine
+
+Substituents:
+acetal
+alkyl aryl ether
+amine
+aryl fluoride
+aryl halide
+benzene
+benzodioxole
+ether
+fluorobenzene
+organofluoride
+organohalogen
+organonitrogen compound
+phenol ether
+polyamine
+secondary aliphatic amine
+secondary amine
+
+Targets:
+Sodium-dependent serotonin transporter
+Sodium-dependent noradrenaline transporter
+5-hydroxytryptamine receptor 2A
+Muscarinic acetylcholine receptor M1
+Muscarinic acetylcholine receptor M2
+Muscarinic acetylcholine receptor M3
+Muscarinic acetylcholine receptor M4
+Muscarinic acetylcholine receptor M5
+
+Action on Target:
+inhibitor
+inhibitor
+other/unknown
+antagonist
+antagonist
+antagonist
+antagonist
+antagonist
+
+Molecular Weight:
+329.3654
+
+ATC Code:
+N06AB05
+N - NERVOUS SYSTEM
+N06 - PSYCHOANALEPTICS
+N06A - ANTIDEPRESSANTS
+N06AB - Selective serotonin reuptake inhibitors
+
+AHFS Code:
+28:16.04.20
+
+InChI Key:
+InChIKey=AHOUBRCZNHFOSL-YOEHRIQHSA-N
+
+Risperidone
+
+Substituents:
+amine
+aryl fluoride
+aryl halide
+azole
+benzene
+fluorobenzene
+isoxazole
+organofluoride
+organohalogen
+organonitrogen compound
+piperidine
+polyamine
+pyridine
+pyrimidine
+pyrimidone
+tertiary amine
+
+Targets:
+5-hydroxytryptamine receptor 2A
+D(2) dopamine receptor
+D(3) dopamine receptor
+D(4) dopamine receptor
+Alpha-1A adrenergic receptor
+Alpha-1B adrenergic receptor
+5-hydroxytryptamine receptor 1D
+Histamine H1 receptor
+Alpha-2A adrenergic receptor
+Alpha-2B adrenergic receptor
+Alpha-2C adrenergic receptor
+5-hydroxytryptamine receptor 2C
+5-hydroxytryptamine receptor 1A
+D(1A) dopamine receptor
+
+Action on Target:
+antagonist
+antagonist
+antagonist
+antagonist
+antagonist
+antagonist
+antagonist
+antagonist
+antagonist
+antagonist
+agonist
+antagonist
+antagonist
+antagonist
+
+Molecular Weight:
+410.4845
+
+ATC Code:
+N05AX08
+N - NERVOUS SYSTEM
+N05 - PSYCHOLEPTICS
+N05A - ANTIPSYCHOTICS
+N05AX - Other antipsychotics
+
+AHFS Code:
+28:16.08.04
+
+InChI Key:
+InChIKey=RAPZEAPATHNIPO-UHFFFAOYSA-N
+
+Triazolam
+
+Substituents:
+1,2,4-triazole
+aryl chloride
+aryl halide
+azole
+benzene
+chlorobenzene
+organochloride
+organohalogen
+organonitrogen compound
+polyamine
+
+Targets:
+Gamma-aminobutyric acid receptor subunit alpha-1
+Gamma-aminobutyric acid receptor subunit alpha-2
+Gamma-aminobutyric acid receptor subunit alpha-3
+Gamma-aminobutyric acid receptor subunit alpha-4
+Gamma-aminobutyric acid receptor subunit alpha-5
+Gamma-aminobutyric acid receptor subunit alpha-6
+Gamma-aminobutyric acid receptor subunit beta-1
+Gamma-aminobutyric acid receptor subunit beta-2
+Gamma-aminobutyric acid receptor subunit beta-3
+Gamma-aminobutyric acid receptor subunit gamma-1
+Gamma-aminobutyric acid receptor subunit gamma-2
+Gamma-aminobutyric acid receptor subunit gamma-3
+Gamma-aminobutyric acid receptor subunit delta
+Gamma-aminobutyric acid receptor subunit epsilon
+Gamma-aminobutyric acid receptor subunit pi
+Gamma-aminobutyric acid receptor subunit rho-1
+Gamma-aminobutyric acid receptor subunit rho-2
+Gamma-aminobutyric acid receptor subunit rho-3
+Gamma-aminobutyric acid receptor subunit theta
+Translocator protein
+GABA-A receptor (anion channel)
+
+Action on Target:
+potentiator
+potentiator
+potentiator
+potentiator
+potentiator
+potentiator
+potentiator
+potentiator
+potentiator
+potentiator
+potentiator
+potentiator
+potentiator
+potentiator
+potentiator
+potentiator
+potentiator
+potentiator
+potentiator
+other
+positive allosteric modulator
+
+Molecular Weight:
+343.21
+
+ATC Code:
+N05CD05
+N - NERVOUS SYSTEM
+N05 - PSYCHOLEPTICS
+N05C - HYPNOTICS AND SEDATIVES
+N05CD - Benzodiazepine derivatives
+
+AHFS Code:
+28:24.08
+
+InChI Key:
+InChIKey=JOFWLTCLBGQGBO-UHFFFAOYSA-N
+
+Bupropion
+
+Substituents:
+amine
+aryl chloride
+aryl halide
+benzoyl
+carbonyl group
+chlorobenzene
+enolate
+ketone
+organochloride
+organohalogen
+organonitrogen compound
+polyamine
+secondary aliphatic amine
+secondary amine
+
+Targets:
+Sodium-dependent dopamine transporter
+Sodium-dependent noradrenaline transporter
+Neuronal acetylcholine receptor subunit alpha-3
+
+Action on Target:
+inhibitor
+inhibitor
+antagonist
+
+Molecular Weight:
+239.741
+
+ATC Code:
+N06AX12
+N - NERVOUS SYSTEM
+N06 - PSYCHOANALEPTICS
+N06A - ANTIDEPRESSANTS
+N06AX - Other antidepressants
+
+AHFS Code:
+28:16.04.92
+
+InChI Key:
+InChIKey=SNPPWIUOZRMYNY-UHFFFAOYSA-N
+
+Quetiapine
+
+Substituents:
+1,4-diazinane
+alcohol
+amidine
+amine
+benzene
+carboxylic acid amidine
+ether
+organonitrogen compound
+piperazine
+polyamine
+primary alcohol
+tertiary amine
+thioether
+
+Targets:
+5-hydroxytryptamine receptor 2A
+D(2) dopamine receptor
+5-hydroxytryptamine receptor 1A
+5-hydroxytryptamine receptor 1B
+5-hydroxytryptamine receptor 1D
+5-hydroxytryptamine receptor 1E
+5-hydroxytryptamine receptor 2C
+5-hydroxytryptamine receptor 3A
+5-hydroxytryptamine receptor 6
+5-hydroxytryptamine receptor 7
+D(1A) dopamine receptor
+D(1B) dopamine receptor
+D(3) dopamine receptor
+D(4) dopamine receptor
+Histamine H1 receptor
+Alpha-1A adrenergic receptor
+Alpha-1B adrenergic receptor
+Alpha-1D adrenergic receptor
+Alpha-2A adrenergic receptor
+Alpha-2B adrenergic receptor
+Alpha-2C adrenergic receptor
+Muscarinic acetylcholine receptor M1
+Muscarinic acetylcholine receptor M2
+Muscarinic acetylcholine receptor M3
+Muscarinic acetylcholine receptor M4
+Muscarinic acetylcholine receptor M5
+
+Action on Target:
+antagonist
+antagonist
+antagonist
+other/unknown
+other/unknown
+other/unknown
+antagonist
+other/unknown
+other/unknown
+antagonist
+antagonist
+antagonist
+antagonist
+antagonist
+antagonist
+antagonist
+antagonist
+antagonist
+antagonist
+antagonist
+antagonist
+antagonist
+antagonist
+antagonist
+antagonist
+antagonist
+
+Molecular Weight:
+383.507
+
+ATC Code:
+N05AH04
+N - NERVOUS SYSTEM
+N05 - PSYCHOLEPTICS
+N05A - ANTIPSYCHOTICS
+N05AH - Diazepines, oxazepines, thiazepines and oxepines
+
+AHFS Code:
+28:16.08.04
+
+InChI Key:
+InChIKey=URKOMYMAXPYINW-UHFFFAOYSA-N
+

@@ -1,5 +1,5 @@
 ### SAM ROSKO'S TEST FILE FOR WORKING ON DIKB
-### LAST UPDATED: 6/12/2015
+### LAST UPDATED: 6/15/2015
 ### TO DO: Wait for responses from the evidence board.... need to add chemicals still
 
 import os,sys, string, cgi
@@ -319,7 +319,6 @@ ev.addAssertion(a)
 ###########################################################
 ############### IN VIVO TRANSPORT PROTEINS  ###############
 ###########################################################
-# Have to add these to the system as enzymes
 # do I need to make rules for 'increases AUC' for digoxin, fexofenadine, talinolol, see quote below... I believe I should
 
 for elt in ["amiodarone", "captopril", "carvedilol", "clarithromycin", "conivaptan", "cyclosporine", "diltiazem", "dronedarone", "felodipine", "itraconazole", "quinidine", "ranolazine", "ticagrelor", "verapamil"]:
@@ -433,7 +432,6 @@ ev.addAssertion(a)
 ###########################################################
 ################ IN VITRO CYP INHIBITORS ##################
 ###########################################################
-# this data comes from fda website, not fda 2012, i used a reference to the website, but a secondary, permanent link may be preferable
 
 ##### CYP1A2
 a = Assertion("furafylline", "in_vitro_selective_inhibitor_of_enzyme", "cyp1a2")
@@ -522,19 +520,17 @@ for elt in ["3-isopropenyl-3-methyl-diamantane", "2-isopropenyl-2-methyl-adamant
         a.insertEvidence("for",e)
         ev.addAssertion(a)
 
-####################################################################################################
 a = Assertion_inhibition_constant("3-isopropenyl-3-methyl-diamantane", "inhibition_constant", "cyp2b6")
 e = In_vitro_inhibition_study(ev)
-e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2B6 for in vitro experiments in supersomes, microsomal isolated from insect cells transfected with baculovirus containing CYP2B6 at a K_i of 2.2micM. See Table 1 on the FDA website. \n\n2.2micM/L X 1M/10^6micM X g/M = g/L", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "6/8/2015", val = "")
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2B6 for in vitro experiments in supersomes, microsomal isolated from insect cells transfected with baculovirus containing CYP2B6 at a K_i of 2.2micM. See Table 1 on the FDA website. \n\n2.2micM/L X 1M/10^6micM X 242.404g/M = 0.0005332888g/L", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "6/15/2015", val = "0.0005332888")
 a.insertEvidence("for",e)
 ev.addAssertion(a)
 
 a = Assertion_inhibition_constant("2-isopropenyl-2-methyl-adamantane", "inhibition_constant", "cyp2b6")
 e = In_vitro_inhibition_study(ev)
-e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2B6 for in vitro experiments in supersomes, microsomal isolated from insect cells transfected with baculovirus containing CYP2B6 at a K_i of 5.3 micM. See Table 1 on the FDA website. \n\n5.3micM/L X 1M/10^6micM X g/M = g/L", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "6/8/2015", val = "")
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of CYP2B6 for in vitro experiments in supersomes, microsomal isolated from insect cells transfected with baculovirus containing CYP2B6 at a K_i of 5.3 micM. See Table 1 on the FDA website. \n\n5.3micM/L X 1M/10^6micM X 190.324g/M = 0.0010087172g/L", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "6/15/2015", val = "0.0010087172")
 a.insertEvidence("for",e)
 ev.addAssertion(a)
-####################################################################################################
 
 a = Assertion_inhibition_constant("sertraline", "inhibition_constant", "cyp2b6")
 e = In_vitro_inhibition_study(ev)
@@ -1088,29 +1084,98 @@ a.insertEvidence("for",e)
 ev.addAssertion(a)
 
 ###########################################################
-################ DUAL INHIBITORS EXTRAS ###################
+#################### DUAL INHIBITORS ######################
 ###########################################################
-###### These are the parts of dual-inhibitor assertions that were not listed elsewhere
 
-for elt in ["quinidine", "felodipine", "azithromycin"]:
+for elt in ["itraconazole", "clarithromycin", "ritonavir", "ketoconazole", "conivaptan", "voriconazole", "nefazodone"]:
     a = Assertion(elt, "in-viVo-selective-inhibitor-of-enzyme", "cyp3a4")
     e = Evidence(ev)
-    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'weak' in vivo inhibitor of CYP3A4. For more information, see Table 8 on page 53 and also see Table 14 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "6/9/2015")
+    if (elt == "nefazodone"):
+        e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'strong' in vivo inhibitor of CYP3A. For more information, see Table 14 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "6/15/2015")
+        a.insertEvidence("for",e)
+        ev.addAssertion(a)
+    else:
+        e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'strong' in vivo inhibitor of CYP3A. For more information, see Table 8 on page 53 and also see Table 14 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "6/15/2015")
+        a.insertEvidence("for",e)
+        ev.addAssertion(a)       
+
+for elt in ["itraconazole", "clarithromycin", "ritonavir", "ketoconazole", "conivaptan", "voriconazole", "nefazodone"]:
+    a = Assertion(elt, "in-viVo-selective-inhibitor-of-enzyme", "cyp3a5")
+    e = Evidence(ev)
+    if (elt == "nefazodone"):
+        e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'strong' in vivo inhibitor of CYP3A. For more information, see Table 14 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "6/15/2015")
+        a.insertEvidence("for",e)
+        ev.addAssertion(a)
+    else:
+        e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'strong' in vivo inhibitor of CYP3A. For more information, see Table 8 on page 53 and also see Table 14 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "6/15/2015")
+        a.insertEvidence("for",e)
+        ev.addAssertion(a)           
+
+for elt in ["verapamil", "erythromycin", "diltiazem", "dronedarone"]:
+    a = Assertion(elt, "in-viVo-selective-inhibitor-of-enzyme", "cyp3a4")
+    e = Evidence(ev)
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'moderate' in vivo inhibitor of CYP3A. For more information, see Table 8 on page 53 and also see Table 14 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "6/15/2015")
     a.insertEvidence("for",e)
     ev.addAssertion(a)
 
-a = Assertion("lapatinib", "in-viVo-selective-inhibitor-of-enzyme", "p-glycoprotein")
-e = Evidence(ev)
-e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo inhibitor of p-glycoprotein. For more information, see Table 8 on page 53 and also see Table 14 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "6/9/2015")
-a.insertEvidence("for",e)
-ev.addAssertion(a)
+for elt in ["verapamil", "erythromycin", "diltiazem", "dronedarone"]:
+    a = Assertion(elt, "in-viVo-selective-inhibitor-of-enzyme", "cyp3a5")
+    e = Evidence(ev)
+    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'moderate' in vivo inhibitor of CYP3A. For more information, see Table 8 on page 53 and also see Table 14 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "6/15/2015")
+    a.insertEvidence("for",e)
+    ev.addAssertion(a)
+    
+for elt in ["lapatinib", "quinidine", "ranolazine", "amiodarone", "felodipine", "azithromycin", "cimetidine"]:
+    a = Assertion(elt, "in-viVo-selective-inhibitor-of-enzyme", "cyp3a4")
+    e = Evidence(ev)
+    if(elt == "lapatinib"):
+        e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'weak' in vivo inhibitor of CYP3A. For more information, see Table 8 on page 53.", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "6/15/2015")
+        a.insertEvidence("for",e)
+        ev.addAssertion(a)
+    else:
+        e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'weak' in vivo inhibitor of CYP3A. For more information, see Table 8 on page 53 and also see Table 14 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "6/15/2015")
+        a.insertEvidence("for",e)
+        ev.addAssertion(a)
 
+for elt in ["lapatinib", "quinidine", "ranolazine", "amiodarone", "felodipine", "azithromycin", "cimetidine"]:
+    a = Assertion(elt, "in-viVo-selective-inhibitor-of-enzyme", "cyp3a5")
+    e = Evidence(ev)
+    if(elt == "lapatinib"):
+        e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'weak' in vivo inhibitor of CYP3A. For more information, see Table 8 on page 53.", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "6/15/2015")
+        a.insertEvidence("for",e)
+        ev.addAssertion(a)
+    else:
+        e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'weak' in vivo inhibitor of CYP3A. For more information, see Table 8 on page 53 and also see Table 14 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "6/15/2015")
+        a.insertEvidence("for",e)
+        ev.addAssertion(a)
+
+for elt in ["itraconazole", "clarithromycin", "ritonavir", "ketoconazole", "conivaptan", "verapamil", "erythromycin", "diltiazem", "dronedarone", "lapatinib", "quinidine", "ranolazine", "amiodarone", "felodipine", "azithromycin"]:
+    a = Assertion(elt, "in-viVo-selective-inhibitor-of-enzyme", "p-glycoprotein")
+    e = Evidence(ev)
+    if(elt == "ritonavir" or elt == "ketoconazole" or elt == "erythromycin" or elt == "azithromycin"):
+        e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo inhibitor of p-glycoprotein. This data was derived with fexofenadine. For more information, see Table 8 on page 53 and also see Table 14 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "6/15/2015")
+        a.insertEvidence("for",e)
+        ev.addAssertion(a)
+    else if(elt == "lapatinib"):
+        e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo inhibitor of p-glycoprotein. This data was derived with digoxin. For more information, see Table 8 on page 53.", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "6/15/2015")
+        a.insertEvidence("for",e)
+        ev.addAssertion(a)
+    else:
+        e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo inhibitor of p-glycoprotein. This data was derived with digoxin. For more information, see Table 8 on page 53 and also see Table 14 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "6/15/2015")
+        a.insertEvidence("for",e)
+        ev.addAssertion(a)        
+    
 for elt in ["voriconazole", "nefazodone", "cimetidine"]:
     a = Assertion(elt, "in-viVo-selective-inhibitor-of-enzyme", "p-glycoprotein")
     e = Evidence(ev)
-    e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is not an effective in vivo inhibitor of p-glycoprotein. This data was derived with digoxin. For more information, see Table 8 on page 53 of the FDA guidelines and Table 14 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "6/9/2015")
-    a.insertEvidence("against",e)
-    ev.addAssertion(a)
+    if(elt == "nefazodone"):
+        e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is not an effective in vivo inhibitor of p-glycoprotein. This data was derived with digoxin. For more information, see Table 14 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "6/9/2015")
+        a.insertEvidence("against",e)
+        ev.addAssertion(a)
+    else:
+        e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is not an effective in vivo inhibitor of p-glycoprotein. This data was derived with digoxin. For more information, see Table 8 on page 53 of the FDA guidelines and Table 14 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "6/9/2015")
+        a.insertEvidence("against",e)
+        ev.addAssertion(a)
 
 ###########################################################
 ############### OTHER USEFUL CODE #########################

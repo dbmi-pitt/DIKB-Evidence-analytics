@@ -35,7 +35,7 @@ rigorous quality and consistency checks.
 2) For efficiency reasons, one should make edits, including adding new
 drugs, assertions, and evidence to the DIKB, using APIs that connect
 to the SQL version of the DIKB (locally-hosted). The code in the
-dikb-pickle-to-SQL subfolder can help with that if you want to make
+dikb-relational-to-object-mappings subfolder can help with that if you want to make
 programmatic changes (currently required for adding drugs, chemicals,
 and metabolites). Also, there is a simple web front end for adding
 assertions and evidence. The interface code is in the subfolder

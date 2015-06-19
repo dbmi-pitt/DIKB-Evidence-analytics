@@ -3,7 +3,8 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
 """sqlalchemy engine params"""
-engine = create_engine('mysql://root:5bboys@localhost/dikbEvidence')
+#engine = create_engine('mysql://root:5bboys@localhost/dikbEvidence')
+engine = create_engine('mysql://root:5bboys@localhost/dikbEvidenceTest')
 Base = declarative_base(engine)
 
 """dikbEvidence Table class representation for sqlalchemy"""

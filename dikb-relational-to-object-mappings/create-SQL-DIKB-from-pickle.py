@@ -69,10 +69,17 @@ def evidenceSlotMap(slot, counter, asrtDict, esDAO, drugID):
 os.environ["DIKB_LOG_LEVEL"] = "2"
 
 ## The DIKB to input into SQL 
-new_ev = EvidenceBase("evidence","UPIA+Hanlon-AJGP-2012")
-new_dikb = DIKB("dikb","Reconstitued UPIA", new_ev)
-new_dikb.unpickleKB('../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/dikb.pickle') # Drug model corresponding to Tier 4 BC evals from UPIA DIKB-runs-04202010 but reloaded from the SQl DIKB as stored in https://svn01.dbmi.pitt.edu/svn/linked-dikb/database/dikb-mysql-backup-03052012 
-new_ev.unpickleKB('../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/ev.pickle') # SQl DIKB as stored in https://svn01.dbmi.pitt.edu/svn/linked-dikb/database/dikb-mysql-backup-03052012, re-loaded into Python, and merged with https://svn01.dbmi.pitt.edu/svn/linked-dikb/database/dikb-pickle-with-Robs-entries-fall-2010/ev.pickle
+#### THE LAST WORKING DIKB + EV BASE
+#new_ev = EvidenceBase("evidence","UPIA+Hanlon-AJGP-2012")
+#new_dikb = DIKB("dikb","Reconstitued UPIA", new_ev)
+#new_dikb.unpickleKB('../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/dikb.pickle') # Drug model corresponding to Tier 4 BC evals from UPIA DIKB-runs-04202010 but reloaded from the SQl DIKB as stored in https://svn01.dbmi.pitt.edu/svn/linked-dikb/database/dikb-mysql-backup-03052012 
+#new_ev.unpickleKB('../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/ev.pickle') # SQl DIKB as stored in https://svn01.dbmi.pitt.edu/svn/linked-dikb/database/dikb-mysql-backup-03052012, re-loaded into Python, and merged with https://svn01.dbmi.pitt.edu/svn/linked-dikb/database/dikb-pickle-with-Robs-entries-fall-2010/ev.pickle
+
+## TESTING ADDING NEW DRUGS
+new_ev = EvidenceBase("evidence","test-June2015")
+new_dikb = DIKB("dikb","Test 2015", new_ev)
+new_dikb.unpickleKB('../Drive-Experiment/dikb-pickles/dikb-test.pickle') # adds a new metabolite
+new_ev.unpickleKB('../Drive-Experiment/dikb-pickles/ev-test.pickle') # no changes yet
 
 ##assess evidence using some belief criteria and test exporting to the database 
 reset_evidence_rating(new_ev, new_dikb) # reset the internal finite
@@ -91,14 +98,15 @@ for e,v in new_ev.objects.iteritems():
         v.assert_by_default = True
     v.ready_for_classification = True
 
-exportAssertions(new_ev, new_dikb, "../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/assertions.lisp")
-assessBeliefCriteria(new_dikb, new_ev, "../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/changing_assumptions.lisp")
+############################## UNCOMMENT WHEN READY TO EXPORT ASSERTIONS TO THE REASONER #########################
+# exportAssertions(new_ev, new_dikb, "../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/assertions.lisp")
+# assessBeliefCriteria(new_dikb, new_ev, "../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/changing_assumptions.lisp")
 
-#new_dikb.pickleKB('../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/full-Tier-4-UPIA-Hanlon-AJGP2012-DIKB-EVALUATED.pickle')
-#new_ev.pickleKB('../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/full-Tier-4-UPIA-Hanlon-AJGP2012-EV-EVALUATED.pickle')
+# #new_dikb.pickleKB('../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/full-Tier-4-UPIA-Hanlon-AJGP2012-DIKB-EVALUATED.pickle')
+# #new_ev.pickleKB('../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/full-Tier-4-UPIA-Hanlon-AJGP2012-EV-EVALUATED.pickle')
 
-## useful if we want to run over all instances of a specific class or
-## classes in the DrugModel
+# ## useful if we want to run over all instances of a specific class or
+# ## classes in the DrugModel
 clsL = []
 for k,v in new_dikb.objects.iteritems():
     if type(v) == Drug or type(v) == Metabolite or type(v) == Chemical:

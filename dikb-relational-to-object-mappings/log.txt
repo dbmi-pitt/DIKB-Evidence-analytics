@@ -120,3 +120,27 @@ DIKB log: 03/07/2012 12:55:48
   -  Web instance id: UPIA+Hanlon-AJGP-2012 locking: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/full-Tier-4-UPIA-Hanlon-AJGP2012-EV-EVALUATED.pickle 
 DIKB log: 03/07/2012 12:56:00
   -  Web instance id: UPIA+Hanlon-AJGP-2012 Done: ../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/full-Tier-4-UPIA-Hanlon-AJGP2012-EV-EVALUATED.pickle 
+DIKB log: 06/18/2015 13:46:35
+  -  Web instance id: Test 2015 locking  KB file to open: ../Drive-Experiment/dikb-pickles/dikb-test.pickle 
+DIKB log: 06/18/2015 13:46:39
+  -  Web instance id: Test 2015Done loading: ../Drive-Experiment/dikb-pickles/dikb-test.pickle 
+DIKB log: 06/18/2015 13:46:39
+  -  Web instance id: test-June2015 locking  KB file to open: ../Drive-Experiment/dikb-pickles/ev-test.pickle 
+DIKB log: 06/18/2015 13:46:42
+  -  Web instance id: test-June2015Done loading: ../Drive-Experiment/dikb-pickles/ev-test.pickle 
+DIKB log: 06/18/2015 13:50:05
+  -  Web instance id: Test 2015 locking  KB file to open: ../Drive-Experiment/dikb-pickles/dikb-test.pickle 
+DIKB log: 06/18/2015 13:50:09
+  -  Web instance id: Test 2015Done loading: ../Drive-Experiment/dikb-pickles/dikb-test.pickle 
+DIKB log: 06/18/2015 13:50:09
+  -  Web instance id: test-June2015 locking  KB file to open: ../Drive-Experiment/dikb-pickles/ev-test.pickle 
+DIKB log: 06/18/2015 13:50:12
+  -  Web instance id: test-June2015Done loading: ../Drive-Experiment/dikb-pickles/ev-test.pickle 
+DIKB log: 06/18/2015 15:19:36
+  -  Web instance id: Test 2015 locking  KB file to open: ../Drive-Experiment/dikb-pickles/dikb-test.pickle 
+DIKB log: 06/18/2015 15:19:41
+  -  Web instance id: Test 2015Done loading: ../Drive-Experiment/dikb-pickles/dikb-test.pickle 
+DIKB log: 06/18/2015 15:19:41
+  -  Web instance id: test-June2015 locking  KB file to open: ../Drive-Experiment/dikb-pickles/ev-test.pickle 
+DIKB log: 06/18/2015 15:19:44
+  -  Web instance id: test-June2015Done loading: ../Drive-Experiment/dikb-pickles/ev-test.pickle 

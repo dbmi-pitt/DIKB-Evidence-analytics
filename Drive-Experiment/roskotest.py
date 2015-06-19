@@ -1,6 +1,6 @@
 ### SAM ROSKO'S TEST FILE FOR WORKING ON DIKB
-### LAST UPDATED: 6/15/2015
-### TO DO: Wait for responses from the evidence board.... need to add chemicals still
+### LAST UPDATED: 6/19/2015
+### TO DO: Wait for responses from the evidence board....
 
 import os,sys, string, cgi
 from time import time, strftime, localtime
@@ -92,14 +92,14 @@ for elt in ["ciprofloxacin", "fluvoxamine"]:
     a.insertEvidence("for",e)
     ev.addAssertion(a)
 
-for elt in ["methoxsalen", "mexiletine", "phenypropanolamine", "vemurafenib", "zileuton"]:
+for elt in ["methoxsalen", "mexiletine", "phenylpropanolamine", "vemurafenib", "zileuton"]:
     a = Assertion(elt, "in-viVo-selective-inhibitor-of-enzyme", "cyp1a2")
     e = Evidence(ev)
     e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'moderate' in vivo inhibitor of CYP1A2. For more information, see Table 3 on page 41 and also see Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "1/05/2015")
     a.insertEvidence("for",e)
     ev.addAssertion(a)
 
-for elt in ["acyclovir", "allopurinol", "caffeine", "cimetidine", "disulfiram", "famotidine", "norfloxacin", "propafeonone", "propranolol", "terbinafine", "ticlopidine", "verapamil"]:
+for elt in ["acyclovir", "allopurinol", "caffeine", "cimetidine", "disulfiram", "famotidine", "norfloxacin", "propafenone", "propranolol", "terbinafine", "ticlopidine", "verapamil"]:
     a = Assertion(elt, "in-viVo-selective-inhibitor-of-enzyme", "cyp1a2")
     e = Evidence(ev)
     e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'weak' in vivo inhibitor of CYP1A2. For more information, see Table 3 on page 41 and also see Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "1/05/2015")
@@ -319,7 +319,6 @@ ev.addAssertion(a)
 ###########################################################
 ############### IN VIVO TRANSPORT PROTEINS  ###############
 ###########################################################
-# do I need to make rules for 'increases AUC' for digoxin, fexofenadine, talinolol, see quote below... I believe I should
 
 for elt in ["amiodarone", "captopril", "carvedilol", "clarithromycin", "conivaptan", "cyclosporine", "diltiazem", "dronedarone", "felodipine", "itraconazole", "quinidine", "ranolazine", "ticagrelor", "verapamil"]:
     a = Assertion(elt, "in-viVo-selective-inhibitor-of-enzyme", "p-glycoprotein")
@@ -448,7 +447,7 @@ ev.addAssertion(a)
 
 a = Assertion_inhibition_constant("furafylline", "inhibition_constant", "cyp1a2")
 e = In_vitro_inhibition_study(ev)
-e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical inhibitor of CYP1A2 for in vitro experiments at a K_i range of 0.6micM-0.73micM. See Table 1 on the FDA website. \n\n0.6-0.73micM/L X 1M/10^6micM X 260.25g/M = 0.00015615g/L - 0.0001899825g/L", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "1/22/2015", val = "0.00015615")
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical inhibitor of CYP1A2 for in vitro experiments at a K_i range of 0.6micM-0.73micM. See Table 1 on the FDA website. \n\n0.6micM/L X 1M/10^6micM X 260.25g/M = 0.00015615g/L", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "1/22/2015", val = "0.00015615")
 a.insertEvidence("for",e)
 ev.addAssertion(a)
 
@@ -485,13 +484,13 @@ ev.addAssertion(a)
 
 a = Assertion_inhibition_constant("tranylcypromine", "inhibition_constant", "cyp2a6")
 e = In_vitro_inhibition_study(ev)
-e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical inhibitor of CYP2A6 for in vitro experiments at a K_i range of 0.02micM to 0.2micM. See Table 1 on the FDA website. \n\n0.02-0.2micM/L X 1M/10^6micM X 133.19g/M = 2.6638E-6g/L - 2.6638E-5g/L", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "1/29/2015", val = "0.0000026638")
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical inhibitor of CYP2A6 for in vitro experiments at a K_i range of 0.02micM to 0.2micM. See Table 1 on the FDA website. \n\n0.02micM/L X 1M/10^6micM X 133.19g/M = 0.0000026638g/L", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "1/29/2015", val = "0.0000026638")
 a.insertEvidence("for",e)
 ev.addAssertion(a)
 
 a = Assertion_inhibition_constant("methoxsalen", "inhibition_constant", "cyp2a6")
 e = In_vitro_inhibition_study(ev)
-e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical inhibitor of CYP2A6 for in vitro experiments at a K_i range of 0.01micM to 0.2micM. See Table 1 on the FDA website. \n\n0.01-0.2micM/L X 1M/10^6micM X 260.25g/M = 0.00000216189g/L - 0.0000432379g/L", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "1/29/2015", val = "0.00000216189")
+e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical inhibitor of CYP2A6 for in vitro experiments at a K_i range of 0.01micM to 0.2micM. See Table 1 on the FDA website. \n\n0.01micM/L X 1M/10^6micM X 260.25g/M = 0.00000216189g/L", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "1/29/2015", val = "0.00000216189")
 a.insertEvidence("for",e)
 ev.addAssertion(a)
 
@@ -929,10 +928,10 @@ for elt in ["digoxin", "loperamide", "quinidine", "vinblastine", "talinolol"]:
         ev.addAssertion(a)
 
 ####### p-glycoprotein Inhibitors
-for elt in ["cyclosporine A", "ketoconazole", "zosuquidar trichloride", "nelfinavir", "quinidine", "ritonavir", "saquinavir", "tacrolimus", "valspodar", "verapamil", "elacridar", "reserpine"]:
+for elt in ["cyclosporine", "ketoconazole", "zosuquidar trichloride", "nelfinavir", "quinidine", "ritonavir", "saquinavir", "tacrolimus", "valspodar", "verapamil", "elacridar", "reserpine"]:
     a = Assertion(elt, "in_vitro_selective_inhibitor_of_enzyme", "p-glycoprotein")
     e = Evidence(ev)
-    if elt == "cyclosporine A" or elt ==  "ketoconazole" or elt == "nelfinavir" or elt == "ritonavir" or elt == "saquinavir":
+    if elt == "cyclosporine" or elt ==  "ketoconazole" or elt == "nelfinavir" or elt == "ritonavir" or elt == "saquinavir":
         e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of p-glycoprotein for in vitro experiments. This chemical is also a CYP3A inhibitor. See Table 9 and footnote 'a' on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "6/9/2015")
         a.insertEvidence("for",e)
         ev.addAssertion(a)
@@ -945,25 +944,25 @@ for elt in ["cyclosporine A", "ketoconazole", "zosuquidar trichloride", "nelfina
         a.insertEvidence("for",e)
         ev.addAssertion(a)
 
-a = Assertion_inhibition_constant("cyclosporine A", "inhibition_constant", "p-glycoprotein")
+a = Assertion_inhibition_constant("cyclosporine", "inhibition_constant", "p-glycoprotein")
 e = In_vitro_inhibition_study(ev)
 e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of p-glycoprotein for in vitro experiments at an IC50 of 1.3micM using a Caco-2 permeability assay with digoxin as a p-glycoprotein substrate. See Table 9 and the footnotes on the FDA website. \n\n1.3micM/L X 1M/10^6micM X 1202.611240g/M = 0.001563394612g/L", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "6/9/2015", val = "0.001563394612")
 a.insertEvidence("for",e)
 ev.addAssertion(a)
 
-a = Assertion_inhibition_constant("cyclosporine A", "inhibition_constant", "p-glycoprotein")
+a = Assertion_inhibition_constant("cyclosporine", "inhibition_constant", "p-glycoprotein")
 e = In_vitro_inhibition_study(ev)
 e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of p-glycoprotein for in vitro experiments at a Ki of 0.5micM using a Caco-2 permeability assay with digoxin as a p-glycoprotein substrate. See Table 9 and the footnotes on the FDA website. \n\n0.5micM/L X 1M/10^6micM X 1202.611240g/M = 0.00060130562g/L", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "6/9/2015", val = "0.00060130562")
 a.insertEvidence("for",e)
 ev.addAssertion(a)
 
-a = Assertion_inhibition_constant("cyclosporine A", "inhibition_constant", "p-glycoprotein")
+a = Assertion_inhibition_constant("cyclosporine", "inhibition_constant", "p-glycoprotein")
 e = In_vitro_inhibition_study(ev)
 e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of p-glycoprotein for in vitro experiments at a Ki of 2.2micM using a MDCK-MDR1 permeability assay with digoxin as a p-glycoprotein substrate. See Table 9 and the footnotes on the FDA website. \n\n2.2micM/L X 1M/10^6micM X 1202.611240g/M = 0.002645744728g/L", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "6/9/2015", val = "0.002645744728")
 a.insertEvidence("for",e)
 ev.addAssertion(a)
 
-a = Assertion_inhibition_constant("cyclosporine A", "inhibition_constant", "p-glycoprotein")
+a = Assertion_inhibition_constant("cyclosporine", "inhibition_constant", "p-glycoprotein")
 e = In_vitro_inhibition_study(ev)
 e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is an acceptable chemical inhibitor of p-glycoprotein for in vitro experiments at a Ki of 1.3micM using a LLC-PK1-MDR1 permeability assay with vinblastine as a p-glycoprotein substrate. See Table 9 and the footnotes on the FDA website. \n\n1.3micM/L X 1M/10^6micM X 1202.611240g/M = 0.001563394612g/L", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "6/9/2015", val = "0.001563394612")
 a.insertEvidence("for",e)
@@ -1440,5 +1439,44 @@ for asrt_tp in asrts.keys():
     print r_str
 ############################ END OF QUERIES TO SUPPORT STATISTICS OF THE EVIDENCE BASE ####################### 
 
+################################################################################
+# Test of loading new drug entities into the DIKB and then connecting
+# the ev and dikb instances
+################################################################################
 
+import os,sys, string, cgi
+from time import time, strftime, localtime
 
+import sys
+sys.path = sys.path + ['../dikb-relational-to-object-mappings']
+
+from mysql_tool import *
+from DIKB_Load import load_ev_from_db
+
+from sqlalchemy import func
+from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
+
+from DIKB.ModelUtils import *
+from DIKB.DIKB import *
+from DIKB.DrugModel import *
+from DIKB.EvidenceModel import *
+from DIKB.ExportAssertions import *
+
+timestamp = strftime("%m/%d/%Y %H:%M:%S\n", localtime(time()))
+
+ident = "".join(["Current SQL DIKB evidence : ", timestamp])
+
+ev = load_ev_from_db(ident)
+
+dikb = DIKB("dikb",ident, ev)
+dikb.unpickleKB("dikb-pickles/dikb-03052012.pickle")
+
+for elt in ["acyclovir", "aliskiren", "allopurinol", "alosetron", "ambrisentan", "armodafinil", "atrasentan", "azithromycin", "bicalutamide", "boceprevir", "clobazam", "conivaptan", "crizotinib", "dabigatran", "darifenacin", "darunavir", "dihydroergotamine", "dronedarone", "eltrombopag", "esomeprazole", "etravirine", "everolimus", "ezetimibe", "famotidine", "febuxostat", "fluticasone", "hydralazine", "lansoprazole", "lurasidone", "maraviroc", "melatonin", "nebivolol", "oxandrolone", "pazopanib", "phenylpropanolamine", "pilocarpine", "pitavastatin", "prasugrel", "propafenone", "quercetin", "ramelteon", "ranitidine", "reserpine", "saxagliptin", "sitagliptin", "telaprevir", "ticagrelor", "tigecycline", "tipranavir", "tizanidine", "tolvaptan", "topotecan", "vemurafenib"]:
+    d = Drug(elt)
+    dikb.putObject(d)
+
+ev.renotifyObservers()
+
+# Now, hopefully, the new dikb and ev are in sync. So, we can pickle
+dikb.pickleKB("dikb-pickles/dikb-test.pickle") # the file is larger - that might be ok but we will want to do some tests
+ev.pickleKB("dikb-pickles/ev-test.pickle")

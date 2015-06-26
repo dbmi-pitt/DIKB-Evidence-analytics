@@ -375,7 +375,7 @@ e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulator
 a.insertEvidence("for",e)
 ev.addAssertion(a)
 
-for elt in ["atrasentan", "atorvastatin", "bosentan", "ezetimibe", "fluvastatin", "glyburide", "rosuvastatin", "simvastatin acid", "pitavastatin", "pravastatin", "repaglinide", "rifampin", "valsartan", "olmesartan"]:
+for elt in ["atrasentan", "atorvastatin", "bosentan", "ezetimibe", "fluvastatin", "glyburide", "rosuvastatin", "simvastatin-acid", "pitavastatin", "pravastatin", "repaglinide", "rifampin", "valsartan", "olmesartan"]:
     a = Assertion(elt, "primary_total_clearance_enzyme", "oatp1b1")
     e = Evidence(ev)
     e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo substrate of OATP1B1. For more information, see Table 7 on page 51 and also see Table 13 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "1/22/2015")
@@ -1471,9 +1471,29 @@ ev = load_ev_from_db(ident)
 dikb = DIKB("dikb",ident, ev)
 dikb.unpickleKB("dikb-pickles/dikb-03052012.pickle")
 
-for elt in ["acyclovir", "aliskiren", "allopurinol", "alosetron", "ambrisentan", "armodafinil", "atrasentan", "azithromycin", "bicalutamide", "boceprevir", "clobazam", "conivaptan", "crizotinib", "dabigatran", "darifenacin", "darunavir", "dihydroergotamine", "dronedarone", "eltrombopag", "esomeprazole", "etravirine", "everolimus", "ezetimibe", "famotidine", "febuxostat", "fluticasone", "hydralazine", "lansoprazole", "lurasidone", "maraviroc", "melatonin", "nebivolol", "oxandrolone", "pazopanib", "phenylpropanolamine", "pilocarpine", "pitavastatin", "prasugrel", "propafenone", "quercetin", "ramelteon", "ranitidine", "reserpine", "saxagliptin", "sitagliptin", "telaprevir", "ticagrelor", "tigecycline", "tipranavir", "tizanidine", "tolvaptan", "topotecan", "vemurafenib"]:
-    d = Drug(elt)
+for i in ["acyclovir", "aliskiren", "allopurinol", "ambrisentan", "armodafinil", "atrasentan", "azithromycin", "bicalutamide", "boceprevir", "clobazam", "conivaptan", "crizotinib", "dabigatran", "darifenacin", "darunavir", "dihydroergotamine", "dronedarone", "eltrombopag", "esomeprazole", "etravirine", "everolimus", "ezetimibe", "famotidine", "febuxostat", "fluticasone", "hydralazine", "lurasidone", "maraviroc", "melatonin", "nebivolol", "oxandrolone", "pazopanib", "phenylpropanolamine", "pilocarpine", "pitavastatin", "quercetin", "ramelteon", "ranitidine", "reserpine", "saxagliptin", "sitagliptin", "telaprevir", "ticagrelor", "tigecycline", "tipranavir", "tizanidine", "tolvaptan", "topotecan", "vemurafenib", "irinotecan", "diethyldithiocarbamate", "phencyclidine", "talinolol", "tranylcypromine", "valspodar", "zosuquidar"]:
+    if i in dikb.objects.keys():
+        print "%s seems to be present already!" % i
+        continue
+
+    d = Drug(i)
     dikb.putObject(d)
+    
+for i in ["triazolam-4-hydroxylation", "terfenadine-C-hydroxylation", "testosterone-6b-hydroxylation", "theophylline-N-demethylation", "tolbutamide-methyl-hydroxylation", "phenytoin-4-hydroxylation", "propofol-hydroxylation", "rosiglitazone-para-hydroxylation", "simvastatin-acid", "sulfaphenazole", "tacrine-1-hydroxylation", "S-mephenytoin-4’-hydroxylation", "efavirenz-hydroxylase", "erythromycin-N-demethylation", "fluoxetine-O-dealkylation", "flurbiprofen-4’-hydroxylation", "midazolam-1-hydroxylation", "nicotine-C-oxidation", "nifedipine-oxidation", "omeprazole-5-hydroxylation", "phenacetin-O-deethylation", "S-mephenytoin-N-demethylation", "S-warfarin-7-hydroxylation", "amodiaquine-N-deethylation", "aniline-4-hydroxylation", "bupropion-hydroxylation", "caffeine-3-N-demethylation", "chlorzoxazone-6-hydroxylation", "coumarin-7-hydroxylation", "debrisoquine-4-hydroxylation", "dextromethorphan-N-demethylation", "dextromethorphan-O-demethylation", "diclofenac-4’-hydroxylation", "2-isopropenyl-2-methyl-adamantane", "7-ethoxyresorufin-O-deethylation", "a-naphthoflavone", "azamulin", "bufuralol-1’-hydroxylation", "elacridar", "etexilate", "lauric-acid-11-hydroxylation", "nootkatone", "p-nitrophenol-3-hydroxylation", "taxol-6-hydroxylation", "tryptamine"]:
+    if i in dikb.objects.keys():
+        print "%s seems to be present already!" % i
+        continue
+
+    m = Metabolite(i)
+    dikb.putObject(m)
+
+for i in ["p-glycoprotein", "oatp1b1", "oatp1b3"]:
+    if i in dikb.objects.keys():
+        print "%s seems to be present already!" % i
+        continue
+
+    e = Enzyme(i)
+    dikb.putObject(e)
 
 ev.renotifyObservers()
 

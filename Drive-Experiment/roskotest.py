@@ -1,4 +1,4 @@
-### SAM ROSKO'S TEST FILE FOR WORKING ON DIKB
+### SAM ROSKO'S COMBINED TEST FILE FOR WORKING ON DIKB
 ### LAST UPDATED: 6/19/2015
 ### TO DO: Wait for responses from the evidence board....
 
@@ -340,7 +340,7 @@ e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulator
 a.insertEvidence("for",e)
 ev.addAssertion(a)
 
-for elt in ["aliskiren", "ambrisentan", "colchicine", "dabigatran", "etexilate", "digoxin", "everolimus", "fexofenadine", "imatinib", "lapatinib", "maraviroc", "nilotinib", "posaconazole", "ranolazine", "saxagliptin", "sirolimus", "sitagliptin", "talinolol", "tolvaptan", "topotecan"]:
+for elt in ["aliskiren", "ambrisentan", "colchicine", "dabigatran", "dabigatran-etexilate", "digoxin", "everolimus", "fexofenadine", "imatinib", "lapatinib", "maraviroc", "nilotinib", "posaconazole", "ranolazine", "saxagliptin", "sirolimus", "sitagliptin", "talinolol", "tolvaptan", "topotecan"]:
     a = Assertion(elt, "primary_total_clearance_enzyme", "p-glycoprotein")
     e = Evidence(ev)
     e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is an in vivo substrate of p-glycoprotein. For more information, see Table 7 on page 51 and also see Table 13 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "1/15/2015")
@@ -1442,6 +1442,7 @@ for asrt_tp in asrts.keys():
 ################################################################################
 # Test of loading new drug entities into the DIKB and then connecting
 # the ev and dikb instances
+# this is outdated
 ################################################################################
 
 import os,sys, string, cgi
@@ -1478,7 +1479,8 @@ for i in ["acyclovir", "aliskiren", "allopurinol", "ambrisentan", "armodafinil",
 
     d = Drug(i)
     dikb.putObject(d)
-    
+
+###### add non-metabolites to chemicals... maybe a problem with primes (4')
 for i in ["triazolam-4-hydroxylation", "terfenadine-C-hydroxylation", "testosterone-6b-hydroxylation", "theophylline-N-demethylation", "tolbutamide-methyl-hydroxylation", "phenytoin-4-hydroxylation", "propofol-hydroxylation", "rosiglitazone-para-hydroxylation", "simvastatin-acid", "sulfaphenazole", "tacrine-1-hydroxylation", "S-mephenytoin-4’-hydroxylation", "efavirenz-hydroxylase", "erythromycin-N-demethylation", "fluoxetine-O-dealkylation", "flurbiprofen-4’-hydroxylation", "midazolam-1-hydroxylation", "nicotine-C-oxidation", "nifedipine-oxidation", "omeprazole-5-hydroxylation", "phenacetin-O-deethylation", "S-mephenytoin-N-demethylation", "S-warfarin-7-hydroxylation", "amodiaquine-N-deethylation", "aniline-4-hydroxylation", "bupropion-hydroxylation", "caffeine-3-N-demethylation", "chlorzoxazone-6-hydroxylation", "coumarin-7-hydroxylation", "debrisoquine-4-hydroxylation", "dextromethorphan-N-demethylation", "dextromethorphan-O-demethylation", "diclofenac-4’-hydroxylation", "2-isopropenyl-2-methyl-adamantane", "7-ethoxyresorufin-O-deethylation", "a-naphthoflavone", "azamulin", "bufuralol-1’-hydroxylation", "elacridar", "etexilate", "lauric-acid-11-hydroxylation", "nootkatone", "p-nitrophenol-3-hydroxylation", "taxol-6-hydroxylation", "tryptamine"]:
     if i in dikb.objects.keys():
         print "%s seems to be present already!" % i

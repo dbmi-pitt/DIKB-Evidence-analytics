@@ -1,6 +1,6 @@
-### SAM ROSKO'S COMBINED TEST FILE FOR WORKING ON DIKB
-### LAST UPDATED: 7/28/2015
-### TO DO: File complete
+# Description - Sam Rosko's File to Update Entities in the DIKB
+# Last Update - 6/30/2015
+# To Do - run for final DB
 
 import os,sys, string, cgi
 from time import time, strftime, localtime
@@ -20,65 +20,62 @@ from DIKB.DrugModel import *
 from DIKB.EvidenceModel import *
 from DIKB.ExportAssertions import *
 
-## current time and date
 timestamp = strftime("%m/%d/%Y %H:%M:%S\n", localtime(time()))
 
-## Customize as you see fit
 ident = "".join(["Current SQL DIKB evidence : ", timestamp])
 
-## CODE TO RELOAD THE EB; SUFFICIENT FOR ADDING INFORMATION TO THE
-## EB. IF YOU NEED TO ADD OBJECTS TO THE KB OR ACCESS EVIDENCE FROM
-## THE DIKB'S DRUG MODEL, THEN USE THE CODE THAT RENOTIFIES OBSERVERS
+### LOAD LATEST EV-BASE AND KB
+
 ev = load_ev_from_db(ident)
 
-###################################################################
-# SAMPLE CODE IDEAS
-###################################################################
+dikb = DIKB("dikb",ident, ev)
+dikb.unpickleKB("dikb-pickles/dikb-03052012.pickle")
 
-#basic entry attempt for inhibition
-for elt in ["cyp2d6", "cyp3a4"]:
-    a = Assertion("rosko", "inhibits", elt)
-    e = Evidence(ev)
-    e.create(doc_p = "samuel rosko's brain", q = "samuel rosko believes that this is a likely result", ev_type = "EV_EX_Met_Enz_ID_Cyp450_Hum_Recom", revwr = "boycer", timestamp = "11132014")
-    a.insertEvidence("for",e)
-    ev.addAssertion(a)
+### UPDATE ENTITY LIST
 
-#entry attempt for metabolite
-a = Assertion("samuel", "has_metabolite", "rosko")
-e = Evidence(ev)
-e.create(doc_p = "rosko family tree", q = "Samuel has the middle name Charles and the last name of Rosko.", ev_type = "Non_traceable_Drug_Label_Statement", revwr = "roskos", timestamp = "11132014")
-a.insertEvidence("for",e)
-ev.addAssertion(a)
+for i in ["acyclovir", "aliskiren", "allopurinol", "ambrisentan", "armodafinil", "atrasentan", "azithromycin", "bicalutamide", "boceprevir", "clobazam", "conivaptan", "crizotinib", "dabigatran", "darifenacin", "darunavir", "dihydroergotamine", "dronedarone", "eltrombopag", "esomeprazole", "etravirine", "everolimus", "ezetimibe", "famotidine", "febuxostat", "fluticasone", "hydralazine", "lurasidone", "maraviroc", "melatonin", "nebivolol", "oxandrolone", "pazopanib", "phenylpropanolamine", "pilocarpine", "pitavastatin", "quercetin", "ramelteon", "ranitidine", "reserpine", "saxagliptin", "sitagliptin", "telaprevir", "ticagrelor", "tigecycline", "tipranavir", "tizanidine", "tolvaptan", "topotecan", "vemurafenib", "irinotecan", "diethyldithiocarbamate", "phencyclidine", "talinolol", "tranylcypromine", "valspodar", "zosuquidar", "elacridar", "sulfaphenazole", "dabigatran-etexilate"]:
+	if i in dikb.objects.keys():
+		print "%s seems to be present already!" % i
+		continue
 
-a = Assertion("samuel", "has_metabolite", "rosko")
-e = Evidence(ev)
-e.create(doc_p = "krebs family tree", q = "Samuel's mother's last name is Krebs rather than Rosko.", ev_type = "Non_traceable_Drug_Label_Statement", revwr = "boycer", timestamp = "11142014")
-a.insertEvidence("against",e)
-ev.addAssertion(a)
+	d = Drug(i)
+	dikb.putObject(d)
 
-#add assumption for inhibition entry from metabolite entry
-ev.objects['rosko_inhibits_cyp2d6'].evidence_for[0].assumptions.addEntry(['samuel_has_metabolite_rosko'])
+for i in ["triazolam-4-hydroxylation", "terfenadine-C-hydroxylation", "testosterone-6b-hydroxylation", "theophylline-N-demethylation", "tolbutamide-methyl-hydroxylation", "phenytoin-4-hydroxylation", "propofol-hydroxylation", "rosiglitazone-para-hydroxylation", "simvastatin-acid", "tacrine-1-hydroxylation", "S-mephenytoin-4’-hydroxylation", "efavirenz-hydroxylase", "erythromycin-N-demethylation", "fluoxetine-O-dealkylation", "flurbiprofen-4’-hydroxylation", "midazolam-1-hydroxylation", "nicotine-C-oxidation", "nifedipine-oxidation", "omeprazole-5-hydroxylation", "phenacetin-O-deethylation", "S-mephenytoin-N-demethylation", "S-warfarin-7-hydroxylation", "amodiaquine-N-deethylation", "aniline-4-hydroxylation", "bupropion-hydroxylation", "caffeine-3-N-demethylation", "chlorzoxazone-6-hydroxylation", "coumarin-7-hydroxylation", "debrisoquine-4-hydroxylation", "dextromethorphan-N-demethylation", "dextromethorphan-O-demethylation", "diclofenac-4’-hydroxylation", "2-isopropenyl-2-methyl-adamantane", "7-ethoxyresorufin-O-deethylation", "bufuralol-1’-hydroxylation", "lauric-acid-11-hydroxylation", "p-nitrophenol-3-hydroxylation", "taxol-6-hydroxylation"]:
+	if i in dikb.objects.keys():
+		print "%s seems to be present already!" % i
+		continue
 
-#deleting an assertion
-ev.deleteAssertion(ev.objects['rosko_inhibits_cyp2d6'])
+	m = Metabolite(i)
+	dikb.putObject(m)
 
-#deleting an evidence item
-ev.objects['samuel_has_metabolite_charles'].evidence_for.pop()
+for i in ["tryptamine", "azamulin", "nootkatone"]:
+	if i in dikb.objects.keys():
+		print "%s seems to be present already!" % i
+		continue
 
-#create a list of document pointers
-doc_list = {}
+	c = Chemical(i)
+	dikb.putObject(c)
+	
+for i in ["p-glycoprotein", "oatp1b1", "oatp1b3"]:
+	if i in dikb.objects.keys():
+		print "%s seems to be present already!" % i
+		continue
+
+	e = Enzyme(i)
+	dikb.putObject(e)
+
+### REMOVE ALL INFO FROM FDA 2006 GUIDELINES
+
 for e,v in ev.objects.iteritems():
     for it in v.evidence_for:
-        doc_list[it.doc_pointer] = e
+        if it.doc_pointer == 'fda2006' or it.doc_pointer == 'fda2006a' or it.doc_pointer == 'fda206a' or it.doc_pointer == 'http://dl.dropbox.com/u/4516186/FDA-Guidance-Drug-Interaction-Studies%E2%80%93Study%20Design-Data-Analysis-and-Implications-2006.pdf':
+            v.evidence_for.remove(it)
     for it in v.evidence_against:
-        doc_list[it.doc_pointer] = e
+        if it.doc_pointer == 'fda2006' or it.doc_pointer == 'fda2006a' or it.doc_pointer == 'fda206a' or it.doc_pointer == 'http://dl.dropbox.com/u/4516186/FDA-Guidance-Drug-Interaction-Studies%E2%80%93Study%20Design-Data-Analysis-and-Implications-2006.pdf':
+            v.evidence_against.remove(it)
 
-#sample evidence entry from 2012 data
-a = Assertion("enoxacin", "inhibits", "cyp1a2")
-e = Evidence(ev)
-e.create(doc_p = "fda2012", q = "The FDA guidelines suggest that this is a strong in vivo inhibitor of CYP3A4. For more information, see Table 3, p. 41 and Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "11252014")
-a.insertEvidence("for",e)
-ev.addAssertion(a)
+### ADD FDA 2012 EVIDENCE ITEMS
 
 ###########################################################
 ################ IN VIVO CYP INHIBITORS ###################
@@ -1076,329 +1073,9 @@ for elt in ["voriconazole", "nefazodone", "cimetidine"]:
         a.insertEvidence("against",e)
         ev.addAssertion(a)
 
-###########################################################
-############### OTHER USEFUL CODE #########################
-###########################################################
-
-## Using 'http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf' as the doc_pointer for now
-# We also have the file saved and can link to DropBox if these guidelines are removed from public access
-## That link is as follows: 'https://dl.dropboxusercontent.com/u/4516186/FDA-guidance-to-industry-on-drug-interaction-studies-ucm292362-February2012.pdf'
-
-#Sample for a change from 2006 to 2012 without removing the entry, test case is as follows: 
-ev.objects['fluconazole_inhibits_cyp2c9'].evidence_for[1].doc_pointer
-#Returns fda2006a, so to change it to 2012, we would simply use the following code:
-ev.objects['fluconazole_inhibits_cyp2c9'].evidence_for[1].doc_pointer = 'http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf'
-#And to correct the quote, we would use the following code:
-ev.objects['fluconazole_inhibits_cyp2c9'].evidence_for[1].quote = '"The FDA guidelines suggest that this is a moderate in vivo inhibitor of CYP3A4. For more information, see Table 3 on page 41 and also see Table 5 on the FDA website."'
-
-#create a list of evidence items supported by data from fda2006 guidelines... there are so many 'or' statements to cover typos
-doc_fda = {}
-for e,v in ev.objects.iteritems():
-    for it in v.evidence_for:
-        if it.doc_pointer == 'fda2006' or it.doc_pointer == 'fda2006a' or it.doc_pointer == 'fda206a' or it.doc_pointer == 'http://dl.dropbox.com/u/4516186/FDA-Guidance-Drug-Interaction-Studies%E2%80%93Study%20Design-Data-Analysis-and-Implications-2006.pdf':
-            doc_fda[v] = 'supports: ' + e
-    for it in v.evidence_against:
-        if it.doc_pointer == 'fda2006' or it.doc_pointer == 'fda2006a' or it.doc_pointer == 'fda206a' or it.doc_pointer == 'http://dl.dropbox.com/u/4516186/FDA-Guidance-Drug-Interaction-Studies%E2%80%93Study%20Design-Data-Analysis-and-Implications-2006.pdf':
-            doc_fda[v] = 'supports: ' + e
-
-#remove all the evidence based on fda2006 information
-for e,v in ev.objects.iteritems():
-    for it in v.evidence_for:
-        if it.doc_pointer == 'fda2006' or it.doc_pointer == 'fda2006a' or it.doc_pointer == 'fda206a' or it.doc_pointer == 'http://dl.dropbox.com/u/4516186/FDA-Guidance-Drug-Interaction-Studies%E2%80%93Study%20Design-Data-Analysis-and-Implications-2006.pdf':
-            v.evidence_for.remove(it)
-    for it in v.evidence_against:
-        if it.doc_pointer == 'fda2006' or it.doc_pointer == 'fda2006a' or it.doc_pointer == 'fda206a' or it.doc_pointer == 'http://dl.dropbox.com/u/4516186/FDA-Guidance-Drug-Interaction-Studies%E2%80%93Study%20Design-Data-Analysis-and-Implications-2006.pdf':
-            v.evidence_against.remove(it)
-
-#create list of evidence that has fda2006 data as a supported assumption my guess for this is to create a list of all evidence claims that are supported by fda2006, then compare that to the assumptions for every item, and make a second list of those which have the fda2006 claims in their assumptions... should just be a for loop within a for loop
-e_list = []
-for e,v in ev.objects.iteritems():
-    for it in v.evidence_for:
-        if it.doc_pointer == 'fda2006' or it.doc_pointer == 'fda2006a' or it.doc_pointer == 'fda206a' or it.doc_pointer == 'http://dl.dropbox.com/u/4516186/FDA-Guidance-Drug-Interaction-Studies%E2%80%93Study%20Design-Data-Analysis-and-Implications-2006.pdf':
-            if e_list.count(e) == 0:
-                e_list.append(e)
-    for it in v.evidence_against:
-        if it.doc_pointer == 'fda2006' or it.doc_pointer == 'fda2006a' or it.doc_pointer == 'fda206a' or it.doc_pointer == 'http://dl.dropbox.com/u/4516186/FDA-Guidance-Drug-Interaction-Studies%E2%80%93Study%20Design-Data-Analysis-and-Implications-2006.pdf':
-            if e_list.count(e) == 0:
-                e_list.append(e)
-dep_list = []
-for e,v in ev.objects.iteritems():
-    for it in v.evidence_for:
-        if len(it.assumptions.getEntries()) > 0:
-            for assum in it.assumptions.getEntries():
-                if e_list.count(assum) > 0 and dep_list.count(assum) == 0:
-                    dep_list.append(assum)
-    for it in v.evidence_against:
-         if len(it.assumptions.getEntries()) > 0:
-            for assum in it.assumptions.getEntries():
-                if e_list.count(assum) > 0 and dep_list.count(assum) == 0:
-                    dep_list.append(assum)
-
-# generate the local html output (incomplete)
-##   make web-pages 
-# use this command in Konsole
-
-############################################################
-# Examples of how to query statistics
-############################################################
-
-######### TALLYING EVIDENCE TYPES
-non_default_asrts = {
-    "bioavailability":  None,
-    "controls_formation_of": None,
-    "first_pass_effect": None,
-    "fraction_absorbed": None,
-    "has_metabolite": None,
-    "increases_auc": None,
-    "inhibition_constant": None,
-    "inhibits": None,
-    "maximum_concentration": None,
-    "primary_metabolic_clearance_enzyme": None,
-    "primary_total_clearance_enzyme": None,
-    "primary_total_clearance_mechanism": None,
-    "substrate_of": None,
-    }
-
-for asrt_tp in non_default_asrts.keys():
-    print "\n\n%s: " % asrt_tp
-    et_for = {}
-    et_against = {}
-    for k,v in ev.objects.iteritems():                  
-        if k.find(asrt_tp) != -1:
-            if asrt_tp == 'substrate_of' and k.find("is_not") != -1:
-                print "\tskipping %s because it is not the 'substrate_of' assertions\n" % k
-                continue
-
-            if asrt_tp == 'substrate_of' and k.find("in_vitro_probe") != -1:
-                print "\tskipping %s because it is not the 'substrate_of' assertions\n" % k
-                continue
+### RENOTIFY OBSERVERS AND PICKLE BOTH EV-BASE/KB
             
-            if v.assert_by_default == True:
-                print "\tskipping %s because it is a default assumption\n" % k
-                continue
-
-            print "\t%s" % k
-            for e in v.evidence_for:
-                if et_for.has_key(e.evidence_type.value):
-                    et_for[e.evidence_type.value] += 1
-                else:
-                    et_for[e.evidence_type.value] = 1
-                print "\t\t(for) %s" % e.evidence_type.value
-            for e in v.evidence_against:
-                if et_against.has_key(e.evidence_type.value):
-                    et_against[e.evidence_type.value] += 1
-                else:
-                    et_against[e.evidence_type.value] = 1
-                print "\t\t(against) %s" % e.evidence_type.value
-    tot = 0.0
-    for k,v in et_for.iteritems():
-        tot += v
-        
-    print "%d types found 'for' %s assertions (total items: %d):" % (len(et_for.keys()), asrt_tp, tot)
-    for k,v in et_for.iteritems():
-        print "\ttype: %s, %d/%d = %.2f" % (k, v, tot, float(v)/float(tot))
-
-    tot = 0.0
-    for k,v in et_against.iteritems():
-        tot += v
-    print "\n%d types found 'against' %s assertions (total items: %d):" % (len(et_against.keys()), asrt_tp, tot)
-    for k,v in et_against.iteritems():
-        print "\ttype: %s, %d/%d = %.2f" % (k, v, tot, float(v)/float(tot))
-
-
-######### GET ALL DOC_POINTERS CURRENTLY IN THE DIKB ###############
-doc_d = {}
-for e,v in ev.objects.iteritems():
-    for it in v.evidence_for:
-        doc_d[it.doc_pointer] = None
-    for it in v.evidence_against:
-        doc_d[it.doc_pointer] = None
-
-
-
-##################################################################################### 
-#  identify and classify all non-redundant assertions including
-#  default assumptions
-#####################################################################################
-
-clinical_types = ["EV_CT_PK_Genotype", "EV_PK_DDI_RCT", "EV_CT_Pharmacokinetic", "EV_PK_DDI_Par_Grps", "EV_PK_DDI_NR"]
-non_traceable_types = ["Non_traceable_Drug_Label_Statement", "Non_Tracable_Statement"]
-#non_traceable_types = ["Non_traceable_Drug_Label_Statement"]
-in_vitro_types = ["EV_EX_Met_Enz_Inhibit_Cyp450_Hum_Recom", "EV_EX_Met_Enz_Inhibit_Cyp450_Hum_Microsome", "EV_EX_Met_Enz_ID", "EV_EX_Met_Enz_ID_Cyp450_Hum_Microsome_Chem", "EV_EX_Met_Enz_ID_Cyp450_Hum_Recom"]
-
-asrts = {
-    "bioavailability":  None,
-    "controls_formation_of": None,
-    "first_pass_effect": None,
-    "fraction_absorbed": None,
-    "has_metabolite": None,
-    "increases_auc": None,
-    "inhibition_constant": None,
-    "inhibits": None,
-    "maximum_concentration": None,
-    "primary_metabolic_clearance_enzyme": None,
-    "primary_total_clearance_enzyme": None,
-    "primary_total_clearance_mechanism": None,
-    "substrate_of": None,
-    "polymorphic_enzyme":None,
-    "does_not_permanently_deactivate_catalytic_function":None,
-    "permanently_deactivates_catalytic_function":None,
-    "in_vitro_probe_substrate_of_enzyme":None,
-    "in_vitro_selective_inhibitor_of_enzyme":None,
-    "in_viVo_selective_inhibitor_of_enzyme":None,
-    "pceut_entity_of_concern":None,
-    "sole_PK_effect_alter_metabolic_clearance":None,
-    }
-
-
-for asrt_tp in asrts.keys():
-    print "\n\n%s: " % asrt_tp
-    et_for = {}
-    et_against = {}
-    (for_clin_cnt, for_non_trac_cnt, for_in_vitro_cnt) = (0,0,0)
-    (against_clin_cnt, against_non_trac_cnt, against_in_vitro_cnt) = (0,0,0)
-    a_cnt = 0
-    default = 0
-    
-    for k,v in ev.objects.iteritems():                  
-        if k.find(asrt_tp) != -1:
-            if k.find("is_not_substrate_of") != -1 or k.find("does_not_inhibit") != -1:
-                print "\tskipping %s because it is not a non-redundant or default evidence evidence item\n" % k
-                continue
-
-            if asrt_tp == "substrate_of" and k.find("in_vitro_probe_substrate_of_enzyme") != -1:
-                continue
-           
-            if v.assert_by_default == True:
-                default += 1
-
-            a_cnt += 1
-            print "\t%s" % k
-
-            for e in v.evidence_for:
-                if et_for.has_key(e.evidence_type.value):
-                    et_for[e.evidence_type.value] += 1
-                else:
-                    et_for[e.evidence_type.value] = 1
-                print "\t\t(for) %s" % e.evidence_type.value
-                
-                if e.evidence_type.value in clinical_types:
-                    for_clin_cnt += 1
-                elif e.evidence_type.value in non_traceable_types:
-                    for_non_trac_cnt += 1
-                elif e.evidence_type.value in in_vitro_types:
-                    for_in_vitro_cnt += 1
-                else:
-                    "ERROR!, COULD NOT CLASSIFY EVIDENCE TYPE INTO ONE OF THREE CATEGORIES"               
-         
-
-            for e in v.evidence_against:
-                if et_against.has_key(e.evidence_type.value):
-                    et_against[e.evidence_type.value] += 1
-                else:
-                    et_against[e.evidence_type.value] = 1
-                print "\t\t(against) %s" % e.evidence_type.value
-
-                if e.evidence_type.value in clinical_types:
-                    against_clin_cnt += 1
-                elif e.evidence_type.value in non_traceable_types:
-                    against_non_trac_cnt += 1
-                elif e.evidence_type.value in in_vitro_types:
-                    against_in_vitro_cnt += 1
-                else:
-                    "ERROR!, COULD NOT CLASSIFY EVIDENCE TYPE INTO ONE OF THREE CATEGORIES"               
-
-    r_str = ""
-                
-    for_tot = 0.0
-    for k,v in et_for.iteritems():
-        for_tot += v
-    print "%d types found 'for' %s assertions (total items: %d):" % (len(et_for.keys()), asrt_tp, for_tot)
-    for k,v in et_for.iteritems():
-        print "\ttype: %s, %d/%d = %.0f" % (k, v, for_tot, float(v)/float(for_tot))
-
-    r_str +=  "%s & %s & %s & " % (asrt_tp, default, a_cnt)
-    if for_tot == 0:
-        r_str +=  "FOR: 0 & 0 & 0 & 0 &"
-    else:
-        r_str +=  "FOR: %s & %.0f & %.0f & %.0f \\\\" % (for_tot, float(for_clin_cnt)/float(for_tot) * 100, float(for_in_vitro_cnt)/float(for_tot) * 100, float(for_non_trac_cnt)/float(for_tot) * 100)
-
-    against_tot = 0.0
-    for k,v in et_against.iteritems():
-        against_tot += v
-    print "\n%d types found 'against' %s assertions (total items: %d):" % (len(et_against.keys()), asrt_tp, against_tot)
-    for k,v in et_against.iteritems():
-        print "\ttype: %s, %d/%d = %.0f" % (k, v, against_tot, float(v)/float(against_tot))
-
-    r_str += "AGAINST: %s & " % against_tot
-    if against_tot == 0:
-        r_str +=  " 0 & 0 & 0 \\"
-    else:
-        r_str +=  " %.0f & %.0f & %.0f \\" % (float(against_clin_cnt)/float(against_tot) * 100, float(against_in_vitro_cnt)/float(against_tot) * 100, float(against_non_trac_cnt)/float(against_tot) * 100)
-
-    print r_str
-############################ END OF QUERIES TO SUPPORT STATISTICS OF THE EVIDENCE BASE ####################### 
-
-################################################################################
-# Test of loading new drug entities into the DIKB and then connecting
-# the ev and dikb instances
-# this is outdated
-################################################################################
-
-import os,sys, string, cgi
-from time import time, strftime, localtime
-
-import sys
-sys.path = sys.path + ['../dikb-relational-to-object-mappings']
-
-from mysql_tool import *
-from DIKB_Load import load_ev_from_db
-
-from sqlalchemy import func
-from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
-
-from DIKB.ModelUtils import *
-from DIKB.DIKB import *
-from DIKB.DrugModel import *
-from DIKB.EvidenceModel import *
-from DIKB.ExportAssertions import *
-
-timestamp = strftime("%m/%d/%Y %H:%M:%S\n", localtime(time()))
-
-ident = "".join(["Current SQL DIKB evidence : ", timestamp])
-
-ev = load_ev_from_db(ident)
-
-dikb = DIKB("dikb",ident, ev)
-dikb.unpickleKB("dikb-pickles/dikb-03052012.pickle")
-
-for i in ["acyclovir", "aliskiren", "allopurinol", "ambrisentan", "armodafinil", "atrasentan", "azithromycin", "bicalutamide", "boceprevir", "clobazam", "conivaptan", "crizotinib", "dabigatran", "darifenacin", "darunavir", "dihydroergotamine", "dronedarone", "eltrombopag", "esomeprazole", "etravirine", "everolimus", "ezetimibe", "famotidine", "febuxostat", "fluticasone", "hydralazine", "lurasidone", "maraviroc", "melatonin", "nebivolol", "oxandrolone", "pazopanib", "phenylpropanolamine", "pilocarpine", "pitavastatin", "quercetin", "ramelteon", "ranitidine", "reserpine", "saxagliptin", "sitagliptin", "telaprevir", "ticagrelor", "tigecycline", "tipranavir", "tizanidine", "tolvaptan", "topotecan", "vemurafenib", "irinotecan", "diethyldithiocarbamate", "phencyclidine", "talinolol", "tranylcypromine", "valspodar", "zosuquidar"]:
-    if i in dikb.objects.keys():
-        print "%s seems to be present already!" % i
-        continue
-
-    d = Drug(i)
-    dikb.putObject(d)
-
-###### add non-metabolites to chemicals... maybe a problem with primes (4')
-for i in ["triazolam-4-hydroxylation", "terfenadine-C-hydroxylation", "testosterone-6b-hydroxylation", "theophylline-N-demethylation", "tolbutamide-methyl-hydroxylation", "phenytoin-4-hydroxylation", "propofol-hydroxylation", "rosiglitazone-para-hydroxylation", "simvastatin-acid", "sulfaphenazole", "tacrine-1-hydroxylation", "S-mephenytoin-4’-hydroxylation", "efavirenz-hydroxylase", "erythromycin-N-demethylation", "fluoxetine-O-dealkylation", "flurbiprofen-4’-hydroxylation", "midazolam-1-hydroxylation", "nicotine-C-oxidation", "nifedipine-oxidation", "omeprazole-5-hydroxylation", "phenacetin-O-deethylation", "S-mephenytoin-N-demethylation", "S-warfarin-7-hydroxylation", "amodiaquine-N-deethylation", "aniline-4-hydroxylation", "bupropion-hydroxylation", "caffeine-3-N-demethylation", "chlorzoxazone-6-hydroxylation", "coumarin-7-hydroxylation", "debrisoquine-4-hydroxylation", "dextromethorphan-N-demethylation", "dextromethorphan-O-demethylation", "diclofenac-4’-hydroxylation", "2-isopropenyl-2-methyl-adamantane", "7-ethoxyresorufin-O-deethylation", "a-naphthoflavone", "azamulin", "bufuralol-1’-hydroxylation", "elacridar", "etexilate", "lauric-acid-11-hydroxylation", "nootkatone", "p-nitrophenol-3-hydroxylation", "taxol-6-hydroxylation", "tryptamine"]:
-    if i in dikb.objects.keys():
-        print "%s seems to be present already!" % i
-        continue
-
-    m = Metabolite(i)
-    dikb.putObject(m)
-
-for i in ["p-glycoprotein", "oatp1b1", "oatp1b3"]:
-    if i in dikb.objects.keys():
-        print "%s seems to be present already!" % i
-        continue
-
-    e = Enzyme(i)
-    dikb.putObject(e)
-
 ev.renotifyObservers()
 
-# Now, hopefully, the new dikb and ev are in sync. So, we can pickle
-dikb.pickleKB("dikb-pickles/dikb-test.pickle") # the file is larger - that might be ok but we will want to do some tests
+dikb.pickleKB("dikb-pickles/dikb-test.pickle")
 ev.pickleKB("dikb-pickles/ev-test.pickle")

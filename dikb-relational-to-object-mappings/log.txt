@@ -208,3 +208,11 @@ DIKB log: 07/29/2015 16:52:45
   -  Web instance id: test-June2015 locking  KB file to open: ../Drive-Experiment/dikb-pickles/ev-test.pickle 
 DIKB log: 07/29/2015 16:52:48
   -  Web instance id: test-June2015Done loading: ../Drive-Experiment/dikb-pickles/ev-test.pickle 
+DIKB log: 07/30/2015 13:57:07
+  -  Web instance id: Test 2015 locking  KB file to open: ../Drive-Experiment/dikb-pickles/dikb-test.pickle 
+DIKB log: 07/30/2015 13:57:12
+  -  Web instance id: Test 2015Done loading: ../Drive-Experiment/dikb-pickles/dikb-test.pickle 
+DIKB log: 07/30/2015 13:57:12
+  -  Web instance id: test-June2015 locking  KB file to open: ../Drive-Experiment/dikb-pickles/ev-test.pickle 
+DIKB log: 07/30/2015 13:57:16
+  -  Web instance id: test-June2015Done loading: ../Drive-Experiment/dikb-pickles/ev-test.pickle 

@@ -145,6 +145,8 @@ loe_d = {
 
     ## assertions below this line are 'default assumptions' for the current study. Their
     ## evidence is not evaluated so, these LOEs are not used
+    "assumed_effective_dose": [["(label_statement){1,}"]],
+        
     "does_not_permanently_deactivate_catalytic_function": [["(iv_met_enz_id_Cyp450_microsomal){1,}", "(iv_met_enz_id_Cyp450_recombinant){1,}"],
                                                            ["(label_statement){1,}"],
                                                            ["(nt_statement){1,}"]],
@@ -157,11 +159,22 @@ loe_d = {
                                                ["(iv_met_inh_microsomal){1,}"],
                                                ["(label_statement){1,}"],
                                                ["(nt_statement){1,}"]],
-    
+                                               
+    'in_viVo_probe_substrate_of_enzyme':  [["(pk_ct_pk_phenotype){1,}", "(pk_ct_pk_genotype){1,}"],
+                                            ["(pk_ddi_rndm){1,}","(pk_ddi_non_rndm){1,}"],
+                                            ["(label_statement){1,}"],
+                                            ["(nt_statement){1,}"]],
+                                                
     "in_viVo_selective_inhibitor_of_enzyme": [["(pk_ddi_rndm){1,}"],
                                               ["(pk_ddi_non_rndm){1,}"],
                                               ["(label_statement){1,}"],
                                               ["(nt_statement){1,}"]],
+
+
+
+    "maximum_therapeutic_dose": [["(label_statement){1,}"]],
+
+    "minimum_therapeutic_dose": [["(label_statement){1,}"]],
     
     'pceut_entity_of_concern': [["(pk_ddi_rndm){1,}", "(pk_ddi_non_rndm){1,}", "(obs_eval){1,}", "(label_statement){1,}"],
                                 ["(nt_statement){1,}"]],
@@ -179,7 +192,6 @@ loe_d = {
                                                  ["(label_statement){1,}"],
                                                  ["(nt_statement){1,}"]],
 
-    "maximum_therapeutic_dose": [["(label_statement){1,}"]],
     }
     
 
@@ -218,12 +230,15 @@ bc_d = {
 
     ## assertions below this line are 'default assumptions' for the current study. Their
     ## evidence is not evaluated so, these belief criteria are not used
-    "does_not_permanently_deactivate_catalytic_function":1,
-    'in_vitro_probe_substrate_of_enzyme':1,
+    "assumed_effective_dose": 1,
+    "does_not_permanently_deactivate_catalytic_function": 1,
+    'in_vitro_probe_substrate_of_enzyme': 1,
     "in_vitro_selective_inhibitor_of_enzyme": 1,
+    "in_viVo_probe_substrate_of_enzyme": 1,
     "in_viVo_selective_inhibitor_of_enzyme": 1,
     "maximum_therapeutic_dose": 1,
-    'pceut_entity_of_concern':1,
+    "minimum_therapeutic_dose": 1,
+    'pceut_entity_of_concern': 1,
     "permanently_deactivates_catalytic_function": 1,    
     "polymorphic_enzyme": 1,
     "sole_PK_effect_alter_metabolic_clearance": 1,

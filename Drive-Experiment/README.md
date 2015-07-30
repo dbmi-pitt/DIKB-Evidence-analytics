@@ -1,6 +1,6 @@
 ##### ReadMe for Drive-Experiment Update Process
 ##### Author : Sam Rosko
-##### Last Update : 2015-07-28
+##### Last Update : 2015-07-29
 
 ### Update the entities/evidence in the DIKB
 
@@ -16,7 +16,7 @@
 -- This file takes the freshly pickled evidence-base and knowledge-bases and creates an sqlite3 file for them, named test.db
 -- This file should be converted from ".db" format to ".sql" format so that it can be loaded into and browsed in "mysql-workbench"
 
-(3) $ sqlite3 test.db dump > dikb-test.sql
+(3) $ sqlite3 test.db .dump > dikb-test.sql
 
 -- This uses sqlite3 to convert the updated database to the correct format
 
@@ -31,7 +31,7 @@
 
 -- "--local-infile" is necessary in order to be able to load a file once in MySQL
 
-(6) $ load data local infile '/path' into dikbEvidenceTest
+(6) $ source /home/scr25/Desktop/Summer Work/DIKB-Evidence-analytics/dikb-relational-to-object-mappings/dikb-test.sql;
 
 -- This will load the new table, and you can browse it using either MySQL or MySQL-Workbench
 

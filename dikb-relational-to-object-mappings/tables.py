@@ -48,7 +48,7 @@ def make_tables(md):
     ev_table = Table('Evidence', md,
                      Column('id', Integer, primary_key=True),
                      Column('_name', String(100)),
-                     Column('doc_pointer', String(100)),
+                     Column('doc_pointer', String(125)),
                      Column('quote', String(4000)),
                      Column('reviewer', String(100)),
                      Column('timestamp', String(100)),

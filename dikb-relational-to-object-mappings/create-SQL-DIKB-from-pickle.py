@@ -99,8 +99,8 @@ for e,v in new_ev.objects.iteritems():
     v.ready_for_classification = True
 
 ############################## UNCOMMENT WHEN READY TO EXPORT ASSERTIONS TO THE REASONER #########################
-# exportAssertions(new_ev, new_dikb, "../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/assertions.lisp")
-# assessBeliefCriteria(new_dikb, new_ev, "../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/changing_assumptions.lisp")
+exportAssertions(new_ev, new_dikb, "../Drive-Experiment/assertions.lisp")
+assessBeliefCriteria(new_dikb, new_ev, "../Drive-Experiment/changing_assumptions.lisp")
 
 # #new_dikb.pickleKB('../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/full-Tier-4-UPIA-Hanlon-AJGP2012-DIKB-EVALUATED.pickle')
 # #new_ev.pickleKB('../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/full-Tier-4-UPIA-Hanlon-AJGP2012-EV-EVALUATED.pickle')

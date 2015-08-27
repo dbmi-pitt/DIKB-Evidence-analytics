@@ -30,7 +30,7 @@
 -- For these files to work properly in lisp, all commas and parenthesis in drug, chemical, enzyme, or metabolite names must be backquoted
 -- EXAMPLE: 4-(4-chlorophenyl)-4-hydroxypiperidine should be 4-\(4-chlorophenyl\)-4-hydroxypiperidine
 
-(4b) Make sure the symbolic links in the "/jtms/" directory are pointing the the files you just made... they should be located in "/Drive-Experiment/sandbox/"
+(4b) Make sure the symbolic links in the "/jtms/" directory are pointing the the files you just made... they should be located in "/Drive-Experiment"
 
 (4c) Open a SLIME interface in EMACS24 or any other inferior list mode that uses Common Lisp
 
@@ -42,22 +42,6 @@
 (4d) For each drug class, run the function call 'GET-PKI-TO-TSV'
 
 -- Here is a test drug-class list, including only those classes which were tested in the original DIKB, but with updated drug lists
-
-(setf drug-class-a-list '((statins . (SIMVASTATIN LOVASTATIN ROSUVASTATIN PRAVASTATIN FLUVASTATIN ATORVASTATIN PITAVASTATIN))
-   (antidepressants . (BUPROPION CITALOPRAM R-CITALOPRAM ESCITALOPRAM FLUOXETINE FLUVOXAMINE PAROXETINE SERTRALINE DESVENLAFAXINE DULOXETINE VENLAFAXINE TRAZODONE MIRTAZAPINE NEFAZODONE DESIPRAMINE))
-   (sedative-hypnotics . (ESZOPICLONE ZALEPLON ZOLPIDEM))
-   (atypical-antipsych . (ARIPIPRAZOLE CLOZAPINE OLANZAPINE PALIPERIDONE QUETIAPINE RISPERIDONE ZIPRASIDONE ILOPERIDONE ASENAPINE LURASIDONE RESERPINE))
-   (typical-antipsych . (DROPERIDOL HALOPERIDOL REDUCED-HALOPERIDOL PIMOZIDE THIOTHIXENE CHLORPROMAZINE FLUPHENAZINE PERPHENAZINE THIORIDAZINE TRIFLUOPERAZINE))
-   (short-acting-bzd . (ALPRAZOLAM TRIAZOLAM CLOBAZAM))))
-
-$ (GET-PKI-TO-TSV PKI-1 "PKI-1" "fourth-tier" 'statins)
-$ (GET-PKI-TO-TSV PKI-1 "PKI-1" "fourth-tier" 'antidepressants)
-$ (GET-PKI-TO-TSV PKI-1 "PKI-1" "fourth-tier" 'sedative-hypnotics)
-$ (GET-PKI-TO-TSV PKI-1 "PKI-1" "fourth-tier" 'atypical-antipsych)
-$ (GET-PKI-TO-TSV PKI-1 "PKI-1" "fourth-tier" 'typical-antipsych)
-$ (GET-PKI-TO-TSV PKI-1 "PKI-1" "fourth-tier" 'short-acting-bzd)
-
--- Here is another test drug-class list, this time including all drug classes that had at least 3 drugs in them (********INCOMPLETE*******)
 
 (setf drug-class-a-list '((statins . (SIMVASTATIN LOVASTATIN ROSUVASTATIN PRAVASTATIN FLUVASTATIN ATORVASTATIN PITAVASTATIN))
    (antidepressants . (BUPROPION CITALOPRAM R-CITALOPRAM ESCITALOPRAM FLUOXETINE FLUVOXAMINE PAROXETINE SERTRALINE DESVENLAFAXINE DULOXETINE VENLAFAXINE TRAZODONE MIRTAZAPINE NEFAZODONE DESIPRAMINE))

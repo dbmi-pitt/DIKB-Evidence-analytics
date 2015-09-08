@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="http://purl.org/mp/" uri="file:/home/scr25/Desktop/Summer%20Work/DIKB-Micropublication/data/published-NP-and-MP-graphs/mp_1.17_updated_with_formalizes_inferred.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
         <uri id="Automatically generated entry, Timestamp=1441136679241" name="http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl" uri="DIKB_evidence_ontology_sam_update.owl"/>
     </group>

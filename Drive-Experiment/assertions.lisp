@@ -1,4 +1,4 @@
-(assert! '(1-is-a-metabolite '1\,3-dimethyluric-acid) 
+(assert! '(1-is-a-metabolite '1,3-dimethyluric-acid) 
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-a-metabolite '1-methyluric-acid) 
@@ -25,7 +25,7 @@
 (assert! '(1-is-a-metabolite '3alpha-hydroxypravastatin) 
 	'(dikb-categorical-assertion))
 
-(assert! '(1-is-a-metabolite '4-\(4-chlorophenyl\)-4-hydroxypiperidine) 
+(assert! '(1-is-a-metabolite '4-(4-chlorophenyl)-4-hydroxypiperidine) 
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-a-metabolite '4-hydroxyalprazolam) 

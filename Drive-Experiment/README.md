@@ -19,9 +19,11 @@
 
 (3) Run "create-SQL-DIKB-from-pickle.py", found in the "dikb-relational-to-object-mappings/" directory
 
+-- EX: $ python create-SQL-DIKB-from-pickle.py 2>&1 | tee /home/scr25/Desktop/Summer\ Work/DIKB-Evidence-analytics/Drive-Experiment/create-sql-output.txt
 -- This file takes the freshly pickled evidence-base and knowledge-bases and creates an sqlite3 file for them, named test.db
 -- This file should be eventually be converted from ".db" format to ".sql" format so that it can be loaded into and browsed in "mysql-workbench"
 -- If this runs into an error in the final step, that is likely because of an issue with your 'levels-of-evidence', see step (2) for more details
+-- The above example python command outputs all of the errors and results to a file named 'create-sql-output.txt', which can be found in the /Drive-Experiment/ directory
 
 (4) Follow the steps found in the overall DIKB-Evidence-analytics README for loading DDI predictions... I will summarize them here:
 

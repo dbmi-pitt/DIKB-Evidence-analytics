@@ -169,9 +169,7 @@ loe_d = {
                                               ["(pk_ddi_non_rndm){1,}"],
                                               ["(label_statement){1,}"],
                                               ["(nt_statement){1,}"]],
-
-
-
+                                              
     "maximum_therapeutic_dose": [["(label_statement){1,}"]],
 
     "minimum_therapeutic_dose": [["(label_statement){1,}"]],

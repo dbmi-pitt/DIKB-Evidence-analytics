@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1443128859707" name="http://purl.org/net/drug-interaction-knowledge-base/DIKB_evidence_ontology.owl" uri="DIKB_evidence_ontology_sam_no_reasoner.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1443128859707" name="http://www.semanticweb.org/scr25/ontologies/untitled-ontology-63" uri="mp_1.17_updated_with_formalizes_inferred.owl"/>
+    </group>
+</catalog>

@@ -1,4 +1,4 @@
-(assert! '(1-is-a-metabolite '1,3-dimethyluric-acid) 
+(assert! '(1-is-a-metabolite '1\,3-dimethyluric-acid) 
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-a-metabolite '1-methyluric-acid) 
@@ -25,7 +25,7 @@
 (assert! '(1-is-a-metabolite '3alpha-hydroxypravastatin) 
 	'(dikb-categorical-assertion))
 
-(assert! '(1-is-a-metabolite '4-(4-chlorophenyl)-4-hydroxypiperidine) 
+(assert! '(1-is-a-metabolite '4-\(4-chlorophenyl\)-4-hydroxypiperidine) 
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-a-metabolite '4-hydroxyalprazolam) 
@@ -460,6 +460,9 @@
 (assert! '(1-is-an-active-ingredient 'clozapine) 
 	'(dikb-categorical-assertion))
 
+(assert! '(1-is-an-active-ingredient 'colchicine) 
+	'(dikb-categorical-assertion))
+
 (assert! '(1-is-an-active-ingredient 'conivaptan) 
 	'(dikb-categorical-assertion))
 
@@ -509,6 +512,9 @@
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-an-active-ingredient 'diethyldithiocarbamate) 
+	'(dikb-categorical-assertion))
+
+(assert! '(1-is-an-active-ingredient 'digoxin) 
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-an-active-ingredient 'dihydroergotamine) 
@@ -575,6 +581,9 @@
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-an-active-ingredient 'felbamate) 
+	'(dikb-categorical-assertion))
+
+(assert! '(1-is-an-active-ingredient 'fexofenadine) 
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-an-active-ingredient 'flecainide) 
@@ -856,6 +865,9 @@
 (assert! '(1-is-an-active-ingredient 'simvastatin) 
 	'(dikb-categorical-assertion))
 
+(assert! '(1-is-an-active-ingredient 'sirolimus) 
+	'(dikb-categorical-assertion))
+
 (assert! '(1-is-an-active-ingredient 'sitagliptin) 
 	'(dikb-categorical-assertion))
 
@@ -875,6 +887,9 @@
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-an-active-ingredient 'tacrine) 
+	'(dikb-categorical-assertion))
+
+(assert! '(1-is-an-active-ingredient 'tacrolimus) 
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-an-active-ingredient 'talinolol) 

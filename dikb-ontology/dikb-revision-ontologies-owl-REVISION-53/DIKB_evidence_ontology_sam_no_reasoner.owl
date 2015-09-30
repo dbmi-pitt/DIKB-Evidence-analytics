@@ -1008,14 +1008,6 @@ For representing homology generics a better way is to use generic entity referen
 
     <owl:ObjectProperty rdf:about="&biopax-level3;subRegion">
         <rdfs:comment rdf:datatype="&xsd;string">The sub region of a region or nucleic acid molecule. The sub region must be wholly part of the region, not outside of it.</rdfs:comment>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&biopax-level3;DnaRegionReference"/>
-                    <rdf:Description rdf:about="&biopax-level3;RnaRegionReference"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -1026,6 +1018,14 @@ For representing homology generics a better way is to use generic entity referen
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&biopax-level3;DnaRegionReference"/>
+                    <rdf:Description rdf:about="&biopax-level3;RnaRegionReference"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -3426,6 +3426,9 @@ Adapted from MeSH 2007 &quot;Drug Labeling&quot; ID: D004348</rdfs:comment>
     <owl:Class rdf:about="&DIKB_evidence_ontology;EV_Non_Tracable_Statement">
         <owl:equivalentClass rdf:resource="&DIKB_evidence_ontology;EV_Non_Traceable_Statement"/>
         <rdfs:subClassOf rdf:resource="&DIKB_evidence_ontology;EV_Statement"/>
+        <owl:disjointWith rdf:resource="&DIKB_evidence_ontology;EV_Traceable_Statement"/>
+        <dc:description>A non-traceable, but possibly authoritative, statement</dc:description>
+        <rdfs:comment>A statement that does not explicitly refer to evidence items in justification of its assertion(s)</rdfs:comment>
     </owl:Class>
     
 
@@ -4198,13 +4201,13 @@ Examples: The catalysis of a biochemical reaction by an enzyme, the enabling of 
         <rdfs:subClassOf rdf:resource="&biopax-level3;UtilityClass"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&biopax-level3;structureData"/>
+                <owl:onProperty rdf:resource="&biopax-level3;structureFormat"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&biopax-level3;structureFormat"/>
+                <owl:onProperty rdf:resource="&biopax-level3;structureData"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -4421,14 +4424,14 @@ Comments : Note that this is not a reference gene. Genes are non-physical,statel
         <rdfs:subClassOf rdf:resource="&biopax-level3;PhysicalEntity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&biopax-level3;entityReference"/>
-                <owl:allValuesFrom rdf:resource="&biopax-level3;DnaRegionReference"/>
+                <owl:onProperty rdf:resource="&biopax-level3;memberPhysicalEntity"/>
+                <owl:allValuesFrom rdf:resource="&biopax-level3;DnaRegion"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&biopax-level3;memberPhysicalEntity"/>
-                <owl:allValuesFrom rdf:resource="&biopax-level3;DnaRegion"/>
+                <owl:onProperty rdf:resource="&biopax-level3;entityReference"/>
+                <owl:allValuesFrom rdf:resource="&biopax-level3;DnaRegionReference"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment rdf:datatype="&xsd;string">Definition: A region on a DNA molecule. 
@@ -4627,6 +4630,12 @@ Usage: Gene should only be used for describing GeneticInteractions.</rdfs:commen
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&biopax-level3;participant"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&biopax-level3;participant"/>
                 <owl:allValuesFrom rdf:resource="&biopax-level3;Gene"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -4634,12 +4643,6 @@ Usage: Gene should only be used for describing GeneticInteractions.</rdfs:commen
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&biopax-level3;phenotype"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&biopax-level3;participant"/>
-                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -4931,14 +4934,14 @@ Examples: A link between a gene G in a BioPAX data collection, and the protein p
         <rdfs:subClassOf rdf:resource="&biopax-level3;PhysicalEntity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&biopax-level3;entityReference"/>
-                <owl:allValuesFrom rdf:resource="&biopax-level3;RnaReference"/>
+                <owl:onProperty rdf:resource="&biopax-level3;memberPhysicalEntity"/>
+                <owl:allValuesFrom rdf:resource="&biopax-level3;Rna"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&biopax-level3;memberPhysicalEntity"/>
-                <owl:allValuesFrom rdf:resource="&biopax-level3;Rna"/>
+                <owl:onProperty rdf:resource="&biopax-level3;entityReference"/>
+                <owl:allValuesFrom rdf:resource="&biopax-level3;RnaReference"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment rdf:datatype="&xsd;string">Definition: A physical entity consisting of a sequence of ribonucleotide monophosphates; a ribonucleic acid.
@@ -4954,14 +4957,14 @@ Examples: messengerRNA, microRNA, ribosomalRNA. A specific example is the let-7 
         <rdfs:subClassOf rdf:resource="&biopax-level3;EntityReference"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&biopax-level3;subRegion"/>
-                <owl:allValuesFrom rdf:resource="&biopax-level3;RnaRegionReference"/>
+                <owl:onProperty rdf:resource="&biopax-level3;memberEntityReference"/>
+                <owl:allValuesFrom rdf:resource="&biopax-level3;RnaReference"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&biopax-level3;memberEntityReference"/>
-                <owl:allValuesFrom rdf:resource="&biopax-level3;RnaReference"/>
+                <owl:onProperty rdf:resource="&biopax-level3;subRegion"/>
+                <owl:allValuesFrom rdf:resource="&biopax-level3;RnaRegionReference"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment rdf:datatype="&xsd;string">Defintion: A RNA  reference is a grouping of several RNA entities that are either encoded by the same gene or replicates of the same genome.  Members can differ in celular location, sequence features and bound partners. Currently conformational states (such as hairpin) are not covered.</rdfs:comment>
@@ -5078,6 +5081,12 @@ Usage: A sequence site is always defined based on the reference sequence of the 
         <rdfs:subClassOf rdf:resource="&biopax-level3;PhysicalEntity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="&biopax-level3;notFeature"/>
+                <owl:allValuesFrom rdf:resource="&biopax-level3;BindingFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="&biopax-level3;entityReference"/>
                 <owl:allValuesFrom rdf:resource="&biopax-level3;SmallMoleculeReference"/>
             </owl:Restriction>
@@ -5091,12 +5100,6 @@ Usage: A sequence site is always defined based on the reference sequence of the 
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&biopax-level3;feature"/>
-                <owl:allValuesFrom rdf:resource="&biopax-level3;BindingFeature"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&biopax-level3;notFeature"/>
                 <owl:allValuesFrom rdf:resource="&biopax-level3;BindingFeature"/>
             </owl:Restriction>
         </rdfs:subClassOf>

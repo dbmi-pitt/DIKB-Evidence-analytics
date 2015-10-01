@@ -1,73 +1,194 @@
-FLUOXETINE	QUINIDINE	CYP2D6	PKI-1	fourth-tier
-FLUVOXAMINE	QUINIDINE	CYP2D6	PKI-1	fourth-tier
-DULOXETINE	VERAPAMIL	CYP1A2	PKI-1	fourth-tier
-FLUOXETINE	TERBINAFINE	CYP2D6	PKI-1	fourth-tier
-FLUVOXAMINE	TERBINAFINE	CYP2D6	PKI-1	fourth-tier
-FLUOXETINE	SERTRALINE	CYP2D6	PKI-1	fourth-tier
-FLUVOXAMINE	SERTRALINE	CYP2D6	PKI-1	fourth-tier
-DULOXETINE	PROPAFENONE	CYP1A2	PKI-1	fourth-tier
-FLUOXETINE	PAROXETINE	CYP2D6	PKI-1	fourth-tier
-FLUVOXAMINE	PAROXETINE	CYP2D6	PKI-1	fourth-tier
-SERTRALINE	OMEPRAZOLE	CYP2C19	PKI-1	fourth-tier
-DULOXETINE	NORFLOXACIN	CYP1A2	PKI-1	fourth-tier
-DULOXETINE	MEXILETINE	CYP1A2	PKI-1	fourth-tier
-FLUVOXAMINE	FLUOXETINE	CYP2D6	PKI-1	fourth-tier
-DULOXETINE	CIPROFLOXACIN	CYP1A2	PKI-1	fourth-tier
-DULOXETINE	CIMETIDINE	CYP1A2	PKI-1	fourth-tier
-FLUOXETINE	BUPROPION	CYP2D6	PKI-1	fourth-tier
-FLUVOXAMINE	BUPROPION	CYP2D6	PKI-1	fourth-tier
-FLUOXETINE	AMIODARONE	CYP2D6	PKI-1	fourth-tier
-FLUVOXAMINE	AMIODARONE	CYP2D6	PKI-1	fourth-tier
-RISPERIDONE	QUINIDINE	CYP2D6	PKI-1	fourth-tier
-QUETIAPINE	ITRACONAZOLE	CYP3A4	PKI-1	fourth-tier
-LURASIDONE	ITRACONAZOLE	CYP3A4	PKI-1	fourth-tier
-QUETIAPINE	VERAPAMIL	CYP3A4	PKI-1	fourth-tier
-LURASIDONE	VERAPAMIL	CYP3A4	PKI-1	fourth-tier
-RISPERIDONE	TERBINAFINE	CYP2D6	PKI-1	fourth-tier
-QUETIAPINE	TELITHROMYCIN	CYP3A4	PKI-1	fourth-tier
-LURASIDONE	TELITHROMYCIN	CYP3A4	PKI-1	fourth-tier
-RISPERIDONE	SERTRALINE	CYP2D6	PKI-1	fourth-tier
-QUETIAPINE	RITONAVIR	CYP3A4	PKI-1	fourth-tier
-LURASIDONE	RITONAVIR	CYP3A4	PKI-1	fourth-tier
-RISPERIDONE	PAROXETINE	CYP2D6	PKI-1	fourth-tier
-QUETIAPINE	NEFAZODONE	CYP3A4	PKI-1	fourth-tier
-LURASIDONE	NEFAZODONE	CYP3A4	PKI-1	fourth-tier
-QUETIAPINE	KETOCONAZOLE	CYP3A4	PKI-1	fourth-tier
-LURASIDONE	KETOCONAZOLE	CYP3A4	PKI-1	fourth-tier
-QUETIAPINE	INDINAVIR	CYP3A4	PKI-1	fourth-tier
-LURASIDONE	INDINAVIR	CYP3A4	PKI-1	fourth-tier
-RISPERIDONE	FLUOXETINE	CYP2D6	PKI-1	fourth-tier
-QUETIAPINE	FLUCONAZOLE	CYP3A4	PKI-1	fourth-tier
-LURASIDONE	FLUCONAZOLE	CYP3A4	PKI-1	fourth-tier
-QUETIAPINE	CLARITHROMYCIN	CYP3A4	PKI-1	fourth-tier
-LURASIDONE	CLARITHROMYCIN	CYP3A4	PKI-1	fourth-tier
-QUETIAPINE	CIMETIDINE	CYP3A4	PKI-1	fourth-tier
-LURASIDONE	CIMETIDINE	CYP3A4	PKI-1	fourth-tier
-RISPERIDONE	BUPROPION	CYP2D6	PKI-1	fourth-tier
-QUETIAPINE	ATAZANAVIR	CYP3A4	PKI-1	fourth-tier
-LURASIDONE	ATAZANAVIR	CYP3A4	PKI-1	fourth-tier
-RISPERIDONE	AMIODARONE	CYP2D6	PKI-1	fourth-tier
-PERPHENAZINE	QUINIDINE	CYP2D6	PKI-1	fourth-tier
-PIMOZIDE	QUINIDINE	CYP2D6	PKI-1	fourth-tier
-PERPHENAZINE	TERBINAFINE	CYP2D6	PKI-1	fourth-tier
-PIMOZIDE	TERBINAFINE	CYP2D6	PKI-1	fourth-tier
-PERPHENAZINE	SERTRALINE	CYP2D6	PKI-1	fourth-tier
-PIMOZIDE	SERTRALINE	CYP2D6	PKI-1	fourth-tier
-PERPHENAZINE	PAROXETINE	CYP2D6	PKI-1	fourth-tier
-PIMOZIDE	PAROXETINE	CYP2D6	PKI-1	fourth-tier
-PERPHENAZINE	FLUOXETINE	CYP2D6	PKI-1	fourth-tier
-PIMOZIDE	FLUOXETINE	CYP2D6	PKI-1	fourth-tier
-PERPHENAZINE	BUPROPION	CYP2D6	PKI-1	fourth-tier
-PIMOZIDE	BUPROPION	CYP2D6	PKI-1	fourth-tier
-PERPHENAZINE	AMIODARONE	CYP2D6	PKI-1	fourth-tier
-PIMOZIDE	AMIODARONE	CYP2D6	PKI-1	fourth-tier
-ALPRAZOLAM	KETOCONAZOLE	CYP3A5	PKI-1	fourth-tier
-ALPRAZOLAM	VERAPAMIL	CYP3A5	PKI-1	fourth-tier
-ALPRAZOLAM	TELITHROMYCIN	CYP3A5	PKI-1	fourth-tier
-ALPRAZOLAM	RITONAVIR	CYP3A5	PKI-1	fourth-tier
-ALPRAZOLAM	NEFAZODONE	CYP3A5	PKI-1	fourth-tier
-ALPRAZOLAM	INDINAVIR	CYP3A5	PKI-1	fourth-tier
-ALPRAZOLAM	FLUCONAZOLE	CYP3A5	PKI-1	fourth-tier
-ALPRAZOLAM	CLARITHROMYCIN	CYP3A5	PKI-1	fourth-tier
-ALPRAZOLAM	CIMETIDINE	CYP3A5	PKI-1	fourth-tier
-ALPRAZOLAM	ATAZANAVIR	CYP3A5	PKI-1	fourth-tier
+simvastatin-acid,rifampin,OATP1B1,PKI-1,fourth-tier
+rosuvastatin,rifampin,OATP1B1,PKI-1,fourth-tier
+pravastatin,rifampin,OATP1B1,PKI-1,fourth-tier
+fluvastatin,rifampin,OATP1B1,PKI-1,fourth-tier
+simvastatin-acid,eltrombopag,OATP1B1,PKI-1,fourth-tier
+rosuvastatin,eltrombopag,OATP1B1,PKI-1,fourth-tier
+pravastatin,eltrombopag,OATP1B1,PKI-1,fourth-tier
+fluvastatin,eltrombopag,OATP1B1,PKI-1,fourth-tier
+sertraline,voriconazole,CYP2C19,PKI-1,fourth-tier
+duloxetine,vemurafenib,CYP1A2,PKI-1,fourth-tier
+bupropion,ticlopidine,CYP2B6,PKI-1,fourth-tier
+duloxetine,terbinafine,CYP1A2,PKI-1,fourth-tier
+fluoxetine,telithromycin,CYP2D6,PKI-1,fourth-tier
+fluvoxamine,telithromycin,CYP2D6,PKI-1,fourth-tier
+fluoxetine,ranitidine,CYP2D6,PKI-1,fourth-tier
+fluvoxamine,ranitidine,CYP2D6,PKI-1,fourth-tier
+fluoxetine,propafenone,CYP2D6,PKI-1,fourth-tier
+fluvoxamine,propafenone,CYP2D6,PKI-1,fourth-tier
+bupropion,prasugrel,CYP2B6,PKI-1,fourth-tier
+duloxetine,phenylpropanolamine,CYP1A2,PKI-1,fourth-tier
+duloxetine,methoxsalen,CYP1A2,PKI-1,fourth-tier
+fluoxetine,methadone,CYP2D6,PKI-1,fourth-tier
+fluvoxamine,methadone,CYP2D6,PKI-1,fourth-tier
+fluoxetine,hydroxychloroquine,CYP2D6,PKI-1,fourth-tier
+fluvoxamine,hydroxychloroquine,CYP2D6,PKI-1,fourth-tier
+fluoxetine,hydralazine,CYP2D6,PKI-1,fourth-tier
+fluvoxamine,hydralazine,CYP2D6,PKI-1,fourth-tier
+sertraline,fluvoxamine,CYP2C19,PKI-1,fourth-tier
+sertraline,felbamate,CYP2C19,PKI-1,fourth-tier
+fluoxetine,febuxostat,CYP2D6,PKI-1,fourth-tier
+fluvoxamine,febuxostat,CYP2D6,PKI-1,fourth-tier
+duloxetine,famotidine,CYP1A2,PKI-1,fourth-tier
+sertraline,esomeprazole,CYP2C19,PKI-1,fourth-tier
+duloxetine,disulfiram,CYP1A2,PKI-1,fourth-tier
+fluoxetine,diphenhydramine,CYP2D6,PKI-1,fourth-tier
+fluvoxamine,diphenhydramine,CYP2D6,PKI-1,fourth-tier
+fluoxetine,desvenlafaxine,CYP2D6,PKI-1,fourth-tier
+fluvoxamine,desvenlafaxine,CYP2D6,PKI-1,fourth-tier
+bupropion,clopidogrel,CYP2B6,PKI-1,fourth-tier
+fluoxetine,clobazam,CYP2D6,PKI-1,fourth-tier
+fluvoxamine,clobazam,CYP2D6,PKI-1,fourth-tier
+duloxetine,caffeine,CYP1A2,PKI-1,fourth-tier
+sertraline,armodafinil,CYP2C19,PKI-1,fourth-tier
+duloxetine,allopurinol,CYP1A2,PKI-1,fourth-tier
+duloxetine,acyclovir,CYP1A2,PKI-1,fourth-tier
+duloxetine,verapamil,CYP1A2,PKI-1,fourth-tier
+fluoxetine,terbinafine,CYP2D6,PKI-1,fourth-tier
+fluvoxamine,terbinafine,CYP2D6,PKI-1,fourth-tier
+fluoxetine,sertraline,CYP2D6,PKI-1,fourth-tier
+fluvoxamine,sertraline,CYP2D6,PKI-1,fourth-tier
+duloxetine,propafenone,CYP1A2,PKI-1,fourth-tier
+fluoxetine,paroxetine,CYP2D6,PKI-1,fourth-tier
+fluvoxamine,paroxetine,CYP2D6,PKI-1,fourth-tier
+sertraline,omeprazole,CYP2C19,PKI-1,fourth-tier
+duloxetine,norfloxacin,CYP1A2,PKI-1,fourth-tier
+duloxetine,mexiletine,CYP1A2,PKI-1,fourth-tier
+fluvoxamine,fluoxetine,CYP2D6,PKI-1,fourth-tier
+fluoxetine,duloxetine,CYP2D6,PKI-1,fourth-tier
+fluvoxamine,duloxetine,CYP2D6,PKI-1,fourth-tier
+duloxetine,ciprofloxacin,CYP1A2,PKI-1,fourth-tier
+fluoxetine,cinacalcet,CYP2D6,PKI-1,fourth-tier
+fluvoxamine,cinacalcet,CYP2D6,PKI-1,fourth-tier
+duloxetine,cimetidine,CYP1A2,PKI-1,fourth-tier
+fluoxetine,celecoxib,CYP2D6,PKI-1,fourth-tier
+fluvoxamine,celecoxib,CYP2D6,PKI-1,fourth-tier
+fluoxetine,bupropion,CYP2D6,PKI-1,fourth-tier
+fluvoxamine,bupropion,CYP2D6,PKI-1,fourth-tier
+fluoxetine,amiodarone,CYP2D6,PKI-1,fourth-tier
+fluvoxamine,amiodarone,CYP2D6,PKI-1,fourth-tier
+quetiapine,zileuton,CYP3A4,PKI-1,fourth-tier
+lurasidone,zileuton,CYP3A4,PKI-1,fourth-tier
+risperidone,telithromycin,CYP2D6,PKI-1,fourth-tier
+quetiapine,telaprevir,CYP3A4,PKI-1,fourth-tier
+lurasidone,telaprevir,CYP3A4,PKI-1,fourth-tier
+risperidone,ranitidine,CYP2D6,PKI-1,fourth-tier
+quetiapine,quinidine,CYP3A4,PKI-1,fourth-tier
+lurasidone,quinidine,CYP3A4,PKI-1,fourth-tier
+risperidone,propafenone,CYP2D6,PKI-1,fourth-tier
+quetiapine,posaconazole,CYP3A4,PKI-1,fourth-tier
+lurasidone,posaconazole,CYP3A4,PKI-1,fourth-tier
+quetiapine,pazopanib,CYP3A4,PKI-1,fourth-tier
+lurasidone,pazopanib,CYP3A4,PKI-1,fourth-tier
+quetiapine,nilotinib,CYP3A4,PKI-1,fourth-tier
+lurasidone,nilotinib,CYP3A4,PKI-1,fourth-tier
+quetiapine,nelfinavir,CYP3A4,PKI-1,fourth-tier
+lurasidone,nelfinavir,CYP3A4,PKI-1,fourth-tier
+risperidone,methadone,CYP2D6,PKI-1,fourth-tier
+quetiapine,isoniazid,CYP3A4,PKI-1,fourth-tier
+lurasidone,isoniazid,CYP3A4,PKI-1,fourth-tier
+quetiapine,imatinib,CYP3A4,PKI-1,fourth-tier
+lurasidone,imatinib,CYP3A4,PKI-1,fourth-tier
+risperidone,hydroxychloroquine,CYP2D6,PKI-1,fourth-tier
+risperidone,hydralazine,CYP2D6,PKI-1,fourth-tier
+quetiapine,fosamprenavir,CYP3A4,PKI-1,fourth-tier
+lurasidone,fosamprenavir,CYP3A4,PKI-1,fourth-tier
+risperidone,febuxostat,CYP2D6,PKI-1,fourth-tier
+risperidone,diphenhydramine,CYP2D6,PKI-1,fourth-tier
+risperidone,desvenlafaxine,CYP2D6,PKI-1,fourth-tier
+quetiapine,cyclosporine,CYP3A4,PKI-1,fourth-tier
+lurasidone,cyclosporine,CYP3A4,PKI-1,fourth-tier
+quetiapine,crizotinib,CYP3A4,PKI-1,fourth-tier
+lurasidone,crizotinib,CYP3A4,PKI-1,fourth-tier
+risperidone,clobazam,CYP2D6,PKI-1,fourth-tier
+quetiapine,ciprofloxacin,CYP3A4,PKI-1,fourth-tier
+lurasidone,ciprofloxacin,CYP3A4,PKI-1,fourth-tier
+quetiapine,boceprevir,CYP3A4,PKI-1,fourth-tier
+lurasidone,boceprevir,CYP3A4,PKI-1,fourth-tier
+quetiapine,bicalutamide,CYP3A4,PKI-1,fourth-tier
+lurasidone,bicalutamide,CYP3A4,PKI-1,fourth-tier
+quetiapine,aprepitant,CYP3A4,PKI-1,fourth-tier
+lurasidone,aprepitant,CYP3A4,PKI-1,fourth-tier
+quetiapine,amprenavir,CYP3A4,PKI-1,fourth-tier
+lurasidone,amprenavir,CYP3A4,PKI-1,fourth-tier
+quetiapine,alprazolam,CYP3A4,PKI-1,fourth-tier
+lurasidone,alprazolam,CYP3A4,PKI-1,fourth-tier
+quetiapine,verapamil,CYP3A4,PKI-1,fourth-tier
+lurasidone,verapamil,CYP3A4,PKI-1,fourth-tier
+risperidone,terbinafine,CYP2D6,PKI-1,fourth-tier
+quetiapine,telithromycin,CYP3A4,PKI-1,fourth-tier
+lurasidone,telithromycin,CYP3A4,PKI-1,fourth-tier
+risperidone,sertraline,CYP2D6,PKI-1,fourth-tier
+quetiapine,ritonavir,CYP3A4,PKI-1,fourth-tier
+lurasidone,ritonavir,CYP3A4,PKI-1,fourth-tier
+risperidone,paroxetine,CYP2D6,PKI-1,fourth-tier
+quetiapine,nefazodone,CYP3A4,PKI-1,fourth-tier
+lurasidone,nefazodone,CYP3A4,PKI-1,fourth-tier
+quetiapine,ketoconazole,CYP3A4,PKI-1,fourth-tier
+lurasidone,ketoconazole,CYP3A4,PKI-1,fourth-tier
+quetiapine,indinavir,CYP3A4,PKI-1,fourth-tier
+lurasidone,indinavir,CYP3A4,PKI-1,fourth-tier
+risperidone,fluoxetine,CYP2D6,PKI-1,fourth-tier
+quetiapine,fluconazole,CYP3A4,PKI-1,fourth-tier
+lurasidone,fluconazole,CYP3A4,PKI-1,fourth-tier
+risperidone,duloxetine,CYP2D6,PKI-1,fourth-tier
+quetiapine,clarithromycin,CYP3A4,PKI-1,fourth-tier
+lurasidone,clarithromycin,CYP3A4,PKI-1,fourth-tier
+risperidone,cinacalcet,CYP2D6,PKI-1,fourth-tier
+quetiapine,cimetidine,CYP3A4,PKI-1,fourth-tier
+lurasidone,cimetidine,CYP3A4,PKI-1,fourth-tier
+risperidone,celecoxib,CYP2D6,PKI-1,fourth-tier
+risperidone,bupropion,CYP2D6,PKI-1,fourth-tier
+quetiapine,atorvastatin,CYP3A4,PKI-1,fourth-tier
+lurasidone,atorvastatin,CYP3A4,PKI-1,fourth-tier
+quetiapine,atazanavir,CYP3A4,PKI-1,fourth-tier
+lurasidone,atazanavir,CYP3A4,PKI-1,fourth-tier
+risperidone,amiodarone,CYP2D6,PKI-1,fourth-tier
+perphenazine,telithromycin,CYP2D6,PKI-1,fourth-tier
+pimozide,telithromycin,CYP2D6,PKI-1,fourth-tier
+perphenazine,ranitidine,CYP2D6,PKI-1,fourth-tier
+pimozide,ranitidine,CYP2D6,PKI-1,fourth-tier
+perphenazine,propafenone,CYP2D6,PKI-1,fourth-tier
+pimozide,propafenone,CYP2D6,PKI-1,fourth-tier
+perphenazine,methadone,CYP2D6,PKI-1,fourth-tier
+pimozide,methadone,CYP2D6,PKI-1,fourth-tier
+perphenazine,hydroxychloroquine,CYP2D6,PKI-1,fourth-tier
+pimozide,hydroxychloroquine,CYP2D6,PKI-1,fourth-tier
+perphenazine,hydralazine,CYP2D6,PKI-1,fourth-tier
+pimozide,hydralazine,CYP2D6,PKI-1,fourth-tier
+perphenazine,febuxostat,CYP2D6,PKI-1,fourth-tier
+pimozide,febuxostat,CYP2D6,PKI-1,fourth-tier
+perphenazine,diphenhydramine,CYP2D6,PKI-1,fourth-tier
+pimozide,diphenhydramine,CYP2D6,PKI-1,fourth-tier
+perphenazine,desvenlafaxine,CYP2D6,PKI-1,fourth-tier
+pimozide,desvenlafaxine,CYP2D6,PKI-1,fourth-tier
+perphenazine,clobazam,CYP2D6,PKI-1,fourth-tier
+pimozide,clobazam,CYP2D6,PKI-1,fourth-tier
+perphenazine,terbinafine,CYP2D6,PKI-1,fourth-tier
+pimozide,terbinafine,CYP2D6,PKI-1,fourth-tier
+perphenazine,sertraline,CYP2D6,PKI-1,fourth-tier
+pimozide,sertraline,CYP2D6,PKI-1,fourth-tier
+perphenazine,paroxetine,CYP2D6,PKI-1,fourth-tier
+pimozide,paroxetine,CYP2D6,PKI-1,fourth-tier
+perphenazine,fluoxetine,CYP2D6,PKI-1,fourth-tier
+pimozide,fluoxetine,CYP2D6,PKI-1,fourth-tier
+perphenazine,duloxetine,CYP2D6,PKI-1,fourth-tier
+pimozide,duloxetine,CYP2D6,PKI-1,fourth-tier
+perphenazine,cinacalcet,CYP2D6,PKI-1,fourth-tier
+pimozide,cinacalcet,CYP2D6,PKI-1,fourth-tier
+perphenazine,celecoxib,CYP2D6,PKI-1,fourth-tier
+pimozide,celecoxib,CYP2D6,PKI-1,fourth-tier
+perphenazine,bupropion,CYP2D6,PKI-1,fourth-tier
+pimozide,bupropion,CYP2D6,PKI-1,fourth-tier
+perphenazine,amiodarone,CYP2D6,PKI-1,fourth-tier
+pimozide,amiodarone,CYP2D6,PKI-1,fourth-tier
+alprazolam,ketoconazole,CYP3A5,PKI-1,fourth-tier
+alprazolam,verapamil,CYP3A5,PKI-1,fourth-tier
+alprazolam,telithromycin,CYP3A5,PKI-1,fourth-tier
+alprazolam,ritonavir,CYP3A5,PKI-1,fourth-tier
+alprazolam,nefazodone,CYP3A5,PKI-1,fourth-tier
+alprazolam,indinavir,CYP3A5,PKI-1,fourth-tier
+alprazolam,fluconazole,CYP3A5,PKI-1,fourth-tier
+alprazolam,clarithromycin,CYP3A5,PKI-1,fourth-tier
+alprazolam,cimetidine,CYP3A5,PKI-1,fourth-tier
+alprazolam,atazanavir,CYP3A5,PKI-1,fourth-tier

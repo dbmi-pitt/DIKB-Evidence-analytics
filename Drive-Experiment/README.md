@@ -45,19 +45,19 @@
 
 -- Here is a test drug-class list, including only those classes which were tested in the original DIKB, but with updated drug lists
 
-(setf drug-class-a-list '((statins . (SIMVASTATIN LOVASTATIN ROSUVASTATIN PRAVASTATIN FLUVASTATIN ATORVASTATIN PITAVASTATIN))
+(setf drug-class-a-list '((statins . (SIMVASTATIN LOVASTATIN ROSUVASTATIN PRAVASTATIN FLUVASTATIN ATORVASTATIN PITAVASTATIN SIMVASTATIN-ACID))
    (antidepressants . (BUPROPION CITALOPRAM R-CITALOPRAM ESCITALOPRAM FLUOXETINE FLUVOXAMINE PAROXETINE SERTRALINE DESVENLAFAXINE DULOXETINE VENLAFAXINE TRAZODONE MIRTAZAPINE NEFAZODONE DESIPRAMINE))
    (sedative-hypnotics . (ESZOPICLONE ZALEPLON ZOLPIDEM))
    (atypical-antipsych . (ARIPIPRAZOLE CLOZAPINE OLANZAPINE PALIPERIDONE QUETIAPINE RISPERIDONE ZIPRASIDONE ILOPERIDONE ASENAPINE LURASIDONE RESERPINE))
    (typical-antipsych . (DROPERIDOL HALOPERIDOL REDUCED-HALOPERIDOL PIMOZIDE THIOTHIXENE CHLORPROMAZINE FLUPHENAZINE PERPHENAZINE THIORIDAZINE TRIFLUOPERAZINE))
-   (short-acting-bzd . (ALPRAZOLAM TRIAZOLAM CLOBAZAM))))
+   (short-acting-bzds . (ALPRAZOLAM CLOBAZAM MIDAZOLAM TRIAZOLAM))))
 
-$ (GET-PKI-TO-TSV PKI-1 "PKI-1" "fourth-tier" 'statins)
-$ (GET-PKI-TO-TSV PKI-1 "PKI-1" "fourth-tier" 'antidepressants)
-$ (GET-PKI-TO-TSV PKI-1 "PKI-1" "fourth-tier" 'sedative-hypnotics)
-$ (GET-PKI-TO-TSV PKI-1 "PKI-1" "fourth-tier" 'atypical-antipsych)
-$ (GET-PKI-TO-TSV PKI-1 "PKI-1" "fourth-tier" 'typical-antipsych)
-$ (GET-PKI-TO-TSV PKI-1 "PKI-1" "fourth-tier" 'short-acting-bzd)
+(GET-PKI-TO-TSV PKI-1 "PKI-1" "fourth-tier" 'statins)
+(GET-PKI-TO-TSV PKI-1 "PKI-1" "fourth-tier" 'antidepressants)
+(GET-PKI-TO-TSV PKI-1 "PKI-1" "fourth-tier" 'sedative-hypnotics)
+(GET-PKI-TO-TSV PKI-1 "PKI-1" "fourth-tier" 'atypical-antipsych)
+(GET-PKI-TO-TSV PKI-1 "PKI-1" "fourth-tier" 'typical-antipsych)
+(GET-PKI-TO-TSV PKI-1 "PKI-1" "fourth-tier" 'short-acting-bzds)
 
 -- All of the output from this step should be copied, cleaned up (all the quotes removed), and loaded into LibreOffice as a .tsv file
 -- Use LibreOffice to make all of the drug names lowercase, and export as a .csv file

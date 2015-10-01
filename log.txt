@@ -126,3 +126,51 @@ DIKB: error: ExportAssertions::assessBeliefCriteria - Error, unable to get DIKB-
 DIKB: error: ExportAssertions::assessBeliefCriteria - Error, unable to get DIKB->JTMS mapping for diltiazem_increases_auc_beta-hydroxy-lovastatin  
 DIKB: error: ExportAssertions::assessBeliefCriteria - Error, unable to get DIKB->JTMS mapping for diltiazem_increases_auc_simvastatin  
 DIKB: error: ExportAssertions::assessBeliefCriteria - Error, unable to get DIKB->JTMS mapping for diltiazem_increases_auc_midazolam  
+DIKB log: 10/01/2015 12:01:00
+  -  Web instance id: DIKB evidence July 30th 2015: 10/01/2015 12:01:00
+ locking  KB file to open: Drive-Experiment/dikb-pickles/ev-test.pickle 
+DIKB log: 10/01/2015 12:01:03
+  -  Web instance id: DIKB evidence July 30th 2015: 10/01/2015 12:01:00
+Done loading: Drive-Experiment/dikb-pickles/ev-test.pickle 
+DIKB log: 10/01/2015 12:01:03
+  -  Web instance id: DIKB evidence July 30th 2015: 10/01/2015 12:01:00
+ locking  KB file to open: Drive-Experiment/dikb-pickles/dikb-test.pickle 
+DIKB log: 10/01/2015 12:01:09
+  -  Web instance id: DIKB evidence July 30th 2015: 10/01/2015 12:01:00
+Done loading: Drive-Experiment/dikb-pickles/dikb-test.pickle 
+DIKB log: 10/01/2015 12:02:12
+  -  Web instance id: DIKB evidence July 30th 2015: 10/01/2015 12:02:08
+ locking  KB file to open: Drive-Experiment/dikb-pickles/ev-test.pickle 
+DIKB log: 10/01/2015 12:02:16
+  -  Web instance id: DIKB evidence July 30th 2015: 10/01/2015 12:02:08
+Done loading: Drive-Experiment/dikb-pickles/ev-test.pickle 
+DIKB log: 10/01/2015 12:02:20
+  -  Web instance id: DIKB evidence July 30th 2015: 10/01/2015 12:02:08
+ locking  KB file to open: Drive-Experiment/dikb-pickles/dikb-test.pickle 
+DIKB log: 10/01/2015 12:02:26
+  -  Web instance id: DIKB evidence July 30th 2015: 10/01/2015 12:02:08
+Done loading: Drive-Experiment/dikb-pickles/dikb-test.pickle 
+DIKB log: 10/01/2015 12:17:17
+  -  Web instance id: DIKB evidence July 30th 2015: 10/01/2015 12:17:17
+ locking  KB file to open: Drive-Experiment/dikb-pickles/ev-test.pickle 
+DIKB log: 10/01/2015 12:17:21
+  -  Web instance id: DIKB evidence July 30th 2015: 10/01/2015 12:17:17
+Done loading: Drive-Experiment/dikb-pickles/ev-test.pickle 
+DIKB log: 10/01/2015 12:17:21
+  -  Web instance id: DIKB evidence July 30th 2015: 10/01/2015 12:17:17
+ locking  KB file to open: Drive-Experiment/dikb-pickles/dikb-test.pickle 
+DIKB log: 10/01/2015 12:17:26
+  -  Web instance id: DIKB evidence July 30th 2015: 10/01/2015 12:17:17
+Done loading: Drive-Experiment/dikb-pickles/dikb-test.pickle 
+DIKB log: 10/01/2015 12:30:43
+  -  Web instance id: DIKB evidence July 30th 2015: 10/01/2015 12:30:43
+ locking  KB file to open: Drive-Experiment/dikb-pickles/ev-test.pickle 
+DIKB log: 10/01/2015 12:30:46
+  -  Web instance id: DIKB evidence July 30th 2015: 10/01/2015 12:30:43
+Done loading: Drive-Experiment/dikb-pickles/ev-test.pickle 
+DIKB log: 10/01/2015 12:30:46
+  -  Web instance id: DIKB evidence July 30th 2015: 10/01/2015 12:30:43
+ locking  KB file to open: Drive-Experiment/dikb-pickles/dikb-test.pickle 
+DIKB log: 10/01/2015 12:30:52
+  -  Web instance id: DIKB evidence July 30th 2015: 10/01/2015 12:30:43
+Done loading: Drive-Experiment/dikb-pickles/dikb-test.pickle 

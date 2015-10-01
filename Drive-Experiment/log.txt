@@ -246,3 +246,75 @@ DIKB log: 09/15/2015 13:00:27
 DIKB log: 09/15/2015 13:00:31
   -  Web instance id: Current SQL DIKB evidence : 09/15/2015 12:46:03
  Done: dikb-pickles/ev-test.pickle 
+DIKB log: 09/29/2015 22:28:02
+  -  Web instance id: Current SQL DIKB evidence : 09/29/2015 22:27:52
+ locking  KB file to open: dikb-pickles/dikb-03052012.pickle 
+DIKB log: 09/29/2015 22:28:06
+  -  Web instance id: Current SQL DIKB evidence : 09/29/2015 22:27:52
+Done loading: dikb-pickles/dikb-03052012.pickle 
+DIKB log: 09/29/2015 22:40:34
+  -  Web instance id: Current SQL DIKB evidence : 09/29/2015 22:27:52
+ writing KB to file: dikb-pickles/dikb-test.pickle 
+DIKB log: 09/29/2015 22:40:34
+  -  Web instance id: Current SQL DIKB evidence : 09/29/2015 22:27:52
+ locking: dikb-pickles/dikb-test.pickle 
+DIKB log: 09/29/2015 22:40:41
+  -  Web instance id: Current SQL DIKB evidence : 09/29/2015 22:27:52
+ Done: dikb-pickles/dikb-test.pickle 
+DIKB log: 09/29/2015 22:40:41
+  -  Web instance id: Current SQL DIKB evidence : 09/29/2015 22:27:52
+ writing KB to file: dikb-pickles/ev-test.pickle 
+DIKB log: 09/29/2015 22:40:41
+  -  Web instance id: Current SQL DIKB evidence : 09/29/2015 22:27:52
+ locking: dikb-pickles/ev-test.pickle 
+DIKB log: 09/29/2015 22:40:45
+  -  Web instance id: Current SQL DIKB evidence : 09/29/2015 22:27:52
+ Done: dikb-pickles/ev-test.pickle 
+DIKB log: 09/30/2015 16:48:58
+  -  Web instance id: Current SQL DIKB evidence : 09/30/2015 16:48:50
+ locking  KB file to open: dikb-pickles/dikb-03052012.pickle 
+DIKB log: 09/30/2015 16:49:01
+  -  Web instance id: Current SQL DIKB evidence : 09/30/2015 16:48:50
+Done loading: dikb-pickles/dikb-03052012.pickle 
+DIKB log: 09/30/2015 17:00:29
+  -  Web instance id: Current SQL DIKB evidence : 09/30/2015 16:48:50
+ writing KB to file: dikb-pickles/dikb-test.pickle 
+DIKB log: 09/30/2015 17:00:29
+  -  Web instance id: Current SQL DIKB evidence : 09/30/2015 16:48:50
+ locking: dikb-pickles/dikb-test.pickle 
+DIKB log: 09/30/2015 17:00:35
+  -  Web instance id: Current SQL DIKB evidence : 09/30/2015 16:48:50
+ Done: dikb-pickles/dikb-test.pickle 
+DIKB log: 09/30/2015 17:00:35
+  -  Web instance id: Current SQL DIKB evidence : 09/30/2015 16:48:50
+ writing KB to file: dikb-pickles/ev-test.pickle 
+DIKB log: 09/30/2015 17:00:35
+  -  Web instance id: Current SQL DIKB evidence : 09/30/2015 16:48:50
+ locking: dikb-pickles/ev-test.pickle 
+DIKB log: 09/30/2015 17:00:40
+  -  Web instance id: Current SQL DIKB evidence : 09/30/2015 16:48:50
+ Done: dikb-pickles/ev-test.pickle 
+DIKB log: 09/30/2015 17:20:43
+  -  Web instance id: Current SQL DIKB evidence : 09/30/2015 17:20:35
+ locking  KB file to open: dikb-pickles/dikb-03052012.pickle 
+DIKB log: 09/30/2015 17:20:46
+  -  Web instance id: Current SQL DIKB evidence : 09/30/2015 17:20:35
+Done loading: dikb-pickles/dikb-03052012.pickle 
+DIKB log: 09/30/2015 17:32:57
+  -  Web instance id: Current SQL DIKB evidence : 09/30/2015 17:20:35
+ writing KB to file: dikb-pickles/dikb-test.pickle 
+DIKB log: 09/30/2015 17:32:57
+  -  Web instance id: Current SQL DIKB evidence : 09/30/2015 17:20:35
+ locking: dikb-pickles/dikb-test.pickle 
+DIKB log: 09/30/2015 17:33:04
+  -  Web instance id: Current SQL DIKB evidence : 09/30/2015 17:20:35
+ Done: dikb-pickles/dikb-test.pickle 
+DIKB log: 09/30/2015 17:33:04
+  -  Web instance id: Current SQL DIKB evidence : 09/30/2015 17:20:35
+ writing KB to file: dikb-pickles/ev-test.pickle 
+DIKB log: 09/30/2015 17:33:04
+  -  Web instance id: Current SQL DIKB evidence : 09/30/2015 17:20:35
+ locking: dikb-pickles/ev-test.pickle 
+DIKB log: 09/30/2015 17:33:09
+  -  Web instance id: Current SQL DIKB evidence : 09/30/2015 17:20:35
+ Done: dikb-pickles/ev-test.pickle 

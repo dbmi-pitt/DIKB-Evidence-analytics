@@ -631,15 +631,11 @@
 	))
 (assert! '(1-is-an-in-viVo-selective-inhibitor-of-2 'eltrombopag 'oatp1b1) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1493)
+		(bc-satisfied 'assertion_1492)
 	))
 (assert! '(1-is-an-in-viVo-selective-inhibitor-of-2 'erythromycin 'p-glycoprotein) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1471)
-	))
-(assert! '(1-is-an-in-viVo-selective-inhibitor-of-2 'escitalopram 'cyp2d6) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_1394)
+		(bc-satisfied 'assertion_1470)
 	))
 (assert! '(1-is-an-in-viVo-selective-inhibitor-of-2 'esomeprazole 'cyp2c19) 
 	'(dikb-assertion
@@ -655,7 +651,7 @@
 	))
 (assert! '(1-is-an-in-viVo-selective-inhibitor-of-2 'febuxostat 'cyp2d6) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1395)
+		(bc-satisfied 'assertion_1394)
 	))
 (assert! '(1-is-an-in-viVo-selective-inhibitor-of-2 'felbamate 'cyp2c19) 
 	'(dikb-assertion
@@ -687,11 +683,11 @@
 	))
 (assert! '(1-is-an-in-viVo-selective-inhibitor-of-2 'hydralazine 'cyp2d6) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1397)
+		(bc-satisfied 'assertion_1396)
 	))
 (assert! '(1-is-an-in-viVo-selective-inhibitor-of-2 'hydroxychloroquine 'cyp2d6) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1398)
+		(bc-satisfied 'assertion_1397)
 	))
 (assert! '(1-is-an-in-viVo-selective-inhibitor-of-2 'imatinib 'cyp3a4) 
 	'(dikb-assertion
@@ -707,7 +703,7 @@
 	))
 (assert! '(1-is-an-in-viVo-selective-inhibitor-of-2 'methadone 'cyp2d6) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1400)
+		(bc-satisfied 'assertion_1399)
 	))
 (assert! '(1-is-an-in-viVo-selective-inhibitor-of-2 'methoxsalen 'cyp1a2) 
 	'(dikb-assertion
@@ -763,19 +759,23 @@
 	))
 (assert! '(1-is-an-in-viVo-selective-inhibitor-of-2 'propafenone 'cyp2d6) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1402)
+		(bc-satisfied 'assertion_1401)
 	))
 (assert! '(1-is-an-in-viVo-selective-inhibitor-of-2 'quinidine 'cyp3a4) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1648)
+		(bc-satisfied 'assertion_1647)
 	))
 (assert! '(1-is-an-in-viVo-selective-inhibitor-of-2 'ranitidine 'cyp2d6) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1403)
+		(bc-satisfied 'assertion_1402)
+	))
+(assert! '(1-is-an-in-viVo-selective-inhibitor-of-2 'rifampin 'oatp1b1) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_1494)
 	))
 (assert! '(1-is-an-in-viVo-selective-inhibitor-of-2 'sertraline 'cyp2d6) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1404)
+		(bc-satisfied 'assertion_1403)
 	))
 (assert! '(1-is-an-in-viVo-selective-inhibitor-of-2 'sulfinpyrazone 'cyp2c9) 
 	'(dikb-assertion
@@ -787,7 +787,7 @@
 	))
 (assert! '(1-is-an-in-viVo-selective-inhibitor-of-2 'telithromycin 'cyp2d6) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1405)
+		(bc-satisfied 'assertion_1404)
 	))
 (assert! '(1-is-an-in-viVo-selective-inhibitor-of-2 'terbinafine 'cyp1a2) 
 	'(dikb-assertion
@@ -795,7 +795,7 @@
 	))
 (assert! '(1-is-an-in-viVo-selective-inhibitor-of-2 'ticagrelor 'p-glycoprotein) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1467)
+		(bc-satisfied 'assertion_1466)
 	))
 (assert! '(1-is-an-in-viVo-selective-inhibitor-of-2 'ticlopidine 'cyp2b6) 
 	'(dikb-assertion
@@ -827,7 +827,7 @@
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 '7-ethoxyresorufin-O-deethylation 'cyp1a2) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1577)
+		(bc-satisfied 'assertion_1576)
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'S-mephenytoin 'cyp2c19) 
 	'(dikb-assertion
@@ -835,11 +835,11 @@
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'S-mephenytoin-4’-hydroxylation 'cyp2c19) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1595)
+		(bc-satisfied 'assertion_1594)
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'S-mephenytoin-N-demethylation 'cyp2b6) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1586)
+		(bc-satisfied 'assertion_1585)
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'S-warfarin 'cyp2c9) 
 	'(dikb-assertion
@@ -847,11 +847,11 @@
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'amodiaquine-N-deethylation 'cyp2c8) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1588)
+		(bc-satisfied 'assertion_1587)
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'aniline-4-hydroxylation 'cyp2e1) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1604)
+		(bc-satisfied 'assertion_1603)
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'bufuralol 'cyp2d6) 
 	'(dikb-assertion
@@ -859,11 +859,11 @@
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'bupropion-hydroxylation 'cyp2b6) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1584)
+		(bc-satisfied 'assertion_1583)
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'caffeine-3-N-demethylation 'cyp1a2) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1579)
+		(bc-satisfied 'assertion_1578)
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'chlorzoxazone 'cyp2e1) 
 	'(dikb-assertion
@@ -871,7 +871,7 @@
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'chlorzoxazone-6-hydroxylation 'cyp2e1) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1601)
+		(bc-satisfied 'assertion_1600)
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'coumarin 'cyp2a6) 
 	'(dikb-assertion
@@ -879,7 +879,7 @@
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'coumarin-7-hydroxylation 'cyp2a6) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1581)
+		(bc-satisfied 'assertion_1580)
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'debrisoquine 'cyp2d6) 
 	'(dikb-assertion
@@ -887,7 +887,7 @@
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'debrisoquine-4-hydroxylation 'cyp2d6) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1600)
+		(bc-satisfied 'assertion_1599)
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'dextromethorphan 'cyp2d6) 
 	'(dikb-assertion
@@ -895,19 +895,19 @@
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'dextromethorphan-N-demethylation 'cyp3a4) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1608)
+		(bc-satisfied 'assertion_1607)
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'dextromethorphan-O-demethylation 'cyp2d6) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1599)
+		(bc-satisfied 'assertion_1598)
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'digoxin 'p-glycoprotein) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1612)
+		(bc-satisfied 'assertion_1611)
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'efavirenz-hydroxylase 'cyp2b6) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1583)
+		(bc-satisfied 'assertion_1582)
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'erythromycin 'cyp3a4) 
 	'(dikb-assertion
@@ -915,15 +915,15 @@
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'erythromycin-N-demethylation 'cyp3a4) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1607)
+		(bc-satisfied 'assertion_1606)
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'flurbiprofen-4’-hydroxylation 'cyp2c9) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1593)
+		(bc-satisfied 'assertion_1592)
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'lauric-acid-11-hydroxylation 'cyp2e1) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1603)
+		(bc-satisfied 'assertion_1602)
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'midazolam 'cyp3a4) 
 	'(dikb-assertion
@@ -931,15 +931,15 @@
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'midazolam-1-hydroxylation 'cyp3a4) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1605)
+		(bc-satisfied 'assertion_1604)
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'nicotine-C-oxidation 'cyp2a6) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1582)
+		(bc-satisfied 'assertion_1581)
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'nifedipine-oxidation 'cyp3a4) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1611)
+		(bc-satisfied 'assertion_1610)
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'omeprazole 'cyp2c19) 
 	'(dikb-assertion
@@ -947,7 +947,7 @@
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'omeprazole-5-hydroxylation 'cyp2c19) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1596)
+		(bc-satisfied 'assertion_1595)
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'p-nitrophenol 'cyp2e1) 
 	'(dikb-assertion
@@ -955,7 +955,7 @@
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'p-nitrophenol-3-hydroxylation 'cyp2e1) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1602)
+		(bc-satisfied 'assertion_1601)
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'paclitaxel 'cyp2c8) 
 	'(dikb-assertion
@@ -967,35 +967,35 @@
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'phenacetin-O-deethylation 'cyp1a2) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1576)
+		(bc-satisfied 'assertion_1575)
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'phenytoin-4-hydroxylation 'cyp2c9) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1594)
+		(bc-satisfied 'assertion_1593)
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'propofol-hydroxylation 'cyp2b6) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1585)
+		(bc-satisfied 'assertion_1584)
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'quinidine 'p-glycoprotein) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1614)
+		(bc-satisfied 'assertion_1613)
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'tacrine-1-hydroxylation 'cyp1a2) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1580)
+		(bc-satisfied 'assertion_1579)
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'talinolol 'p-glycoprotein) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1616)
+		(bc-satisfied 'assertion_1615)
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'taxol-6-hydroxylation 'cyp2c8) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1587)
+		(bc-satisfied 'assertion_1586)
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'terfenadine-C-hydroxylation 'cyp3a4) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1610)
+		(bc-satisfied 'assertion_1609)
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'testosterone 'cyp3a4) 
 	'(dikb-assertion
@@ -1007,7 +1007,7 @@
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'theophylline-N-demethylation 'cyp1a2) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1578)
+		(bc-satisfied 'assertion_1577)
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'tolbutamide 'cyp2c9) 
 	'(dikb-assertion
@@ -1015,7 +1015,7 @@
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'tolbutamide-methyl-hydroxylation 'cyp2c9) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1590)
+		(bc-satisfied 'assertion_1589)
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'triazolam 'cyp3a4) 
 	'(dikb-assertion
@@ -1023,91 +1023,91 @@
 	))
 (assert! '(1-is-an-in-vitro-probe-substrate-of-2 'triazolam-4-hydroxylation 'cyp3a4) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1609)
+		(bc-satisfied 'assertion_1608)
 	))
 (assert! '(1-is-an-in-vitro-selective-inhibitor-of-2 '2-isopropenyl-2-methyl-adamantane 'cyp2b6) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1530)
+		(bc-satisfied 'assertion_1529)
 	))
 (assert! '(1-is-an-in-vitro-selective-inhibitor-of-2 'azamulin 'cyp3a4) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1565)
+		(bc-satisfied 'assertion_1564)
 	))
 (assert! '(1-is-an-in-vitro-selective-inhibitor-of-2 'clopidogrel 'cyp2b6) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1534)
+		(bc-satisfied 'assertion_1533)
 	))
 (assert! '(1-is-an-in-vitro-selective-inhibitor-of-2 'cyclosporine 'p-glycoprotein) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1617)
+		(bc-satisfied 'assertion_1616)
 	))
 (assert! '(1-is-an-in-vitro-selective-inhibitor-of-2 'diethyldithiocarbamate 'cyp2e1) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1562)
+		(bc-satisfied 'assertion_1561)
 	))
 (assert! '(1-is-an-in-vitro-selective-inhibitor-of-2 'elacridar 'p-glycoprotein) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1625)
+		(bc-satisfied 'assertion_1624)
 	))
 (assert! '(1-is-an-in-vitro-selective-inhibitor-of-2 'fluconazole 'cyp2c9) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1551)
+		(bc-satisfied 'assertion_1550)
 	))
 (assert! '(1-is-an-in-vitro-selective-inhibitor-of-2 'fluoxetine 'cyp2c9) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1553)
+		(bc-satisfied 'assertion_1552)
 	))
 (assert! '(1-is-an-in-vitro-selective-inhibitor-of-2 'gemfibrozil 'cyp2c8) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1544)
+		(bc-satisfied 'assertion_1543)
 	))
 (assert! '(1-is-an-in-vitro-selective-inhibitor-of-2 'methoxsalen 'cyp2a6) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1522)
+		(bc-satisfied 'assertion_1521)
 	))
 (assert! '(1-is-an-in-vitro-selective-inhibitor-of-2 'montelukast 'cyp2c8) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1541)
+		(bc-satisfied 'assertion_1540)
 	))
 (assert! '(1-is-an-in-vitro-selective-inhibitor-of-2 'nelfinavir 'p-glycoprotein) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1620)
+		(bc-satisfied 'assertion_1619)
 	))
 (assert! '(1-is-an-in-vitro-selective-inhibitor-of-2 'nootkatone 'cyp2c19) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1559)
+		(bc-satisfied 'assertion_1558)
 	))
 (assert! '(1-is-an-in-vitro-selective-inhibitor-of-2 'phencyclidine 'cyp2b6) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1532)
+		(bc-satisfied 'assertion_1531)
 	))
 (assert! '(1-is-an-in-vitro-selective-inhibitor-of-2 'pilocarpine 'cyp2a6) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1523)
+		(bc-satisfied 'assertion_1522)
 	))
 (assert! '(1-is-an-in-vitro-selective-inhibitor-of-2 'pioglitazone 'cyp2c8) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1546)
+		(bc-satisfied 'assertion_1545)
 	))
 (assert! '(1-is-an-in-vitro-selective-inhibitor-of-2 'quercetin 'cyp2c8) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1542)
+		(bc-satisfied 'assertion_1541)
 	))
 (assert! '(1-is-an-in-vitro-selective-inhibitor-of-2 'reserpine 'p-glycoprotein) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1626)
+		(bc-satisfied 'assertion_1625)
 	))
 (assert! '(1-is-an-in-vitro-selective-inhibitor-of-2 'rosiglitazone 'cyp2c8) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1545)
+		(bc-satisfied 'assertion_1544)
 	))
 (assert! '(1-is-an-in-vitro-selective-inhibitor-of-2 'sertraline 'cyp2b6) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1531)
+		(bc-satisfied 'assertion_1530)
 	))
 (assert! '(1-is-an-in-vitro-selective-inhibitor-of-2 'sulfaphenazole 'cyp2c9) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1550)
+		(bc-satisfied 'assertion_1549)
 	))
 (assert! '(1-is-an-in-vitro-selective-inhibitor-of-2 'sulphaphenazole 'cyp2c9) 
 	'(dikb-assertion
@@ -1115,35 +1115,35 @@
 	))
 (assert! '(1-is-an-in-vitro-selective-inhibitor-of-2 'tacrolimus 'p-glycoprotein) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1622)
+		(bc-satisfied 'assertion_1621)
 	))
 (assert! '(1-is-an-in-vitro-selective-inhibitor-of-2 'thiotepa 'cyp2b6) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1533)
+		(bc-satisfied 'assertion_1532)
 	))
 (assert! '(1-is-an-in-vitro-selective-inhibitor-of-2 'ticlopidine 'cyp2b6) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1535)
+		(bc-satisfied 'assertion_1534)
 	))
 (assert! '(1-is-an-in-vitro-selective-inhibitor-of-2 'tranylcypromine 'cyp2a6) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1521)
+		(bc-satisfied 'assertion_1520)
 	))
 (assert! '(1-is-an-in-vitro-selective-inhibitor-of-2 'trimethoprim 'cyp2c8) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1543)
+		(bc-satisfied 'assertion_1542)
 	))
 (assert! '(1-is-an-in-vitro-selective-inhibitor-of-2 'tryptamine 'cyp2a6) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1524)
+		(bc-satisfied 'assertion_1523)
 	))
 (assert! '(1-is-an-in-vitro-selective-inhibitor-of-2 'valspodar 'p-glycoprotein) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1623)
+		(bc-satisfied 'assertion_1622)
 	))
 (assert! '(1-is-an-in-vitro-selective-inhibitor-of-2 'verapamil 'p-glycoprotein) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1624)
+		(bc-satisfied 'assertion_1623)
 	))
 (assert! '(1-is-not-a-substrate-of-2 'desvenlafaxine 'cyp2d6) 
 	'(dikb-assertion
@@ -1302,7 +1302,7 @@
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 '2-isopropenyl-2-methyl-adamantane 'cyp2b6 '1.009E-03) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1537)
+		(bc-satisfied 'assertion_1536)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 '9-hydroxyrisperidone 'cyp2d6 '7.000E-03) 
 	'(dikb-assertion
@@ -1311,7 +1311,7 @@
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'alpha-naphthoflavone 'cyp1a2 '2.723E-05) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1520)
+		(bc-satisfied 'assertion_1519)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'atorvastatin 'cyp2c8 '1.900E-02) 
 	'(dikb-assertion
@@ -1359,11 +1359,11 @@
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'cyclosporine 'p-glycoprotein '6.013E-04) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1627)
+		(bc-satisfied 'assertion_1626)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'diethyldithiocarbamate 'cyp2e1 '2.140E-03) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1563)
+		(bc-satisfied 'assertion_1562)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'diltiazem 'cyp3a4 '2.200E-04) 
 	'(dikb-assertion
@@ -1372,7 +1372,7 @@
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'elacridar 'p-glycoprotein '2.255E-04) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1635)
+		(bc-satisfied 'assertion_1634)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'erythromycin 'cyp3a4 '6.000E-03) 
 	'(dikb-assertion
@@ -1381,7 +1381,7 @@
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'fluconazole 'cyp2c9 '2.144E-03) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1555)
+		(bc-satisfied 'assertion_1554)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'fluconazole 'cyp3a4 '3.890E-04) 
 	'(dikb-assertion
@@ -1390,7 +1390,7 @@
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'fluoxetine 'cyp2c9 '5.568E-03) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1557)
+		(bc-satisfied 'assertion_1556)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'fluoxetine 'cyp3a4 '4.000E-03) 
 	'(dikb-assertion
@@ -1419,15 +1419,15 @@
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'fluvoxamine 'cyp2c9 '2.037E-03) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1556)
+		(bc-satisfied 'assertion_1555)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'furafylline 'cyp1a2 '1.562E-04) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1519)
+		(bc-satisfied 'assertion_1518)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'gemfibrozil 'cyp2c8 '1.727E-02) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1549)
+		(bc-satisfied 'assertion_1548)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'haloperidol 'cyp2d6 '3.000E-03) 
 	'(dikb-assertion
@@ -1440,7 +1440,7 @@
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'itraconazole 'cyp3a5 '1.905E-04) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1573)
+		(bc-satisfied 'assertion_1572)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'ketoconazole 'cyp3a4 '1.966E-06) 
 	'(dikb-assertion
@@ -1449,11 +1449,11 @@
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'ketoconazole 'cyp3a5 '1.966E-06) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1572)
+		(bc-satisfied 'assertion_1571)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'ketoconazole 'p-glycoprotein '2.817E-03) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1628)
+		(bc-satisfied 'assertion_1627)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'lovastatin 'cyp2c8 '3.000E-03) 
 	'(dikb-assertion
@@ -1462,7 +1462,7 @@
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'methoxsalen 'cyp2a6 '2.162E-06) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1526)
+		(bc-satisfied 'assertion_1525)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'montelukast 'cyp2c8 '6.448E-04) 
 	'(dikb-assertion
@@ -1470,11 +1470,11 @@
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'nelfinavir 'p-glycoprotein '7.949E-04) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1630)
+		(bc-satisfied 'assertion_1629)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'nootkatone 'cyp2c19 '1.092E-04) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1560)
+		(bc-satisfied 'assertion_1559)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'norfluoxetine 'cyp3a4 '4.252E-04) 
 	'(dikb-assertion
@@ -1513,11 +1513,11 @@
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'phencyclidine 'cyp2b6 '2.434E-03) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1539)
+		(bc-satisfied 'assertion_1538)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'pilocarpine 'cyp2a6 '8.330E-04) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1527)
+		(bc-satisfied 'assertion_1526)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'pioglitazone 'cyp2c8 '6.059E-04) 
 	'(dikb-assertion
@@ -1525,19 +1525,19 @@
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'quercetin 'cyp2c8 '1.871E-03) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1547)
+		(bc-satisfied 'assertion_1546)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'quinidine 'cyp2d6 '8.759E-05) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1561)
+		(bc-satisfied 'assertion_1560)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'quinidine 'p-glycoprotein '7.137E-04) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1631)
+		(bc-satisfied 'assertion_1630)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'reserpine 'p-glycoprotein '8.522E-04) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1636)
+		(bc-satisfied 'assertion_1635)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'risperidone 'cyp2d6 '3.000E-03) 
 	'(dikb-assertion
@@ -1550,7 +1550,7 @@
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'sertraline 'cyp2b6 '9.799E-04) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1538)
+		(bc-satisfied 'assertion_1537)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'simvastatin 'cyp2c8 '3.000E-03) 
 	'(dikb-assertion
@@ -1559,11 +1559,11 @@
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'sulfaphenazole 'cyp2c9 '4.087E-04) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1554)
+		(bc-satisfied 'assertion_1553)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'tacrolimus 'p-glycoprotein '5.950E-04) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1632)
+		(bc-satisfied 'assertion_1631)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'thioridazine 'cyp2d6 '5.699E-04) 
 	'(dikb-assertion
@@ -1572,7 +1572,7 @@
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'thiotepa 'cyp2b6 '9.082E-04) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1540)
+		(bc-satisfied 'assertion_1539)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'thiothixene 'cyp2d6 '2.900E-02) 
 	'(dikb-assertion
@@ -1589,39 +1589,39 @@
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'tranylcypromine 'cyp2a6 '2.664E-06) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1525)
+		(bc-satisfied 'assertion_1524)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'trimethoprim 'cyp2c8 '9.290E-03) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1548)
+		(bc-satisfied 'assertion_1547)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'troleandomycin 'cyp3a4 '2.198E-04) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1570)
+		(bc-satisfied 'assertion_1569)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'troleandomycin 'cyp3a5 '2.198E-04) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1574)
+		(bc-satisfied 'assertion_1573)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'tryptamine 'cyp2a6 '1.643E-03) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1528)
+		(bc-satisfied 'assertion_1527)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'valspodar 'p-glycoprotein '1.336E-04) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1633)
+		(bc-satisfied 'assertion_1632)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'verapamil 'cyp3a4 '4.546E-03) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1571)
+		(bc-satisfied 'assertion_1570)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'verapamil 'cyp3a5 '4.546E-03) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1575)
+		(bc-satisfied 'assertion_1574)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'verapamil 'p-glycoprotein '3.637E-03) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1634)
+		(bc-satisfied 'assertion_1633)
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'ziprasidone 'cyp2d6 '5.000E-03) 
 	'(dikb-assertion
@@ -1630,7 +1630,7 @@
 	))
 (assert! '(inhibition-constant-of-1-for-2-is-3 'zosuquidar 'p-glycoprotein '1.529E-05) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1629)
+		(bc-satisfied 'assertion_1628)
 	))
 (assert! '(maximum-in-vivo-concentration-of-1-is-2-at-dose-3 '14-hydroxyclarithromycin '8.800E-04 '5.000E-01) 
 	'(dikb-assertion
@@ -2097,59 +2097,59 @@
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'aliskiren 'p-glycoprotein) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1472)
+		(bc-satisfied 'assertion_1471)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'alosetron 'cyp1a2) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1408)
+		(bc-satisfied 'assertion_1407)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'ambrisentan 'p-glycoprotein) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1473)
+		(bc-satisfied 'assertion_1472)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'aprepitant 'cyp3a4) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1422)
+		(bc-satisfied 'assertion_1421)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'atrasentan 'oatp1b1) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1496)
+		(bc-satisfied 'assertion_1495)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'bupropion 'cyp2b6) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1414)
+		(bc-satisfied 'assertion_1413)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'celecoxib 'cyp2c9) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1418)
+		(bc-satisfied 'assertion_1417)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'colchicine 'p-glycoprotein) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1474)
+		(bc-satisfied 'assertion_1473)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'conivaptan 'cyp3a4) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1425)
+		(bc-satisfied 'assertion_1424)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'cyclosporine 'cyp3a4) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1443)
+		(bc-satisfied 'assertion_1442)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'dabigatran 'p-glycoprotein) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1475)
+		(bc-satisfied 'assertion_1474)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'dabigatran-etexilate 'p-glycoprotein) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1476)
+		(bc-satisfied 'assertion_1475)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'darifenacin 'cyp3a4) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1426)
+		(bc-satisfied 'assertion_1425)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'dasatinib 'cyp3a4) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1427)
+		(bc-satisfied 'assertion_1426)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'desacetyldiltiazem 'cyp2d6) 
 	'(dikb-assertion
@@ -2158,83 +2158,83 @@
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'digoxin 'p-glycoprotein) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1477)
+		(bc-satisfied 'assertion_1476)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'dihydroergotamine 'cyp3a4) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1444)
+		(bc-satisfied 'assertion_1443)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'dronedarone 'cyp3a4) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1428)
+		(bc-satisfied 'assertion_1427)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'duloxetine 'cyp1a2) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1409)
+		(bc-satisfied 'assertion_1408)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'efavirenz 'cyp2b6) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1415)
+		(bc-satisfied 'assertion_1414)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'everolimus 'p-glycoprotein) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1478)
+		(bc-satisfied 'assertion_1477)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'ezetimibe 'oatp1b1) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1499)
+		(bc-satisfied 'assertion_1498)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'fexofenadine 'p-glycoprotein) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1479)
+		(bc-satisfied 'assertion_1478)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'fluticasone 'cyp3a4) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1434)
+		(bc-satisfied 'assertion_1433)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'fluvastatin 'oatp1b1) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1500)
+		(bc-satisfied 'assertion_1499)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'imatinib 'p-glycoprotein) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1480)
+		(bc-satisfied 'assertion_1479)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'indinavir 'cyp3a4) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1433)
+		(bc-satisfied 'assertion_1432)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'irinotecan 'oatp1b1) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1510)
+		(bc-satisfied 'assertion_1509)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'lapatinib 'p-glycoprotein) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1481)
+		(bc-satisfied 'assertion_1480)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'lurasidone 'cyp3a4) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1435)
+		(bc-satisfied 'assertion_1434)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'maraviroc 'cyp3a4) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1436)
+		(bc-satisfied 'assertion_1435)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'melatonin 'cyp1a2) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1410)
+		(bc-satisfied 'assertion_1409)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'nebivolol 'cyp2d6) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1451)
+		(bc-satisfied 'assertion_1450)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'nilotinib 'p-glycoprotein) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1483)
+		(bc-satisfied 'assertion_1482)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'paclitaxel 'cyp2c8) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1417)
+		(bc-satisfied 'assertion_1416)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'pantoprazole 'cyp2c19) 
 	'(dikb-assertion
@@ -2242,43 +2242,47 @@
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'perphenazine 'cyp2d6) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1452)
+		(bc-satisfied 'assertion_1451)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'phenytoin 'cyp2c9) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1419)
+		(bc-satisfied 'assertion_1418)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'pimozide 'cyp2d6) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1454)
+		(bc-satisfied 'assertion_1453)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'pitavastatin 'oatp1b3) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1515)
+		(bc-satisfied 'assertion_1514)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'posaconazole 'p-glycoprotein) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1484)
+		(bc-satisfied 'assertion_1483)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'pravastatin 'oatp1b1) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1505)
+		(bc-satisfied 'assertion_1504)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'quetiapine 'cyp3a4) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1438)
+		(bc-satisfied 'assertion_1437)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'quinidine 'cyp3a4) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1448)
+		(bc-satisfied 'assertion_1447)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'ramelteon 'cyp1a2) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1411)
+		(bc-satisfied 'assertion_1410)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'ranolazine 'p-glycoprotein) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1485)
+		(bc-satisfied 'assertion_1484)
+	))
+(assert! '(primary-total-clearance-enzyme-of-1-is-2 'rifampin 'oatp1b1) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_1506)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'rosiglitazone 'cyp2c8) 
 	'(dikb-assertion
@@ -2286,35 +2290,35 @@
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'rosuvastatin 'oatp1b1) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1502)
+		(bc-satisfied 'assertion_1501)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'saxagliptin 'p-glycoprotein) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1486)
+		(bc-satisfied 'assertion_1485)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'simvastatin-acid 'oatp1b1) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1503)
+		(bc-satisfied 'assertion_1502)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'sitagliptin 'p-glycoprotein) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1488)
+		(bc-satisfied 'assertion_1487)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'tacrine 'cyp1a2) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1412)
+		(bc-satisfied 'assertion_1411)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'tacrolimus 'cyp3a4) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1449)
+		(bc-satisfied 'assertion_1448)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'talinolol 'p-glycoprotein) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1489)
+		(bc-satisfied 'assertion_1488)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'ticagrelor 'cyp3a4) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1442)
+		(bc-satisfied 'assertion_1441)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'tolbutamide 'cyp2c9) 
 	'(dikb-assertion
@@ -2322,11 +2326,11 @@
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'tolvaptan 'p-glycoprotein) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1490)
+		(bc-satisfied 'assertion_1489)
 	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'topotecan 'p-glycoprotein) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_1491)
+		(bc-satisfied 'assertion_1490)
 	))
 (assert! '(primary-total-clearance-mechanism-of-1-is-2 'atorvastatin 'Metabolic_Clearance) 
 	'(dikb-assertion
@@ -2721,13 +2725,13 @@
 (assume!
 	'(bc-satisfied 'assertion_1394) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1395) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1396) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1397) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1398) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1399) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1400) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1401) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1402) 'dikb-inference-assumption)
 (assume!
@@ -2735,7 +2739,7 @@
 (assume!
 	'(bc-satisfied 'assertion_1404) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1405) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1407) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1408) 'dikb-inference-assumption)
 (assume!
@@ -2745,21 +2749,21 @@
 (assume!
 	'(bc-satisfied 'assertion_1411) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1412) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1413) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1414) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1415) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1416) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1417) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1418) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1419) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_142) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1422) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1421) 'dikb-inference-assumption)
+(assume!
+	'(bc-satisfied 'assertion_1424) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1425) 'dikb-inference-assumption)
 (assume!
@@ -2767,7 +2771,7 @@
 (assume!
 	'(bc-satisfied 'assertion_1427) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1428) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1432) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1433) 'dikb-inference-assumption)
 (assume!
@@ -2775,29 +2779,29 @@
 (assume!
 	'(bc-satisfied 'assertion_1435) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1436) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_1438) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1437) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_144) 'dikb-inference-assumption)
+(assume!
+	'(bc-satisfied 'assertion_1441) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1442) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1443) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1444) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1447) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1448) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1449) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1450) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1451) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1452) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1453) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1454) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1466) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1467) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1470) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1471) 'dikb-inference-assumption)
 (assume!
@@ -2819,7 +2823,7 @@
 (assume!
 	'(bc-satisfied 'assertion_1480) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1481) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1482) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1483) 'dikb-inference-assumption)
 (assume!
@@ -2827,7 +2831,7 @@
 (assume!
 	'(bc-satisfied 'assertion_1485) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1486) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1487) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1488) 'dikb-inference-assumption)
 (assume!
@@ -2835,27 +2839,31 @@
 (assume!
 	'(bc-satisfied 'assertion_1490) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1491) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1492) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1493) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1494) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1496) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1495) 'dikb-inference-assumption)
+(assume!
+	'(bc-satisfied 'assertion_1498) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1499) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1500) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1501) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1502) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1503) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1504) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1505) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1506) 'dikb-inference-assumption)
+(assume!
+	'(bc-satisfied 'assertion_1509) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_151) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1510) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1514) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1515) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1518) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1519) 'dikb-inference-assumption)
 (assume!
@@ -2875,7 +2883,7 @@
 (assume!
 	'(bc-satisfied 'assertion_1527) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1528) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1529) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_153) 'dikb-inference-assumption)
 (assume!
@@ -2889,7 +2897,7 @@
 (assume!
 	'(bc-satisfied 'assertion_1534) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1535) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1536) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1537) 'dikb-inference-assumption)
 (assume!
@@ -2921,7 +2929,7 @@
 (assume!
 	'(bc-satisfied 'assertion_1550) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1551) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1552) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1553) 'dikb-inference-assumption)
 (assume!
@@ -2931,7 +2939,7 @@
 (assume!
 	'(bc-satisfied 'assertion_1556) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1557) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1558) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1559) 'dikb-inference-assumption)
 (assume!
@@ -2941,9 +2949,9 @@
 (assume!
 	'(bc-satisfied 'assertion_1562) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1563) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1564) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1565) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1569) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1570) 'dikb-inference-assumption)
 (assume!
@@ -2981,9 +2989,9 @@
 (assume!
 	'(bc-satisfied 'assertion_1587) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1588) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1589) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1590) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1592) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1593) 'dikb-inference-assumption)
 (assume!
@@ -2991,7 +2999,7 @@
 (assume!
 	'(bc-satisfied 'assertion_1595) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1596) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1598) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1599) 'dikb-inference-assumption)
 (assume!
@@ -3005,7 +3013,7 @@
 (assume!
 	'(bc-satisfied 'assertion_1604) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1605) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1606) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1607) 'dikb-inference-assumption)
 (assume!
@@ -3017,15 +3025,15 @@
 (assume!
 	'(bc-satisfied 'assertion_1611) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1612) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1613) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1614) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1615) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1616) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1617) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1619) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1620) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1621) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1622) 'dikb-inference-assumption)
 (assume!
@@ -3057,11 +3065,9 @@
 (assume!
 	'(bc-satisfied 'assertion_1635) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1636) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_164) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1648) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1647) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_172) 'dikb-inference-assumption)
 (assume!

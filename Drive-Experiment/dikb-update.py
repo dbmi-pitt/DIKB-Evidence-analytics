@@ -1,5 +1,5 @@
 # Description - Sam Rosko's File to Update the DIKB
-# Last Update - 8/26/2015
+# Last Update - 9/30/2015
 
 import os,sys, string, cgi
 from time import time, strftime, localtime
@@ -32,7 +32,7 @@ dikb.unpickleKB("dikb-pickles/dikb-03052012.pickle")
 
 ### UPDATE ENTITY LIST
 
-for i in ["acyclovir", "aliskiren", "allopurinol", "ambrisentan", "armodafinil", "atrasentan", "azithromycin", "bicalutamide", "boceprevir", "clobazam", "colchicine", "conivaptan", "crizotinib", "dabigatran", "darifenacin", "darunavir", "digoxin", "dihydroergotamine", "dronedarone", "eltrombopag", "esomeprazole", "etravirine", "everolimus", "ezetimibe", "famotidine", "febuxostat", "fexofenadine", "fluticasone", "hydralazine", "lurasidone", "maraviroc", "melatonin", "nebivolol", "oxandrolone", "pazopanib", "phenylpropanolamine", "pilocarpine", "pitavastatin", "quercetin", "ramelteon", "ranitidine", "reserpine", "saxagliptin", "sirolimus", "sitagliptin", "telaprevir", "ticagrelor", "tigecycline", "tipranavir", "tizanidine", "tolvaptan", "topotecan", "vemurafenib", "irinotecan", "diethyldithiocarbamate", "phencyclidine", "tacrolimus", "talinolol", "tranylcypromine", "valspodar", "zosuquidar", "elacridar", "sulfaphenazole", "dabigatran-etexilate"]:
+for i in ["acyclovir", "aliskiren", "allopurinol", "ambrisentan", "armodafinil", "atorvastatin", "atrasentan", "azithromycin", "bicalutamide", "boceprevir", "clobazam", "colchicine", "conivaptan", "crizotinib",  "cyclosporine", "dabigatran", "darifenacin", "darunavir", "digoxin", "dihydroergotamine", "dronedarone", "eltrombopag", "esomeprazole", "etravirine", "everolimus", "ezetimibe", "famotidine", "febuxostat", "fexofenadine", "fluticasone",  "gemfibrozil", "hydralazine", "lurasidone", "maraviroc", "melatonin", "nebivolol", "oxandrolone", "pazopanib", "phenylpropanolamine", "pilocarpine", "pitavastatin", "quercetin", "ramelteon", "ranitidine", "rifampin", "reserpine", "rosuvastatin", "saxagliptin", "sirolimus", "sitagliptin", "telaprevir", "ticagrelor", "tigecycline", "tipranavir", "tizanidine", "tolvaptan", "topotecan", "vemurafenib", "irinotecan", "diethyldithiocarbamate", "phencyclidine", "tacrolimus", "talinolol", "tranylcypromine", "valspodar", "zosuquidar", "elacridar", "sulfaphenazole", "dabigatran-etexilate"]:
 	if i in dikb.objects.keys():
 		print "%s seems to be present already!" % i
 		continue
@@ -219,13 +219,14 @@ for elt in ["cinacalcet", "duloxetine", "terbinafine"]:
     a.insertEvidence("for",e)
     ev.addAssertion(a)
 
-for elt in ["amiodarone", "celecoxib", "clobazam", "cimetidine", "desvenlafaxine", "diltiazem", "diphenhydramine", "escitalopram", "febuxostat", "gefitinib", "hydralazine", "hydroxychloroquine", "imatinib", "methadone", "pazopanib", "propafenone", "ranitidine", "sertraline", "telithromycin", "verapamil", "vemurafenib"]:
+for elt in ["amiodarone", "celecoxib", "clobazam", "cimetidine", "desvenlafaxine", "diltiazem", "diphenhydramine",  "febuxostat", "gefitinib", "hydralazine", "hydroxychloroquine", "imatinib", "methadone", "pazopanib", "propafenone", "ranitidine", "sertraline", "telithromycin", "verapamil", "vemurafenib"]:
     a = Assertion(elt, "in_viVo_selective_inhibitor_of_enzyme", "cyp2d6")
     a.assert_by_default = True
     e = Evidence(ev)
     e.create(doc_p = "http://www.fda.gov/downloads/drugs/guidancecomplianceregulatoryinformation/guidances/ucm292362.pdf", q = "The FDA guidelines suggest that this is a 'weak' in vivo inhibitor of CYP2D6. For more information, see Table 3 on page 42 and also see Table 5 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "1/05/2015")
     a.insertEvidence("for",e)
     ev.addAssertion(a)
+#### temporarily removed "escitalopram"
 
 ###########################################################
 ################ IN VIVO CYP SUBSTRATES ###################

@@ -382,3 +382,51 @@ DIKB log: 10/01/2015 11:50:41
   -  Web instance id: test-June2015 locking  KB file to open: ../Drive-Experiment/dikb-pickles/ev-test.pickle 
 DIKB log: 10/01/2015 11:50:45
   -  Web instance id: test-June2015Done loading: ../Drive-Experiment/dikb-pickles/ev-test.pickle 
+DIKB log: 10/21/2015 20:47:10
+  -  Web instance id: Test 2015 locking  KB file to open: ../Drive-Experiment/dikb-pickles/dikb-test.pickle 
+DIKB log: 10/21/2015 20:47:15
+  -  Web instance id: Test 2015Done loading: ../Drive-Experiment/dikb-pickles/dikb-test.pickle 
+DIKB log: 10/21/2015 20:47:15
+  -  Web instance id: test-June2015 locking  KB file to open: ../Drive-Experiment/dikb-pickles/ev-test.pickle 
+DIKB log: 10/21/2015 20:47:18
+  -  Web instance id: test-June2015Done loading: ../Drive-Experiment/dikb-pickles/ev-test.pickle 
+DIKB log: 10/21/2015 20:47:34
+  -  Web instance id: Test 2015 locking  KB file to open: ../Drive-Experiment/dikb-pickles/dikb-test.pickle 
+DIKB log: 10/21/2015 20:47:39
+  -  Web instance id: Test 2015Done loading: ../Drive-Experiment/dikb-pickles/dikb-test.pickle 
+DIKB log: 10/21/2015 20:47:39
+  -  Web instance id: test-June2015 locking  KB file to open: ../Drive-Experiment/dikb-pickles/ev-test.pickle 
+DIKB log: 10/21/2015 20:47:42
+  -  Web instance id: test-June2015Done loading: ../Drive-Experiment/dikb-pickles/ev-test.pickle 
+DIKB log: 10/21/2015 21:33:41
+  -  Web instance id: Test 2015 locking  KB file to open: ../Drive-Experiment/dikb-pickles/dikb-test.pickle 
+DIKB log: 10/21/2015 21:33:46
+  -  Web instance id: Test 2015Done loading: ../Drive-Experiment/dikb-pickles/dikb-test.pickle 
+DIKB log: 10/21/2015 21:33:46
+  -  Web instance id: test-June2015 locking  KB file to open: ../Drive-Experiment/dikb-pickles/ev-test.pickle 
+DIKB log: 10/21/2015 21:33:49
+  -  Web instance id: test-June2015Done loading: ../Drive-Experiment/dikb-pickles/ev-test.pickle 
+DIKB log: 10/21/2015 22:15:13
+  -  Web instance id: Test 2015 locking  KB file to open: ../Drive-Experiment/dikb-pickles/dikb-test.pickle 
+DIKB log: 10/21/2015 22:15:18
+  -  Web instance id: Test 2015Done loading: ../Drive-Experiment/dikb-pickles/dikb-test.pickle 
+DIKB log: 10/21/2015 22:15:18
+  -  Web instance id: test-June2015 locking  KB file to open: ../Drive-Experiment/dikb-pickles/ev-test.pickle 
+DIKB log: 10/21/2015 22:15:22
+  -  Web instance id: test-June2015Done loading: ../Drive-Experiment/dikb-pickles/ev-test.pickle 
+DIKB log: 10/22/2015 11:34:19
+  -  Web instance id: Test 2015 locking  KB file to open: ../Drive-Experiment/dikb-pickles/dikb-test.pickle 
+DIKB log: 10/22/2015 11:34:24
+  -  Web instance id: Test 2015Done loading: ../Drive-Experiment/dikb-pickles/dikb-test.pickle 
+DIKB log: 10/22/2015 11:34:24
+  -  Web instance id: test-June2015 locking  KB file to open: ../Drive-Experiment/dikb-pickles/ev-test.pickle 
+DIKB log: 10/22/2015 11:34:28
+  -  Web instance id: test-June2015Done loading: ../Drive-Experiment/dikb-pickles/ev-test.pickle 
+DIKB log: 10/22/2015 12:11:26
+  -  Web instance id: Test 2015 locking  KB file to open: ../Drive-Experiment/dikb-pickles/dikb-test.pickle 
+DIKB log: 10/22/2015 12:11:31
+  -  Web instance id: Test 2015Done loading: ../Drive-Experiment/dikb-pickles/dikb-test.pickle 
+DIKB log: 10/22/2015 12:11:31
+  -  Web instance id: test-June2015 locking  KB file to open: ../Drive-Experiment/dikb-pickles/ev-test.pickle 
+DIKB log: 10/22/2015 12:11:34
+  -  Web instance id: test-June2015Done loading: ../Drive-Experiment/dikb-pickles/ev-test.pickle 

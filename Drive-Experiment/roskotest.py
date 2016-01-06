@@ -585,7 +585,7 @@ a.insertEvidence("for",e)
 ev.addAssertion(a)
 
 ##### CYP2C9
-a = Assertion("sulfaphenazole", "in_vitro_selective_inhibitor_of_enzyme", "cyp2c9")
+a = Assertion("sulphafenazole", "in_vitro_selective_inhibitor_of_enzyme", "cyp2c9")
 e = Evidence(ev)
 e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical inhibitor of CYP2C9 for in vitro experiments. See Table 1 on the FDA website.", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "1/29/2015")
 a.insertEvidence("for",e)
@@ -598,7 +598,7 @@ for elt in ["fluconazole", "fluvoxamine", "fluoxetine"]:
     a.insertEvidence("for",e)
     ev.addAssertion(a)
     
-a = Assertion_inhibition_constant("sulfaphenazole", "inhibition_constant", "cyp2c9")
+a = Assertion_inhibition_constant("sulphafenazole", "inhibition_constant", "cyp2c9")
 e = In_vitro_inhibition_study(ev)
 e.create(doc_p = "http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/ucm093664.htm#cypEnzymes", q = "The FDA guidelines suggest that this is a preferred chemical inhibitor of CYP2C9 for in vitro experiments at a K_i of 1.3micM. See Table 1 on the FDA website. \n\n1.3micM/L X 1M/10^6micM X 314.36226g/M = 0.000408670938g/L", ev_type = "Non_Tracable_Statement", revwr = "roskos", timestamp = "6/8/2015", val = "0.000408670938")
 a.insertEvidence("for",e)
@@ -1381,7 +1381,7 @@ for i in ["acyclovir", "aliskiren", "allopurinol", "ambrisentan", "armodafinil",
     dikb.putObject(d)
 
 ###### add non-metabolites to chemicals... maybe a problem with primes (4')
-for i in ["triazolam-4-hydroxylation", "terfenadine-C-hydroxylation", "testosterone-6b-hydroxylation", "theophylline-N-demethylation", "tolbutamide-methyl-hydroxylation", "phenytoin-4-hydroxylation", "propofol-hydroxylation", "rosiglitazone-para-hydroxylation", "simvastatin-acid", "sulfaphenazole", "tacrine-1-hydroxylation", "S-mephenytoin-4’-hydroxylation", "efavirenz-hydroxylase", "erythromycin-N-demethylation", "fluoxetine-O-dealkylation", "flurbiprofen-4’-hydroxylation", "midazolam-1-hydroxylation", "nicotine-C-oxidation", "nifedipine-oxidation", "omeprazole-5-hydroxylation", "phenacetin-O-deethylation", "S-mephenytoin-N-demethylation", "S-warfarin-7-hydroxylation", "amodiaquine-N-deethylation", "aniline-4-hydroxylation", "bupropion-hydroxylation", "caffeine-3-N-demethylation", "chlorzoxazone-6-hydroxylation", "coumarin-7-hydroxylation", "debrisoquine-4-hydroxylation", "dextromethorphan-N-demethylation", "dextromethorphan-O-demethylation", "diclofenac-4’-hydroxylation", "2-isopropenyl-2-methyl-adamantane", "7-ethoxyresorufin-O-deethylation", "a-naphthoflavone", "azamulin", "bufuralol-1’-hydroxylation", "elacridar", "etexilate", "lauric-acid-11-hydroxylation", "nootkatone", "p-nitrophenol-3-hydroxylation", "taxol-6-hydroxylation", "tryptamine"]:
+for i in ["triazolam-4-hydroxylation", "terfenadine-C-hydroxylation", "testosterone-6b-hydroxylation", "theophylline-N-demethylation", "tolbutamide-methyl-hydroxylation", "phenytoin-4-hydroxylation", "propofol-hydroxylation", "rosiglitazone-para-hydroxylation", "simvastatin-acid", "sulphafenazole", "tacrine-1-hydroxylation", "S-mephenytoin-4’-hydroxylation", "efavirenz-hydroxylase", "erythromycin-N-demethylation", "fluoxetine-O-dealkylation", "flurbiprofen-4’-hydroxylation", "midazolam-1-hydroxylation", "nicotine-C-oxidation", "nifedipine-oxidation", "omeprazole-5-hydroxylation", "phenacetin-O-deethylation", "S-mephenytoin-N-demethylation", "S-warfarin-7-hydroxylation", "amodiaquine-N-deethylation", "aniline-4-hydroxylation", "bupropion-hydroxylation", "caffeine-3-N-demethylation", "chlorzoxazone-6-hydroxylation", "coumarin-7-hydroxylation", "debrisoquine-4-hydroxylation", "dextromethorphan-N-demethylation", "dextromethorphan-O-demethylation", "diclofenac-4’-hydroxylation", "2-isopropenyl-2-methyl-adamantane", "7-ethoxyresorufin-O-deethylation", "a-naphthoflavone", "azamulin", "bufuralol-1’-hydroxylation", "elacridar", "etexilate", "lauric-acid-11-hydroxylation", "nootkatone", "p-nitrophenol-3-hydroxylation", "taxol-6-hydroxylation", "tryptamine"]:
     if i in dikb.objects.keys():
         print "%s seems to be present already!" % i
         continue

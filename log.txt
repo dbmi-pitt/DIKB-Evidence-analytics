@@ -174,3 +174,15 @@ DIKB log: 10/01/2015 12:30:46
 DIKB log: 10/01/2015 12:30:52
   -  Web instance id: DIKB evidence July 30th 2015: 10/01/2015 12:30:43
 Done loading: Drive-Experiment/dikb-pickles/dikb-test.pickle 
+DIKB log: 10/22/2015 13:13:29
+  -  Web instance id: DIKB evidence July 30th 2015: 10/22/2015 13:13:29
+ locking  KB file to open: Drive-Experiment/dikb-pickles/ev-test.pickle 
+DIKB log: 10/22/2015 13:13:32
+  -  Web instance id: DIKB evidence July 30th 2015: 10/22/2015 13:13:29
+Done loading: Drive-Experiment/dikb-pickles/ev-test.pickle 
+DIKB log: 10/22/2015 13:13:49
+  -  Web instance id: DIKB evidence July 30th 2015: 10/22/2015 13:13:49
+ locking  KB file to open: Drive-Experiment/dikb-pickles/ev-test.pickle 
+DIKB log: 10/22/2015 13:13:53
+  -  Web instance id: DIKB evidence July 30th 2015: 10/22/2015 13:13:49
+Done loading: Drive-Experiment/dikb-pickles/ev-test.pickle 

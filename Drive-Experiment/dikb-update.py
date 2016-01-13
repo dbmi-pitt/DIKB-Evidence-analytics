@@ -70,11 +70,11 @@ for e,v in ev.objects.iteritems():
     for it in v.evidence_for:
         if it.doc_pointer == 'fda2006' or it.doc_pointer == 'fda2006a' or it.doc_pointer == 'fda206a' or it.doc_pointer == 'http://dl.dropbox.com/u/4516186/FDA-Guidance-Drug-Interaction-Studies%E2%80%93Study%20Design-Data-Analysis-and-Implications-2006.pdf':
             v.evidence_for.remove(it)
-            v.assert_by_default = 0
+            #v.assert_by_default = 0
     for it in v.evidence_against:
         if it.doc_pointer == 'fda2006' or it.doc_pointer == 'fda2006a' or it.doc_pointer == 'fda206a' or it.doc_pointer == 'http://dl.dropbox.com/u/4516186/FDA-Guidance-Drug-Interaction-Studies%E2%80%93Study%20Design-Data-Analysis-and-Implications-2006.pdf':
             v.evidence_against.remove(it)
-            v.assert_by_default = 0
+            #v.assert_by_default = 0
 
 ### REMOVE ALL ASSERTIONS THAT ARE UNSUPPORTED
 

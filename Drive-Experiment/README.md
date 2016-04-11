@@ -1,6 +1,6 @@
 ##### ReadMe for Drive-Experiment Update Process
 ##### Author : Sam Rosko
-##### Last Update : 2015-08-07
+##### Last Update : 2016-02-08
 
 ### Update the entities/evidence in the DIKB, run DDI prediction engine
 
@@ -19,7 +19,7 @@
 
 (3) Run "create-SQL-DIKB-from-pickle.py", found in the "dikb-relational-to-object-mappings/" directory
 
--- EX: $ python create-SQL-DIKB-from-pickle.py 2>&1 | tee /home/scr25/Desktop/Summer\ Work/DIKB-Evidence-analytics/Drive-Experiment/create-sql-output.txt
+-- EX: $ python create-SQL-DIKB-from-pickle.py 2>&1 | tee /home/scr25/Documents/Fall_2015/DIKB-Evidence-analytics/Drive-Experiment/create-sql-output.txt
 -- This file takes the freshly pickled evidence-base and knowledge-bases and creates an sqlite3 file for them, named test.db
 -- This file should be eventually be converted from ".db" format to ".sql" format so that it can be loaded into and browsed in "mysql-workbench"
 -- If this runs into an error in the final step, that is likely because of an issue with your 'levels-of-evidence', see step (2) for more details

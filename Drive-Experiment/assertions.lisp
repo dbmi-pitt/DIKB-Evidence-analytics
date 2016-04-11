@@ -16,9 +16,6 @@
 (assert! '(1-is-a-metabolite '1prime-hydroxymidazolam) 
 	'(dikb-categorical-assertion))
 
-(assert! '(1-is-a-metabolite '2-isopropenyl-2-methyl-adamantane) 
-	'(dikb-categorical-assertion))
-
 (assert! '(1-is-a-metabolite '3-methylxanthine) 
 	'(dikb-categorical-assertion))
 
@@ -62,9 +59,6 @@
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-a-metabolite '6prime-hydroxymethyl-simvastatin) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-a-metabolite '7-ethoxyresorufin-O-deethylation) 
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-a-metabolite '7-hydroxy-N-desalkyl-quetiapine) 
@@ -130,16 +124,7 @@
 (assert! '(1-is-a-metabolite 'S-mephenytoin) 
 	'(dikb-categorical-assertion))
 
-(assert! '(1-is-a-metabolite 'S-mephenytoin-4’-hydroxylation) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-a-metabolite 'S-mephenytoin-N-demethylation) 
-	'(dikb-categorical-assertion))
-
 (assert! '(1-is-a-metabolite 'S-methyl-dihydroziprasidone) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-a-metabolite 'S-warfarin-7-hydroxylation) 
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-a-metabolite 'S-zopiclone-N-oxide) 
@@ -149,12 +134,6 @@
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-a-metabolite 'alpha-naphthoflavone) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-a-metabolite 'amodiaquine-N-deethylation) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-a-metabolite 'aniline-4-hydroxylation) 
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-a-metabolite 'benzisothiazole-sulphone) 
@@ -169,25 +148,7 @@
 (assert! '(1-is-a-metabolite 'beta-hydroxy-simvastatin) 
 	'(dikb-categorical-assertion))
 
-(assert! '(1-is-a-metabolite 'bufuralol-1’-hydroxylation) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-a-metabolite 'bupropion-hydroxylation) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-a-metabolite 'caffeine-3-N-demethylation) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-a-metabolite 'chlorzoxazone-6-hydroxylation) 
-	'(dikb-categorical-assertion))
-
 (assert! '(1-is-a-metabolite 'clozapine-N-oxide) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-a-metabolite 'coumarin-7-hydroxylation) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-a-metabolite 'debrisoquine-4-hydroxylation) 
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-a-metabolite 'dehydro-aripiprazole) 
@@ -205,31 +166,10 @@
 (assert! '(1-is-a-metabolite 'desmethylclozapine) 
 	'(dikb-categorical-assertion))
 
-(assert! '(1-is-a-metabolite 'dextromethorphan-N-demethylation) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-a-metabolite 'dextromethorphan-O-demethylation) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-a-metabolite 'diclofenac-4’-hydroxylation) 
-	'(dikb-categorical-assertion))
-
 (assert! '(1-is-a-metabolite 'didemethylcitalopram) 
 	'(dikb-categorical-assertion))
 
-(assert! '(1-is-a-metabolite 'efavirenz-hydroxylase) 
-	'(dikb-categorical-assertion))
-
 (assert! '(1-is-a-metabolite 'erythrohydrobupropion) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-a-metabolite 'erythromycin-N-demethylation) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-a-metabolite 'fluoxetine-O-dealkylation) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-a-metabolite 'flurbiprofen-4’-hydroxylation) 
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-a-metabolite 'hydrocinnamic-acid) 
@@ -241,19 +181,7 @@
 (assert! '(1-is-a-metabolite 'hydroxybupropion) 
 	'(dikb-categorical-assertion))
 
-(assert! '(1-is-a-metabolite 'lauric-acid-11-hydroxylation) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-a-metabolite 'midazolam-1-hydroxylation) 
-	'(dikb-categorical-assertion))
-
 (assert! '(1-is-a-metabolite 'modafinil-sulfone) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-a-metabolite 'nicotine-C-oxidation) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-a-metabolite 'nifedipine-oxidation) 
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-a-metabolite 'norfluoxetine) 
@@ -262,61 +190,22 @@
 (assert! '(1-is-a-metabolite 'norpropoxyphene) 
 	'(dikb-categorical-assertion))
 
-(assert! '(1-is-a-metabolite 'omeprazole-5-hydroxylation) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-a-metabolite 'p-nitrophenol-3-hydroxylation) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-a-metabolite 'phenacetin-O-deethylation) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-a-metabolite 'phenytoin-4-hydroxylation) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-a-metabolite 'propofol-hydroxylation) 
-	'(dikb-categorical-assertion))
-
 (assert! '(1-is-a-metabolite 'quetiapine-sulfoxide) 
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-a-metabolite 'reduced-haloperidol) 
 	'(dikb-categorical-assertion))
 
-(assert! '(1-is-a-metabolite 'rosiglitazone-para-hydroxylation) 
-	'(dikb-categorical-assertion))
-
 (assert! '(1-is-a-metabolite 'simvastatin-acid) 
 	'(dikb-categorical-assertion))
 
-(assert! '(1-is-a-metabolite 'tacrine-1-hydroxylation) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-a-metabolite 'taxol-6-hydroxylation) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-a-metabolite 'terfenadine-C-hydroxylation) 
-	'(dikb-categorical-assertion))
-
 (assert! '(1-is-a-metabolite 'teriflunomide) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-a-metabolite 'testosterone-6b-hydroxylation) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-a-metabolite 'theophylline-N-demethylation) 
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-a-metabolite 'thioridazine-5-sulfoxide) 
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-a-metabolite 'threohydrobupropion) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-a-metabolite 'tolbutamide-methyl-hydroxylation) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-a-metabolite 'triazolam-4-hydroxylation) 
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-a-metabolite 'voriconazole-N-oxide) 
@@ -487,9 +376,6 @@
 (assert! '(1-is-an-active-ingredient 'darifenacin) 
 	'(dikb-categorical-assertion))
 
-(assert! '(1-is-an-active-ingredient 'darunavir) 
-	'(dikb-categorical-assertion))
-
 (assert! '(1-is-an-active-ingredient 'dasatinib) 
 	'(dikb-categorical-assertion))
 
@@ -509,12 +395,6 @@
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-an-active-ingredient 'dextromethorphan) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-an-active-ingredient 'diethyldithiocarbamate) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-an-active-ingredient 'digoxin) 
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-an-active-ingredient 'dihydroergotamine) 
@@ -542,9 +422,6 @@
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-an-active-ingredient 'efavirenz) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-an-active-ingredient 'elacridar) 
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-an-active-ingredient 'eltrombopag) 
@@ -769,16 +646,10 @@
 (assert! '(1-is-an-active-ingredient 'phenacetin) 
 	'(dikb-categorical-assertion))
 
-(assert! '(1-is-an-active-ingredient 'phencyclidine) 
-	'(dikb-categorical-assertion))
-
 (assert! '(1-is-an-active-ingredient 'phenylpropanolamine) 
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-an-active-ingredient 'phenytoin) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-an-active-ingredient 'pilocarpine) 
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-an-active-ingredient 'pimozide) 
@@ -808,9 +679,6 @@
 (assert! '(1-is-an-active-ingredient 'propoxyphene) 
 	'(dikb-categorical-assertion))
 
-(assert! '(1-is-an-active-ingredient 'quercetin) 
-	'(dikb-categorical-assertion))
-
 (assert! '(1-is-an-active-ingredient 'quetiapine) 
 	'(dikb-categorical-assertion))
 
@@ -833,9 +701,6 @@
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-an-active-ingredient 'ranolazine) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-an-active-ingredient 'reserpine) 
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-an-active-ingredient 'rifampin) 
@@ -937,9 +802,6 @@
 (assert! '(1-is-an-active-ingredient 'tigecycline) 
 	'(dikb-categorical-assertion))
 
-(assert! '(1-is-an-active-ingredient 'tipranavir) 
-	'(dikb-categorical-assertion))
-
 (assert! '(1-is-an-active-ingredient 'tizanidine) 
 	'(dikb-categorical-assertion))
 
@@ -953,9 +815,6 @@
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-an-active-ingredient 'topotecan) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-an-active-ingredient 'tranylcypromine) 
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-an-active-ingredient 'trazodone) 
@@ -974,9 +833,6 @@
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-an-active-ingredient 'valproate) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-an-active-ingredient 'valspodar) 
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-an-active-ingredient 'vemurafenib) 
@@ -1007,9 +863,6 @@
 	'(dikb-categorical-assertion))
 
 (assert! '(1-is-an-active-ingredient 'zolpidem) 
-	'(dikb-categorical-assertion))
-
-(assert! '(1-is-an-active-ingredient 'zosuquidar) 
 	'(dikb-categorical-assertion))
 
 (assert! '(ACCEPT-IN-VITRO-BASED-ENZYME-MODULATION-ASSERTIONS) '(dikb-inference-configuration))

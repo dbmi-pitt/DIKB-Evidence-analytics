@@ -78,8 +78,8 @@ os.environ["DIKB_LOG_LEVEL"] = "2"
 ## TESTING ADDING NEW DRUGS
 new_ev = EvidenceBase("evidence","test-June2015")
 new_dikb = DIKB("dikb","Test 2015", new_ev)
-new_dikb.unpickleKB('../Drive-Experiment/dikb-pickles/dikb-test.pickle') # adds a new metabolite
-new_ev.unpickleKB('../Drive-Experiment/dikb-pickles/ev-test.pickle') # no changes yet
+new_dikb.unpickleKB('../dikb-pickles/dikb-test.pickle') # adds a new metabolite
+new_ev.unpickleKB('../dikb-pickles/ev-test.pickle') # no changes yet
 
 ##assess evidence using some belief criteria and test exporting to the database 
 reset_evidence_rating(new_ev, new_dikb) # reset the internal finite
@@ -99,8 +99,8 @@ for e,v in new_ev.objects.iteritems():
     v.ready_for_classification = True
 
 ############################## UNCOMMENT WHEN READY TO EXPORT ASSERTIONS TO THE REASONER #########################
-exportAssertions(new_ev, new_dikb, "../Drive-Experiment/assertions.lisp")
-assessBeliefCriteria(new_dikb, new_ev, "../Drive-Experiment/changing_assumptions.lisp")
+exportAssertions(new_ev, new_dikb, "../assertions.lisp")
+assessBeliefCriteria(new_dikb, new_ev, "../changing_assumptions.lisp")
 
 # #new_dikb.pickleKB('../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/full-Tier-4-UPIA-Hanlon-AJGP2012-DIKB-EVALUATED.pickle')
 # #new_ev.pickleKB('../database/dikb-pickle-merging-Robs-entries-fall-2010-with-SQL-030512/full-Tier-4-UPIA-Hanlon-AJGP2012-EV-EVALUATED.pickle')

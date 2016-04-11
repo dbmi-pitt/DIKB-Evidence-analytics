@@ -1,17 +1,24 @@
 Pravastatin
 
 Substituents:
-alcohol
-beta-hydroxy acid
-carboxylic acid
-carboxylic acid derivative
-carboxylic acid ester
-dicarboxylic acid derivative
-enolate
-ether
-hydroxy acid
-polyamine
-secondary alcohol
+Alcohol
+Aliphatic homopolycyclic compound
+Beta-hydroxy acid
+Branched fatty acid
+Carbocyclic fatty acid
+Carbonyl group
+Carboxylic acid
+Carboxylic acid derivative
+Carboxylic acid ester
+Dicarboxylic acid or derivatives
+Fatty acid ester
+Fatty alcohol
+Hydrocarbon derivative
+Hydroxy acid
+Medium-chain fatty acid
+Medium-chain hydroxy acid
+Organooxygen compound
+Secondary alcohol
 
 Targets:
 3-hydroxy-3-methylglutaryl-coenzyme A reductase
@@ -38,21 +45,28 @@ InChIKey=TUZYXOIXSAXUGO-PZAWKZKUSA-N
 Citalopram
 
 Substituents:
-amine
-aryl fluoride
-aryl halide
-benzene
-benzonitrile
-carbonitrile
-dialkyl ether
-ether
-fluorobenzene
-nitrile
-organofluoride
-organohalogen
-organonitrogen compound
-polyamine
-tertiary amine
+Amine
+Aralkylamine
+Aromatic heteropolycyclic compound
+Aryl fluoride
+Aryl halide
+Benzonitrile
+Carbonitrile
+Dialkyl ether
+Ether
+Fluorobenzene
+Halobenzene
+Hydrocarbon derivative
+Nitrile
+Organofluoride
+Organohalogen compound
+Organoheterocyclic compound
+Organonitrogen compound
+Organooxygen compound
+Oxacycle
+Phenylbutylamine
+Tertiary aliphatic amine
+Tertiary amine
 
 Targets:
 Sodium-dependent serotonin transporter
@@ -86,15 +100,28 @@ Alprazolam
 
 Substituents:
 1,2,4-triazole
-aryl chloride
-aryl halide
-azole
-benzene
-chlorobenzene
-organochloride
-organohalogen
-organonitrogen compound
-polyamine
+1,4-benzodiazepine
+Aromatic heteropolycyclic compound
+Aryl chloride
+Aryl halide
+Azacycle
+Azole
+Benzenoid
+Chlorobenzene
+Heteroaromatic compound
+Hydrocarbon derivative
+Imine
+Ketimine
+Monocyclic benzene moiety
+Organic 1,3-dipolar compound
+Organochloride
+Organohalogen compound
+Organonitrogen compound
+Phenyl-1,2,4-triazole
+Phenyl-1,3,4-triazole
+Phenyltriazole
+Propargyl-type 1,3-dipolar organic compound
+Triazole
 
 Targets:
 GABA-A receptor (anion channel)
@@ -121,16 +148,20 @@ InChIKey=VREFGVBLTWBCJP-UHFFFAOYSA-N
 Duloxetine
 
 Substituents:
-alkyl aryl ether
-amine
-benzene
-ether
-organonitrogen compound
-phenol ether
-polyamine
-secondary aliphatic amine
-secondary amine
-thiophene
+Alkyl aryl ether
+Amine
+Aralkylamine
+Aromatic heteropolycyclic compound
+Ether
+Heteroaromatic compound
+Hydrocarbon derivative
+Naphthalene
+Organoheterocyclic compound
+Organonitrogen compound
+Organooxygen compound
+Secondary aliphatic amine
+Secondary amine
+Thiophene
 
 Targets:
 Sodium-dependent serotonin transporter
@@ -160,26 +191,38 @@ InChIKey=ZEUITGRIYCTCEM-KRWDZBQOSA-N
 Haloperidol
 
 Substituents:
-acetophenone
-alcohol
-amine
-aryl chloride
-aryl fluoride
-aryl halide
-benzene
-benzoyl
-carbonyl group
-chlorobenzene
-enolate
-fluorobenzene
-ketone
-organochloride
-organofluoride
-organohalogen
-organonitrogen compound
-polyamine
-tertiary alcohol
-tertiary amine
+Acetophenone
+Alcohol
+Amine
+Aralkylamine
+Aromatic heteromonocyclic compound
+Aryl alkyl ketone
+Aryl chloride
+Aryl fluoride
+Aryl halide
+Aryl ketone
+Azacycle
+Benzenoid
+Benzoyl
+Butyrophenone
+Carbonyl group
+Chlorobenzene
+Fluorobenzene
+Gamma-aminoketone
+Halobenzene
+Hydrocarbon derivative
+Ketone
+Monocyclic benzene moiety
+Organochloride
+Organofluoride
+Organohalogen compound
+Organonitrogen compound
+Organooxygen compound
+Phenylbutylamine
+Phenylpiperidine
+Tertiary alcohol
+Tertiary aliphatic amine
+Tertiary amine
 
 Targets:
 D(2) dopamine receptor
@@ -214,15 +257,22 @@ InChIKey=LNEPOXFFQSENCJ-UHFFFAOYSA-N
 Simvastatin
 
 Substituents:
-alcohol
-carboxylic acid derivative
-carboxylic acid ester
-dicarboxylic acid derivative
-enolate
-ether
-oxane
-polyamine
-secondary alcohol
+Alcohol
+Aliphatic heteropolycyclic compound
+Carbonyl group
+Carboxylic acid derivative
+Carboxylic acid ester
+Delta valerolactone
+Delta_valerolactone
+Dicarboxylic acid or derivatives
+Fatty acid ester
+Fatty acyl
+Hydrocarbon derivative
+Organooxygen compound
+Oxacycle
+Oxane
+Saccharide
+Secondary alcohol
 
 Targets:
 3-hydroxy-3-methylglutaryl-coenzyme A reductase
@@ -251,22 +301,29 @@ InChIKey=RYMZZMVNJRMUDD-HGQWONQESA-N
 Paroxetine
 
 Substituents:
-acetal
-alkyl aryl ether
-amine
-aryl fluoride
-aryl halide
-benzene
-benzodioxole
-ether
-fluorobenzene
-organofluoride
-organohalogen
-organonitrogen compound
-phenol ether
-polyamine
-secondary aliphatic amine
-secondary amine
+Acetal
+Alkyl aryl ether
+Amine
+Aralkylamine
+Aromatic heteropolycyclic compound
+Aryl fluoride
+Aryl halide
+Azacycle
+Benzenoid
+Benzodioxole
+Ether
+Fluorobenzene
+Halobenzene
+Hydrocarbon derivative
+Monocyclic benzene moiety
+Organofluoride
+Organohalogen compound
+Organonitrogen compound
+Organooxygen compound
+Oxacycle
+Phenylpiperidine
+Secondary aliphatic amine
+Secondary amine
 
 Targets:
 Sodium-dependent serotonin transporter
@@ -307,22 +364,33 @@ InChIKey=AHOUBRCZNHFOSL-YOEHRIQHSA-N
 Risperidone
 
 Substituents:
-amine
-aryl fluoride
-aryl halide
-azole
-benzene
-fluorobenzene
-isoxazole
-organofluoride
-organohalogen
-organonitrogen compound
-piperidine
-polyamine
-pyridine
-pyrimidine
-pyrimidone
-tertiary amine
+Amine
+Aralkylamine
+Aromatic heteropolycyclic compound
+Aryl fluoride
+Aryl halide
+Azacycle
+Azole
+Benzenoid
+Benzisoxazole
+Fluorobenzene
+Heteroaromatic compound
+Hydrocarbon derivative
+Isoxazole
+Lactam
+Organofluoride
+Organohalogen compound
+Organonitrogen compound
+Organooxygen compound
+Oxacycle
+Oxazole
+Piperidine
+Pyridine
+Pyridopyrimidine
+Pyrimidine
+Pyrimidone
+Tertiary aliphatic amine
+Tertiary amine
 
 Targets:
 5-hydroxytryptamine receptor 2A
@@ -376,15 +444,29 @@ Triazolam
 
 Substituents:
 1,2,4-triazole
-aryl chloride
-aryl halide
-azole
-benzene
-chlorobenzene
-organochloride
-organohalogen
-organonitrogen compound
-polyamine
+1,4-benzodiazepine
+Aromatic heteropolycyclic compound
+Aryl chloride
+Aryl halide
+Azacycle
+Azole
+Benzenoid
+Chlorobenzene
+Halobenzene
+Heteroaromatic compound
+Hydrocarbon derivative
+Imine
+Ketimine
+Monocyclic benzene moiety
+Organic 1,3-dipolar compound
+Organochloride
+Organohalogen compound
+Organonitrogen compound
+Phenyl-1,2,4-triazole
+Phenyl-1,3,4-triazole
+Phenyltriazole
+Propargyl-type 1,3-dipolar organic compound
+Triazole
 
 Targets:
 Gamma-aminobutyric acid receptor subunit alpha-1
@@ -451,20 +533,27 @@ InChIKey=JOFWLTCLBGQGBO-UHFFFAOYSA-N
 Bupropion
 
 Substituents:
-amine
-aryl chloride
-aryl halide
-benzoyl
-carbonyl group
-chlorobenzene
-enolate
-ketone
-organochloride
-organohalogen
-organonitrogen compound
-polyamine
-secondary aliphatic amine
-secondary amine
+Acetophenone
+Alpha-aminoketone
+Amine
+Aromatic homomonocyclic compound
+Aryl alkyl ketone
+Aryl chloride
+Aryl halide
+Aryl ketone
+Benzoyl
+Carbonyl group
+Chlorobenzene
+Halobenzene
+Hydrocarbon derivative
+Ketone
+Organochloride
+Organohalogen compound
+Organonitrogen compound
+Organooxygen compound
+Phenylpropane
+Secondary aliphatic amine
+Secondary amine
 
 Targets:
 Sodium-dependent dopamine transporter
@@ -496,18 +585,29 @@ Quetiapine
 
 Substituents:
 1,4-diazinane
-alcohol
-amidine
-amine
-benzene
-carboxylic acid amidine
-ether
-organonitrogen compound
-piperazine
-polyamine
-primary alcohol
-tertiary amine
-thioether
+Alcohol
+Amidine
+Amine
+Aromatic heteropolycyclic compound
+Azacycle
+Benzenoid
+Carboxylic acid amidine
+Dialkyl ether
+Diarylthioether
+Dibenzothiazepine
+Ether
+Hydrocarbon derivative
+Imidolactam
+N-alkylpiperazine
+Organic 1,3-dipolar compound
+Organonitrogen compound
+Organooxygen compound
+Piperazine
+Primary alcohol
+Propargyl-type 1,3-dipolar organic compound
+Tertiary aliphatic amine
+Tertiary amine
+Thioether
 
 Targets:
 5-hydroxytryptamine receptor 2A

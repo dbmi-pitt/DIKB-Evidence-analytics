@@ -809,9 +809,10 @@
 		  (rule
 		   ((:IN (effect-on-1-of-2-reducing-the-clearance-of-3-via-4-is-ambiguous ?m ?q ?x ?z))
 		    (:IN (1-effects-an-increase-in-2-by-reducing-clearance-of-3-via-4 ?q ?m ?x ?z)))
-		   (contradiction (eval (quotize (list '1-effects-an-increase-in-2-by-reducing-clearance-of-3-via-4 ?q ?m ?x ?z)))))
-
-		  
+		   (rretract! (1-effects-an-increase-in-2-by-reducing-clearance-of-3-via-4 ?q ?m ?x ?z) default-inference-assumption))
+		 
+		  ;;(contradiction (eval (quotize (list '1-effects-an-increase-in-2-by-reducing-clearance-of-3-via-4 ?q ?m ?x ?z)))))
+			  
 		  ;; a rule for that makes it a contradiction for an active ingredient 
 		  ;; or compound to inhibit and *not* inhibit an enzyme
 		  (rule 

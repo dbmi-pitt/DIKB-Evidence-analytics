@@ -32,6 +32,22 @@ WHERE drug = (SELECT ingredient_id
    WHERE report_order = 1 AND ingredient = 'Haloperidol')
 ORDER BY snomed_hoi;
 
+--- this is an attempt to get all of the side effects for my sample drugs for use in a frequency distribution
+--- this can be used as my comparision case as the "sample of drugs"
+
+SELECT DISTINCT snomed_hoi
+FROM drug_hoi_relationship
+WHERE drug IN (SELECT ingredient_id
+   FROM laertes_summary
+   WHERE report_order = 1 AND ingredient = 'Haloperidol', 'Risperidone', 'Quetiapine', 'Duloxetine', 'Paroxetine', 'Bupropion', 'Citalopram', 'Triazolam', 'Alprazolam', 'Simvastatin', 'Pravastatin')
+ORDER BY snomed_hoi;
+
+--- this query gets me a list of all side effects with repetition for every drug in the LAERTES system
+--- this can be used as my comparison case as the "universe of drugs"
+
+SELECT snomed_hoi
+FROM drug_hoi_relationship
+ORDER BY snomed_hoi;
 
 ---------- SIDER INFO ----------
 

@@ -1,6 +1,6 @@
 ##### Sam Rosko's file for running the DRIVE Empirical Experiment
 ##### TO DO: Test extensively
-##### Last Update: 2016-03-29
+##### Last Update: 2016-04-12
 
 from DIKB.DIKB import *
 from DIKB.DrugModel import *
@@ -13,7 +13,7 @@ import errno
 import shutil
 import time
 
-rootdir = "/home/scr25/Documents/Fall_2015/DIKB-Evidence-analytics/Drive-Experiment/project-class-test/test-experiment/"
+rootdir = "/home/scr25/Documents/Fall_2015/DIKB-Evidence-analytics/Drive-Experiment/project-class-real/test-experiment/"
 
 ##### Function for easy symbolic link reassignment
 def symlink_force(target, link_name):

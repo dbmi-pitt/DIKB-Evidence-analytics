@@ -165,7 +165,7 @@ for x in a:
 
 ## for each strategy, create a new folder and write out the loe and
 ## modified belief criteria dictionaries in that folder
-pth_prfx = "/home/scr25/Documents/Fall_2015/DIKB-Evidence-analytics/Drive-Experiment/project-class-test/test-experiment/"
+pth_prfx = "/home/scr25/Documents/Fall_2015/DIKB-Evidence-analytics/Drive-Experiment/project-class-real/test-experiment/"
 f = open(pth_prfx + "belief-criteria-strategies", 'w')
 for s in r:
     f.write(str(s) + "\n")

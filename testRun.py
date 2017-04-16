@@ -9,11 +9,14 @@ from DIKB.DrugModel import *
 from DIKB.EvidenceModel import *
 from DIKB.ExportAssertions import *
 
+##### must set log level, can be changed
+os.environ["DIKB_LOG_LEVEL"] = "2" 
+
 ## current time and date
 timestamp = strftime("%m/%d/%Y %H:%M:%S\n", localtime(time()))
 
 ## Customize as you see fit
-ident = "".join(["DIKB evidence July 30th 2015: ", timestamp])
+ident = "".join(["DIKB evidence July 27th 2016: ", timestamp])
 
 ev = EvidenceBase("evidence",ident)
 ev.unpickleKB("Drive-Experiment/dikb-pickles/ev-test.pickle")

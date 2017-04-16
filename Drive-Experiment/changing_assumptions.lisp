@@ -1,106 +1,6 @@
-(assert! '(1-controls-formation-of-2 'cyp1a2 '3-methylxanthine) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_264)
-	))
-(assert! '(1-controls-formation-of-2 'cyp2b6 'hydroxybupropion) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_1186)
-	))
-(assert! '(1-controls-formation-of-2 'cyp2c19 'N-dealkylperphenazine) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_1202)
-	))
-(assert! '(1-controls-formation-of-2 'cyp2c19 'N-desmethylatomoxetine) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_487)
-	))
 (assert! '(1-controls-formation-of-2 'cyp2c19 'N-desmethylsertraline) 
 	'(dikb-assertion
 		(bc-satisfied 'assertion_960)
-	))
-(assert! '(1-controls-formation-of-2 'cyp2c8 '6alpha-hydroxy-paclitaxel) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_1127)
-	))
-(assert! '(1-controls-formation-of-2 'cyp2c8 'N-dealkylperphenazine) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_76)
-	))
-(assert! '(1-controls-formation-of-2 'cyp2c9 'N-dealkylperphenazine) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_1199)
-	))
-(assert! '(1-controls-formation-of-2 'cyp2c9 'N-desmethylrosuvastatin) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_244)
-	))
-(assert! '(1-controls-formation-of-2 'cyp2d6 '4-hydroxyatomoxetine) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_304)
-	))
-(assert! '(1-controls-formation-of-2 'cyp2d6 '9-hydroxyrisperidone) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_996)
-	))
-(assert! '(1-controls-formation-of-2 'cyp2e1 '1\,3-dimethyluric-acid) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_175)
-	))
-(assert! '(1-controls-formation-of-2 'cyp3a4 '1\,3-dimethyluric-acid) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_28)
-	))
-(assert! '(1-controls-formation-of-2 'cyp3a4 '1prime-hydroxymidazolam) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_149)
-	))
-(assert! '(1-controls-formation-of-2 'cyp3a4 '4-hydroxyalprazolam) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_707)
-	))
-(assert! '(1-controls-formation-of-2 'cyp3a4 '4-hydroxymidazolam) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_460)
-	))
-(assert! '(1-controls-formation-of-2 'cyp3a4 'alpha-hydroxyalprazolam) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_623)
-	))
-(assert! '(1-controls-formation-of-2 'cyp3a4 'ortho-hydroxy-atorvastatin) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_301)
-	))
-(assert! '(1-controls-formation-of-2 'cyp3a4 'para-hydroxy-atorvastatin) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_639)
-	))
-(assert! '(1-controls-formation-of-2 'cyp3a4 'ziprasidone-sulphoxide) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_225)
-	))
-(assert! '(1-controls-formation-of-2 'cyp3a5 '1prime-hydroxymidazolam) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_558)
-	))
-(assert! '(1-controls-formation-of-2 'cyp3a5 '4-hydroxyalprazolam) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_277)
-	))
-(assert! '(1-controls-formation-of-2 'cyp3a5 '4-hydroxymidazolam) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_490)
-	))
-(assert! '(1-controls-formation-of-2 'cyp3a5 'alpha-hydroxyalprazolam) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_823)
-	))
-(assert! '(1-controls-formation-of-2 'cyp3a5 'ortho-hydroxy-atorvastatin) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_1236)
-	))
-(assert! '(1-controls-formation-of-2 'cyp3a5 'para-hydroxy-atorvastatin) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_1026)
 	))
 (assert! '(1-does-not-inhibit-2 'R-citalopram 'cyp1a2) 
 	'(dikb-assertion
@@ -318,6 +218,30 @@
 	'(dikb-assertion
 		(bc-satisfied 'assertion_832)
 	))
+(assert! '(1-has-metabolite-2 '1-methylxanthine '1-methyluric-acid) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_945)
+	))
+(assert! '(1-has-metabolite-2 'alprazolam '4-hydroxyalprazolam) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_113)
+	))
+(assert! '(1-has-metabolite-2 'alprazolam 'alpha-hydroxyalprazolam) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_1176)
+	))
+(assert! '(1-has-metabolite-2 'aripiprazole 'dehydro-aripiprazole) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_746)
+	))
+(assert! '(1-has-metabolite-2 'atomoxetine '4-hydroxyatomoxetine) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_833)
+	))
+(assert! '(1-has-metabolite-2 'atomoxetine 'N-desmethylatomoxetine) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_260)
+	))
 (assert! '(1-has-metabolite-2 'atorvastatin 'ortho-hydroxy-atorvastatin) 
 	'(dikb-assertion
 		(bc-satisfied 'assertion_535)
@@ -325,6 +249,50 @@
 (assert! '(1-has-metabolite-2 'atorvastatin 'para-hydroxy-atorvastatin) 
 	'(dikb-assertion
 		(bc-satisfied 'assertion_46)
+	))
+(assert! '(1-has-metabolite-2 'beta-hydroxy-simvastatin '6prime-exomethylene-simvastatin) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_1234)
+	))
+(assert! '(1-has-metabolite-2 'beta-hydroxy-simvastatin '6prime-hydroxy-simvastatin) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_1110)
+	))
+(assert! '(1-has-metabolite-2 'beta-hydroxy-simvastatin '6prime-hydroxymethyl-simvastatin) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_706)
+	))
+(assert! '(1-has-metabolite-2 'bupropion 'erythrohydrobupropion) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_3)
+	))
+(assert! '(1-has-metabolite-2 'bupropion 'hydroxybupropion) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_585)
+	))
+(assert! '(1-has-metabolite-2 'bupropion 'threohydrobupropion) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_1109)
+	))
+(assert! '(1-has-metabolite-2 'cinacalcet 'hydrocinnamic-acid) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_179)
+	))
+(assert! '(1-has-metabolite-2 'cinacalcet 'hydroxy-hydrocinnamic-acid) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_826)
+	))
+(assert! '(1-has-metabolite-2 'citalopram 'demethylcitalopram) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_570)
+	))
+(assert! '(1-has-metabolite-2 'citalopram 'didemethylcitalopram) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_544)
+	))
+(assert! '(1-has-metabolite-2 'clarithromycin '14-hydroxyclarithromycin) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_417)
 	))
 (assert! '(1-has-metabolite-2 'clozapine '7-hydroxyclozapine) 
 	'(dikb-assertion
@@ -350,9 +318,57 @@
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1259)
 	))
+(assert! '(1-has-metabolite-2 'escitalopram 'S-demethylcitalopram) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_85)
+	))
+(assert! '(1-has-metabolite-2 'escitalopram 'S-didemethylcitalopram) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_871)
+	))
+(assert! '(1-has-metabolite-2 'eszopiclone 'S-N-desmethylzopiclone) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_196)
+	))
+(assert! '(1-has-metabolite-2 'eszopiclone 'S-zopiclone-N-oxide) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_1000)
+	))
+(assert! '(1-has-metabolite-2 'fluoxetine 'norfluoxetine) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_38)
+	))
+(assert! '(1-has-metabolite-2 'leflunomide 'teriflunomide) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_263)
+	))
+(assert! '(1-has-metabolite-2 'lovastatin 'beta-hydroxy-lovastatin) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_992)
+	))
+(assert! '(1-has-metabolite-2 'midodrine 'desglymidodrine) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_12)
+	))
+(assert! '(1-has-metabolite-2 'modafinil 'modafinil-sulfone) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_497)
+	))
 (assert! '(1-has-metabolite-2 'olanzapine '10-N-glucuronide) 
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1042)
+	))
+(assert! '(1-has-metabolite-2 'perphenazine '7-hydroxyperphenazine) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_705)
+	))
+(assert! '(1-has-metabolite-2 'pravastatin '3alpha-hydroxypravastatin) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_1204)
+	))
+(assert! '(1-has-metabolite-2 'propoxyphene 'norpropoxyphene) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_427)
 	))
 (assert! '(1-has-metabolite-2 'quetiapine '7-hydroxy-N-desalkyl-quetiapine) 
 	'(dikb-assertion
@@ -362,6 +378,10 @@
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1252)
 	))
+(assert! '(1-has-metabolite-2 'quetiapine 'N-desalkylquetiapine) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_1095)
+	))
 (assert! '(1-has-metabolite-2 'quetiapine 'quetiapine-sulfoxide) 
 	'(dikb-assertion
 		(bc-satisfied 'assertion_850)
@@ -370,17 +390,85 @@
 	'(dikb-assertion
 		(bc-satisfied 'assertion_766)
 	))
+(assert! '(1-has-metabolite-2 'rosuvastatin 'N-desmethylrosuvastatin) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_652)
+	))
+(assert! '(1-has-metabolite-2 'sertraline 'N-desmethylsertraline) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_1210)
+	))
+(assert! '(1-has-metabolite-2 'simvastatin 'beta-hydroxy-simvastatin) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_18)
+	))
+(assert! '(1-has-metabolite-2 'tamoxifen '4-hydroxytamoxifin) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_414)
+	))
+(assert! '(1-has-metabolite-2 'tamoxifen 'N-desmethyltamoxifen) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_1140)
+	))
+(assert! '(1-has-metabolite-2 'theophylline '1\,3-dimethyluric-acid) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_308)
+	))
+(assert! '(1-has-metabolite-2 'theophylline '1-methylxanthine) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_220)
+	))
+(assert! '(1-has-metabolite-2 'theophylline '3-methylxanthine) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_722)
+	))
+(assert! '(1-has-metabolite-2 'theophylline 'caffeine) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_1203)
+	))
 (assert! '(1-has-metabolite-2 'thioridazine 'mesoridazine) 
 	'(dikb-assertion
 		(bc-satisfied 'assertion_635)
+	))
+(assert! '(1-has-metabolite-2 'thioridazine 'sulforidazine) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_395)
 	))
 (assert! '(1-has-metabolite-2 'thioridazine 'thioridazine-5-sulfoxide) 
 	'(dikb-assertion
 		(bc-satisfied 'assertion_305)
 	))
+(assert! '(1-has-metabolite-2 'trazodone 'M-chlorophenylpiperazine) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_797)
+	))
+(assert! '(1-has-metabolite-2 'venlafaxine 'N-desmethylvenlafaxine) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_492)
+	))
 (assert! '(1-has-metabolite-2 'venlafaxine 'O-desmethylvenlafaxine) 
 	'(dikb-assertion
 		(bc-satisfied 'assertion_735)
+	))
+(assert! '(1-has-metabolite-2 'voriconazole 'voriconazole-N-oxide) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_191)
+	))
+(assert! '(1-has-metabolite-2 'ziprasidone 'S-methyl-dihydroziprasidone) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_731)
+	))
+(assert! '(1-has-metabolite-2 'ziprasidone 'benzisothiazole-sulphone) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_1116)
+	))
+(assert! '(1-has-metabolite-2 'ziprasidone 'benzisothiazole-sulphoxide) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_617)
+	))
+(assert! '(1-has-metabolite-2 'ziprasidone 'ziprasidone-sulphoxide) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_947)
 	))
 (assert! '(1-inhibits-2  'acyclovir 'cyp1a2) 
 	'(dikb-assertion
@@ -394,10 +482,6 @@
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1351)
 	))
-(assert! '(1-inhibits-2  'amiodarone 'cyp1a2) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_1250)
-	))
 (assert! '(1-inhibits-2  'amiodarone 'cyp2c9) 
 	'(dikb-assertion
 		(bc-satisfied 'assertion_403)
@@ -405,10 +489,6 @@
 (assert! '(1-inhibits-2  'amiodarone 'cyp2d6) 
 	'(dikb-assertion
 		(bc-satisfied 'assertion_404)
-	))
-(assert! '(1-inhibits-2  'amiodarone 'cyp3a4) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_695)
 	))
 (assert! '(1-inhibits-2  'amiodarone 'p-glycoprotein) 
 	'(dikb-assertion
@@ -645,10 +725,6 @@
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1325)
 	))
-(assert! '(1-inhibits-2  'fluvoxamine 'cyp2c19) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_221)
-	))
 (assert! '(1-inhibits-2  'fluvoxamine 'cyp3a4) 
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1358)
@@ -673,11 +749,6 @@
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1373)
 	))
-(assert! '(1-inhibits-2  'iloperidone 'cyp2d6) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_296)(primary-total-clearance-enzyme-of-1-is-2 'dextromethorphan 'cyp2d6)
-
-	))
 (assert! '(1-inhibits-2  'imatinib 'cyp2d6) 
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1374)
@@ -693,10 +764,6 @@
 (assert! '(1-inhibits-2  'isoniazid 'cyp3a4) 
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1359)
-	))
-(assert! '(1-inhibits-2  'itraconazole 'cyp3a4) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_1158)
 	))
 (assert! '(1-inhibits-2  'itraconazole 'p-glycoprotein) 
 	'(dikb-assertion
@@ -735,17 +802,13 @@
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1326)
 	))
+(assert! '(1-inhibits-2  'mexiletine 'cyp1a2) 
+	'(dikb-assertion
+		(bc-satisfied 'assertion_1155)
+	))
 (assert! '(1-inhibits-2  'miconazole 'cyp2c9) 
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1320)
-	))
-(assert! '(1-inhibits-2  'modafinil 'cyp2c19) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_287)
-	))
-(assert! '(1-inhibits-2  'modafinil-sulfone 'cyp2c19) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_688)
 	))
 (assert! '(1-inhibits-2  'nefazodone 'cyp3a4) 
 	'(dikb-assertion
@@ -803,10 +866,6 @@
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1377)
 	))
-(assert! '(1-inhibits-2  'quinidine 'cyp2d6) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_1032)
-	))
 (assert! '(1-inhibits-2  'quinidine 'cyp3a4) 
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1508)
@@ -823,18 +882,6 @@
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1363)
 	))
-(assert! '(1-inhibits-2  'ranolazine 'cyp2d6) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_369)
-	))
-(assert! '(1-inhibits-2  'ranolazine 'cyp3a4) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_1152)
-	))
-(assert! '(1-inhibits-2  'ranolazine 'cyp3a5) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_1151)
-	))
 (assert! '(1-inhibits-2  'ranolazine 'p-glycoprotein) 
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1454)
@@ -846,10 +893,6 @@
 (assert! '(1-inhibits-2  'rifampin 'oatp1b3) 
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1500)
-	))
-(assert! '(1-inhibits-2  'ritonavir 'cyp2d6) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_320)
 	))
 (assert! '(1-inhibits-2  'ritonavir 'cyp3a4) 
 	'(dikb-assertion
@@ -869,8 +912,7 @@
 	))
 (assert! '(1-inhibits-2  'telithromycin 'cyp3a4) 
 	'(dikb-assertion
-		(bc-satisfied 'assertion_989)(primary-total-clearance-enzyme-of-1-is-2 'midazolam 'cyp3a4)
-
+		(bc-satisfied 'assertion_989)
 	))
 (assert! '(1-inhibits-2  'terbinafine 'cyp1a2) 
 	'(dikb-assertion
@@ -879,10 +921,6 @@
 (assert! '(1-inhibits-2  'terbinafine 'cyp2d6) 
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1205)
-	))
-(assert! '(1-inhibits-2  'teriflunomide 'cyp2c9) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_1028)
 	))
 (assert! '(1-inhibits-2  'ticagrelor 'p-glycoprotein) 
 	'(dikb-assertion
@@ -912,10 +950,6 @@
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1381)
 	))
-(assert! '(1-inhibits-2  'venlafaxine 'cyp2d6) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_1093)
-	))
 (assert! '(1-inhibits-2  'verapamil 'cyp1a2) 
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1315)
@@ -932,41 +966,9 @@
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1456)
 	))
-(assert! '(1-inhibits-2  'voriconazole 'cyp2c19) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_1141)
-	))
-(assert! '(1-inhibits-2  'voriconazole 'cyp2c9) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_454)
-	))
-(assert! '(1-inhibits-2  'voriconazole 'cyp3a4) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_595)
-	))
 (assert! '(1-inhibits-2  'voriconazole 'p-glycoprotein) 
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1512)
-	))
-(assert! '(1-inhibits-2  'voriconazole-N-oxide 'cyp2c19) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_511)
-	))
-(assert! '(1-inhibits-2  'voriconazole-N-oxide 'cyp2c9) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_881)
-	))
-(assert! '(1-inhibits-2  'voriconazole-N-oxide 'cyp3a4) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_251)
-	))
-(assert! '(1-inhibits-2  'zafirlukast 'cyp2c9) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_211)
-	))
-(assert! '(1-inhibits-2  'zafirlukast 'cyp3a4) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_63)
 	))
 (assert! '(1-inhibits-2  'zileuton 'cyp1a2) 
 	'(dikb-assertion
@@ -984,17 +986,9 @@
 	'(dikb-assertion
 		(bc-satisfied 'assertion_692)
 	))
-(assert! '(1-is-not-a-substrate-of-2 'clozapine-N-oxide 'cyp2d6) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_128)
-	))
 (assert! '(1-is-not-a-substrate-of-2 'desvenlafaxine 'cyp2d6) 
 	'(dikb-assertion
 		(bc-satisfied 'assertion_669)
-	))
-(assert! '(1-is-substrate-of-2 'N-desalkylquetiapine 'cyp3a4) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_89)
 	))
 (assert! '(1-is-substrate-of-2 'S-mephenytoin 'cyp2c19) 
 	'(dikb-assertion
@@ -1012,10 +1006,6 @@
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1461)
 	))
-(assert! '(1-is-substrate-of-2 'aripiprazole 'cyp2d6) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_632)
-	))
 (assert! '(1-is-substrate-of-2 'atorvastatin 'oatp1b1) 
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1485)
@@ -1027,31 +1017,6 @@
 (assert! '(1-is-substrate-of-2 'atrasentan 'oatp1b1) 
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1484)
-	))
-(assert! '(1-is-substrate-of-2 'celecoxib 'cyp2c9) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_239)
-	))
-(assert! '(1-is-substrate-of-2 'cinacalcet 'cyp1a2) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_194)
-	))
-(assert! '(1-is-substrate-of-2 'cinacalcet 'cyp2d6) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_1019)
-	))
-(assert! '(1-is-substrate-of-2 'cinacalcet 'cyp3a4) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_856)
-	))
-(assert! '(1-is-substrate-of-2 'citalopram 'cyp2c19) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_966)
-	))
-(assert! '(1-is-substrate-of-2 'clozapine 'cyp2d6) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_262)(1-is-an-in-viVo-selective-inhibitor-of-2 'paroxetine 'cyp2d6)
-
 	))
 (assert! '(1-is-substrate-of-2 'colchicine 'p-glycoprotein) 
 	'(dikb-assertion
@@ -1073,19 +1038,6 @@
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1429)
 	))
-(assert! '(1-is-substrate-of-2 'duloxetine 'cyp1a2) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_700)
-	))
-(assert! '(1-is-substrate-of-2 'duloxetine 'cyp2d6) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_127)(1-is-an-in-viVo-selective-inhibitor-of-2 'paroxetine 'cyp2d6)
-
-	))
-(assert! '(1-is-substrate-of-2 'eszopiclone 'cyp3a4) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_181)
-	))
 (assert! '(1-is-substrate-of-2 'everolimus 'p-glycoprotein) 
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1466)
@@ -1097,18 +1049,6 @@
 (assert! '(1-is-substrate-of-2 'fexofenadine 'p-glycoprotein) 
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1467)
-	))
-(assert! '(1-is-substrate-of-2 'fluvastatin 'cyp2c8) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_58)
-	))
-(assert! '(1-is-substrate-of-2 'fluvastatin 'cyp2c9) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_59)
-	))
-(assert! '(1-is-substrate-of-2 'fluvastatin 'cyp3a4) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_712)
 	))
 (assert! '(1-is-substrate-of-2 'fluvastatin 'oatp1b1) 
 	'(dikb-assertion
@@ -1122,18 +1062,6 @@
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1498)
 	))
-(assert! '(1-is-substrate-of-2 'lansoprazole 'cyp2c19) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_838)
-	))
-(assert! '(1-is-substrate-of-2 'lansoprazole 'cyp3a4) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_1206)
-	))
-(assert! '(1-is-substrate-of-2 'lansoprazole 'cyp3a5) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_890)
-	))
 (assert! '(1-is-substrate-of-2 'lapatinib 'p-glycoprotein) 
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1469)
@@ -1142,14 +1070,6 @@
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1470)
 	))
-(assert! '(1-is-substrate-of-2 'mirtazapine 'cyp3a5) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_1030)
-	))
-(assert! '(1-is-substrate-of-2 'modafinil 'cyp3a4) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_152)
-	))
 (assert! '(1-is-substrate-of-2 'nilotinib 'p-glycoprotein) 
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1471)
@@ -1157,18 +1077,6 @@
 (assert! '(1-is-substrate-of-2 'paclitaxel 'cyp2c8) 
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1394)
-	))
-(assert! '(1-is-substrate-of-2 'pantoprazole 'cyp2c19) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_254)
-	))
-(assert! '(1-is-substrate-of-2 'pantoprazole 'cyp3a4) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_533)
-	))
-(assert! '(1-is-substrate-of-2 'paroxetine 'cyp2d6) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_1002)
 	))
 (assert! '(1-is-substrate-of-2 'phenytoin 'cyp2c9) 
 	'(dikb-assertion
@@ -1201,19 +1109,6 @@
 (assert! '(1-is-substrate-of-2 'quinidine 'cyp3a4) 
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1433)
-	))
-(assert! '(1-is-substrate-of-2 'rabeprazole 'cyp2c19) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_1228)
-	))
-(assert! '(1-is-substrate-of-2 'rabeprazole 'cyp3a5) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_1129)
-	))
-(assert! '(1-is-substrate-of-2 'ranolazine 'cyp2d6) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_1188)(1-is-an-in-viVo-selective-inhibitor-of-2 'paroxetine 'cyp2d6)
-
 	))
 (assert! '(1-is-substrate-of-2 'ranolazine 'p-glycoprotein) 
 	'(dikb-assertion
@@ -1259,29 +1154,9 @@
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1477)
 	))
-(assert! '(1-is-substrate-of-2 'tamoxifen 'cyp2c9) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_1169)
-	))
-(assert! '(1-is-substrate-of-2 'tamoxifen 'cyp2d6) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_580)
-	))
-(assert! '(1-is-substrate-of-2 'tamoxifen 'cyp3a4) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_957)
-	))
-(assert! '(1-is-substrate-of-2 'tamoxifen 'cyp3a5) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_796)
-	))
 (assert! '(1-is-substrate-of-2 'theophylline 'cyp1a2) 
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1389)
-	))
-(assert! '(1-is-substrate-of-2 'thioridazine 'cyp2d6) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_895)
 	))
 (assert! '(1-is-substrate-of-2 'tizanidine 'cyp1a2) 
 	'(dikb-assertion
@@ -1295,37 +1170,9 @@
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1479)
 	))
-(assert! '(1-is-substrate-of-2 'trazodone 'cyp3a4) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_654)
-	))
-(assert! '(1-is-substrate-of-2 'voriconazole 'cyp2c19) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_383)
-	))
-(assert! '(1-is-substrate-of-2 'voriconazole 'cyp2c9) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_547)
-	))
-(assert! '(1-is-substrate-of-2 'voriconazole 'cyp3a4) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_298)
-	))
 (assert! '(1-is-substrate-of-2 'warfarin 'cyp2c9) 
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1396)
-	))
-(assert! '(1-is-substrate-of-2 'zafirlukast 'cyp2c9) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_640)
-	))
-(assert! '(1-is-substrate-of-2 'zaleplon 'cyp3a4) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_719)
-	))
-(assert! '(1-is-substrate-of-2 'zolpidem 'cyp3a5) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_591)
 	))
 (assert! '(1-permanently-deactivates-catalytic-function-of-2 'diltiazem 'cyp3a4) 
 	'(dikb-assertion
@@ -1923,18 +1770,6 @@
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1047)
 	))
-(assert! '(primary-metabolic-clearance-enzyme-of-1-is-2 'alprazolam 'cyp3a4) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_1122)
-	))
-(assert! '(primary-metabolic-clearance-enzyme-of-1-is-2 'risperidone 'cyp2d6) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_1013)
-	))
-(assert! '(primary-metabolic-clearance-enzyme-of-1-is-2 'rosuvastatin 'cyp2c9) 
-	'(dikb-assertion
-		(bc-satisfied 'assertion_816)
-	))
 (assert! '(primary-total-clearance-enzyme-of-1-is-2 'S-mephenytoin 'cyp2c19) 
 	'(dikb-assertion
 		(bc-satisfied 'assertion_1400)
@@ -2084,11 +1919,9 @@
 		(bc-satisfied 'assertion_645)
 	))
 (assume!
-	'(bc-satisfied 'assertion_1) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_10) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1002) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1000) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1003) 'dikb-inference-assumption)
 (assume!
@@ -2102,13 +1935,9 @@
 (assume!
 	'(bc-satisfied 'assertion_1010) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1013) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_1015) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1017) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_1019) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1022) 'dikb-inference-assumption)
 (assume!
@@ -2116,35 +1945,19 @@
 (assume!
 	'(bc-satisfied 'assertion_1025) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1026) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_1028) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_1029) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_103) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_1030) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_1032) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1033) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_104) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1040) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_1042) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_1044) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1047) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1050) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1053) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_1055) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1057) 'dikb-inference-assumption)
 (assume!
@@ -2174,9 +1987,9 @@
 (assume!
 	'(bc-satisfied 'assertion_1091) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1093) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_1094) 'dikb-inference-assumption)
+(assume!
+	'(bc-satisfied 'assertion_1095) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_110) 'dikb-inference-assumption)
 (assume!
@@ -2188,31 +2001,25 @@
 (assume!
 	'(bc-satisfied 'assertion_1107) 'dikb-inference-assumption)
 (assume!
+	'(bc-satisfied 'assertion_1109) 'dikb-inference-assumption)
+(assume!
 	'(bc-satisfied 'assertion_111) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1112) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1110) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1122) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1116) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1126) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1127) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_1129) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_113) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1131) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1141) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_1143) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1140) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1148) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1150) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_1151) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_1152) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1153) 'dikb-inference-assumption)
 (assume!
@@ -2220,15 +2027,11 @@
 (assume!
 	'(bc-satisfied 'assertion_1157) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1158) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_116) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1162) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1164) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_1169) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1170) 'dikb-inference-assumption)
 (assume!
@@ -2236,13 +2039,11 @@
 (assume!
 	'(bc-satisfied 'assertion_1172) 'dikb-inference-assumption)
 (assume!
+	'(bc-satisfied 'assertion_1176) 'dikb-inference-assumption)
+(assume!
 	'(bc-satisfied 'assertion_1179) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_118) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_1186) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_1188) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_119) 'dikb-inference-assumption)
 (assume!
@@ -2250,21 +2051,21 @@
 (assume!
 	'(bc-satisfied 'assertion_1197) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1199) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_12) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_120) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1201) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1203) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1202) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1204) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1205) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_1206) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1208) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_121) 'dikb-inference-assumption)
+(assume!
+	'(bc-satisfied 'assertion_1210) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1212) 'dikb-inference-assumption)
 (assume!
@@ -2282,23 +2083,15 @@
 (assume!
 	'(bc-satisfied 'assertion_1223) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1225) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_1227) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_1228) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_1230) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1232) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1233) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_1236) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_1234) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1243) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_1250) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1251) 'dikb-inference-assumption)
 (assume!
@@ -2314,8 +2107,6 @@
 (assume!
 	'(bc-satisfied 'assertion_1267) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_127) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_1273) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1277) 'dikb-inference-assumption)
@@ -2323,8 +2114,6 @@
 	'(bc-satisfied 'assertion_1278) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1279) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_128) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1281) 'dikb-inference-assumption)
 (assume!
@@ -2536,8 +2325,6 @@
 (assume!
 	'(bc-satisfied 'assertion_1389) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_139) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_1390) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1391) 'dikb-inference-assumption)
@@ -2686,8 +2473,6 @@
 (assume!
 	'(bc-satisfied 'assertion_1479) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_148) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_1480) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1481) 'dikb-inference-assumption)
@@ -2703,8 +2488,6 @@
 	'(bc-satisfied 'assertion_1487) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1488) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_149) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_1490) 'dikb-inference-assumption)
 (assume!
@@ -2744,13 +2527,9 @@
 (assume!
 	'(bc-satisfied 'assertion_1514) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_152) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_153) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_154) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_155) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_163) 'dikb-inference-assumption)
 (assume!
@@ -2758,23 +2537,23 @@
 (assume!
 	'(bc-satisfied 'assertion_172) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_175) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_176) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_177) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_180) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_179) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_181) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_18) 'dikb-inference-assumption)
+(assume!
+	'(bc-satisfied 'assertion_180) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_185) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_186) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_187) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_191) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_194) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_196) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_197) 'dikb-inference-assumption)
 (assume!
@@ -2784,17 +2563,13 @@
 (assume!
 	'(bc-satisfied 'assertion_206) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_211) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_214) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_219) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_221) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_220) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_224) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_225) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_226) 'dikb-inference-assumption)
 (assume!
@@ -2802,23 +2577,15 @@
 (assume!
 	'(bc-satisfied 'assertion_23) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_239) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_240) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_241) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_242) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_244) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_25) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_251) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_252) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_254) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_256) 'dikb-inference-assumption)
 (assume!
@@ -2826,21 +2593,13 @@
 (assume!
 	'(bc-satisfied 'assertion_26) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_262) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_260) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_264) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_265) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_263) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_267) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_275) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_277) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_28) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_287) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_289) 'dikb-inference-assumption)
 (assume!
@@ -2852,23 +2611,15 @@
 (assume!
 	'(bc-satisfied 'assertion_295) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_296) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_297) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_298) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_3) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_30) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_301) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_302) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_304) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_305) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_307) 'dikb-inference-assumption)
+(assume!
+	'(bc-satisfied 'assertion_308) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_312) 'dikb-inference-assumption)
 (assume!
@@ -2879,8 +2630,6 @@
 	'(bc-satisfied 'assertion_316) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_317) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_320) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_322) 'dikb-inference-assumption)
 (assume!
@@ -2902,25 +2651,19 @@
 (assume!
 	'(bc-satisfied 'assertion_354) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_36) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_364) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_367) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_368) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_369) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_371) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_373) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_376) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_383) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_38) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_388) 'dikb-inference-assumption)
+(assume!
+	'(bc-satisfied 'assertion_395) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_396) 'dikb-inference-assumption)
 (assume!
@@ -2932,23 +2675,25 @@
 (assume!
 	'(bc-satisfied 'assertion_404) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_407) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_409) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_41) 'dikb-inference-assumption)
 (assume!
+	'(bc-satisfied 'assertion_414) 'dikb-inference-assumption)
+(assume!
 	'(bc-satisfied 'assertion_416) 'dikb-inference-assumption)
+(assume!
+	'(bc-satisfied 'assertion_417) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_420) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_421) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_422) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_423) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_425) 'dikb-inference-assumption)
+(assume!
+	'(bc-satisfied 'assertion_427) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_429) 'dikb-inference-assumption)
 (assume!
@@ -2974,45 +2719,29 @@
 (assume!
 	'(bc-satisfied 'assertion_45) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_454) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_455) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_46) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_460) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_464) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_465) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_466) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_467) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_469) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_47) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_472) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_477) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_48) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_480) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_482) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_483) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_486) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_487) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_49) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_490) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_492) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_493) 'dikb-inference-assumption)
 (assume!
@@ -3020,13 +2749,13 @@
 (assume!
 	'(bc-satisfied 'assertion_495) 'dikb-inference-assumption)
 (assume!
+	'(bc-satisfied 'assertion_497) 'dikb-inference-assumption)
+(assume!
 	'(bc-satisfied 'assertion_503) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_505) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_508) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_511) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_512) 'dikb-inference-assumption)
 (assume!
@@ -3036,10 +2765,6 @@
 (assume!
 	'(bc-satisfied 'assertion_527) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_532) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_533) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_535) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_536) 'dikb-inference-assumption)
@@ -3048,21 +2773,13 @@
 (assume!
 	'(bc-satisfied 'assertion_543) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_546) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_547) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_552) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_544) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_557) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_558) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_559) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_560) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_562) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_566) 'dikb-inference-assumption)
 (assume!
@@ -3070,9 +2787,9 @@
 (assume!
 	'(bc-satisfied 'assertion_569) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_571) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_570) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_573) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_571) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_576) 'dikb-inference-assumption)
 (assume!
@@ -3080,27 +2797,17 @@
 (assume!
 	'(bc-satisfied 'assertion_579) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_58) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_580) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_581) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_582) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_589) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_585) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_59) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_589) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_590) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_591) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_592) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_594) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_595) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_599) 'dikb-inference-assumption)
 (assume!
@@ -3118,11 +2825,11 @@
 (assume!
 	'(bc-satisfied 'assertion_616) 'dikb-inference-assumption)
 (assume!
+	'(bc-satisfied 'assertion_617) 'dikb-inference-assumption)
+(assume!
 	'(bc-satisfied 'assertion_619) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_622) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_623) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_624) 'dikb-inference-assumption)
 (assume!
@@ -3132,21 +2839,13 @@
 (assume!
 	'(bc-satisfied 'assertion_629) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_63) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_630) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_631) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_632) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_635) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_637) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_639) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_640) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_643) 'dikb-inference-assumption)
 (assume!
@@ -3158,7 +2857,7 @@
 (assume!
 	'(bc-satisfied 'assertion_65) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_654) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_652) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_655) 'dikb-inference-assumption)
 (assume!
@@ -3169,8 +2868,6 @@
 	'(bc-satisfied 'assertion_666) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_669) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_670) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_673) 'dikb-inference-assumption)
 (assume!
@@ -3186,51 +2883,43 @@
 (assume!
 	'(bc-satisfied 'assertion_687) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_688) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_689) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_690) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_691) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_692) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_694) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_695) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_698) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_70) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_700) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_702) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_703) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_707) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_705) 'dikb-inference-assumption)
+(assume!
+	'(bc-satisfied 'assertion_706) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_708) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_712) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_713) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_714) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_719) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_720) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_721) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_722) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_725) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_727) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_728) 'dikb-inference-assumption)
+(assume!
+	'(bc-satisfied 'assertion_731) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_735) 'dikb-inference-assumption)
 (assume!
@@ -3246,17 +2935,15 @@
 (assume!
 	'(bc-satisfied 'assertion_745) 'dikb-inference-assumption)
 (assume!
+	'(bc-satisfied 'assertion_746) 'dikb-inference-assumption)
+(assume!
 	'(bc-satisfied 'assertion_749) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_752) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_753) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_754) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_758) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_76) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_762) 'dikb-inference-assumption)
 (assume!
@@ -3282,7 +2969,7 @@
 (assume!
 	'(bc-satisfied 'assertion_794) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_796) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_797) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_798) 'dikb-inference-assumption)
 (assume!
@@ -3298,21 +2985,19 @@
 (assume!
 	'(bc-satisfied 'assertion_814) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_816) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_821) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_822) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_823) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_824) 'dikb-inference-assumption)
+(assume!
+	'(bc-satisfied 'assertion_826) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_832) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_834) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_833) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_838) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_834) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_841) 'dikb-inference-assumption)
 (assume!
@@ -3322,15 +3007,13 @@
 (assume!
 	'(bc-satisfied 'assertion_848) 'dikb-inference-assumption)
 (assume!
+	'(bc-satisfied 'assertion_85) 'dikb-inference-assumption)
+(assume!
 	'(bc-satisfied 'assertion_850) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_854) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_856) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_859) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_864) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_865) 'dikb-inference-assumption)
 (assume!
@@ -3338,11 +3021,11 @@
 (assume!
 	'(bc-satisfied 'assertion_869) 'dikb-inference-assumption)
 (assume!
+	'(bc-satisfied 'assertion_871) 'dikb-inference-assumption)
+(assume!
 	'(bc-satisfied 'assertion_88) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_880) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_881) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_884) 'dikb-inference-assumption)
 (assume!
@@ -3350,15 +3033,9 @@
 (assume!
 	'(bc-satisfied 'assertion_889) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_89) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_890) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_893) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_894) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_895) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_897) 'dikb-inference-assumption)
 (assume!
@@ -3380,13 +3057,9 @@
 (assume!
 	'(bc-satisfied 'assertion_921) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_922) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_924) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_928) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_929) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_934) 'dikb-inference-assumption)
 (assume!
@@ -3400,19 +3073,17 @@
 (assume!
 	'(bc-satisfied 'assertion_943) 'dikb-inference-assumption)
 (assume!
+	'(bc-satisfied 'assertion_945) 'dikb-inference-assumption)
+(assume!
 	'(bc-satisfied 'assertion_946) 'dikb-inference-assumption)
+(assume!
+	'(bc-satisfied 'assertion_947) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_950) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_957) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_960) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_966) 'dikb-inference-assumption)
-(assume!
 	'(bc-satisfied 'assertion_967) 'dikb-inference-assumption)
-(assume!
-	'(bc-satisfied 'assertion_97) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_971) 'dikb-inference-assumption)
 (assume!
@@ -3426,8 +3097,8 @@
 (assume!
 	'(bc-satisfied 'assertion_989) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_995) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_992) 'dikb-inference-assumption)
 (assume!
-	'(bc-satisfied 'assertion_996) 'dikb-inference-assumption)
+	'(bc-satisfied 'assertion_995) 'dikb-inference-assumption)
 (assume!
 	'(bc-satisfied 'assertion_998) 'dikb-inference-assumption)

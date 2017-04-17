@@ -66,9 +66,15 @@ oatp1b3_substates = ['Atorvastatin', 'rosuvastatin', 'pitavastatin', 'telmisarta
 
 oct2_substates = ['Amantadine', 'amiloride', 'cimetidine', 'dopamine', 'famotidine', 'memantine', 'metformin', 'pindolol', 'procainamide', 'ranitidine', 'varenicline', 'oxaliplatin']
 
-oat1_substates = []
+oat1_substates = ['Adefovir', 'captopril', 'furosemide', 'lamivudine', 'methotrexate', 'oseltamivir', 'tenofovir', 'zalcitabine', 'zidovudine']
 
-oat3_substates = []
+oat3_substates = ['Acyclovir', 'bumetanide', 'ciprofloxacin', 'famotidine', 'furosemide', 'methotrexate', 'zidovudine', 'oseltamivir', 'pravastatin', 'rosuvastatin', 'sitagliptin']
+
+###
+
+dikb_drugs = ['alprazolam', 'aripiprazole', 'asenapine', 'atorvastatin', 'bupropion', 'chlorpromazine', 'citalopram', 'clozapine', 'desipramine', 'desvenlafaxine', 'diltiazem', 'duloxetine', 'escitalopram', 'eszopiclone', 'fluconazole', 'fluoxetine', 'fluphenazine', 'fluvastatin', 'fluvoxamine', 'haloperidol', 'itraconazole', 'ketoconazole', 'iloperidone', 'lovastatin', 'lurasidone', 'midazolam', 'mirtazapine', 'nefazodone', 'olanzapine', 'paliperidone', 'paroxetine', 'perphenazine', 'pimozide', 'pravastatin', 'quetiapine', 'risperidone', 'rosuvastatin', 'sertraline', 'simvastatin', 'thioridazine', 'thiothixene', 'trazodone', 'triazolam', 'venlafaxine', 'zaleplon', 'ziprasidone', 'zolpidem']
+
+###
 
 cyp1a_inhib_count = 0
 cyp2b_inhib_count = 0
@@ -110,3 +116,31 @@ oatp1b3_substrate_count = 0
 oct2_substrate_count = 0
 oat1_substrate_count = 0
 oat3_substrate_count = 0
+
+for drug in dikb_drugs
+  if(drug in cyp1a_inhib):
+    cyp1a_inhib_count = cyp1a_inhib_count + 1
+  if(drug in cyp2b_inhib):
+    cyp2b_inhib_count = cyp2b_inhib_count + 1
+  if(drug in cyp2c8_inhib):
+    cyp2c8_inhib_count = cyp1a_inhib_count + 1
+  if(drug in cyp2b_inhib):
+    cyp2b_inhib_count = cyp2b_inhib_count + 1
+  if(drug in cyp1a_inhib):
+    cyp1a_inhib_count = cyp1a_inhib_count + 1
+  if(drug in cyp2b_inhib):
+    cyp2b_inhib_count = cyp2b_inhib_count + 1
+  if(drug in cyp1a_inhib):
+    cyp1a_inhib_count = cyp1a_inhib_count + 1
+  if(drug in cyp2b_inhib):
+    cyp2b_inhib_count = cyp2b_inhib_count + 1
+  if(drug in cyp1a_inhib):
+    cyp1a_inhib_count = cyp1a_inhib_count + 1
+  if(drug in cyp2b_inhib):
+    cyp2b_inhib_count = cyp2b_inhib_count + 1
+  if(drug in cyp1a_inhib):
+    cyp1a_inhib_count = cyp1a_inhib_count + 1
+  if(drug in cyp2b_inhib):
+    cyp2b_inhib_count = cyp2b_inhib_count + 1    
+
+    

@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+
+<!-- This file generated using Python HTMLgen module. -->
+<HEAD>
+  <META NAME="GENERATOR" CONTENT="HTMLgen 2.2.2">
+        <TITLE>Drug Interaction Knowledge Base 1.2</TITLE>
+
+ <LINK rel=stylesheet href="html/HTMLgen.css" type="text/css" title="html/HTMLgen.css">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#EE0000">
+<span style="width: 60px"></span> 
+<IMG src="./images/blank.gif" height="22" width="66" alt="blank.gif"> 
+<IMG src="./images/blank.gif" height="22" width="66" alt="blank.gif"> 
+<IMG src="./images/blank.gif" height="22" width="66" alt="blank.gif"> 
+<H3>Drug Interaction Knowledge Base 1.2</H3>
+<H2>diclofenac 4’-hydroxylation_in_vitro_probe_substrate_of_enzyme_cyp2c9</H2>
+<HR>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+
+<!-- This file generated using Python HTMLgen module. -->
+<HEAD>
+  <META NAME="GENERATOR" CONTENT="HTMLgen 2.2.2">
+        <TITLE></TITLE>
+
+ <LINK rel=stylesheet href="html/HTMLgen.css" type="text/css" title="html/HTMLgen.css">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#EE0000">
+<b>You can go to DIKB assertion index here:</b>  
+<A HREF="/dikb-evidence/index.html">DIKB assertion index</A>
+<br><b>You can go to DIKB the home page here:</b>  
+<A HREF="/dikb-evidence/front-page.html">DIKB Front Page</A>
+
+<P>
+
+<a name="
+diclofenac 4’-hydroxylation_in_vitro_probe_substrate_of_enzyme_cyp2c9
+"></a>
+<b>Assertion:
+diclofenac 4’-hydroxylation in_vitro_probe_substrate_of_enzyme cyp2c9
+</b>
+<BR>
+<A NAME="Evidence"></A>
+<P><TABLE border=2 cellpadding=4 cellspacing=1 width="100%">
+<CAPTION align=top><STRONG>Evidence</STRONG></CAPTION>
+<TR><TD Align=left ><STRONG>Evidence For (item 0)</STRONG></TD>
+<TD Align=left ><STRONG>Evidence Type: </STRONG>Non_Tracable_Statement</TD>
+<TD Align=left ><STRONG>Pointer: </STRONG>http://www.fda.gov/drugs/developmentapprovalprocess/developmentresources/druginteractionslabeling/uc</TD>
+<TD Align=left ><STRONG>Reviewer: </STRONG>roskos</TD>
+</TR>
+<TR><TD Align=left ></TD>
+<TD Align=left ><STRONG>Quote: </STRONG>The FDA guidelines suggest that this is a preferred chemical substrate of CYP2C9 for in vitro experiments. See Table 2 on the FDA website.</TD>
+</TR>
+<TR><TD Align=left ></TD>
+<TD Align=left ><STRONG>Assumptions: </STRONG></TD>
+</TR>
+<TR><TD Align=left ><STRONG>No evidence against!</STRONG></TD>
+</TR>
+</TABLE><P>
+
+<BR>
+
+</BODY> </HTML>
+
+<b>You can go to DIKB assertion index here:</b>  
+<A HREF="/dikb-evidence/index.html">DIKB assertion index</A>
+<br><b>You can go to DIKB the home page here:</b>  
+<A HREF="/dikb-evidence/front-page.html">DIKB Front Page</A>
+
+<P>
+
+<BR><BR><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Dataset" property="dct:title" rel="dct:type">Drug Interaction Knowledge Base (DIKB)</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.dbmi.pitt.edu/person/richard-boyce-phd" property="cc:attributionName" rel="cc:attributionURL">Richard D. Boyce</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+
+<P><HR>
+<span style="width: 60px"></span> 
+<IMG src="./images/blank.gif" height="22" width="66" alt="blank.gif"> 
+<IMG src="./images/blank.gif" height="22" width="66" alt="blank.gif"> 
+<IMG src="./images/blank.gif" height="22" width="66" alt="blank.gif"> 
+<BR><IMG src="./images/logo.jpg" alt="logo.jpg" align="bottom">
+<FONT SIZE="-1"><P>Copyright &#169 (c) 2005-2012 Richard David Boyce<BR>All Rights Reserved<BR>
+
+Comments to author: <A HREF="mailto:&#114;d&#98;2&#48; &#97;t&#32;p&#105;t&#116; &#60;d&#111;t&#62; &#101;d&#117;">rdb20 at pitt <dot> edu</A><br>
+Generated: Thu Jul 30, 2015 <BR><hr>
+</FONT>
+</BODY> </HTML>

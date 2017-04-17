@@ -148,7 +148,7 @@ for(p_ctr in 1:length(pths)){
   write(paste(hdr, out_st, sep="\n"),  anl_out)
   writeLines(paste(p_ctr, ": wrote analysis to ", anl_out), con)
 
-  lcl_rslts <- paste(prfx, "/dikb-loe-experiments-scr25-results.tsv", sep="")
+  lcl_rslts <- paste(prfx, "/dikb-loe-experiments-scr25-results-colloquium.tsv", sep="")
   write(out_st, lcl_rslts,  append = TRUE)
   writeLines(paste(p_ctr, ": appended results of analysis on ", strat[[1]][length(strat[[1]])], " to ", lcl_rslts), con)
   print(Sys.time() - stm)

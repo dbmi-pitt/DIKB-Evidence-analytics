@@ -2370,7 +2370,7 @@ Pceut entity combination	VALIDATION_SET_DDI	VALIDATION_SET_NON_DDI	DDI_DIKB	NON_
 "diltiazem - saxagliptin"	
 "diltiazem - sertraline"	
 "diltiazem - sildenafil"	
-"diltiazem - simvastatin"	
+"diltiazem - simvastatin"	TRUE
 "diltiazem - sirolimus"	
 "diltiazem - sitagliptin"	
 "diltiazem - sulfamethizole"	

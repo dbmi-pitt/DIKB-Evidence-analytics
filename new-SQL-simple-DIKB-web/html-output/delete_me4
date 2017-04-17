@@ -14,7 +14,7 @@
 <IMG src="./images/blank.gif" height="22" width="66" alt="blank.gif"> 
 <IMG src="./images/blank.gif" height="22" width="66" alt="blank.gif"> 
 <H3>Drug Interaction Knowledge Base 1.2</H3>
-<H2>( ± )-bufuralol-1’-hydroxylation_in_vitro_probe_substrate_of_enzyme_cyp2d6</H2>
+<H2>flurbiprofen-4â€™-hydroxylation_in_vitro_probe_substrate_of_enzyme_cyp2c9</H2>
 <HR>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
@@ -36,10 +36,10 @@
 <P>
 
 <a name="
-( ± )-bufuralol-1’-hydroxylation_in_vitro_probe_substrate_of_enzyme_cyp2d6
+flurbiprofen-4â€™-hydroxylation_in_vitro_probe_substrate_of_enzyme_cyp2c9
 "></a>
 <b>Assertion:
-( ± )-bufuralol-1’-hydroxylation in_vitro_probe_substrate_of_enzyme cyp2d6
+flurbiprofen-4â€™-hydroxylation in_vitro_probe_substrate_of_enzyme cyp2c9
 </b>
 <BR>
 <A NAME="Evidence"></A>
@@ -51,7 +51,7 @@
 <TD Align=left ><STRONG>Reviewer: </STRONG>roskos</TD>
 </TR>
 <TR><TD Align=left ></TD>
-<TD Align=left ><STRONG>Quote: </STRONG>The FDA guidelines suggest that this is a preferred chemical substrate of CYP2D6 for in vitro experiments. See Table 2 on the FDA website.</TD>
+<TD Align=left ><STRONG>Quote: </STRONG>The FDA guidelines suggest that this is an acceptable chemical substrate of CYP2C9 for in vitro experiments. See Table 2 on the FDA website.</TD>
 </TR>
 <TR><TD Align=left ></TD>
 <TD Align=left ><STRONG>Assumptions: </STRONG></TD>

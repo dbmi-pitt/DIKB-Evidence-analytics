@@ -62,9 +62,10 @@ for(p_ctr in 1:length(pths)){
   tn <- length(subset(tbl$True_neg, tbl$True_neg == TRUE)) 
   fn <- length(subset(tbl$False_neg, tbl$False_neg == TRUE))
   
-  ppv <- tp / (tp + fp) 
+  ppv <- tp / (tp + fp)
+  npv <- tn / (tn + fn)
   sens <- tp / (tp + fn) 
-  spec <- tn / (fp + tn) 
+  spec <- tn / (fp + tn)
   f1 <- ((2 * ppv * sens) / (ppv + sens))
   
   rslt_m <- matrix(nrow=length(tbl$Pceut.entity.combination), ncol=2, dimnames=list(1:length(tbl$Pceut.entity.combination),c("VAL_SET","DIKB")))
@@ -110,6 +111,7 @@ for(p_ctr in 1:length(pths)){
                "fp",
                "tn",
                "fn",
+               "npv",
                "ppv",
                "sens",
                "spec",
@@ -134,6 +136,7 @@ for(p_ctr in 1:length(pths)){
                   fp,
                   tn,
                   fn,
+                  npv,
                   ppv,
                   sens,
                   spec,

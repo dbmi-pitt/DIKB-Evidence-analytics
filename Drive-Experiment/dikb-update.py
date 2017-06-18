@@ -508,5 +508,5 @@ for elt in ["voriconazole", "nefazodone", "cimetidine"]:
             
 ev.renotifyObservers()
 
-dikb.pickleKB("dikb-pickles/dikb-test.pickle")
-ev.pickleKB("dikb-pickles/ev-test.pickle")
+dikb.pickleKB("dikb-pickles/dikb-test-two.pickle")
+ev.pickleKB("dikb-pickles/ev-test-two.pickle")

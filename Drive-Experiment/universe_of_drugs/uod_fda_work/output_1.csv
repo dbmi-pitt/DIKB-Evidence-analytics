@@ -1,0 +1,605 @@
+1,(S)-citalopram ,CYP2C19
+2,(S)-citalopram ,CYP3A4
+3,(S)-citalopram ,P-gp (citalopram)
+4,(S)-omeprazole ,CYP2C19
+5,(S)-omeprazole ,CYP3A4
+6,(S)-omeprazole ,P-gp (omeprazole)
+7,abiraterone,CYP3A4
+8,abiraterone,SULT2A1
+9,aclidinium,Hydrolysis
+10,acyclovir,MATE1
+11,acyclovir,MATE2K
+12,acyclovir,OAT1
+13,acyclovir,OAT3
+14,acyclovir,OCT1
+15,alfentanil,CYP3A
+16,alfuzosin,CYP3A
+17,alfuzosin,P-gp
+18,aliskiren,CYP3A4
+19,alogliptin,CYP2D6
+20,alogliptin,CYP3A4
+21,alvimopan,Hydrolysis
+22,alvimopan,P-gp
+23,ambrisentan,CYP 3A4
+24,ambrisentan,CYP 2C19
+25,ambrisentan,UGT
+26,ambrisentan,P-gp
+27,amprenavir,CYP3A4
+28,amprenavir,P-gp
+29,apixaban,CYP3A4
+30,apixaban,CYP1A2
+31,apixaban,CYP2C8
+32,apixaban,CYP2C9
+33,apixaban,CYP2C19
+34,apixaban,CYP2J2
+35,apixaban,BCRP
+36,apixaban,P-gp
+37,aripiprazole,CYP2D6
+38,aripiprazole,CYP3A4
+39,arsenic trioxide,Methyltransferase
+40,asenapine,CYP1A2
+41,asenapine,UGT1A4
+42,atomoxetine,CYP2D6
+43,avanafil,CYP3A
+44,avanafil,CYP2C
+45,axitinib,CYP3A
+46,axitinib,CYP1A2
+47,axitinib,CYP2C19
+48,axitinib,UGT1A1
+49,axitinib,BCRP
+50,axitinib,OATP1B1
+51,axitinib,OATP1B3
+52,axitinib,P-gp
+53,azilsartan,CYP2C9
+54,azilsartan,P-gp
+55,azimilide- not approved in USA,CYP3A
+56,azimilide- not approved in USA,CYP 1A
+57,azimilide- not approved in USA,FMO
+58,bedaquiline,CYP3A4
+59,bilastine -not approved in USA,CYP3A
+60,bilastine -not approved in USA,OAT3
+61,bilastine -not approved in USA,P-gp
+62,boceprevir,AKR
+63,boceprevir,CYP3A
+64,boceprevir,BCRP
+65,boceprevir,P-gp
+66,bortezomib,CYP3A4
+67,bortezomib,CYP2C19
+68,bortezomib,CYP1A2
+69,bortezomib,CYP2D6
+70,bortezomib,CYP2C9
+71,bosutinib,CYP3A4
+72,bosutinib,P-gp
+73,brivaracetam,CYP2C8
+74,bupropion,CYP 2B6
+75,bupropion,BCRP
+76,bupropion,P-gp
+77,caffeine,CYP 1A2
+78,canagliflozin,UGT1A9
+79,canagliflozin,UGT2B4
+80,canagliflozin,P-gp
+81,candesartan,P-gp
+82,carisbamate,UGT
+83,casopitant-not approved in USA,CYP 3A4
+84,caspofungin,OATP1B1
+85,cediranib-not approved in USA,UGT1A4
+86,cediranib-not approved in USA,FMO1
+87,cediranib-not approved in USA,P-gp
+88,cefmetazole,Not metabolized
+89,cefmetazole,OATP1B3
+90,ceftaroline,Phosphatase
+91,ceftaroline,hydrolysis
+92,ceftizoxime,OAT1
+93,ceftizoxime,OAT3
+94,cerivastatin,CYP3A4
+95,cerivastatin,CYP2C8
+96,cerivastatin,BCRP
+97,cerivastatin,OATP1B1
+98,cerivastatin,OATP1B3
+99,cerivastatin,P-gp
+100,chlormethiazole,CYP2A6
+101,chlorzoxazone,CYP2E1
+102,chlorzoxazone,CYP1A2
+103,cidofovir,OAT1
+104,cidofovir,OAT3
+105,cilostazol,CYP3A4
+106,cilostazol,CYP2C19
+107,cinacalcet,CYP3A4
+108,cinacalcet,CYP2D6
+109,cinacalcet,CYP1A2
+110,ciprofloxacin,BCRP
+111,ciprofloxacin,P-gp
+112,citalopram,CYP3A4
+113,citalopram,CYP2C19
+114,citalopram,P-gp
+115,clarithromycin,3A4
+116,clarithromycin,P-gp
+117,clobazam,CYP3A4
+118,clobazam,CYP2C19
+119,clobazam,CYP2B6
+120,clobazam,P-gp
+121,cobicistat (GS-9350),CYP3A
+122,cobicistat (GS-9350),CYP2D6
+123,cobicistat (GS-9350),BCRP
+124,cobicistat (GS-9350),OCT2
+125,cobicistat (GS-9350),P-gp
+126,conivaptan,CYP3A
+127,conivaptan,P-gp
+128,cyclophosphamide,CYP2A6
+129,cyclophosphamide,CYP2B6
+130,cyclophosphamide,CYP3A4/5
+131,cyclophosphamide,CYP2C9/18/19
+132,dabigatran,Hydrolysis
+133,dabigatran,UGT
+134,dapagliflozin,UGT1A9
+135,dapagliflozin,P-gp
+136,darunavir,CYP3A
+137,darunavir,OATP1B1
+138,darunavir,P-gp
+139,debrisoquine,CYP2D6
+140,debrisoquine,OCT1
+141,desloratadine (descarboethoxyloratadine),Not specfied
+142,desloratadine (descarboethoxyloratadine),P-gp
+143,desvenlafaxine (O-desmethylvenlafaxine),UGT
+144,desvenlafaxine (O-desmethylvenlafaxine),CYP3A4
+145,dexmedetomidine,UGT
+146,dexmedetomidine,CTP2A6
+147,diazepam,CYP2C19
+148,diazepam,CYP3A4
+149,didanosine,Endogenous purine elimination pathway
+150,d-nebivolol,UGT
+151,d-nebivolol,CYP2D6
+152,donepezil,CYP2D6
+153,donepezil,CYP3A4
+154,donepezil,UGT
+155,doripenem,Dehydropeptidase-I
+156,doxazosin,CYP3A4
+157,doxazosin,CYP2D6
+158,doxazosin,CYP2C19
+159,dronedarone,CYP3A4
+160,drospirenone,Non P450 metabolism
+161,drospirenone,CYP3A4
+162,duloxetine,CYP1A2
+163,duloxetine,2D6
+164,ebastine,CYP 2J2
+165,ebastine,CYP 3A4
+166,elvitegravir (GS-9137),CYP3A
+167,elvitegravir (GS-9137),UGT1A1/3
+168,elvitegravir (GS-9137),P-gp
+169,enalapril,Carboxylesterases
+170,enalapril,OATP1B1
+171,enzalutamide,CYP2C8
+172,enzalutamide,CYP3A4
+173,eplerenone,CYP3A4
+174,eprosartan,Not metabolized
+175,eribulin,Not metabolized
+176,erlotinib,CYP1A1
+177,erlotinib,CYP1A2
+178,erlotinib,CYP3A4
+179,erlotinib,BCRP
+180,erlotinib,P-gp
+181,erythromycin (po),CYP3A
+182,erythromycin (po),BCRP
+183,erythromycin (po),OATP1B1
+184,erythromycin (po),OATP1B3
+185,erythromycin (po),P-gp
+186,erythromycin (iv),CYP3A
+187,erythromycin (iv),BCRP
+188,erythromycin (iv),OATP1B1
+189,erythromycin (iv),OATP1B3
+190,erythromycin (iv),P-gp
+191,eslicarbazepine,UGT
+192,eslicarbazepine,P-gp
+193,etoposide,CYP3A4
+194,etoposide,UGT
+195,etoposide,SULT
+196,etoposide,BCRP
+197,etoposide,OATP1B1
+198,etoposide,OATP1B3
+199,etoposide,P-gp
+200,etoricoxib - not approved in US,CYP3A4
+201,etoricoxib - not approved in US,CYP2C9
+202,etoricoxib - not approved in US,CYP2D6
+203,etoricoxib - not approved in US,CYP1A2
+204,etoricoxib - not approved in US,CYP2C19
+205,etravirine,CYP3A4
+206,etravirine,CYP2C19
+207,etravirine,CYP2C9
+208,everolimus,CYP3A4
+209,everolimus,P-gp
+210,exemestane,CYP3A4
+211,exemestane,aldoketoreductases
+212,febuxostat,UGT1A1
+213,febuxostat,UGT1A3
+214,febuxostat,UGT1A9
+215,febuxostat,UGT2B7
+216,febuxostat,CYP1A2
+217,febuxostat,CYP2C8
+218,febuxostat,CYP2C9
+219,febuxostat,non-P450 enzymes
+220,fesoterodine,CYP 3A4
+221,fesoterodine,CYP2D6 (5-HMT)
+222,fexofenadine,MATE1
+223,fexofenadine,MATE2K
+224,fexofenadine,OATP1B3
+225,fexofenadine,OCT1
+226,fexofenadine,OAT3
+227,fexofenadine,P-gp
+228,fingolimod,CYP 4F2
+229,fluticasone,CYP3A4
+230,fluticasone,P-gp
+231,fluvastatin,CYP2C9
+232,fluvastatin,CYP2C8
+233,fluvastatin,CYP3A4
+234,fluvastatin,BCRP
+235,fluvastatin,OATP1B1
+236,fluvastatin,OATP1B3
+237,fluvastatin,P-gp
+238,gadoxetic acid,Not metabolized
+239,gadoxetic acid,OATP1B1
+240,gadoxetic acid,OATP1B3
+241,galantamine,CYP2D6
+242,galantamine,CYP3A4
+243,ganciclovir,MATE1
+244,ganciclovir,MATE2K
+245,ganciclovir,OAT1
+246,ganciclovir,OCT1
+247,garenoxacin-not approved in US,SULT
+248,garenoxacin-not approved in US,UGT
+249,gefitinib,CYP 3A4
+250,gefitinib,BCRP
+251,gefitinib,OATP1B3
+252,gefitinib,P-gp
+253,grepafloxacin,SULT
+254,grepafloxacin,UGT
+255,grepafloxacin,BCRP
+256,hydromorphone,UGT
+257,iloperidone,CYP2D6
+258,iloperidone,CYP3A4
+259,imatinib,CYP3A4
+260,imatinib,CYP1A2
+261,imatinib,CYP2D6
+262,imatinib,CYP2C9
+263,imatinib,CYP2C19
+264,imatinib,BCRP
+265,imatinib,OATP1B3
+266,imatinib,OCT1
+267,imatinib,P-gp
+268,ipragliflozin-not approved in US,UGT2B7
+269,ipragliflozin-not approved in US,UGT2B4
+270,ipragliflozin-not approved in US,UGT1A8
+271,ipragliflozin-not approved in US,UGT1A9
+272,ivacaftor,CYP3A
+273,ivacaftor,P-gp
+274,ixabepilone,CYP3A4
+275,ixabepilone,P-gp
+276,lacosamide,CYP3A4
+277,lacosamide,CYP2C9
+278,lacosamide,CYP2C19
+279,lamivudine,BCRP
+280,lamivudine,MATE1
+281,lamivudine,MATE2K
+282,lamivudine,OCT1
+283,lamivudine,OCT2
+284,lansoprazole,CYP3A
+285,lansoprazole,CYP2C19
+286,lansoprazole,P-gp
+287,lapatinib,CYP 3A4
+288,lapatinib,CYP3A5
+289,lapatinib,CYP2C19
+290,lapatinib,CYP2C8
+291,lapatinib,BCRP
+292,lapatinib,P-gp
+293,laropiprant,UGT
+294,lasofoxifene,CYP3A4
+295,lasofoxifene,CYP3A5
+296,lasofoxifene,CYP2D6
+297,lasofoxifene,CYP2C19
+298,lasofoxifene,UGT
+299,lenalidomide,P-gp
+300,lidocaine,CYP1A2
+301,lidocaine,3A4
+302,linagliptin,OATP1B3
+303,linagliptin,OCT2
+304,linagliptin,P-gp
+305,lomitapide,CYP3A4
+306,lomitapide,CYP1A2
+307,lomitapide,CYP2B6
+308,lomitapide,CYP2C8
+309,lomitapide,CYP2C19
+310,lopinavir,CYP3A
+311,lopinavir,OATP1B1
+312,lopinavir,P-gp
+313,lorazepam,UGT
+314,losartan,CYP2C9
+315,losartan,CYP3A4
+316,losartan,P-gp
+317,lurasidone,CYP3A4
+318,manidipine-not approved in US,CYP3A4
+319,maraviroc,CYP3A4
+320,maraviroc,OATP1B1
+321,maraviroc,P-gp
+322,maribavir-not approved in US,CYP3A4
+323,memantine,OCT2
+324,methotrexate,BCRP
+325,methotrexate,OAT1
+326,methotrexate,OAT3
+327,methotrexate,OATP1B1
+328,methotrexate,OATP1B3
+329,micafungin,Arylsulfatase
+330,micafungin,CYP3A
+331,midazolam (iv),CYP3A4
+332,midazolam (po),CYP3A4
+333,mirabegron,CYP2D6
+334,mirabegron,CYP3A4
+335,mirabegron,P-gp
+336,mirodenafil-not approved in US,CYP3A4
+337,mirodenafil-not approved in US,CYP2D6
+338,moxifloxacin,UGT
+339,moxifloxacin,SULT
+340,moxifloxacin,P-gp
+341,mycophenolic acid,UGT
+342,naloxone,UGT
+343,nebivolol (racemic),UGT
+344,nebivolol (racemic),CYP2D6
+345,nefazodone,CYP3A4
+346,nelfinavir,CYP3A
+347,nelfinavir,CYP2C19
+348,nelfinavir,p-gp
+349,nilotinib,CYP3A4
+350,nilotinib,OATP1B1
+351,nilotinib,OATP1B3
+352,nilotinib,P-gp
+353,norfloxacin,BCRP
+354,ofloxacin,BCRP
+355,olmesartan,OAT1
+356,olmesartan,OAT3
+357,olmesartan,OATP1B1
+358,olmesartan,OATP1B3
+359,omeprazole,CYP2C19
+360,omeprazole,CYP3A4
+361,omeprazole,CYP2C8
+362,omeprazole,P-gp
+363,ondansetron,CYP3A4
+364,ondansetron,CYP1A2
+365,ondansetron,CYP2D6
+366,ospemifene,CYP3A4
+367,ospemifene,CYP2C9
+368,ospemifene,CYP2C19
+369,oxaliplatin,Nonenzymatic
+370,oxaliplatin,MATE1
+371,oxaliplatin,MATE2K
+372,oxaliplatin,OCT1
+373,oxaliplatin,OCT2
+374,paliperidone (9-hydroxyrisperidone),CYP2D6
+375,paliperidone (9-hydroxyrisperidone),CYP3A4
+376,paliperidone (9-hydroxyrisperidone),P-gp
+377,pantoprazole,CYP2C19
+378,pantoprazole,CYP3A4
+379,pantoprazole,P-gp
+380,paricalcitol,CYP 24
+381,paricalcitol,CYP 3A4
+382,paricalcitol,UGT 1A4
+383,pasireotide,Not metabolized
+384,pasireotide,P-gp
+385,pazopanib,CYP3A4
+386,pazopanib,CYP1A2
+387,pazopanib,CYP2C8
+388,pazopanib,OATP1B1
+389,pazopanib,OATP1B3
+390,pazopanib,P-gp
+391,perampanel,CYP3A
+392,perampanel,CYP1A2
+393,perampanel,CYP2B6
+394,phenytoin,CYP2C9
+395,phenytoin,CYP2C19
+396,phenytoin,CYP1A2
+397,phenytoin,CYP2A6
+398,phenytoin,CYP2C8
+399,phenytoin,CYP2D6
+400,phenytoin,CYP2E1
+401,pioglitazone,CYP2C8
+402,pioglitazone,CYP3A4
+403,pioglitazone,CYP1A1
+404,pitavastatin,CYP2C9
+405,pitavastatin,CYP2C8
+406,pitavastatin,UGT1A3
+407,pitavastatin,UGT2B7
+408,pitavastatin,BCRP
+409,pitavastatin,OATP1B1
+410,pitavastatin,OATP1B3
+411,pitavastatin,P-gp
+412,posaconazole,UGT
+413,posaconazole,P-gp
+414,pravastatin,BCRP
+415,pravastatin,OAT3
+416,pravastatin,OATP1B1
+417,pravastatin,OATP1B3
+418,quetiapine,CYP3A4
+419,rabeprazole,CYP3A4
+420,rabeprazole,CYP2C19
+421,raloxifene,UGT
+422,raloxifene,P-gp
+423,raltegravir,UGT1A1
+424,raltegravir,BCRP
+425,raltegravir,OAT1
+426,raltegravir,P-gp
+427,ramipril,Esterase
+428,ramipril,UGT
+429,ramiprilat,UGT
+430,ranolazine,CYP3A4
+431,ranolazine,CYP2D6
+432,ranolazine,P-gp
+433,rasagiline,CYP1A2
+434,rasagiline,UGT
+435,reboxetine,CYP3A4
+436,regorafenib,CYP3A4
+437,regorafenib,UGT1A9
+438,repaglinide,CYP2C8
+439,repaglinide,CYP3A4
+440,repaglinide,P-gp
+441,retigabine (ezogabine),UGT
+442,retigabine (ezogabine),acetylation
+443,rilpivirine,CYP3A
+444,risperidone,CYP2D6
+445,risperidone,P-gp
+446,ritonavir,CYP3A
+447,ritonavir,P-gp
+448,rivaroxaban,CYP 3A4
+449,rivaroxaban,CYP 2J2
+450,rivaroxaban,BCRP
+451,rivaroxaban,P-gp
+452,roflumilast,CYP 1A2
+453,roflumilast,CYP 3A4.
+454,ropivacaine,CYP 1A2
+455,rosiglitazone,CYP 2C8
+456,rosiglitazone,2C9
+457,rosiglitazone,P-gp
+458,rosuvastatin,CYP2C9
+459,rosuvastatin,BCRP
+460,rosuvastatin,OAT3
+461,rosuvastatin,OATP1B1
+462,rosuvastatin,OATP1B3
+463,rosuvastatin,P-gp
+464,rotigotine,CYP
+465,rotigotine,SULT
+466,rotigotine,UGT1A9
+467,rotigotine,UGT2B15
+468,ruboxistaurin (LY333531),CYP3A4
+469,rufinamide,CES
+470,ruxolitinib,CYP3A4
+471,ruxolitinib,CYP2C9
+472,saxagliptin,CYP3A4
+473,saxagliptin,CYP3A5
+474,saxagliptin,P-gp
+475,sildenafil,CYP3A4
+476,sildenafil,CYP2C9
+477,sildenafil,BCRP
+478,sildenafil,P-gp
+479,silodosin,UGT2B7
+480,silodosin,ADH/ALDH
+481,silodosin,CYP3A4
+482,silodosin,P-gp
+483,sirolimus,CYP3A4
+484,sirolimus,CYP3A5
+485,sirolimus,OATP1B1
+486,sirolimus,OATP1B3
+487,sirolimus,P-gp
+488,sitagliptin,CYP3A4
+489,sitagliptin,CYP2C8 (limited metabolism)
+490,sitagliptin,OAT3
+491,sitagliptin,P-gp
+492,solifenacin,CYP 3A4
+493,sparfloxacin,UGT
+494,sparfloxacin,P-gp
+495,sunitinib,CYP 3A4
+496,sunitinib,BCRP
+497,sunitinib,OATP1B1
+498,sunitinib,P-gp
+499,tacrolimus,CYP3A
+500,tacrolimus,P-gp
+501,tadalafil,CYP3A4
+502,talinolol-not approved in US,P-gp
+503,tamsulosin,CYP3A4
+504,tamsulosin,CYP2D6
+505,tapentadol,UGT
+506,tapentadol,CYP2C9
+507,tapentadol,CYP2A19
+508,tapentadol,CYP2D6
+509,telaprevir,CYP3A4
+510,telaprevir,P-gp
+511,telithromycin,CYP3A4
+512,telithromycin,non CYP-dependent
+513,telithromycin,P-gp
+514,telmisartan,UGT
+515,telmisartan,OATP1B3
+516,temsirolimus,CYP 3A4
+517,temsirolimus,P-gp
+518,tenofovir,No metabolism by CYP
+519,tenofovir,OAT1
+520,tenofovir,OAT3
+521,tenofovir,P-gp
+522,tenoxicam-not approved in US,CYP2C9
+523,teriflunomide,BCRP
+524,teriflunomide,P-gp
+525,tetrabenazine,Carbonyl reductase
+526,tetrabenazine,CYP2D6
+527,tiagabine,CYP 3A
+528,ticagrelor,CYP 3A4
+529,ticagrelor,P-gp
+530,tigecycline,Biliary excretion
+531,tigecycline,UGT
+532,tipifarnib-not approved in US,UGT
+533,tipifarnib-not approved in US,CYP3A4
+534,tirilazad,CYP3A4
+535,tizanidine,CYP1A2
+536,toborinone-not approved in US,CYP2D6
+537,toborinone-not approved in US,CYP1A2
+538,tofacitinib,CYP3A4
+539,tofacitinib,CYP2C19
+540,tofacitinib,P-gp
+541,tolvaptan,CYP3A4
+542,tolvaptan,P-gp
+543,topotecan,pH-dependent hydrolysis
+544,topotecan,BCRP
+545,topotecan,MATE1
+546,topotecan,MATE2K
+547,topotecan,P-gp
+548,toremifene,CYP3A4
+549,toremifene,CYP2D6
+550,troglitazone,SULT
+551,troglitazone,UGT
+552,valproic acid,UGT
+553,valproic acid,Mitochondrial β-oxidation
+554,valsartan,CYP2C9
+555,valsartan,OATP1B1
+556,valsartan,OATP1B3
+557,valsartan,P-gp
+558,vandetanib,CYP3A4
+559,vandetanib,FMO1
+560,vandetanib,FMO2
+561,vandetanib,OATP1B1
+562,vandetanib,OATP1B3
+563,vandetanib,P-gp
+564,varenicline,Not metabolized
+565,varenicline,MATE1
+566,varenicline,MATE2K
+567,varenicline,OCT2
+568,vemurafenib,CYP3A4
+569,vemurafenib,OATP1B3
+570,vemurafenib,P-gp
+571,vicriviroc-not approved in US,CYP3A4
+572,vicriviroc-not approved in US,CYP3A5
+573,vicriviroc-not approved in US,CYP2C9
+574,vilanterol,CYP3A4
+575,vilanterol,P-gp
+576,vilazodone,CYP3A4
+577,vilazodone,CYP2C19
+578,vilazodone,CYP2D6
+579,vildagliptin-not approved in US,Hydrolysis
+580,vincristine,CYP 3A4
+581,vincristine,P-gp
+582,vorapaxar (SCH 530348),CYP 3A4
+583,vorapaxar (SCH 530348),CYP2J2
+584,voriconazole (po),CYP2C19
+585,voriconazole (po),CYP2C9
+586,voriconazole (po),CYP3A4
+587,voriconazole (iv),CYP2C19
+588,voriconazole (iv),CYP2C9
+589,voriconazole (iv),CYP3A4
+590,ximelagatran-not approved in US,CES
+591,ximelagatran-not approved in US,P-gp
+592,zalcitabine,OAT1
+593,zalcitabine,OCT1
+594,zalcitabine,OCT2
+595,zibotentan (ZD4054)-not approved in US,CYP3A4
+596,zileuton,CYP1A2
+597,zileuton,CYP2C9
+598,zileuton,CYP3A4
+599,zileuton,UGT
+600,ziprasidone,AO
+601,ziprasidone,gluathione reduction
+602,ziprasidone,CYP3A4
+603,ziprasidone,CYP1A2
+604,zolmitriptan,CYP1A2
+605,zolmitriptan,P-gp

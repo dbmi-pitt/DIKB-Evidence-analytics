@@ -1,0 +1,227 @@
+(S)-citalopram 	CYP2C19, CYP3A4	P-gp (citalopram)
+(S)-omeprazole 	CYP2C19, CYP3A4	P-gp (omeprazole)
+abiraterone	CYP3A4, SULT2A1	
+aclidinium	Hydrolysis	
+acyclovir		MATE1, MATE2K, OAT1, OAT3, OCT1
+alfentanil	CYP3A	
+alfuzosin	CYP3A	P-gp
+aliskiren	CYP3A4	
+alogliptin	CYP2D6, CYP3A4	
+alvimopan	Hydrolysis	P-gp
+ambrisentan	CYP 3A4, CYP 2C19, UGT	P-gp
+amprenavir	CYP3A4	P-gp
+apixaban	CYP3A4, CYP1A2, CYP2C8, CYP2C9, CYP2C19, CYP2J2	BCRP, P-gp
+aripiprazole	CYP2D6, CYP3A4	
+arsenic trioxide	Methyltransferase	
+asenapine	CYP1A2, UGT1A4	
+atomoxetine	CYP2D6	
+avanafil	CYP3A, CYP2C	
+axitinib	CYP3A,  CYP1A2, CYP2C19, UGT1A1	BCRP, OATP1B1, OATP1B3, P-gp
+azilsartan	CYP2C9	P-gp
+azimilide- not approved in USA	CYP3A, CYP 1A, FMO	
+bedaquiline	CYP3A4	
+bilastine -not approved in USA	CYP3A	OAT3, P-gp
+boceprevir	AKR, CYP3A	BCRP, P-gp
+bortezomib	CYP3A4, CYP2C19, CYP1A2, CYP2D6, CYP2C9	
+bosutinib	CYP3A4	P-gp
+brivaracetam	CYP2C8	
+bupropion	CYP 2B6	BCRP, P-gp
+caffeine	CYP 1A2	
+canagliflozin	UGT1A9, UGT2B4	P-gp
+candesartan		P-gp
+carisbamate	UGT	
+casopitant-not approved in USA	CYP 3A4	
+caspofungin		OATP1B1
+cediranib-not approved in USA	UGT1A4, FMO1	P-gp
+cefmetazole	Not metabolized	OATP1B3
+ceftaroline	Phosphatase, hydrolysis	
+ceftizoxime		OAT1, OAT3
+cerivastatin	CYP3A4, CYP2C8	BCRP, OATP1B1, OATP1B3, P-gp
+chlormethiazole	CYP2A6	
+chlorzoxazone	CYP2E1, CYP1A2	
+cidofovir		OAT1, OAT3
+cilostazol	CYP3A4, CYP2C19	
+cinacalcet	CYP3A4, CYP2D6, CYP1A2	
+ciprofloxacin		BCRP, P-gp
+citalopram	CYP3A4, CYP2C19	P-gp
+clarithromycin	3A4	P-gp
+clinafloxacin		
+clobazam	CYP3A4, CYP2C19, CYP2B6	P-gp
+cobicistat (GS-9350)	CYP3A, CYP2D6	BCRP, OCT2, P-gp
+conivaptan	CYP3A	P-gp
+cyclophosphamide	CYP2A6, CYP2B6, CYP3A4/5, CYP2C9/18/19	
+dabigatran	Hydrolysis, UGT	
+dapagliflozin	UGT1A9	P-gp
+darunavir	CYP3A	OATP1B1, P-gp
+debrisoquine	CYP2D6	OCT1
+desloratadine (descarboethoxyloratadine)	Not specfied	P-gp
+desvenlafaxine (O-desmethylvenlafaxine)	UGT, CYP3A4	
+dexmedetomidine	UGT, CTP2A6	
+diazepam	CYP2C19, CYP3A4	
+didanosine (2,3-dideoxyinosine)	Endogenous purine elimination pathway	
+d-nebivolol	UGT, CYP2D6	
+donepezil	CYP2D6, CYP3A4, UGT	
+doripenem	Dehydropeptidase-I	
+doxazosin	CYP3A4, CYP2D6, CYP2C19	
+dronedarone	CYP3A4	
+drospirenone	Non P450 metabolism, CYP3A4	
+duloxetine	CYP1A2, 2D6	
+ebastine	CYP 2J2 , CYP 3A4	
+elvitegravir (GS-9137)	CYP3A, UGT1A1/3	P-gp
+enalapril	Carboxylesterases	OATP1B1
+enzalutamide	CYP2C8, CYP3A4	
+eplerenone	CYP3A4	
+eprosartan	Not metabolized	
+eribulin	Not metabolized	
+erlotinib	CYP1A1, CYP1A2, CYP3A4	BCRP, P-gp
+erythromycin (po)	CYP3A	BCRP, OATP1B1, OATP1B3, P-gp
+erythromycin (iv)	CYP3A	BCRP, OATP1B1, OATP1B3, P-gp
+eslicarbazepine	UGT	P-gp
+etoposide	CYP3A4, UGT, SULT	BCRP, OATP1B1, OATP1B3, P-gp
+etoricoxib - not approved in US	CYP3A4, CYP2C9, CYP2D6, CYP1A2, CYP2C19	
+etravirine	CYP3A4, CYP2C19, CYP2C9	
+everolimus	CYP3A4	P-gp
+exemestane	CYP3A4, aldoketoreductases	
+febuxostat	UGT1A1, UGT1A3, UGT1A9, UGT2B7, CYP1A2, CYP2C8, CYP2C9, non-P450 enzymes	
+fesoterodine	CYP 3A4, CYP2D6 (5-HMT)	
+fexofenadine		MATE1, MATE2K, OATP1B3, OCT1, OAT3, P-gp
+fingolimod	CYP 4F2	
+fluticasone	CYP3A4	P-gp
+fluvastatin	CYP2C9, CYP2C8, CYP3A4	BCRP, OATP1B1, OATP1B3, P-gp
+gadoxetic acid	Not metabolized	OATP1B1, OATP1B3
+galantamine	CYP2D6, CYP3A4	
+ganciclovir		MATE1, MATE2K,OAT1, OCT1
+garenoxacin-not approved in US	SULT, UGT	
+gefitinib	CYP 3A4	BCRP, OATP1B3, P-gp
+grepafloxacin	SULT, UGT	BCRP
+hydromorphone	UGT	
+iloperidone	CYP2D6, CYP3A4	
+imatinib	CYP3A4, CYP1A2, CYP2D6, CYP2C9, CYP2C19	BCRP, OATP1B3, OCT1, P-gp
+ipragliflozin-not approved in US	UGT2B7, UGT2B4, UGT1A8, UGT1A9	
+ivacaftor	CYP3A	P-gp
+ixabepilone	CYP3A4	P-gp
+lacosamide	CYP3A4,  CYP2C9, CYP2C19	
+lamivudine		BCRP, MATE1, MATE2K, OCT1, OCT2
+lansoprazole	CYP3A,  CYP2C19	P-gp
+lapatinib	CYP 3A4, CYP3A5, CYP2C19, CYP2C8	BCRP, P-gp
+laropiprant	UGT	
+lasofoxifene	CYP3A4, CYP3A5, CYP2D6, CYP2C19, UGT	
+lenalidomide		P-gp
+lidocaine	CYP1A2, 3A4	
+linagliptin		OATP1B3, OCT2, P-gp
+lomitapide	CYP3A4, CYP1A2, CYP2B6, CYP2C8, CYP2C19	
+lopinavir	CYP3A	OATP1B1, P-gp
+lorazepam	UGT	
+losartan	CYP2C9, CYP3A4	P-gp
+lurasidone	CYP3A4	
+manidipine-not approved in US	CYP3A4	
+maraviroc	CYP3A4	OATP1B1, P-gp
+maribavir-not approved in US	CYP3A4	
+memantine		OCT2
+methotrexate		BCRP, OAT1, OAT3, OATP1B1, OATP1B3
+micafungin	Arylsulfatase, CYP3A	
+midazolam (iv)	CYP3A4	
+midazolam (po)	CYP3A4	
+mirabegron	CYP2D6, CYP3A4	P-gp
+mirodenafil-not approved in US	CYP3A4, CYP2D6	
+moxifloxacin	UGT, SULT	P-gp
+mycophenolic acid	UGT	
+naloxone	UGT	
+nebivolol (racemic)	UGT, CYP2D6	
+nefazodone	CYP3A4	
+nelfinavir	CYP3A, CYP2C19	p-gp
+nilotinib	CYP3A4	OATP1B1, OATP1B3, P-gp
+norfloxacin		BCRP
+ofloxacin		BCRP
+olmesartan		OAT1, OAT3, OATP1B1, OATP1B3
+omeprazole	CYP2C19, CYP3A4, CYP2C8	P-gp
+ondansetron	CYP3A4, CYP1A2, CYP2D6	
+ospemifene	CYP3A4, CYP2C9, CYP2C19	
+oxaliplatin	Nonenzymatic	MATE1, MATE2K, OCT1, OCT2
+paliperidone (9-hydroxyrisperidone)	CYP2D6, CYP3A4	P-gp
+pantoprazole	CYP2C19, CYP3A4	P-gp
+paricalcitol	CYP 24, CYP 3A4, UGT 1A4	
+pasireotide	Not metabolized	P-gp
+pazopanib	CYP3A4, CYP1A2, CYP2C8	OATP1B1, OATP1B3, P-gp
+perampanel	CYP3A, CYP1A2, CYP2B6	
+phenytoin	CYP2C9, CYP2C19, CYP1A2, CYP2A6, CYP2C8, CYP2D6, CYP2E1	
+pioglitazone	CYP2C8, CYP3A4, CYP1A1	
+pitavastatin	CYP2C9, CYP2C8, UGT1A3, UGT2B7	BCRP, OATP1B1, OATP1B3, P-gp
+posaconazole	UGT	P-gp
+pravastatin		BCRP, OAT3, OATP1B1, OATP1B3
+quetiapine	CYP3A4	
+rabeprazole	CYP3A4, CYP2C19	
+raloxifene	UGT	P-gp
+raltegravir	UGT1A1	BCRP, OAT1, P-gp
+ramipril	Esterase, UGT	
+ramiprilat	UGT	
+ranolazine	CYP3A4, CYP2D6	P-gp
+rasagiline	CYP1A2, UGT	
+reboxetine	CYP3A4	
+regorafenib	CYP3A4, UGT1A9	
+repaglinide	CYP2C8, CYP3A4	P-gp
+retigabine (ezogabine)	UGT, acetylation	
+rilpivirine	CYP3A	
+risperidone	CYP2D6	P-gp
+ritonavir	CYP3A	P-gp
+rivaroxaban	CYP 3A4, CYP 2J2	BCRP, P-gp
+roflumilast	CYP 1A2 , CYP 3A4.	
+ropivacaine	CYP 1A2	
+rosiglitazone	CYP 2C8, 2C9	P-gp
+rosuvastatin	CYP2C9	BCRP, OAT3, OATP1B1, OATP1B3, P-gp
+rotigotine	CYP, SULT, UGT1A9, UGT2B15	
+ruboxistaurin (LY333531)	CYP3A4	
+rufinamide	CES	
+ruxolitinib	CYP3A4, CYP2C9	
+saxagliptin	CYP3A4, CYP3A5	P-gp
+sildenafil	CYP3A4, CYP2C9	BCRP, P-gp
+silodosin	UGT2B7, ADH/ALDH, CYP3A4	P-gp
+sirolimus	CYP3A4, CYP3A5	OATP1B1, OATP1B3, P-gp
+sitagliptin	CYP3A4, CYP2C8 (limited metabolism)	OAT3, P-gp
+solifenacin	CYP 3A4	
+sparfloxacin	UGT	P-gp
+sunitinib	CYP 3A4	BCRP, OATP1B1, P-gp
+tacrolimus	CYP3A	P-gp
+tadalafil	CYP3A4	
+talinolol-not approved in US		P-gp
+tamsulosin	CYP3A4, CYP2D6	
+tapentadol	UGT, CYP2C9, CYP2A19, CYP2D6	
+telaprevir	CYP3A4	P-gp
+telithromycin	CYP3A4, non CYP-dependent	P-gp
+telmisartan	UGT	OATP1B3
+temsirolimus	CYP 3A4	P-gp
+tenofovir	No metabolism by CYP	OAT1, OAT3, P-gp
+tenoxicam-not approved in US	CYP2C9	
+teriflunomide		BCRP, P-gp
+tetrabenazine	Carbonyl reductase, CYP2D6	
+tiagabine	CYP 3A	
+ticagrelor	CYP 3A4	P-gp
+tigecycline	Biliary excretion, UGT	
+tipifarnib-not approved in US	UGT, CYP3A4	
+tirilazad	CYP3A4	
+tizanidine	CYP1A2	
+toborinone-not approved in US	CYP2D6, CYP1A2	
+tofacitinib	CYP3A4, CYP2C19	P-gp
+tolvaptan	CYP3A4	P-gp
+topotecan	pH-dependent hydrolysis	BCRP, MATE1, MATE2K, P-gp
+toremifene	CYP3A4, CYP2D6	
+troglitazone	SULT, UGT	
+valproic acid	UGT, Mitochondrial β-oxidation	
+valsartan	CYP2C9	OATP1B1, OATP1B3, P-gp
+vandetanib	CYP3A4, FMO1, FMO2	OATP1B1, OATP1B3, P-gp
+varenicline	Not metabolized	MATE1, MATE2K, OCT2
+vemurafenib	CYP3A4	OATP1B3, P-gp
+vicriviroc-not approved in US	CYP3A4, CYP3A5, CYP2C9	
+vilanterol	CYP3A4	P-gp
+vilazodone	CYP3A4, CYP2C19, CYP2D6	
+vildagliptin-not approved in US	Hydrolysis	
+vincristine	CYP 3A4	P-gp
+vorapaxar (SCH 530348)	CYP 3A4, CYP2J2	
+voriconazole (po)	CYP2C19, CYP2C9, CYP3A4	
+voriconazole (iv)	CYP2C19, CYP2C9, CYP3A4	
+ximelagatran-not approved in US	CES	P-gp
+zalcitabine		OAT1, OCT1, OCT2
+zibotentan (ZD4054)-not approved in US	CYP3A4	
+zileuton	CYP1A2, CYP2C9, CYP3A4, UGT	
+ziprasidone	AO, gluathione reduction, CYP3A4, CYP1A2	
+zolmitriptan	CYP1A2	P-gp
